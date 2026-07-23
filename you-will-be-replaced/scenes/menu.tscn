@@ -1,0 +1,431 @@
+[gd_scene load_steps=15 format=3 uid="uid://cv1j6fe23cyb7"]
+
+[ext_resource type="Script" uid="uid://6l0f32ac4oxn" path="res://scripts/menu.gd" id="1_vjb58"]
+[ext_resource type="PackedScene" uid="uid://c08umx5trny1e" path="res://scenes/window.tscn" id="2_4ytvr"]
+[ext_resource type="Texture2D" uid="uid://b3gql1fbqss8c" path="res://assets/triangle.png" id="2_i6lef"]
+[ext_resource type="Texture2D" uid="uid://cihvwyvg8bpmb" path="res://assets/ascii-art-text(2).png" id="3_g3eks"]
+[ext_resource type="FontFile" uid="uid://cexbk66whqwso" path="res://fonts/w95fa/w95f.woff" id="3_mhnvy"]
+[ext_resource type="Theme" uid="uid://b2kkavm1kjn46" path="res://themes/win95_theme.tres" id="4_v86rl"]
+[ext_resource type="Shader" uid="uid://n0fjxglnrli1" path="res://themes/screen2.gdshader" id="6_g3eks"]
+[ext_resource type="Texture2D" uid="uid://5wo7qpq4yiuh" path="res://assets/Start_button_Windows_4.00.337.png" id="7_13sgg"]
+[ext_resource type="Script" uid="uid://cjtnmkaudgxic" path="res://scripts/time.gd" id="8_i6lef"]
+
+[sub_resource type="FontVariation" id="FontVariation_70i5f"]
+base_font = ExtResource("3_mhnvy")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mj5lg"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ufwb2"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cdou"]
+atlas = ExtResource("7_13sgg")
+region = Rect2(20, 40, 540, 220)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v86rl"]
+shader = ExtResource("6_g3eks")
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/scan_line_amount = 0.173
+shader_parameter/warp_amount = 0.0
+shader_parameter/vignette_amount = 0.205
+shader_parameter/vignette_intensity = 0.3
+shader_parameter/grille_amount = 0.05
+shader_parameter/brightness_boost = 1.2
+
+[node name="Menu" type="CanvasLayer"]
+script = ExtResource("1_vjb58")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.105882354, 0.5529412, 0.5529412, 1)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_i6lef")
+flip_h = true
+
+[node name="Label" type="Label" parent="ColorRect/TextureRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -56.0
+offset_top = -12.0
+offset_right = 58.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_mhnvy")
+text = "The sacred sibling
+is watching you"
+horizontal_alignment = 1
+
+[node name="Window" parent="ColorRect" instance=ExtResource("2_4ytvr")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -328.0
+offset_top = -189.0
+offset_right = 328.0
+offset_bottom = 189.0
+title = "Run game"
+
+[node name="X" parent="ColorRect/Window/TextureProgressBar" index="1"]
+disabled = true
+
+[node name="ColorRect3" type="ColorRect" parent="ColorRect/Window"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 48.0
+offset_right = -32.0
+offset_bottom = -66.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect3" type="ColorRect" parent="ColorRect/Window/ColorRect3"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+color = Color(0.443137, 0.447059, 0.466667, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="ColorRect/Window/ColorRect3"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+color = Color(0.443137, 0.447059, 0.466667, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRect/Window/ColorRect3"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -2.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.758218, 0.7612021, 0.7818063, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="ColorRect/Window/ColorRect3"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.758218, 0.7612021, 0.7818063, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="ColorRect/Window/ColorRect3"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = -0.5
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.9549826, 0.9557937, 0.9598053, 1)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/Window/ColorRect3"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 1.5
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.95957583, 0.96013695, 0.9639432, 1)
+
+[node name="AsciiArtText(1)" type="TextureRect" parent="ColorRect/Window"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -270.0
+offset_top = -110.0
+offset_right = 498.0
+offset_bottom = 215.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_g3eks")
+
+[node name="VBoxContainer" type="HBoxContainer" parent="ColorRect/Window"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = 142.0
+offset_right = 256.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="ColorRect/Window/VBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme = ExtResource("4_v86rl")
+text = "Play"
+
+[node name="Settings" type="Button" parent="ColorRect/Window/VBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme = ExtResource("4_v86rl")
+text = "Settings"
+
+[node name="Credits" type="Button" parent="ColorRect/Window/VBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme = ExtResource("4_v86rl")
+text = "Credits"
+
+[node name="Quit" type="Button" parent="ColorRect/Window/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme = ExtResource("4_v86rl")
+text = "Cancel"
+
+[node name="Window2" parent="ColorRect" instance=ExtResource("2_4ytvr")]
+visible = false
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 784.0
+offset_top = 448.0
+offset_right = 1040.0
+offset_bottom = 576.0
+grow_horizontal = 1
+grow_vertical = 1
+title = "Settings"
+
+[node name="SettingCont" type="VBoxContainer" parent="ColorRect/Window2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -32.0
+offset_right = 112.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="ColorRect/Window2/SettingCont"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_mhnvy")
+text = "Volume"
+
+[node name="VolumeSlider" type="HSlider" parent="ColorRect/Window2/SettingCont"]
+layout_mode = 2
+theme = ExtResource("4_v86rl")
+max_value = 1.2
+step = 0.01
+scrollable = false
+tick_count = 10
+ticks_on_borders = true
+
+[node name="Label2" type="Label" parent="ColorRect/Window2/SettingCont"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_mhnvy")
+text = "Mouse Sensitivity"
+
+[node name="SensiSlider" type="HSlider" parent="ColorRect/Window2/SettingCont"]
+visible = false
+layout_mode = 2
+min_value = 0.001
+max_value = 0.01
+step = 0.001
+value = 0.005
+scrollable = false
+
+[node name="Label3" type="CheckButton" parent="ColorRect/Window2/SettingCont"]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_mhnvy")
+button_pressed = true
+text = "CRT Effect"
+
+[node name="Label4" type="CheckButton" parent="ColorRect/Window2/SettingCont"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_mhnvy")
+button_pressed = true
+text = "Fullscreen"
+
+[node name="Window3" parent="ColorRect" instance=ExtResource("2_4ytvr")]
+visible = false
+layout_mode = 1
+offset_left = 768.0
+offset_top = 56.0
+offset_right = 832.256
+offset_bottom = 120.03999
+title = "Credits"
+
+[node name="Credits" type="RichTextLabel" parent="ColorRect/Window3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 40.0
+offset_right = -16.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_v86rl")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("FontVariation_70i5f")
+theme_override_styles/background = SubResource("StyleBoxFlat_mj5lg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ufwb2")
+text = "Mostly Pizza doggy's 3D asset pack
+
+\"LowPolly Water Bottle\" (https://skfb.ly/6TuWQ) by Gabriel Tarzia
+
+\"Cafe Cherry Slice Cake\" (https://skfb.ly/o8wCQ) by My Imaginary World
+
+Red flag icons created by Tingting Studio - Flaticon
+
+Title made using patorjk's ASCII Art Generator
+
+Nathan Hoad's dialogue manager
+
+Rest is made by me, from asset packs or CC0"
+autowrap_mode = 2
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_lock_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.764706, 0.780392, 0.796078, 1)
+metadata/_edit_lock_ = true
+
+[node name="Start" type="TextureButton" parent="ColorRect2" groups=["apps"]]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 7.0
+offset_top = -15.5
+offset_right = 90.0
+offset_bottom = 15.5
+grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_6cdou")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Time" type="Button" parent="ColorRect2" groups=["apps"]]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -72.0
+offset_top = -11.0
+offset_bottom = 13.0
+grow_horizontal = 0
+grow_vertical = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_mhnvy")
+disabled = true
+text = "00:00"
+flat = true
+script = ExtResource("8_i6lef")
+
+[node name="CRT" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_v86rl")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+metadata/_edit_lock_ = true
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="ColorRect/Window/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="ColorRect/Window/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="ColorRect/Window/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="ColorRect/Window/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="value_changed" from="ColorRect/Window2/SettingCont/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="drag_ended" from="ColorRect/Window2/SettingCont/SensiSlider" to="." method="_on_sensi_slider_drag_ended"]
+[connection signal="toggled" from="ColorRect/Window2/SettingCont/Label3" to="." method="_on_label_3_toggled"]
+[connection signal="toggled" from="ColorRect/Window2/SettingCont/Label4" to="." method="_on_fullscreen_toggled"]
+[connection signal="pressed" from="ColorRect2/Start" to="." method="_on_start_pressed"]
+
+[editable path="ColorRect/Window"]

@@ -1,0 +1,86 @@
+[gd_scene load_steps=8 format=3 uid="uid://c08umx5trny1e"]
+
+[ext_resource type="Script" uid="uid://cnjyw0m4yrwv0" path="res://scripts/window.gd" id="1_hjewq"]
+[ext_resource type="FontFile" uid="uid://bueekk14nownm" path="res://fonts/w95fa/W95F.otf" id="1_mvsta"]
+[ext_resource type="Texture2D" uid="uid://5o1p6p4bjnl" path="res://assets/Windows_95_resize.png" id="2_srjdr"]
+[ext_resource type="Texture2D" uid="uid://hs1ag8md4c0k" path="res://assets/Windows_95_close_window_icon.png" id="3_nfq5s"]
+
+[sub_resource type="Gradient" id="Gradient_qnju7"]
+colors = PackedColorArray(0.22352941, 0, 0.7254902, 1, 0.28627452, 0.44705883, 0.9529412, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ato5p"]
+gradient = SubResource("Gradient_qnju7")
+
+[sub_resource type="FontVariation" id="FontVariation_mvsta"]
+base_font = ExtResource("1_mvsta")
+variation_embolden = 0.43
+
+[node name="Window" type="Control"]
+layout_mode = 3
+anchor_right = 0.222
+anchor_bottom = 0.395
+offset_right = 0.255981
+offset_bottom = 0.0399933
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_hjewq")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_srjdr")
+region_rect = Rect2(0, 0, 20, 18)
+patch_margin_left = 17
+patch_margin_top = 15
+patch_margin_right = 18
+patch_margin_bottom = 16
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.008
+anchor_right = 1.0
+anchor_bottom = 0.008
+offset_left = 2.0
+offset_top = -0.048000097
+offset_right = -3.9999847
+offset_bottom = 22.952
+texture = SubResource("GradientTexture1D_ato5p")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="TextureRect"]
+texture_filter = 4
+layout_mode = 0
+offset_left = 5.0
+offset_top = 2.0
+offset_right = 154.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_mvsta")
+theme_override_font_sizes/font_size = 16
+text = "Title"
+vertical_alignment = 1
+
+[node name="X" type="TextureButton" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -20.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = 20.0
+grow_horizontal = 0
+texture_normal = ExtResource("3_nfq5s")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="closed" from="." to="." method="_on_closed"]
+[connection signal="gui_input" from="TextureRect" to="." method="_on_gui_input"]
+[connection signal="pressed" from="TextureRect/X" to="." method="_on_x_pressed"]
