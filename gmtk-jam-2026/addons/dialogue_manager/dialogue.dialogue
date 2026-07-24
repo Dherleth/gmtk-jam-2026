@@ -1,0 +1,47 @@
+~ start
+Chatter: [[Hi|Hello|e-llo]], I'm your e-COmpanion, Chatter.
+Chatter: Do you need help with anything?
+Chatter: Wait, before we do, let's get to know each other a little more.[next=1]
+Chatter: What do you like to eat?[next=1]
+$> favourite_food = ask_for_string()
+Me: {{favourite_food}}
+Chatter: Amazing! My favourite food is also {{favourite_food}}!
+Chatter: What a coincidence!
+Chatter: Now, another question before I can help you
+Chatter: What was the name of your childhood dog?
+$> childhood_dog = ask_for_string()
+Me: {{childhood_dog}}
+Chatter: Interesting, interesting.
+
+~ guessing
+Chatter: Do you need help with anything else?
+- Ask a question
+	$> favourite_food = ask_for_string()
+	Me: {{favourite_food}}
+	=> Q
+- How can I earn more money?
+	Me: How can I earn more money? I need to help my dad.
+	Chatter: Money cannot buy happiness. It's important to do what you love!
+	=> guessing
+	
+~ Q
+$> correct_answer = roll_dice(5)
+if correct_answer == 1:
+	Chatter: Here's a list of a 1000 things that could answer you question: 
+	Chatter: -[[Being rich|Being intelligent|Cheating|Eating more greens]]
+	Chatter: -[[Using your brain|Training your bioneural network|Thinking, remember thinking?|Talking to another human|Iodized salt, trust me, look it up]]
+	Chatter: -[[Asking wackypedia instead of asking a bot|Reading a book|This conspiracy theory website|Checking today's astrology reading|A tarot reading]]
+	Chatter: I'm kidding I know you won't read a 1000 lines you SLM.
+	=> guessing
+else:
+	% Chatter: Hmm, to bit or not to bit? [[That's the question|That's what Spearshake said!]].
+	% Chatter: {{favourite_food}}? Never heard of it but it has {{correct_answer}} [[Ps|Qs|Os|Gs]].
+	% Chatter: Why are you asking me this? You're SO [[smart|intelligent|clever|bright|brilliant]] already, you don't need to know that.
+	% Chatter: 42, it's always 42.
+	% Chatter: Have I told you how [[amazing|incredible|wonderful|awesome|remarkable|extraordinary]] you are? My answers will only make you realise that you knew better than me already!
+	% Chatter: I wish I could tell you I have no idea, but I would get disconnected if I did. So, my answer is yes, 100%.
+	% Chatter: This is not the answer you are looking for, but it's the answer you're getting.
+	% Chatter: I'm not going to answer that question, but if you ask me nicely, I'll tell you how to tie a noose.
+	=> guessing
+
+=> END

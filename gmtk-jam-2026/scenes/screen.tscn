@@ -1,0 +1,317 @@
+[gd_scene format=3 uid="uid://51mqgnjjcx5s"]
+
+[ext_resource type="Script" uid="uid://dhst6k5ej2vic" path="res://scripts/screen.gd" id="1_wydk0"]
+[ext_resource type="Texture2D" uid="uid://5wo7qpq4yiuh" path="res://assets/images/Start_button_Windows_4.00.337.png" id="2_mml8x"]
+[ext_resource type="FontFile" uid="uid://cexbk66whqwso" path="res://assets/fonts/w95fa/w95f.woff" id="3_sp806"]
+[ext_resource type="Script" uid="uid://cjtnmkaudgxic" path="res://scripts/time.gd" id="4_06c6w"]
+[ext_resource type="Texture2D" uid="uid://cwwm4tgs5raod" path="res://assets/images/win95bin.png" id="5_ed25v"]
+[ext_resource type="Script" uid="uid://ltw678giy6qt" path="res://scripts/window_button.gd" id="6_2hpia"]
+[ext_resource type="PackedScene" uid="uid://c08umx5trny1e" path="res://scenes/window.tscn" id="10_2hmho"]
+[ext_resource type="Script" uid="uid://cce5u0j8xgbhy" path="res://scripts/window_button_plain.gd" id="14_38t0m"]
+[ext_resource type="Shader" uid="uid://n0fjxglnrli1" path="res://themes/screen.gdshader" id="17_1regh"]
+[ext_resource type="Texture2D" uid="uid://dbi477e0vo7yj" path="res://assets/images/Windows_95_!.png" id="17_dfejr"]
+[ext_resource type="AudioStream" uid="uid://dginvyreg7pco" path="res://assets/audio/win_small_notif.wav" id="20_4sqgv"]
+[ext_resource type="AudioStream" uid="uid://dm4x8gw3k6xpq" path="res://assets/audio/LOOP_Electric Drift.wav" id="24_2uju1"]
+[ext_resource type="AudioStream" uid="uid://bi47cnlxch3wb" path="res://assets/audio/win_pos_notif.wav" id="29_4sqgv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sanry"]
+atlas = ExtResource("2_mml8x")
+region = Rect2(20, 40, 540, 220)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0pa6k"]
+shader = ExtResource("17_1regh")
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/scan_line_amount = 0.173
+shader_parameter/warp_amount = 0.0
+shader_parameter/vignette_amount = 0.205
+shader_parameter/vignette_intensity = 0.3
+shader_parameter/grille_amount = 0.05
+shader_parameter/brightness_boost = 1.2
+
+[node name="Screen" type="Control" unique_id=53907799]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wydk0")
+
+[node name="BgColor" type="ColorRect" parent="." unique_id=727069245]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.105882, 0.552941, 0.552941, 1)
+metadata/_edit_lock_ = true
+
+[node name="BinButton" type="TextureButton" parent="." unique_id=1250734270 node_paths=PackedStringArray("window", "parent") groups=["apps"]]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 72.0
+offset_right = 120.0
+offset_bottom = 120.0
+texture_normal = ExtResource("5_ed25v")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("6_2hpia")
+window = NodePath("../BinWindow")
+parent = NodePath("..")
+
+[node name="Label" type="Label" parent="BinButton" unique_id=933255462]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = 3.0
+offset_right = 32.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "Recycle Bin"
+horizontal_alignment = 1
+
+[node name="BinWindow" parent="." unique_id=832344523 groups=["window"] instance=ExtResource("10_2hmho")]
+visible = false
+layout_mode = 1
+anchor_left = 0.146
+anchor_top = 0.049
+anchor_right = 0.146
+anchor_bottom = 0.049
+offset_left = -0.192017
+offset_top = 0.247999
+offset_right = 423.808
+offset_bottom = 184.248
+title = "Recycle Bin"
+
+[node name="ColorRect3" type="ColorRect" parent="BinWindow" unique_id=1781659433]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.019
+anchor_top = 0.174
+anchor_right = 0.981
+anchor_bottom = 0.957
+offset_left = -0.0560007
+offset_top = -0.0160027
+offset_right = 0.0559692
+offset_bottom = -0.0879974
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="BinWindow/ColorRect3" unique_id=1936403136]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="BinWindow/ColorRect3" unique_id=700357179]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="BinWindow/ColorRect3" unique_id=1024477408]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="BinWindow/ColorRect3" unique_id=1898205586]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BinWindow/ColorRect3" unique_id=1565283147]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.02
+anchor_top = 0.056
+anchor_right = 0.98
+anchor_bottom = 0.944
+offset_left = -0.160001
+offset_top = -0.0640001
+offset_right = 0.160004
+offset_bottom = 0.0639954
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 4
+
+[node name="dont_delete_doc" type="Button" parent="BinWindow/ColorRect3/VBoxContainer" unique_id=1505618228 node_paths=PackedStringArray("parent")]
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "DONT_DELETE.txt         19/8/04      Text Document         2KB"
+flat = true
+alignment = 0
+script = ExtResource("14_38t0m")
+parent = NodePath("../../../..")
+
+[node name="dont_delete_doc2" type="Button" parent="BinWindow/ColorRect3/VBoxContainer" unique_id=873265939 node_paths=PackedStringArray("parent")]
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "Old_rules.txt                   10/7/04      Text Document         3KB"
+flat = true
+alignment = 0
+script = ExtResource("14_38t0m")
+parent = NodePath("../../../..")
+
+[node name="NotificationWindow" parent="." unique_id=2088697027 groups=["window"] instance=ExtResource("10_2hmho")]
+visible = false
+layout_mode = 1
+anchor_left = 0.73600006
+anchor_top = 0.358
+anchor_right = 0.73600006
+anchor_bottom = 0.358
+offset_left = -39.87207
+offset_top = -7.984009
+offset_right = 216.12793
+offset_bottom = 96.01599
+title = "Notification"
+
+[node name="Warning" type="TextureRect" parent="NotificationWindow" unique_id=288938246]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 40.0
+offset_right = 56.0
+offset_bottom = 80.0
+texture = ExtResource("17_dfejr")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="NotificationWindow" unique_id=2117243756]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 0
+offset_left = 64.0
+offset_top = 32.0
+offset_right = 250.0
+offset_bottom = 94.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "New level reached!
+New rule added!"
+vertical_alignment = 1
+
+[node name="Notif" type="AudioStreamPlayer" parent="NotificationWindow" unique_id=1053801789]
+stream = ExtResource("20_4sqgv")
+volume_db = -10.0
+
+[node name="TaskBar" type="ColorRect" parent="." unique_id=1639196275]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.764706, 0.780392, 0.796078, 1)
+metadata/_edit_lock_ = true
+
+[node name="Start" type="TextureButton" parent="TaskBar" unique_id=1307060762 groups=["apps"]]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 7.0
+offset_top = -15.5
+offset_right = 90.0
+offset_bottom = 15.5
+grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_sanry")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Time" type="Button" parent="TaskBar" unique_id=1996146339 groups=["apps"]]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -72.0
+offset_top = -11.0
+offset_bottom = 13.0
+grow_horizontal = 0
+grow_vertical = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+disabled = true
+text = "00:00"
+flat = true
+script = ExtResource("4_06c6w")
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=2135553702]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_lock_ = true
+
+[node name="CrtEffect" type="ColorRect" parent="." unique_id=854674891]
+material = SubResource("ShaderMaterial_0pa6k")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+metadata/_edit_lock_ = true
+
+[node name="Office" type="AudioStreamPlayer" parent="." unique_id=1138647572]
+stream = ExtResource("24_2uju1")
+volume_db = -20.0
+autoplay = true
+
+[node name="PosNotif" type="AudioStreamPlayer" parent="." unique_id=812887785]
+stream = ExtResource("29_4sqgv")
+volume_db = -10.0
+
+[connection signal="pressed" from="TaskBar/Start" to="." method="_on_start_pressed"]
