@@ -1208,7 +1208,7 @@ offset_right = 216.12793
 offset_bottom = 96.01599
 title = "Notification"
 
-[node name="TextureRect" type="TextureRect" parent="NotificationWindow"]
+[node name="TextureRect2" type="TextureRect" parent="NotificationWindow"]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 40.0

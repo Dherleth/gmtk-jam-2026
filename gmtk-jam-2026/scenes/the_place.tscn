@@ -153,7 +153,6 @@ script = ExtResource("6_qf88h")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013662338, 0.284306, -0.14868021)
 script = ExtResource("7_so6na")
 interact_prompt = "Work"
-can_interact = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Desk/Pc/Monitor" unique_id=540416747]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.067871094, -0.17541504, -0.27856207)
@@ -161,7 +160,7 @@ shape = SubResource("BoxShape3D_yubay")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1252119876]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 0.9576712, 0.2878618, 0, -0.2878618, 0.9576712, 3.86196, 1.39948, 4.90129)
+transform = Transform3D(1, 0, 0, 0, 0.9576712, 0.28786176, 0, -0.28786176, 0.9576712, 3.86196, 1.39948, 4.90129)
 script = ExtResource("8_gqsbp")
 
 [node name="RayCast3D" type="RayCast3D" parent="Camera3D" unique_id=525805358]
