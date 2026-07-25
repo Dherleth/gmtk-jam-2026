@@ -7,6 +7,7 @@ extends Control
 @onready var signed_contracts_folder_content: ColorRect = $"../WorkFolderContent/SignedContractsFolderContent"
 @onready var articles_folder_content: ColorRect = $"../WorkFolderContent/ArticlesFolderContent"
 @onready var pictures_folder_content: ColorRect = $"../NotImportantFolderContent/PicturesFolderContent"
+@onready var music_folder_content: ColorRect = $"../NotImportantFolderContent/MusicFolderContent"
 
 
 var back_goes_to := "root"
@@ -19,6 +20,7 @@ func _ready() -> void:
 	signed_contracts_folder_content.hide()
 	articles_folder_content.hide()
 	pictures_folder_content.hide()
+	music_folder_content.hide()
 
 
 func _on_work_button_pressed() -> void:
@@ -40,10 +42,19 @@ func _on_signed_contracts_button_pressed() -> void:
 	back_goes_to = "work"
 	signed_contracts_folder_content.show()
 	
+func _on_articles_buttons_pressed() -> void:
+	back_goes_to = "work"
+	articles_folder_content.show()
+	
 	
 func _on_pictures_button_pressed() -> void:
 	back_goes_to = "not_important"
 	pictures_folder_content.show()
+	
+
+func _on_music_button_pressed() -> void:
+	back_goes_to = "not_important"
+	music_folder_content.show()
 	
 
 func _on_back_button_pressed() -> void:
@@ -61,9 +72,6 @@ func _on_back_button_pressed() -> void:
 		"not_important":
 			not_important_folder_content.show()
 			pictures_folder_content.hide()
+			music_folder_content.hide()
 			back_goes_to = 'root'
 			
-
-func _on_articles_buttons_pressed() -> void:
-	back_goes_to = "work"
-	articles_folder_content.show()
