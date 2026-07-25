@@ -18,6 +18,9 @@
 [ext_resource type="Texture2D" uid="uid://dlnpux1c7qrim" path="res://assets/images/stat_numbers.png" id="19_sp806"]
 [ext_resource type="AudioStream" uid="uid://dginvyreg7pco" path="res://assets/audio/win_small_notif.wav" id="20_4sqgv"]
 [ext_resource type="Texture2D" uid="uid://bhwkeb11kqor6" path="res://assets/images/Monthly_revenue_in_Millions.png" id="20_06c6w"]
+[ext_resource type="Texture2D" uid="uid://j60i6dyv2prb" path="res://assets/images/image1.png" id="21_n8qyt"]
+[ext_resource type="Texture2D" uid="uid://bql7cgsf6jrtb" path="res://assets/images/my_beloved.png" id="22_2uju1"]
+[ext_resource type="Texture2D" uid="uid://bfg24qoiv2tly" path="res://icon.png" id="23_dfejr"]
 [ext_resource type="AudioStream" uid="uid://dm4x8gw3k6xpq" path="res://assets/audio/LOOP_Electric Drift.wav" id="24_2uju1"]
 [ext_resource type="AudioStream" uid="uid://bi47cnlxch3wb" path="res://assets/audio/win_pos_notif.wav" id="29_4sqgv"]
 
@@ -2913,7 +2916,6 @@ flat = true
 alignment = 0
 
 [node name="NotImportantFolderContent" type="ColorRect" parent="Windows/Folders" unique_id=638249582]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.019
@@ -3203,7 +3205,6 @@ theme_override_fonts/font = ExtResource("3_sp806")
 text = "0Kb"
 
 [node name="PicturesFolderContent" type="ColorRect" parent="Windows/Folders/NotImportantFolderContent" unique_id=476875724]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.019
@@ -3270,7 +3271,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 4
 
-[node name="PictureA" type="Button" parent="Windows/Folders/NotImportantFolderContent/PicturesFolderContent/Files" unique_id=944567129]
+[node name="PictureA" type="Button" parent="Windows/Folders/NotImportantFolderContent/PicturesFolderContent/Files" unique_id=944567129 node_paths=PackedStringArray("window", "parent")]
 layout_mode = 2
 focus_mode = 0
 mouse_default_cursor_shape = 2
@@ -3284,8 +3285,11 @@ theme_override_fonts/font = ExtResource("3_sp806")
 text = "image1.jpg                        01/11/01                       Image                         10KB"
 flat = true
 alignment = 0
+script = ExtResource("14_38t0m")
+window = NodePath("../../../../Windows/Image1Window")
+parent = NodePath("../../../../../..")
 
-[node name="PictureB" type="Button" parent="Windows/Folders/NotImportantFolderContent/PicturesFolderContent/Files" unique_id=97813170]
+[node name="PictureB" type="Button" parent="Windows/Folders/NotImportantFolderContent/PicturesFolderContent/Files" unique_id=97813170 node_paths=PackedStringArray("window", "parent")]
 layout_mode = 2
 focus_mode = 0
 mouse_default_cursor_shape = 2
@@ -3299,8 +3303,11 @@ theme_override_fonts/font = ExtResource("3_sp806")
 text = "mybeloved.jpg                 02/11/01                      Image                         50KB"
 flat = true
 alignment = 0
+script = ExtResource("14_38t0m")
+window = NodePath("../../../../Windows/MyBelovedWindow")
+parent = NodePath("../../../../../..")
 
-[node name="PictureC" type="Button" parent="Windows/Folders/NotImportantFolderContent/PicturesFolderContent/Files" unique_id=2139523804]
+[node name="PictureC" type="Button" parent="Windows/Folders/NotImportantFolderContent/PicturesFolderContent/Files" unique_id=2139523804 node_paths=PackedStringArray("window", "parent")]
 layout_mode = 2
 focus_mode = 0
 mouse_default_cursor_shape = 2
@@ -3314,8 +3321,12 @@ theme_override_fonts/font = ExtResource("3_sp806")
 text = "icon.jpg                             03/11/01                      Image                         66KB"
 flat = true
 alignment = 0
+script = ExtResource("14_38t0m")
+window = NodePath("../../../../Windows/IconWindow")
+parent = NodePath("../../../../../..")
 
 [node name="MusicFolderContent" type="ColorRect" parent="Windows/Folders/NotImportantFolderContent" unique_id=84453408]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.019
@@ -4111,6 +4122,231 @@ offset_top = 13.406006
 offset_right = 636.1234
 offset_bottom = 392.836
 texture = ExtResource("20_06c6w")
+expand_mode = 1
+
+[node name="Image1Window" parent="Windows/Folders/Windows" unique_id=1550086900 groups=["window"] instance=ExtResource("10_2hmho")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchor_left = 0.146
+anchor_top = 0.049
+anchor_right = 0.146
+anchor_bottom = 0.049
+offset_left = -27.839985
+offset_top = -8.959998
+offset_right = 418.16
+offset_bottom = 429.04
+title = "image1.png"
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/Windows/Image1Window" unique_id=276546277]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.019
+anchor_top = 0.174
+anchor_right = 0.981
+anchor_bottom = 0.957
+offset_left = -0.05600071
+offset_top = -45.082
+offset_right = 0.05596924
+offset_bottom = -0.08792114
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Windows/Folders/Windows/Image1Window/ColorRect3" unique_id=962867936]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Windows/Folders/Windows/Image1Window/ColorRect3" unique_id=1722110056]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/Windows/Image1Window/ColorRect3" unique_id=2095239324]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Windows/Folders/Windows/Image1Window/ColorRect3" unique_id=123131110]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Windows/Folders/Windows/Image1Window/ColorRect3" unique_id=1292950782]
+layout_mode = 0
+offset_left = 23.490005
+offset_top = 27.406006
+offset_right = 402.63965
+offset_bottom = 357.0
+texture = ExtResource("21_n8qyt")
+expand_mode = 1
+
+[node name="MyBelovedWindow" parent="Windows/Folders/Windows" unique_id=807335605 groups=["window"] instance=ExtResource("10_2hmho")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchor_left = 0.146
+anchor_top = 0.049
+anchor_right = 0.146
+anchor_bottom = 0.049
+offset_left = -27.839985
+offset_top = -8.959998
+offset_right = 418.16
+offset_bottom = 429.04
+title = "mybeloved.png"
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/Windows/MyBelovedWindow" unique_id=1094021772]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.019
+anchor_top = 0.174
+anchor_right = 0.981
+anchor_bottom = 0.957
+offset_left = -0.05600071
+offset_top = -45.082
+offset_right = 0.05596924
+offset_bottom = -0.08792114
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Windows/Folders/Windows/MyBelovedWindow/ColorRect3" unique_id=528061583]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Windows/Folders/Windows/MyBelovedWindow/ColorRect3" unique_id=472560623]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/Windows/MyBelovedWindow/ColorRect3" unique_id=1046758305]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Windows/Folders/Windows/MyBelovedWindow/ColorRect3" unique_id=766610003]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Windows/Folders/Windows/MyBelovedWindow/ColorRect3" unique_id=202699364]
+layout_mode = 0
+offset_left = 23.490005
+offset_top = 27.406006
+offset_right = 402.63965
+offset_bottom = 357.0
+texture = ExtResource("22_2uju1")
+expand_mode = 1
+
+[node name="IconWindow" parent="Windows/Folders/Windows" unique_id=1148099425 groups=["window"] instance=ExtResource("10_2hmho")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchor_left = 0.146
+anchor_top = 0.049
+anchor_right = 0.146
+anchor_bottom = 0.049
+offset_left = -61.839985
+offset_top = -8.959998
+offset_right = 280.16
+offset_bottom = 319.04
+title = "icon.png"
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/Windows/IconWindow" unique_id=1033755042]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.019
+anchor_top = 0.174
+anchor_right = 0.981
+anchor_bottom = 0.957
+offset_left = 5.978973
+offset_top = -17.071999
+offset_right = -5.979004
+offset_bottom = -3.604004
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Windows/Folders/Windows/IconWindow/ColorRect3" unique_id=2002269474]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Windows/Folders/Windows/IconWindow/ColorRect3" unique_id=1737042676]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/Windows/IconWindow/ColorRect3" unique_id=1424632011]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Windows/Folders/Windows/IconWindow/ColorRect3" unique_id=2029499357]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Windows/Folders/Windows/IconWindow/ColorRect3" unique_id=1509359494]
+layout_mode = 0
+offset_left = 16.523026
+offset_top = 12.0
+offset_right = 83.26868
+offset_bottom = 77.46399
+texture = ExtResource("23_dfejr")
 expand_mode = 1
 
 [connection signal="pressed" from="TaskBar/Start" to="." method="_on_start_pressed"]
