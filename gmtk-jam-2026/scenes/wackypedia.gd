@@ -19,12 +19,13 @@ extends Control
 @onready var ms_result: Control = $Result/MsResult
 @onready var js_result: Control = $Result/JsResult
 @onready var anthropomorfik_result: Control = $Result/AnthropomorfikResult
+@onready var mario_modeli_result: Control = $Result/MarioModeliResult
 
 
 @onready var results := [
 	unknown_result, open_4_all_result, boh_result, xc_motherload_result,
 	mh_result, melon_result, husk_result, mh_businessman_result, close_b_result,
-	ms_result, js_result, anthropomorfik_result
+	ms_result, js_result, anthropomorfik_result, mario_modeli_result
 ]
 @onready var searchterm_to_result := {
 		'open4all': {'searchTermLabel': 'open4all', 'node': open_4_all_result},
@@ -59,6 +60,9 @@ extends Control
 		'schoolman': {'searchTermLabel': 'John Schoolman', 'node': js_result},
 		
 		'anthropomorfik': {'searchTermLabel': 'Anthropomorfik', 'node': anthropomorfik_result},
+	
+		'mario modeli': {'searchTermLabel': 'Mario Modeli', 'node': mario_modeli_result},
+
 	}
 @onready var wacky_pedia_buttons := [
 		$Result/Open4AllResult/MhButton,
@@ -79,7 +83,11 @@ extends Control
 		$Result/JsResult/WackyPediaButton4,
 		$Result/JsResult/WackyPediaButton5,
 		$Result/JsResult/WackyPediaButton6,
-		$Result/JsResult/WackyPediaButton7
+		$Result/JsResult/WackyPediaButton7,
+		$Result/AnthropomorfikResult/WackyPediaButton,
+		$Result/AnthropomorfikResult/WackyPediaButton2,
+		$Result/MarioModeliResult/WackyPediaButton,
+		$Result/MarioModeliResult/WackyPediaButton2
 	]
 var wacky_button_scene := preload("res://scenes/WackyPediaButton.tscn")
 var searchterm := ""
