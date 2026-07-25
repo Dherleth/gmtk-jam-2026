@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://c08umx5trny1e" path="res://scenes/window.tscn" id="10_2hmho"]
 [ext_resource type="Texture2D" uid="uid://bq6xc7mjmgren" path="res://assets/images/Windows_95_Highlights_in_program.png" id="10_esotp"]
 [ext_resource type="Script" uid="uid://cce5u0j8xgbhy" path="res://scripts/window_button_plain.gd" id="14_38t0m"]
+[ext_resource type="Script" uid="uid://dcmbog0g538u7" path="res://scenes/wackypedia.gd" id="15_ufolh"]
+[ext_resource type="PackedScene" uid="uid://cbd1u2j608rx6" path="res://scenes/WackyPediaButton.tscn" id="16_mfkbl"]
 [ext_resource type="Shader" uid="uid://n0fjxglnrli1" path="res://themes/screen.gdshader" id="17_1regh"]
 [ext_resource type="Texture2D" uid="uid://dbi477e0vo7yj" path="res://assets/images/Windows_95_!.png" id="17_dfejr"]
 [ext_resource type="AudioStream" uid="uid://dginvyreg7pco" path="res://assets/audio/win_small_notif.wav" id="20_4sqgv"]
@@ -177,7 +179,7 @@ texture_normal = ExtResource("10_esotp")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("6_2hpia")
-window = NodePath("../../Windows/Browser/HomePage")
+window = NodePath("../../Windows/Browser")
 parent = NodePath("../..")
 
 [node name="Label" type="Label" parent="Buttons/BrowserButton" unique_id=1324344127]
@@ -668,12 +670,7 @@ vertical_alignment = 1
 stream = ExtResource("20_4sqgv")
 volume_db = -10.0
 
-[node name="Browser" type="Control" parent="Windows" unique_id=1479826382]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="HomePage" parent="Windows/Browser" unique_id=1415093049 groups=["window"] instance=ExtResource("10_2hmho")]
+[node name="Browser" parent="Windows" unique_id=1415093049 groups=["window"] instance=ExtResource("10_2hmho")]
 unique_name_in_owner = true
 layout_mode = 1
 anchor_left = 0.146
@@ -686,7 +683,7 @@ offset_right = 977.44794
 offset_bottom = 526.77594
 title = "Browser- WackyPedia"
 
-[node name="ColorRect3" type="ColorRect" parent="Windows/Browser/HomePage" unique_id=343786833]
+[node name="ColorRect3" type="ColorRect" parent="Windows/Browser" unique_id=343786833]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.019
@@ -700,7 +697,7 @@ offset_bottom = -0.0879974
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="Windows/Browser/HomePage/ColorRect3" unique_id=248639378]
+[node name="ColorRect" type="ColorRect" parent="Windows/Browser/ColorRect3" unique_id=248639378]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -708,7 +705,7 @@ offset_bottom = 1.0
 grow_horizontal = 2
 color = Color(0.125911, 0.125911, 0.125911, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="Windows/Browser/HomePage/ColorRect3" unique_id=1013904675]
+[node name="ColorRect2" type="ColorRect" parent="Windows/Browser/ColorRect3" unique_id=1013904675]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -716,7 +713,7 @@ offset_right = 1.0
 grow_vertical = 2
 color = Color(0.125911, 0.125911, 0.125911, 1)
 
-[node name="ColorRect3" type="ColorRect" parent="Windows/Browser/HomePage/ColorRect3" unique_id=893979409]
+[node name="ColorRect3" type="ColorRect" parent="Windows/Browser/ColorRect3" unique_id=893979409]
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -727,7 +724,7 @@ grow_horizontal = 0
 grow_vertical = 2
 color = Color(0.818447, 0.839665, 0.842692, 1)
 
-[node name="ColorRect4" type="ColorRect" parent="Windows/Browser/HomePage/ColorRect3" unique_id=1604550521]
+[node name="ColorRect4" type="ColorRect" parent="Windows/Browser/ColorRect3" unique_id=1604550521]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -738,17 +735,38 @@ grow_horizontal = 2
 grow_vertical = 0
 color = Color(0.818447, 0.839665, 0.842692, 1)
 
-[node name="Title" type="Label" parent="Windows/Browser/HomePage/ColorRect3" unique_id=257662802]
+[node name="WackyPedia" type="Control" parent="Windows/Browser/ColorRect3" unique_id=1500906867]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("15_ufolh")
+
+[node name="HomePage" type="Control" parent="Windows/Browser/ColorRect3/WackyPedia" unique_id=2056516644]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -49.91751
+offset_top = 120.176636
+offset_right = 766.0825
+offset_bottom = 160.17664
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="Windows/Browser/ColorRect3/WackyPedia/HomePage" unique_id=257662802]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.025
 anchor_top = 0.047
 anchor_right = 0.985
 anchor_bottom = 0.936
-offset_left = -19.465595
-offset_top = 39.83135
-offset_right = 11.016052
-offset_bottom = -262.74872
+offset_left = 10.456034
+offset_top = -83.69068
+offset_right = 40.937683
+offset_bottom = -76.25069
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -758,21 +776,7 @@ theme_override_font_sizes/font_size = 45
 text = "WackyPedia"
 horizontal_alignment = 1
 
-[node name="Control" type="Control" parent="Windows/Browser/HomePage/ColorRect3" unique_id=2056516644]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -438.0
-offset_top = -57.0
-offset_right = 378.00003
-offset_bottom = -17.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="LineEdit" type="LineEdit" parent="Windows/Browser/HomePage/ColorRect3/Control" unique_id=269484495]
+[node name="SearchTerm" type="LineEdit" parent="Windows/Browser/ColorRect3/WackyPedia/HomePage" unique_id=269484495]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -785,9 +789,11 @@ offset_right = 153.1365
 offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/caret_width = 2
 placeholder_text = "Do your own research"
+caret_blink = true
 
-[node name="Search" type="Button" parent="Windows/Browser/HomePage/ColorRect3/Control" unique_id=1678937485]
+[node name="SearchButton" type="Button" parent="Windows/Browser/ColorRect3/WackyPedia/HomePage" unique_id=1678937485]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -802,6 +808,280 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Search"
 
+[node name="Result" type="Control" parent="Windows/Browser/ColorRect3/WackyPedia" unique_id=1208210404]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -49.91751
+offset_top = 120.176636
+offset_right = 766.0825
+offset_bottom = 160.17664
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="Windows/Browser/ColorRect3/WackyPedia/Result" unique_id=282309757]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = 34.45603
+offset_top = -114.69068
+offset_right = 64.93768
+offset_bottom = -117.25069
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_sp806")
+theme_override_font_sizes/font_size = 35
+text = "WackyPedia"
+
+[node name="BackButton" type="Button" parent="Windows/Browser/ColorRect3/WackyPedia/Result" unique_id=145551750]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 365.85602
+offset_top = -131.81068
+offset_right = 426.85602
+offset_bottom = -100.810684
+grow_horizontal = 2
+grow_vertical = 2
+text = "Back"
+
+[node name="SearchTerm" type="Label" parent="Windows/Browser/ColorRect3/WackyPedia/Result" unique_id=1683314955]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = 37.45603
+offset_top = -43.690685
+offset_right = 67.93768
+offset_bottom = -49.250683
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_sp806")
+theme_override_font_sizes/font_size = 30
+text = "SearchTerm"
+
+[node name="UnknownResult" type="Control" parent="Windows/Browser/ColorRect3/WackyPedia/Result" unique_id=288665506]
+visible = false
+anchors_preset = 0
+offset_left = -3.0
+offset_right = 37.0
+offset_bottom = 40.0
+
+[node name="Text2" type="RichTextLabel" parent="Windows/Browser/ColorRect3/WackyPedia/Result/UnknownResult" unique_id=184763067]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = 59.856033
+offset_top = 6.3093157
+offset_right = 798.456
+offset_bottom = 191.74931
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_sp806")
+bbcode_enabled = true
+text = "Cupcake ipsum dolor sit amet gingerbread sweet bonbon. I love ice cream candy pudding tiramisu. Cupcake marzipan bear claw croissant caramels oat cake tootsie roll. Topping chupa chups ice cream I love I love biscuit wafer.
+
+Icing cake tart icing chupa chups oat cake sweet dessert. Macaroon macaroon cake I love bear claw dessert cheesecake brownie. I love gummies pie caramels powder lemon drops gummi bears. Cake I love candy canes bonbon powder pie tart oat cake.
+
+Dessert gummies sugar plum candy canes jelly bear claw icing chocolate bar bonbon. Dragée donut chocolate cake pastry fruitcake I love. Jelly-o gummies jelly-o sweet pudding cotton candy macaroon. Donut marzipan bonbon icing soufflé toffee marshmallow.
+
+Candy canes pudding icing carrot cake icing biscuit. Jujubes sesame snaps oat cake icing candy canes. Sesame snaps macaroon pie jelly beans cookie gummi bears I love. Jelly candy canes gummies dragée topping ice cream.
+
+Cake chupa chups cake I love danish carrot cake. Bonbon icing I love candy soufflé gummies. Tiramisu I love cake candy canes danish topping croissant.
+
+Cupcake ipsum dolor sit amet gingerbread sweet bonbon. I love ice cream candy pudding tiramisu. Cupcake marzipan bear claw croissant caramels oat cake tootsie roll. Topping chupa chups ice cream I love I love biscuit wafer.
+
+Icing cake tart icing chupa chups oat cake sweet dessert. Macaroon macaroon cake I love bear claw dessert cheesecake brownie. I love gummies pie caramels powder lemon drops gummi bears. Cake I love candy canes bonbon powder pie tart oat cake.
+
+Dessert gummies sugar plum candy canes jelly bear claw icing chocolate bar bonbon. Dragée donut chocolate cake pastry fruitcake I love. Jelly-o gummies jelly-o sweet pudding cotton candy macaroon. Donut marzipan bonbon icing soufflé toffee marshmallow.
+
+Candy canes pudding icing carrot cake icing biscuit. Jujubes sesame snaps oat cake icing candy canes. Sesame snaps macaroon pie jelly beans cookie gummi bears I love. Jelly candy canes gummies dragée topping ice cream.
+
+Cake chupa chups cake I love danish carrot cake. Bonbon icing I love candy soufflé gummies. Tiramisu I love cake candy canes danish topping croissant."
+autowrap_mode = 2
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Open4AllResult" type="Control" parent="Windows/Browser/ColorRect3/WackyPedia/Result" unique_id=1553801568]
+anchors_preset = 0
+offset_top = 40.999985
+offset_right = 40.0
+offset_bottom = 80.999985
+
+[node name="Text" type="RichTextLabel" parent="Windows/Browser/ColorRect3/WackyPedia/Result/Open4AllResult" unique_id=1525790076]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = 57.856033
+offset_top = -34.690685
+offset_right = 796.456
+offset_bottom = 149.74931
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_sp806")
+bbcode_enabled = true
+text = "Open4All is a company specialized in e-helpers.
+The goal of the organization is to empower users, help them solve menial tasks and give them freedom to do things they love.
+
+It was founded in 1999 as a nonprofit. It's value has been increasing exponentially, creating widespread interest in the research and development of larger e-centers, better e-helpers and soon the awaited e-worker.
+
+Its founders are"
+autowrap_mode = 2
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="MhButton" parent="Windows/Browser/ColorRect3/WackyPedia/Result/Open4AllResult" unique_id=359387453 instance=ExtResource("16_mfkbl")]
+layout_mode = 0
+offset_left = 158.85603
+offset_top = 63.189316
+offset_right = 158.85603
+offset_bottom = 63.189316
+text = "Melon Husk"
+search_term = "Melon Husk"
+
+[node name="MsButton" parent="Windows/Browser/ColorRect3/WackyPedia/Result/Open4AllResult" unique_id=572883717 instance=ExtResource("16_mfkbl")]
+layout_mode = 0
+offset_left = 238.85603
+offset_top = 63.189316
+offset_right = 238.85603
+offset_bottom = 63.189316
+text = "Martin Saltman"
+search_term = "Martin Saltman"
+
+[node name="JsButton" parent="Windows/Browser/ColorRect3/WackyPedia/Result/Open4AllResult" unique_id=1059384553 instance=ExtResource("16_mfkbl")]
+layout_mode = 0
+offset_left = 360.85602
+offset_top = 63.189316
+offset_right = 360.85602
+offset_bottom = 63.189316
+text = "John Schoolman"
+search_term = "John Schoolman"
+
+[node name="Label" type="Label" parent="Windows/Browser/ColorRect3/WackyPedia/Result/Open4AllResult" unique_id=1905871844]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = 230.85602
+offset_top = 61.30933
+offset_right = 197.45602
+offset_bottom = 41.749332
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+theme_override_font_sizes/font_size = 16
+text = ","
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Windows/Browser/ColorRect3/WackyPedia/Result/Open4AllResult" unique_id=261855764]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = 328.85602
+offset_top = 61.30933
+offset_right = 319.45602
+offset_bottom = 41.749332
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+theme_override_font_sizes/font_size = 16
+text = " and"
+horizontal_alignment = 1
+
+[node name="BohResult" type="Control" parent="Windows/Browser/ColorRect3/WackyPedia/Result" unique_id=1269174446]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Text2" type="RichTextLabel" parent="Windows/Browser/ColorRect3/WackyPedia/Result/BohResult" unique_id=1591574323]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = 57.856033
+offset_top = 6.3093157
+offset_right = 796.456
+offset_bottom = 190.74931
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_sp806")
+bbcode_enabled = true
+text = "Open4All is a company specialized in e-helpers.
+The goal of the organization is to empower users, help them solve menial tasks and give them freedom to do things they love.
+
+It was founded in 1999 as a nonprofit. It's value has been increasing exponentially, creating widespread interest in the research and development of larger e-centers, better e-helpers and soon the awaited e-worker.
+
+Its founders are"
+autowrap_mode = 2
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="XcMotherloadResult" type="Control" parent="Windows/Browser/ColorRect3/WackyPedia/Result" unique_id=19191482]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Text" type="RichTextLabel" parent="Windows/Browser/ColorRect3/WackyPedia/Result/XcMotherloadResult" unique_id=1459711388]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = 57.856033
+offset_top = 6.3093157
+offset_right = 796.456
+offset_bottom = 190.74931
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_sp806")
+bbcode_enabled = true
+text = "Open4All is a company specialized in e-helpers.
+The goal of the organization is to empower users, help them solve menial tasks and give them freedom to do things they love.
+
+It was founded in 1999 as a nonprofit. It's value has been increasing exponentially, creating widespread interest in the research and development of larger e-centers, better e-helpers and soon the awaited e-worker.
+
+Its founders are"
+autowrap_mode = 2
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+
 [connection signal="pressed" from="TaskBar/Start" to="." method="_on_start_pressed"]
 [connection signal="caret_changed" from="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" to="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" method="_on_caret_changed"]
 [connection signal="focus_entered" from="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" to="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" method="_on_focus_entered"]
@@ -809,4 +1089,14 @@ text = "Search"
 [connection signal="focus_entered" from="Windows/BinWindows/NotesWindow/ColorRect3/DontTxt" to="Windows/BinWindows/NotesWindow/ColorRect3/DontTxt" method="_on_focus_entered"]
 [connection signal="caret_changed" from="Windows/BinWindows/LookingMilfWindow/ColorRect3/DontTxt" to="Windows/BinWindows/LookingMilfWindow/ColorRect3/DontTxt" method="_on_caret_changed"]
 [connection signal="focus_entered" from="Windows/BinWindows/LookingMilfWindow/ColorRect3/DontTxt" to="Windows/BinWindows/LookingMilfWindow/ColorRect3/DontTxt" method="_on_focus_entered"]
-[connection signal="focus_entered" from="Windows/Browser/HomePage/ColorRect3/Title" to="Windows/Browser/HomePage/ColorRect3/Title" method="_on_focus_entered"]
+[connection signal="text_changed" from="Windows/Browser/ColorRect3/WackyPedia/HomePage/SearchTerm" to="Windows/Browser/ColorRect3/WackyPedia" method="_on_line_edit_text_changed"]
+[connection signal="text_submitted" from="Windows/Browser/ColorRect3/WackyPedia/HomePage/SearchTerm" to="Windows/Browser/ColorRect3/WackyPedia" method="_on_line_edit_text_submitted"]
+[connection signal="pressed" from="Windows/Browser/ColorRect3/WackyPedia/HomePage/SearchButton" to="Windows/Browser/ColorRect3/WackyPedia" method="_on_search_pressed"]
+[connection signal="pressed" from="Windows/Browser/ColorRect3/WackyPedia/Result/BackButton" to="Windows/Browser/ColorRect3/WackyPedia" method="_on_back_button_pressed"]
+[connection signal="focus_entered" from="Windows/Browser/ColorRect3/WackyPedia/Result/UnknownResult/Text2" to="Windows/Browser/ColorRect3/WackyPedia/Result/UnknownResult/Text2" method="_on_focus_entered"]
+[connection signal="focus_entered" from="Windows/Browser/ColorRect3/WackyPedia/Result/Open4AllResult/Text" to="Windows/Browser/ColorRect3/WackyPedia/Result/Open4AllResult/Text" method="_on_focus_entered"]
+[connection signal="wacky_link_pressed" from="Windows/Browser/ColorRect3/WackyPedia/Result/Open4AllResult/MhButton" to="Windows/Browser/ColorRect3/WackyPedia" method="_on_melon_husk_button_wacky_link_pressed"]
+[connection signal="wacky_link_pressed" from="Windows/Browser/ColorRect3/WackyPedia/Result/Open4AllResult/MsButton" to="Windows/Browser/ColorRect3/WackyPedia" method="_on_melon_husk_button_wacky_link_pressed"]
+[connection signal="wacky_link_pressed" from="Windows/Browser/ColorRect3/WackyPedia/Result/Open4AllResult/JsButton" to="Windows/Browser/ColorRect3/WackyPedia" method="_on_melon_husk_button_wacky_link_pressed"]
+[connection signal="focus_entered" from="Windows/Browser/ColorRect3/WackyPedia/Result/BohResult/Text2" to="Windows/Browser/ColorRect3/WackyPedia/Result/BohResult/Text2" method="_on_focus_entered"]
+[connection signal="focus_entered" from="Windows/Browser/ColorRect3/WackyPedia/Result/XcMotherloadResult/Text" to="Windows/Browser/ColorRect3/WackyPedia/Result/XcMotherloadResult/Text" method="_on_focus_entered"]
