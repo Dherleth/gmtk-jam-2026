@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cwwm4tgs5raod" path="res://assets/images/win95bin.png" id="5_ed25v"]
 [ext_resource type="Script" uid="uid://ltw678giy6qt" path="res://scripts/window_button.gd" id="6_2hpia"]
 [ext_resource type="PackedScene" uid="uid://c08umx5trny1e" path="res://scenes/window.tscn" id="10_2hmho"]
+[ext_resource type="Texture2D" uid="uid://bq6xc7mjmgren" path="res://assets/images/Windows_95_Highlights_in_program.png" id="10_esotp"]
 [ext_resource type="Script" uid="uid://cce5u0j8xgbhy" path="res://scripts/window_button_plain.gd" id="14_38t0m"]
 [ext_resource type="Shader" uid="uid://n0fjxglnrli1" path="res://themes/screen.gdshader" id="17_1regh"]
 [ext_resource type="Texture2D" uid="uid://dbi477e0vo7yj" path="res://assets/images/Windows_95_!.png" id="17_dfejr"]
@@ -146,7 +147,7 @@ texture_normal = ExtResource("5_ed25v")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("6_2hpia")
-window = NodePath("../../Windows/BinWindows/Bin")
+window = NodePath("../../Windows/BinWindows/BinWindow")
 parent = NodePath("../..")
 
 [node name="Label" type="Label" parent="Buttons/BinButton" unique_id=933255462]
@@ -166,6 +167,36 @@ theme_override_fonts/font = ExtResource("3_sp806")
 text = "Recycle Bin"
 horizontal_alignment = 1
 
+[node name="BrowserButton" type="TextureButton" parent="Buttons" unique_id=90696947 node_paths=PackedStringArray("window", "parent") groups=["apps"]]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 175.0
+offset_right = 126.0
+offset_bottom = 231.0
+texture_normal = ExtResource("10_esotp")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("6_2hpia")
+window = NodePath("../../Windows/Browser/HomePage")
+parent = NodePath("../..")
+
+[node name="Label" type="Label" parent="Buttons/BrowserButton" unique_id=1324344127]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = 3.0
+offset_right = 32.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "Browser"
+horizontal_alignment = 1
+
 [node name="Windows" type="Control" parent="." unique_id=1130820464]
 anchors_preset = 0
 offset_right = 40.0
@@ -176,7 +207,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Bin" parent="Windows/BinWindows" unique_id=832344523 groups=["window"] instance=ExtResource("10_2hmho")]
+[node name="BinWindow" parent="Windows/BinWindows" unique_id=832344523 groups=["window"] instance=ExtResource("10_2hmho")]
 layout_mode = 1
 anchor_left = 0.146
 anchor_top = 0.049
@@ -188,7 +219,7 @@ offset_right = 648.16
 offset_bottom = 214.04001
 title = "Recycle Bin"
 
-[node name="ColorRect3" type="ColorRect" parent="Windows/BinWindows/Bin" unique_id=1781659433]
+[node name="ColorRect3" type="ColorRect" parent="Windows/BinWindows/BinWindow" unique_id=1781659433]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.019
@@ -202,7 +233,7 @@ offset_bottom = -0.0879974
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="Windows/BinWindows/Bin/ColorRect3" unique_id=1936403136]
+[node name="ColorRect" type="ColorRect" parent="Windows/BinWindows/BinWindow/ColorRect3" unique_id=1936403136]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -210,7 +241,7 @@ offset_bottom = 1.0
 grow_horizontal = 2
 color = Color(0.125911, 0.125911, 0.125911, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="Windows/BinWindows/Bin/ColorRect3" unique_id=700357179]
+[node name="ColorRect2" type="ColorRect" parent="Windows/BinWindows/BinWindow/ColorRect3" unique_id=700357179]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -218,7 +249,7 @@ offset_right = 1.0
 grow_vertical = 2
 color = Color(0.125911, 0.125911, 0.125911, 1)
 
-[node name="ColorRect3" type="ColorRect" parent="Windows/BinWindows/Bin/ColorRect3" unique_id=1024477408]
+[node name="ColorRect3" type="ColorRect" parent="Windows/BinWindows/BinWindow/ColorRect3" unique_id=1024477408]
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -229,7 +260,7 @@ grow_horizontal = 0
 grow_vertical = 2
 color = Color(0.818447, 0.839665, 0.842692, 1)
 
-[node name="ColorRect4" type="ColorRect" parent="Windows/BinWindows/Bin/ColorRect3" unique_id=1898205586]
+[node name="ColorRect4" type="ColorRect" parent="Windows/BinWindows/BinWindow/ColorRect3" unique_id=1898205586]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -240,7 +271,7 @@ grow_horizontal = 2
 grow_vertical = 0
 color = Color(0.818447, 0.839665, 0.842692, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Windows/BinWindows/Bin/ColorRect3" unique_id=1565283147]
+[node name="VBoxContainer" type="VBoxContainer" parent="Windows/BinWindows/BinWindow/ColorRect3" unique_id=1565283147]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.02
@@ -255,7 +286,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 4
 
-[node name="Guidelines" type="Button" parent="Windows/BinWindows/Bin/ColorRect3/VBoxContainer" unique_id=1505618228 node_paths=PackedStringArray("window", "parent")]
+[node name="Guidelines" type="Button" parent="Windows/BinWindows/BinWindow/ColorRect3/VBoxContainer" unique_id=1505618228 node_paths=PackedStringArray("window", "parent")]
 layout_mode = 2
 focus_mode = 0
 mouse_default_cursor_shape = 2
@@ -270,10 +301,10 @@ text = "guidelines.txt                           01/11/01      Text Document    
 flat = true
 alignment = 0
 script = ExtResource("14_38t0m")
-window = NodePath("../../../../GuideLines")
+window = NodePath("../../../../GuideLinesWindow")
 parent = NodePath("../../../../../..")
 
-[node name="Notes" type="Button" parent="Windows/BinWindows/Bin/ColorRect3/VBoxContainer" unique_id=873265939 node_paths=PackedStringArray("window", "parent")]
+[node name="Notes" type="Button" parent="Windows/BinWindows/BinWindow/ColorRect3/VBoxContainer" unique_id=873265939 node_paths=PackedStringArray("window", "parent")]
 layout_mode = 2
 focus_mode = 0
 mouse_default_cursor_shape = 2
@@ -288,10 +319,10 @@ text = "notes.txt                                   03/11/01      Text Document 
 flat = true
 alignment = 0
 script = ExtResource("14_38t0m")
-window = NodePath("../../../../Notes")
+window = NodePath("../../../../NotesWindow")
 parent = NodePath("../../../../../..")
 
-[node name="LookingMilf" type="Button" parent="Windows/BinWindows/Bin/ColorRect3/VBoxContainer" unique_id=1888529828 node_paths=PackedStringArray("window", "parent")]
+[node name="LookingMilf" type="Button" parent="Windows/BinWindows/BinWindow/ColorRect3/VBoxContainer" unique_id=1888529828 node_paths=PackedStringArray("window", "parent")]
 layout_mode = 2
 focus_mode = 0
 mouse_default_cursor_shape = 2
@@ -306,10 +337,10 @@ text = "Looking for a MILF?               07/11/01      Text Document         3K
 flat = true
 alignment = 0
 script = ExtResource("14_38t0m")
-window = NodePath("../../../../LookingMilf")
+window = NodePath("../../../../LookingMilfWindow")
 parent = NodePath("../../../../../..")
 
-[node name="GuideLines" parent="Windows/BinWindows" unique_id=1942496214 groups=["window"] instance=ExtResource("10_2hmho")]
+[node name="GuideLinesWindow" parent="Windows/BinWindows" unique_id=1942496214 groups=["window"] instance=ExtResource("10_2hmho")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
@@ -323,7 +354,7 @@ offset_right = 891.16
 offset_bottom = 364.04
 title = "guidelines.txt"
 
-[node name="ColorRect3" type="ColorRect" parent="Windows/BinWindows/GuideLines" unique_id=1029618765]
+[node name="ColorRect3" type="ColorRect" parent="Windows/BinWindows/GuideLinesWindow" unique_id=1029618765]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.019
@@ -337,7 +368,7 @@ offset_bottom = -0.0879974
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="Windows/BinWindows/GuideLines/ColorRect3" unique_id=1264499478]
+[node name="ColorRect" type="ColorRect" parent="Windows/BinWindows/GuideLinesWindow/ColorRect3" unique_id=1264499478]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -345,7 +376,7 @@ offset_bottom = 1.0
 grow_horizontal = 2
 color = Color(0.125911, 0.125911, 0.125911, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="Windows/BinWindows/GuideLines/ColorRect3" unique_id=876949219]
+[node name="ColorRect2" type="ColorRect" parent="Windows/BinWindows/GuideLinesWindow/ColorRect3" unique_id=876949219]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -353,7 +384,7 @@ offset_right = 1.0
 grow_vertical = 2
 color = Color(0.125911, 0.125911, 0.125911, 1)
 
-[node name="ColorRect3" type="ColorRect" parent="Windows/BinWindows/GuideLines/ColorRect3" unique_id=696519576]
+[node name="ColorRect3" type="ColorRect" parent="Windows/BinWindows/GuideLinesWindow/ColorRect3" unique_id=696519576]
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -364,7 +395,7 @@ grow_horizontal = 0
 grow_vertical = 2
 color = Color(0.818447, 0.839665, 0.842692, 1)
 
-[node name="ColorRect4" type="ColorRect" parent="Windows/BinWindows/GuideLines/ColorRect3" unique_id=1802027448]
+[node name="ColorRect4" type="ColorRect" parent="Windows/BinWindows/GuideLinesWindow/ColorRect3" unique_id=1802027448]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -375,7 +406,7 @@ grow_horizontal = 2
 grow_vertical = 0
 color = Color(0.818447, 0.839665, 0.842692, 1)
 
-[node name="DontTxt" type="TextEdit" parent="Windows/BinWindows/GuideLines/ColorRect3" unique_id=2087573528]
+[node name="DontTxt" type="TextEdit" parent="Windows/BinWindows/GuideLinesWindow/ColorRect3" unique_id=2087573528]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.025
@@ -409,7 +440,7 @@ middle_mouse_paste_enabled = false
 autowrap_mode = 0
 virtual_keyboard_enabled = false
 
-[node name="Notes" parent="Windows/BinWindows" unique_id=891963243 groups=["window"] instance=ExtResource("10_2hmho")]
+[node name="NotesWindow" parent="Windows/BinWindows" unique_id=891963243 groups=["window"] instance=ExtResource("10_2hmho")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
@@ -423,7 +454,7 @@ offset_right = 891.16
 offset_bottom = 364.04
 title = "notes.txt"
 
-[node name="ColorRect3" type="ColorRect" parent="Windows/BinWindows/Notes" unique_id=1425130053]
+[node name="ColorRect3" type="ColorRect" parent="Windows/BinWindows/NotesWindow" unique_id=1425130053]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.019
@@ -437,7 +468,7 @@ offset_bottom = -0.0879974
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="Windows/BinWindows/Notes/ColorRect3" unique_id=1487056593]
+[node name="ColorRect" type="ColorRect" parent="Windows/BinWindows/NotesWindow/ColorRect3" unique_id=1487056593]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -445,7 +476,7 @@ offset_bottom = 1.0
 grow_horizontal = 2
 color = Color(0.125911, 0.125911, 0.125911, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="Windows/BinWindows/Notes/ColorRect3" unique_id=1147121150]
+[node name="ColorRect2" type="ColorRect" parent="Windows/BinWindows/NotesWindow/ColorRect3" unique_id=1147121150]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -453,7 +484,7 @@ offset_right = 1.0
 grow_vertical = 2
 color = Color(0.125911, 0.125911, 0.125911, 1)
 
-[node name="ColorRect3" type="ColorRect" parent="Windows/BinWindows/Notes/ColorRect3" unique_id=1420161019]
+[node name="ColorRect3" type="ColorRect" parent="Windows/BinWindows/NotesWindow/ColorRect3" unique_id=1420161019]
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -464,7 +495,7 @@ grow_horizontal = 0
 grow_vertical = 2
 color = Color(0.818447, 0.839665, 0.842692, 1)
 
-[node name="ColorRect4" type="ColorRect" parent="Windows/BinWindows/Notes/ColorRect3" unique_id=286524095]
+[node name="ColorRect4" type="ColorRect" parent="Windows/BinWindows/NotesWindow/ColorRect3" unique_id=286524095]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -475,7 +506,7 @@ grow_horizontal = 2
 grow_vertical = 0
 color = Color(0.818447, 0.839665, 0.842692, 1)
 
-[node name="DontTxt" type="TextEdit" parent="Windows/BinWindows/Notes/ColorRect3" unique_id=619192230]
+[node name="DontTxt" type="TextEdit" parent="Windows/BinWindows/NotesWindow/ColorRect3" unique_id=619192230]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.025
@@ -503,7 +534,7 @@ middle_mouse_paste_enabled = false
 autowrap_mode = 0
 virtual_keyboard_enabled = false
 
-[node name="LookingMilf" parent="Windows/BinWindows" unique_id=2105439069 groups=["window"] instance=ExtResource("10_2hmho")]
+[node name="LookingMilfWindow" parent="Windows/BinWindows" unique_id=2105439069 groups=["window"] instance=ExtResource("10_2hmho")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
@@ -517,7 +548,7 @@ offset_right = 891.16
 offset_bottom = 364.04
 title = "Looking for a MILF?.txt"
 
-[node name="ColorRect3" type="ColorRect" parent="Windows/BinWindows/LookingMilf" unique_id=2130351187]
+[node name="ColorRect3" type="ColorRect" parent="Windows/BinWindows/LookingMilfWindow" unique_id=2130351187]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.019
@@ -531,7 +562,7 @@ offset_bottom = -0.0879974
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="Windows/BinWindows/LookingMilf/ColorRect3" unique_id=1288139526]
+[node name="ColorRect" type="ColorRect" parent="Windows/BinWindows/LookingMilfWindow/ColorRect3" unique_id=1288139526]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -539,7 +570,7 @@ offset_bottom = 1.0
 grow_horizontal = 2
 color = Color(0.125911, 0.125911, 0.125911, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="Windows/BinWindows/LookingMilf/ColorRect3" unique_id=76287778]
+[node name="ColorRect2" type="ColorRect" parent="Windows/BinWindows/LookingMilfWindow/ColorRect3" unique_id=76287778]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -547,7 +578,7 @@ offset_right = 1.0
 grow_vertical = 2
 color = Color(0.125911, 0.125911, 0.125911, 1)
 
-[node name="ColorRect3" type="ColorRect" parent="Windows/BinWindows/LookingMilf/ColorRect3" unique_id=781503949]
+[node name="ColorRect3" type="ColorRect" parent="Windows/BinWindows/LookingMilfWindow/ColorRect3" unique_id=781503949]
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -558,7 +589,7 @@ grow_horizontal = 0
 grow_vertical = 2
 color = Color(0.818447, 0.839665, 0.842692, 1)
 
-[node name="ColorRect4" type="ColorRect" parent="Windows/BinWindows/LookingMilf/ColorRect3" unique_id=594702344]
+[node name="ColorRect4" type="ColorRect" parent="Windows/BinWindows/LookingMilfWindow/ColorRect3" unique_id=594702344]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -569,7 +600,7 @@ grow_horizontal = 2
 grow_vertical = 0
 color = Color(0.818447, 0.839665, 0.842692, 1)
 
-[node name="DontTxt" type="TextEdit" parent="Windows/BinWindows/LookingMilf/ColorRect3" unique_id=806049191]
+[node name="DontTxt" type="TextEdit" parent="Windows/BinWindows/LookingMilfWindow/ColorRect3" unique_id=806049191]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.025
@@ -637,10 +668,145 @@ vertical_alignment = 1
 stream = ExtResource("20_4sqgv")
 volume_db = -10.0
 
+[node name="Browser" type="Control" parent="Windows" unique_id=1479826382]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HomePage" parent="Windows/Browser" unique_id=1415093049 groups=["window"] instance=ExtResource("10_2hmho")]
+unique_name_in_owner = true
+layout_mode = 1
+anchor_left = 0.146
+anchor_top = 0.049
+anchor_right = 0.146
+anchor_bottom = 0.049
+offset_left = 129.16
+offset_top = 23.04
+offset_right = 977.44794
+offset_bottom = 526.77594
+title = "Browser- WackyPedia"
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/Browser/HomePage" unique_id=343786833]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.019
+anchor_top = 0.174
+anchor_right = 0.981
+anchor_bottom = 0.957
+offset_left = -0.0560007
+offset_top = -0.0160027
+offset_right = 0.0559692
+offset_bottom = -0.0879974
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Windows/Browser/HomePage/ColorRect3" unique_id=248639378]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Windows/Browser/HomePage/ColorRect3" unique_id=1013904675]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/Browser/HomePage/ColorRect3" unique_id=893979409]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Windows/Browser/HomePage/ColorRect3" unique_id=1604550521]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="Title" type="Label" parent="Windows/Browser/HomePage/ColorRect3" unique_id=257662802]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = -19.465595
+offset_top = 39.83135
+offset_right = 11.016052
+offset_bottom = -262.74872
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_sp806")
+theme_override_font_sizes/font_size = 45
+text = "WackyPedia"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="Windows/Browser/HomePage/ColorRect3" unique_id=2056516644]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -438.0
+offset_top = -57.0
+offset_right = 378.00003
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LineEdit" type="LineEdit" parent="Windows/Browser/HomePage/ColorRect3/Control" unique_id=269484495]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -153.1365
+offset_top = -15.5
+offset_right = 153.1365
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "Do your own research"
+
+[node name="Search" type="Button" parent="Windows/Browser/HomePage/ColorRect3/Control" unique_id=1678937485]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 170.5
+offset_top = -15.5
+offset_right = 231.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Search"
+
 [connection signal="pressed" from="TaskBar/Start" to="." method="_on_start_pressed"]
-[connection signal="caret_changed" from="Windows/BinWindows/GuideLines/ColorRect3/DontTxt" to="Windows/BinWindows/GuideLines/ColorRect3/DontTxt" method="_on_caret_changed"]
-[connection signal="focus_entered" from="Windows/BinWindows/GuideLines/ColorRect3/DontTxt" to="Windows/BinWindows/GuideLines/ColorRect3/DontTxt" method="_on_focus_entered"]
-[connection signal="caret_changed" from="Windows/BinWindows/Notes/ColorRect3/DontTxt" to="Windows/BinWindows/Notes/ColorRect3/DontTxt" method="_on_caret_changed"]
-[connection signal="focus_entered" from="Windows/BinWindows/Notes/ColorRect3/DontTxt" to="Windows/BinWindows/Notes/ColorRect3/DontTxt" method="_on_focus_entered"]
-[connection signal="caret_changed" from="Windows/BinWindows/LookingMilf/ColorRect3/DontTxt" to="Windows/BinWindows/LookingMilf/ColorRect3/DontTxt" method="_on_caret_changed"]
-[connection signal="focus_entered" from="Windows/BinWindows/LookingMilf/ColorRect3/DontTxt" to="Windows/BinWindows/LookingMilf/ColorRect3/DontTxt" method="_on_focus_entered"]
+[connection signal="caret_changed" from="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" to="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" method="_on_caret_changed"]
+[connection signal="focus_entered" from="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" to="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" method="_on_focus_entered"]
+[connection signal="caret_changed" from="Windows/BinWindows/NotesWindow/ColorRect3/DontTxt" to="Windows/BinWindows/NotesWindow/ColorRect3/DontTxt" method="_on_caret_changed"]
+[connection signal="focus_entered" from="Windows/BinWindows/NotesWindow/ColorRect3/DontTxt" to="Windows/BinWindows/NotesWindow/ColorRect3/DontTxt" method="_on_focus_entered"]
+[connection signal="caret_changed" from="Windows/BinWindows/LookingMilfWindow/ColorRect3/DontTxt" to="Windows/BinWindows/LookingMilfWindow/ColorRect3/DontTxt" method="_on_caret_changed"]
+[connection signal="focus_entered" from="Windows/BinWindows/LookingMilfWindow/ColorRect3/DontTxt" to="Windows/BinWindows/LookingMilfWindow/ColorRect3/DontTxt" method="_on_focus_entered"]
+[connection signal="focus_entered" from="Windows/Browser/HomePage/ColorRect3/Title" to="Windows/Browser/HomePage/ColorRect3/Title" method="_on_focus_entered"]
