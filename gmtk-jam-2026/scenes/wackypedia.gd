@@ -3,6 +3,8 @@ extends Control
 @onready var home_page: Control = $HomePage
 @onready var result: Control = $Result
 @onready var searchterm_input: LineEdit = $HomePage/SearchTerm
+@onready var recent: Control = $HomePage/Recent
+@onready var discovered_pages_container: HBoxContainer = $HomePage/Recent/DiscoveredPages
 @onready var searchterm_label: Label = $Result/SearchTerm
 @onready var unknown_result: Control = $Result/UnknownResult
 
@@ -79,11 +81,13 @@ extends Control
 		$Result/JsResult/WackyPediaButton6,
 		$Result/JsResult/WackyPediaButton7
 	]
-
+var wacky_button_scene := preload("res://scenes/WackyPediaButton.tscn")
 var searchterm := ""
-var history :Array[String] = []
+var history: Array[String] = []
+var discovered_pages: Array[String] = []
 
 func _ready() -> void:
+	recent.hide()
 	result.hide()
 	home_page.show()
 	for button in wacky_pedia_buttons:
@@ -103,6 +107,22 @@ func _on_search_pressed() -> void:
 		var result = searchterm_to_result[searchterm.to_lower()]
 		searchterm_label.text = result.searchTermLabel
 		result.node.show()
+		
+		if not discovered_pages.has(result.searchTermLabel):
+			recent.show()
+			discovered_pages.push_back(result.searchTermLabel)
+			
+			var new_wacky_button: WackyPediaButton = wacky_button_scene.instantiate()
+			new_wacky_button.search_term = searchterm
+			new_wacky_button.text = result.searchTermLabel
+			var label := Label.new()
+			label.text = result.searchTermLabel
+			label.add_theme_font_size_override("font_size", 14)
+			label.add_child(new_wacky_button)
+			new_wacky_button.wacky_link_pressed.connect(_on_wacky_link_pressed)
+		
+			discovered_pages_container.add_child(label)
+			
 	else:
 		searchterm_label.text = searchterm
 		unknown_result.show()

@@ -1,5 +1,6 @@
 @tool
 extends Control
+class_name WackyPediaButton
 
 signal wacky_link_pressed(searchTerm: String)
 @onready var button: Button = $Button

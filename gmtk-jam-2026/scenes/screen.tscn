@@ -742,7 +742,6 @@ offset_bottom = 40.0
 script = ExtResource("15_ufolh")
 
 [node name="HomePage" type="Control" parent="Windows/Browser/ColorRect3/WackyPedia" unique_id=2056516644]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -808,7 +807,42 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Search"
 
+[node name="Recent" type="Control" parent="Windows/Browser/ColorRect3/WackyPedia/HomePage" unique_id=2057569653]
+anchors_preset = 0
+offset_left = 31.856033
+offset_top = 42.189316
+offset_right = 845.856
+offset_bottom = 225.18932
+
+[node name="Label" type="Label" parent="Windows/Browser/ColorRect3/WackyPedia/HomePage/Recent" unique_id=512251095]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.011000001
+anchor_top = 0.186
+anchor_right = 0.068
+anchor_bottom = 0.273
+offset_left = -9.954
+offset_top = -0.038009644
+offset_right = 756.648
+offset_bottom = 0.040992737
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+theme_override_font_sizes/font_size = 16
+text = "Recent"
+horizontal_alignment = 1
+
+[node name="DiscoveredPages" type="HBoxContainer" parent="Windows/Browser/ColorRect3/WackyPedia/HomePage/Recent" unique_id=362405341]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 64.0
+offset_right = 813.0
+offset_bottom = 87.0
+alignment = 1
+
 [node name="Result" type="Control" parent="Windows/Browser/ColorRect3/WackyPedia" unique_id=1208210404]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -957,7 +991,7 @@ autowrap_mode = 2
 shortcut_keys_enabled = false
 drag_and_drop_selection_enabled = false
 
-[node name="MhButton" parent="Windows/Browser/ColorRect3/WackyPedia/Result/Open4AllResult" unique_id=359387453 instance=ExtResource("16_mfkbl")]
+[node name="MhButton" parent="Windows/Browser/ColorRect3/WackyPedia/Result/Open4AllResult" unique_id=1928741597 instance=ExtResource("16_mfkbl")]
 layout_mode = 0
 offset_left = 158.85603
 offset_top = 63.189316
