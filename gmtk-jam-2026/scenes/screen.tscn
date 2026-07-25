@@ -783,9 +783,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -153.1365
+offset_left = -150.1365
 offset_top = -15.5
-offset_right = 153.1365
+offset_right = 156.13647
 offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
@@ -800,9 +800,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 170.5
+offset_left = 173.5
 offset_top = -15.5
-offset_right = 231.5
+offset_right = 234.5
 offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
@@ -822,24 +822,27 @@ offset_bottom = 160.17664
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Title" type="Label" parent="Windows/Browser/ColorRect3/WackyPedia/Result" unique_id=282309757]
+[node name="Title" type="Button" parent="Windows/Browser/ColorRect3/WackyPedia/Result" unique_id=1913916254]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.025
 anchor_top = 0.047
 anchor_right = 0.985
 anchor_bottom = 0.936
-offset_left = 34.45603
-offset_top = -114.69068
-offset_right = 64.93768
-offset_bottom = -117.25069
+offset_left = 27.456026
+offset_top = -118.69068
+offset_right = -566.904
+offset_bottom = -113.25069
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.39607844, 1, 1)
+theme_override_colors/font_hover_color = Color(0.28627452, 0, 0.94509804, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("3_sp806")
 theme_override_font_sizes/font_size = 35
 text = "WackyPedia"
+flat = true
 
 [node name="BackButton" type="Button" parent="Windows/Browser/ColorRect3/WackyPedia/Result" unique_id=145551750]
 layout_mode = 1
@@ -922,7 +925,6 @@ shortcut_keys_enabled = false
 drag_and_drop_selection_enabled = false
 
 [node name="Open4AllResult" type="Control" parent="Windows/Browser/ColorRect3/WackyPedia/Result" unique_id=1553801568]
-visible = false
 anchors_preset = 0
 offset_top = 40.999985
 offset_right = 40.0
@@ -975,11 +977,11 @@ search_term = "Martin Saltman"
 [node name="JsButton" parent="Windows/Browser/ColorRect3/WackyPedia/Result/Open4AllResult" unique_id=1059384553 instance=ExtResource("16_mfkbl")]
 layout_mode = 0
 offset_left = 360.85602
-offset_top = 63.189316
+offset_top = 64.189316
 offset_right = 360.85602
-offset_bottom = 63.189316
+offset_bottom = 64.189316
 text = "John Schoolman"
-search_term = "John Schoolman"
+search_term = "john schoolman"
 
 [node name="Label" type="Label" parent="Windows/Browser/ColorRect3/WackyPedia/Result/Open4AllResult" unique_id=1905871844]
 layout_mode = 1
@@ -1268,6 +1270,7 @@ text = "and stayed CTO even after it became"
 horizontal_alignment = 1
 
 [node name="CloseBResult" type="Control" parent="Windows/Browser/ColorRect3/WackyPedia/Result" unique_id=541165525]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -1325,6 +1328,227 @@ theme_override_font_sizes/font_size = 16
 text = "."
 horizontal_alignment = 1
 
+[node name="MsResult" type="Control" parent="Windows/Browser/ColorRect3/WackyPedia/Result" unique_id=851111065]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Text" type="RichTextLabel" parent="Windows/Browser/ColorRect3/WackyPedia/Result/MsResult" unique_id=1789186401]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = 57.856033
+offset_top = 6.3093157
+offset_right = 796.456
+offset_bottom = 190.74931
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_sp806")
+bbcode_enabled = true
+text = "Martin Saltman is an entrepreneur and investor who has been the chief executive officer of the e-helper company open4all since 1999.
+
+Saltman attended Herverd University for two months before he dropped out and co-founded Wacko, a social media that sold for $50 million.
+He is a billionaire due to investments in different e-companies.
+
+He dissappeared quickly after open4all became closeB$."
+autowrap_mode = 2
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Text2" type="RichTextLabel" parent="Windows/Browser/ColorRect3/WackyPedia/Result/MsResult" unique_id=2135532498]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = 57.856033
+offset_top = 22.309317
+offset_right = 793.456
+offset_bottom = 205.74931
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_sp806")
+bbcode_enabled = true
+text = "since 1999.
+
+Saltman attended Herverd University for two months before he dropped out and co-founded Wacko, a social media that sold for $50 million.
+He is a billionaire due to investments in different e-companies.
+
+He dissappeared quickly after "
+autowrap_mode = 2
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Text3" type="RichTextLabel" parent="Windows/Browser/ColorRect3/WackyPedia/Result/MsResult" unique_id=1428573276]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = 300.85602
+offset_top = 118.30932
+offset_right = 320.45602
+offset_bottom = 137.74931
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_sp806")
+bbcode_enabled = true
+text = " became "
+autowrap_mode = 2
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Text4" type="RichTextLabel" parent="Windows/Browser/ColorRect3/WackyPedia/Result/MsResult" unique_id=1410629654]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = 407.85602
+offset_top = 118.30932
+offset_right = 390.45602
+offset_bottom = 104.74931
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_sp806")
+bbcode_enabled = true
+text = "."
+autowrap_mode = 2
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="WackyPediaButton" parent="Windows/Browser/ColorRect3/WackyPedia/Result/MsResult" unique_id=1633894383 instance=ExtResource("16_mfkbl")]
+layout_mode = 0
+offset_left = 767.856
+offset_top = 8.189316
+offset_right = 767.856
+offset_bottom = 8.189316
+text = "open4all"
+search_term = "open4all"
+
+[node name="WackyPediaButton2" parent="Windows/Browser/ColorRect3/WackyPedia/Result/MsResult" unique_id=1106771776 instance=ExtResource("16_mfkbl")]
+layout_mode = 0
+offset_left = 247.85602
+offset_top = 120.189316
+offset_right = 247.85602
+offset_bottom = 120.189316
+text = "open4all"
+search_term = "open4all"
+
+[node name="WackyPediaButton3" parent="Windows/Browser/ColorRect3/WackyPedia/Result/MsResult" unique_id=1660941018 instance=ExtResource("16_mfkbl")]
+layout_mode = 0
+offset_left = 358.85602
+offset_top = 120.189316
+offset_right = 358.85602
+offset_bottom = 120.189316
+text = "closeB$"
+search_term = "closeb$"
+
+[node name="JsResult" type="Control" parent="Windows/Browser/ColorRect3/WackyPedia/Result" unique_id=795903117]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Text" type="RichTextLabel" parent="Windows/Browser/ColorRect3/WackyPedia/Result/JsResult" unique_id=2018557525]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = 57.856033
+offset_top = 6.3093157
+offset_right = 796.456
+offset_bottom = 190.74931
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_sp806")
+bbcode_enabled = true
+text = "John Schoolman is a researcher and the co-founder of open4all.
+He had an interest in science and math from a young age.
+After finishing his PhD, he joined Martin Saltman and Melon Husk and co-founded open4all. He lead the research and development team behind the company's e-helper tool and is refered to as the \"designer\" of Lenna, the first e-worker.
+
+Schoolman left open4all shortly after it became closeB$ and has joined another e-helper company called Anthropomorfik"
+autowrap_mode = 2
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="WackyPediaButton" parent="Windows/Browser/ColorRect3/WackyPedia/Result/JsResult" unique_id=1748371385 instance=ExtResource("16_mfkbl")]
+layout_mode = 0
+offset_left = 403.85602
+offset_top = 8.189316
+offset_right = 403.85602
+offset_bottom = 8.189316
+text = "open4all"
+search_term = "open4all"
+
+[node name="WackyPediaButton2" parent="Windows/Browser/ColorRect3/WackyPedia/Result/JsResult" unique_id=1286548096 instance=ExtResource("16_mfkbl")]
+layout_mode = 0
+offset_left = 569.856
+offset_top = 40.189316
+offset_right = 569.856
+offset_bottom = 40.189316
+text = "open4all"
+search_term = "open4all"
+
+[node name="WackyPediaButton3" parent="Windows/Browser/ColorRect3/WackyPedia/Result/JsResult" unique_id=1008732753 instance=ExtResource("16_mfkbl")]
+layout_mode = 0
+offset_left = 264.85602
+offset_top = 40.189316
+offset_right = 264.85602
+offset_bottom = 40.189316
+text = "Martin Saltman"
+search_term = "martin saltman"
+
+[node name="WackyPediaButton4" parent="Windows/Browser/ColorRect3/WackyPedia/Result/JsResult" unique_id=808663510 instance=ExtResource("16_mfkbl")]
+layout_mode = 0
+offset_left = 385.85602
+offset_top = 40.189316
+offset_right = 385.85602
+offset_bottom = 40.189316
+text = "Melon Husk"
+search_term = "melon husk"
+
+[node name="WackyPediaButton5" parent="Windows/Browser/ColorRect3/WackyPedia/Result/JsResult" unique_id=877636582 instance=ExtResource("16_mfkbl")]
+layout_mode = 0
+offset_left = 154.85602
+offset_top = 88.189316
+offset_right = 154.85602
+offset_bottom = 88.189316
+text = "open4all"
+search_term = "open4all"
+
+[node name="WackyPediaButton6" parent="Windows/Browser/ColorRect3/WackyPedia/Result/JsResult" unique_id=384409208 instance=ExtResource("16_mfkbl")]
+layout_mode = 0
+offset_left = 352.85602
+offset_top = 88.189316
+offset_right = 352.85602
+offset_bottom = 88.189316
+text = "closeB$"
+search_term = "closeb$"
+
+[node name="WackyPediaButton7" parent="Windows/Browser/ColorRect3/WackyPedia/Result/JsResult" unique_id=118340290 instance=ExtResource("16_mfkbl")]
+layout_mode = 0
+offset_left = 712.856
+offset_top = 88.189316
+offset_right = 712.856
+offset_bottom = 88.189316
+text = "Anthropomorfik"
+search_term = "anthropomorfik"
+
 [connection signal="pressed" from="TaskBar/Start" to="." method="_on_start_pressed"]
 [connection signal="caret_changed" from="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" to="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" method="_on_caret_changed"]
 [connection signal="focus_entered" from="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" to="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" method="_on_focus_entered"]
@@ -1335,6 +1559,7 @@ horizontal_alignment = 1
 [connection signal="text_changed" from="Windows/Browser/ColorRect3/WackyPedia/HomePage/SearchTerm" to="Windows/Browser/ColorRect3/WackyPedia" method="_on_line_edit_text_changed"]
 [connection signal="text_submitted" from="Windows/Browser/ColorRect3/WackyPedia/HomePage/SearchTerm" to="Windows/Browser/ColorRect3/WackyPedia" method="_on_line_edit_text_submitted"]
 [connection signal="pressed" from="Windows/Browser/ColorRect3/WackyPedia/HomePage/SearchButton" to="Windows/Browser/ColorRect3/WackyPedia" method="_on_search_pressed"]
+[connection signal="pressed" from="Windows/Browser/ColorRect3/WackyPedia/Result/Title" to="Windows/Browser/ColorRect3/WackyPedia" method="_on_title_pressed"]
 [connection signal="pressed" from="Windows/Browser/ColorRect3/WackyPedia/Result/BackButton" to="Windows/Browser/ColorRect3/WackyPedia" method="_on_back_button_pressed"]
 [connection signal="focus_entered" from="Windows/Browser/ColorRect3/WackyPedia/Result/UnknownResult/Text2" to="Windows/Browser/ColorRect3/WackyPedia/Result/UnknownResult/Text2" method="_on_focus_entered"]
 [connection signal="focus_entered" from="Windows/Browser/ColorRect3/WackyPedia/Result/Open4AllResult/Text" to="Windows/Browser/ColorRect3/WackyPedia/Result/Open4AllResult/Text" method="_on_focus_entered"]
@@ -1345,3 +1570,8 @@ horizontal_alignment = 1
 [connection signal="focus_entered" from="Windows/Browser/ColorRect3/WackyPedia/Result/HuskResult/Text" to="Windows/Browser/ColorRect3/WackyPedia/Result/HuskResult/Text" method="_on_focus_entered"]
 [connection signal="focus_entered" from="Windows/Browser/ColorRect3/WackyPedia/Result/MhBusinessmanResult/Text" to="Windows/Browser/ColorRect3/WackyPedia/Result/MhBusinessmanResult/Text" method="_on_focus_entered"]
 [connection signal="focus_entered" from="Windows/Browser/ColorRect3/WackyPedia/Result/CloseBResult/Text" to="Windows/Browser/ColorRect3/WackyPedia/Result/CloseBResult/Text" method="_on_focus_entered"]
+[connection signal="focus_entered" from="Windows/Browser/ColorRect3/WackyPedia/Result/MsResult/Text" to="Windows/Browser/ColorRect3/WackyPedia/Result/MsResult/Text" method="_on_focus_entered"]
+[connection signal="focus_entered" from="Windows/Browser/ColorRect3/WackyPedia/Result/MsResult/Text2" to="Windows/Browser/ColorRect3/WackyPedia/Result/MsResult/Text2" method="_on_focus_entered"]
+[connection signal="focus_entered" from="Windows/Browser/ColorRect3/WackyPedia/Result/MsResult/Text3" to="Windows/Browser/ColorRect3/WackyPedia/Result/MsResult/Text3" method="_on_focus_entered"]
+[connection signal="focus_entered" from="Windows/Browser/ColorRect3/WackyPedia/Result/MsResult/Text4" to="Windows/Browser/ColorRect3/WackyPedia/Result/MsResult/Text4" method="_on_focus_entered"]
+[connection signal="focus_entered" from="Windows/Browser/ColorRect3/WackyPedia/Result/JsResult/Text" to="Windows/Browser/ColorRect3/WackyPedia/Result/JsResult/Text" method="_on_focus_entered"]

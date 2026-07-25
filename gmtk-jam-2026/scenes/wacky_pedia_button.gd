@@ -1,3 +1,4 @@
+@tool
 extends Control
 
 signal wacky_link_pressed(searchTerm: String)
@@ -9,6 +10,11 @@ signal wacky_link_pressed(searchTerm: String)
 
 func _ready() -> void:
 	button.text = text
+	
+	
+func _process(delta: float) -> void:
+	if Engine.is_editor_hint():
+		button.text = text
 
 func _on_button_pressed() -> void:
 	wacky_link_pressed.emit(search_term)

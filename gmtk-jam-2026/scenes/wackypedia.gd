@@ -5,6 +5,7 @@ extends Control
 @onready var searchterm_input: LineEdit = $HomePage/SearchTerm
 @onready var searchterm_label: Label = $Result/SearchTerm
 @onready var unknown_result: Control = $Result/UnknownResult
+
 @onready var open_4_all_result: Control = $Result/Open4AllResult
 @onready var boh_result: Control = $Result/BohResult
 @onready var xc_motherload_result: Control = $Result/XcMotherloadResult
@@ -13,11 +14,13 @@ extends Control
 @onready var husk_result: Control = $Result/HuskResult
 @onready var mh_businessman_result: Control = $Result/MhBusinessmanResult
 @onready var close_b_result: Control = $Result/CloseBResult
+@onready var ms_result: Control = $Result/MsResult
+@onready var js_result: Control = $Result/JsResult
 
 @onready var results := [
 	unknown_result, open_4_all_result, boh_result, xc_motherload_result,
 	mh_result, melon_result, husk_result, mh_businessman_result, close_b_result,
-	
+	ms_result, js_result,
 ]
 @onready var searchterm_to_result := {
 		'open4all': {'searchTermLabel': 'open4all', 'node': open_4_all_result},
@@ -43,6 +46,10 @@ extends Control
 		
 		'closeb$': {'searchTermLabel': 'closeB$', 'node': close_b_result},
 		'closeb': {'searchTermLabel': 'closeB$', 'node': close_b_result},
+		
+		'martin saltman': {'searchTermLabel': 'Martin Saltman', 'node': ms_result},
+		'saltman': {'searchTermLabel': 'Martin Saltman', 'node': ms_result},
+		'john schoolman': {'searchTermLabel': 'John Schoolman', 'node': js_result},
 	}
 @onready var wacky_pedia_buttons := [
 		$Result/Open4AllResult/MhButton,
@@ -54,6 +61,16 @@ extends Control
 		$Result/MhBusinessmanResult/WackyPediaButton,
 		$Result/MhBusinessmanResult/WackyPediaButton2,
 		$Result/CloseBResult/WackyPediaButton,
+		$Result/MsResult/WackyPediaButton,
+		$Result/MsResult/WackyPediaButton2,
+		$Result/MsResult/WackyPediaButton3,
+		$Result/JsResult/WackyPediaButton,
+		$Result/JsResult/WackyPediaButton2,
+		$Result/JsResult/WackyPediaButton3,
+		$Result/JsResult/WackyPediaButton4,
+		$Result/JsResult/WackyPediaButton5,
+		$Result/JsResult/WackyPediaButton6,
+		$Result/JsResult/WackyPediaButton7
 	]
 
 var searchterm := ""
@@ -108,3 +125,10 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 func _on_wacky_link_pressed(searchTerm: String) -> void:
 	self.searchterm = searchTerm
 	_on_search_pressed()
+
+
+func _on_title_pressed() -> void:
+	history = []
+	searchterm_input.text = ""
+	result.hide()
+	home_page.show()
