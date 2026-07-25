@@ -1887,9 +1887,9 @@ color = Color(0.818447, 0.839665, 0.842692, 1)
 
 [node name="WorkButton" type="TextureButton" parent="Windows/Folders/Root" unique_id=1453006883 groups=["apps"]]
 layout_mode = 0
-offset_left = 29.822021
+offset_left = 30.822021
 offset_top = 23.814003
-offset_right = 68.45117
+offset_right = 69.45117
 offset_bottom = 63.814003
 texture_normal = ExtResource("11_wydk0")
 ignore_texture_size = true
@@ -1966,9 +1966,9 @@ text = "300KB"
 
 [node name="ImportantButton" type="TextureButton" parent="Windows/Folders/Root" unique_id=2016198356 groups=["apps"]]
 layout_mode = 0
-offset_left = 29.822021
+offset_left = 30.822021
 offset_top = 91.81401
-offset_right = 68.45117
+offset_right = 69.45117
 offset_bottom = 131.81401
 texture_normal = ExtResource("11_wydk0")
 ignore_texture_size = true
@@ -2045,9 +2045,9 @@ text = "100KB"
 
 [node name="NotImportantButton" type="TextureButton" parent="Windows/Folders/Root" unique_id=1209652647 groups=["apps"]]
 layout_mode = 0
-offset_left = 29.822021
+offset_left = 30.822021
 offset_top = 164.21
-offset_right = 68.45117
+offset_right = 69.45117
 offset_bottom = 204.21
 texture_normal = ExtResource("11_wydk0")
 ignore_texture_size = true
@@ -2177,9 +2177,9 @@ color = Color(0.818447, 0.839665, 0.842692, 1)
 
 [node name="SignedContractsButton" type="TextureButton" parent="Windows/Folders/WorkFolderContent" unique_id=817341421 groups=["apps"]]
 layout_mode = 0
-offset_left = 15.8220215
+offset_left = 28.822021
 offset_top = 25.21
-offset_right = 54.45117
+offset_right = 67.45117
 offset_bottom = 65.21
 texture_normal = ExtResource("11_wydk0")
 ignore_texture_size = true
@@ -2256,9 +2256,9 @@ text = "300KB"
 
 [node name="ArticlesButton" type="TextureButton" parent="Windows/Folders/WorkFolderContent" unique_id=1948765295 groups=["apps"]]
 layout_mode = 0
-offset_left = 15.8220215
+offset_left = 28.822021
 offset_top = 85.20999
-offset_right = 54.45117
+offset_right = 67.45117
 offset_bottom = 125.20999
 texture_normal = ExtResource("11_wydk0")
 ignore_texture_size = true
@@ -2335,9 +2335,9 @@ text = "2Mo"
 
 [node name="StatsButton" type="TextureButton" parent="Windows/Folders/WorkFolderContent" unique_id=1760943434 groups=["apps"]]
 layout_mode = 0
-offset_left = 15.8220215
+offset_left = 28.822021
 offset_top = 145.20999
-offset_right = 54.45117
+offset_right = 67.45117
 offset_bottom = 185.20999
 texture_normal = ExtResource("11_wydk0")
 ignore_texture_size = true
@@ -2702,6 +2702,7 @@ window = NodePath("../../../../Windows/ArticleUWindow")
 parent = NodePath("../../../../../..")
 
 [node name="StatsFolderContent" type="ColorRect" parent="Windows/Folders/WorkFolderContent" unique_id=1528530785]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.019
