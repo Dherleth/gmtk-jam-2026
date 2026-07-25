@@ -1023,7 +1023,6 @@ text = " and"
 horizontal_alignment = 1
 
 [node name="BohResult" type="Control" parent="Windows/Browser/ColorRect3/WackyPedia/Result" unique_id=1269174446]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -1044,12 +1043,9 @@ grow_vertical = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_sp806")
 bbcode_enabled = true
-text = "Open4All is a company specialized in e-helpers.
-The goal of the organization is to empower users, help them solve menial tasks and give them freedom to do things they love.
+text = "B.o.H (or Bank of Hawaii) is an investment bank and financial services firm founded and based in Honolulu, Hawaii.
 
-It was founded in 1999 as a nonprofit. It's value has been increasing exponentially, creating widespread interest in the research and development of larger e-centers, better e-helpers and soon the awaited e-worker.
-
-Its founders are"
+They are known for their strict bank-client confidentiality and culture of banking secrecy."
 autowrap_mode = 2
 shortcut_keys_enabled = false
 drag_and_drop_selection_enabled = false
@@ -1551,6 +1547,7 @@ text = "Anthropomorfik"
 search_term = "anthropomorfik"
 
 [node name="AnthropomorfikResult" type="Control" parent="Windows/Browser/ColorRect3/WackyPedia/Result" unique_id=392989203]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0

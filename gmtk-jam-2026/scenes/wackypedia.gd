@@ -32,6 +32,7 @@ extends Control
 		
 		'b.o.h': {'searchTermLabel': 'B.o.H', 'node': boh_result},
 		'boh': {'searchTermLabel': 'B.o.H', 'node': boh_result},
+		'b o h': {'searchTermLabel': 'B.o.H', 'node': boh_result},
 	
 		'xc motherload': {'searchTermLabel': 'XC Motherload', 'node': xc_motherload_result},
 		'xcmotherload': {'searchTermLabel': 'XC Motherload', 'node': xc_motherload_result},
