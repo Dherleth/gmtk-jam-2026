@@ -16,11 +16,13 @@ extends Control
 @onready var close_b_result: Control = $Result/CloseBResult
 @onready var ms_result: Control = $Result/MsResult
 @onready var js_result: Control = $Result/JsResult
+@onready var anthropomorfik_result: Control = $Result/AnthropomorfikResult
+
 
 @onready var results := [
 	unknown_result, open_4_all_result, boh_result, xc_motherload_result,
 	mh_result, melon_result, husk_result, mh_businessman_result, close_b_result,
-	ms_result, js_result,
+	ms_result, js_result, anthropomorfik_result
 ]
 @onready var searchterm_to_result := {
 		'open4all': {'searchTermLabel': 'open4all', 'node': open_4_all_result},
@@ -49,7 +51,11 @@ extends Control
 		
 		'martin saltman': {'searchTermLabel': 'Martin Saltman', 'node': ms_result},
 		'saltman': {'searchTermLabel': 'Martin Saltman', 'node': ms_result},
+		
 		'john schoolman': {'searchTermLabel': 'John Schoolman', 'node': js_result},
+		'schoolman': {'searchTermLabel': 'John Schoolman', 'node': js_result},
+		
+		'anthropomorfik': {'searchTermLabel': 'Anthropomorfik', 'node': anthropomorfik_result},
 	}
 @onready var wacky_pedia_buttons := [
 		$Result/Open4AllResult/MhButton,

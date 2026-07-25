@@ -925,6 +925,7 @@ shortcut_keys_enabled = false
 drag_and_drop_selection_enabled = false
 
 [node name="Open4AllResult" type="Control" parent="Windows/Browser/ColorRect3/WackyPedia/Result" unique_id=1553801568]
+visible = false
 anchors_preset = 0
 offset_top = 40.999985
 offset_right = 40.0
@@ -1549,6 +1550,32 @@ offset_bottom = 88.189316
 text = "Anthropomorfik"
 search_term = "anthropomorfik"
 
+[node name="AnthropomorfikResult" type="Control" parent="Windows/Browser/ColorRect3/WackyPedia/Result" unique_id=392989203]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Text" type="RichTextLabel" parent="Windows/Browser/ColorRect3/WackyPedia/Result/AnthropomorfikResult" unique_id=1106448721]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = 57.856033
+offset_top = 6.3093157
+offset_right = 796.456
+offset_bottom = 190.74931
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_sp806")
+bbcode_enabled = true
+text = "No data"
+autowrap_mode = 2
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+
 [connection signal="pressed" from="TaskBar/Start" to="." method="_on_start_pressed"]
 [connection signal="caret_changed" from="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" to="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" method="_on_caret_changed"]
 [connection signal="focus_entered" from="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" to="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" method="_on_focus_entered"]
@@ -1575,3 +1602,4 @@ search_term = "anthropomorfik"
 [connection signal="focus_entered" from="Windows/Browser/ColorRect3/WackyPedia/Result/MsResult/Text3" to="Windows/Browser/ColorRect3/WackyPedia/Result/MsResult/Text3" method="_on_focus_entered"]
 [connection signal="focus_entered" from="Windows/Browser/ColorRect3/WackyPedia/Result/MsResult/Text4" to="Windows/Browser/ColorRect3/WackyPedia/Result/MsResult/Text4" method="_on_focus_entered"]
 [connection signal="focus_entered" from="Windows/Browser/ColorRect3/WackyPedia/Result/JsResult/Text" to="Windows/Browser/ColorRect3/WackyPedia/Result/JsResult/Text" method="_on_focus_entered"]
+[connection signal="focus_entered" from="Windows/Browser/ColorRect3/WackyPedia/Result/AnthropomorfikResult/Text" to="Windows/Browser/ColorRect3/WackyPedia/Result/AnthropomorfikResult/Text" method="_on_focus_entered"]
