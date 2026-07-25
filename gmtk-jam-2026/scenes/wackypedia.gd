@@ -20,12 +20,16 @@ extends Control
 @onready var js_result: Control = $Result/JsResult
 @onready var anthropomorfik_result: Control = $Result/AnthropomorfikResult
 @onready var mario_modeli_result: Control = $Result/MarioModeliResult
+@onready var e_helper_result: Control = $Result/EHelperResult
+@onready var e_worker_result: Control = $Result/EWorkerResult
+@onready var e_center_result: Control = $Result/ECenterResult
 
 
 @onready var results := [
 	unknown_result, open_4_all_result, boh_result, xc_motherload_result,
 	mh_result, melon_result, husk_result, mh_businessman_result, close_b_result,
-	ms_result, js_result, anthropomorfik_result, mario_modeli_result
+	ms_result, js_result, anthropomorfik_result, mario_modeli_result, e_helper_result,
+	e_worker_result, e_center_result,
 ]
 @onready var searchterm_to_result := {
 		'open4all': {'searchTermLabel': 'open4all', 'node': open_4_all_result},
@@ -62,7 +66,18 @@ extends Control
 		'anthropomorfik': {'searchTermLabel': 'Anthropomorfik', 'node': anthropomorfik_result},
 	
 		'mario modeli': {'searchTermLabel': 'Mario Modeli', 'node': mario_modeli_result},
-
+		
+		'e-helper': {'searchTermLabel': 'e-helper', 'node': e_helper_result},
+		'ehelper': {'searchTermLabel': 'e-helper', 'node': e_helper_result},
+		'e helper': {'searchTermLabel': 'e-helper', 'node': e_helper_result},
+		
+		'e-worker': {'searchTermLabel': 'e-worker', 'node': e_worker_result},
+		'eworker': {'searchTermLabel': 'e-worker', 'node': e_worker_result},
+		'e worker': {'searchTermLabel': 'e-worker', 'node': e_worker_result},
+		
+		'e-center': {'searchTermLabel': 'e-center', 'node': e_center_result},
+		'ecenter': {'searchTermLabel': 'e-center', 'node': e_center_result},
+		'e center': {'searchTermLabel': 'e-center', 'node': e_center_result},
 	}
 @onready var wacky_pedia_buttons := [
 		$Result/Open4AllResult/MhButton,
@@ -87,7 +102,9 @@ extends Control
 		$Result/AnthropomorfikResult/WackyPediaButton,
 		$Result/AnthropomorfikResult/WackyPediaButton2,
 		$Result/MarioModeliResult/WackyPediaButton,
-		$Result/MarioModeliResult/WackyPediaButton2
+		$Result/MarioModeliResult/WackyPediaButton2,
+		$Result/EHelperResult/WackyPediaButton,
+		$Result/EWorkerResult/WackyPediaButton
 	]
 var wacky_button_scene := preload("res://scenes/WackyPediaButton.tscn")
 var searchterm := ""

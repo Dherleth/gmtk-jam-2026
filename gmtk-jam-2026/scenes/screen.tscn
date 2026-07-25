@@ -872,7 +872,6 @@ volume_db = -10.0
 
 [node name="Browser" parent="Windows" unique_id=1415093049 groups=["window"] instance=ExtResource("10_2hmho")]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchor_left = 0.146
 anchor_top = 0.049
@@ -943,6 +942,7 @@ offset_bottom = 40.0
 script = ExtResource("15_ufolh")
 
 [node name="HomePage" type="Control" parent="Windows/Browser/ColorRect3/WackyPedia" unique_id=2056516644]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1043,7 +1043,6 @@ offset_bottom = 87.0
 alignment = 1
 
 [node name="Result" type="Control" parent="Windows/Browser/ColorRect3/WackyPedia" unique_id=1208210404]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1828,6 +1827,7 @@ text = "open4all"
 search_term = "open4all"
 
 [node name="MarioModeliResult" type="Control" parent="Windows/Browser/ColorRect3/WackyPedia/Result" unique_id=1907314323]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -1872,6 +1872,119 @@ offset_right = 459.85602
 offset_bottom = 8.189316
 text = "Anthropomorfik"
 search_term = "anthropomorfik"
+
+[node name="EHelperResult" type="Control" parent="Windows/Browser/ColorRect3/WackyPedia/Result" unique_id=1337702171]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Text" type="RichTextLabel" parent="Windows/Browser/ColorRect3/WackyPedia/Result/EHelperResult" unique_id=465032562]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = 57.856033
+offset_top = 6.3093157
+offset_right = 796.456
+offset_bottom = 190.74931
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_sp806")
+bbcode_enabled = true
+text = "E-helper is a technology developed using a colossal amount of electronic data and created for the purpose of helping humans, hence the name e-helper (short for electronic helper).
+
+An e-helper is able to perform human tasks such as learning, reasoning and decision-making.
+They are capable of speaking in a natural language and understanding given assignments.
+
+Their are resource gorgers and need rare electronic materials as well as a high flow of electricity to power their e-networks and make them useful. Many e-centers have been built to provide enough e-helpers for everyone and keep them up to date."
+autowrap_mode = 2
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="WackyPediaButton" parent="Windows/Browser/ColorRect3/WackyPedia/Result/EHelperResult" unique_id=840802595 instance=ExtResource("16_mfkbl")]
+layout_mode = 0
+offset_left = 239.85602
+offset_top = 120.189316
+offset_right = 239.85602
+offset_bottom = 120.189316
+text = "e-centers"
+search_term = "e-center"
+
+[node name="EWorkerResult" type="Control" parent="Windows/Browser/ColorRect3/WackyPedia/Result" unique_id=685478802]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Text" type="RichTextLabel" parent="Windows/Browser/ColorRect3/WackyPedia/Result/EWorkerResult" unique_id=1850443836]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = 57.856033
+offset_top = 6.3093157
+offset_right = 796.456
+offset_bottom = 190.74931
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_sp806")
+bbcode_enabled = true
+text = "E-worker is a technology developed using a colossal amount of electronic data and created for the purpose of working for humans, hence the name e-worker (short for electronic worker). It is based on the e-helper model, but has been updated to take in more commands and requests.
+
+An e-worker is able to perform human tasks such as walking, carrying objects and using tools.
+They are capable of speaking in a natural language and understanding given assignments.
+
+Their are resource gorgers and need rare electronic materials as well as a high flow of electricity to power their e-networks and make them useful. Many e-centers have been built to provide enough e-workers for everyone and keep them up to date."
+autowrap_mode = 2
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="WackyPediaButton" parent="Windows/Browser/ColorRect3/WackyPedia/Result/EWorkerResult" unique_id=1434196081 instance=ExtResource("16_mfkbl")]
+layout_mode = 0
+offset_left = 239.85602
+offset_top = 136.18932
+offset_right = 239.85602
+offset_bottom = 136.18932
+text = "e-centers"
+search_term = "e-center"
+
+[node name="ECenterResult" type="Control" parent="Windows/Browser/ColorRect3/WackyPedia/Result" unique_id=36126016]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Text" type="RichTextLabel" parent="Windows/Browser/ColorRect3/WackyPedia/Result/ECenterResult" unique_id=1374734008]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = 57.856033
+offset_top = 6.3093157
+offset_right = 796.456
+offset_bottom = 190.74931
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_sp806")
+bbcode_enabled = true
+text = "An e-center is a physical building for the purpose of storage, management and dissemination of e-helpers and e-workers.
+
+Despite the benefits of e-helpers, e-centers tip the balance by using enormous amounts of rare materials as well as ressources essential for the neighbouring population.
+
+Despite their size and scale, an e-center does not create jobs for the area."
+autowrap_mode = 2
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
 
 [node name="EmployeeMgmtWindow" parent="Windows" unique_id=1445978554 groups=["window"] instance=ExtResource("10_2hmho")]
 visible = false
@@ -4547,6 +4660,9 @@ expand_mode = 1
 [connection signal="focus_entered" from="Windows/Browser/ColorRect3/WackyPedia/Result/JsResult/Text" to="Windows/Browser/ColorRect3/WackyPedia/Result/JsResult/Text" method="_on_focus_entered"]
 [connection signal="focus_entered" from="Windows/Browser/ColorRect3/WackyPedia/Result/AnthropomorfikResult/Text" to="Windows/Browser/ColorRect3/WackyPedia/Result/AnthropomorfikResult/Text" method="_on_focus_entered"]
 [connection signal="focus_entered" from="Windows/Browser/ColorRect3/WackyPedia/Result/MarioModeliResult/Text" to="Windows/Browser/ColorRect3/WackyPedia/Result/MarioModeliResult/Text" method="_on_focus_entered"]
+[connection signal="focus_entered" from="Windows/Browser/ColorRect3/WackyPedia/Result/EHelperResult/Text" to="Windows/Browser/ColorRect3/WackyPedia/Result/EHelperResult/Text" method="_on_focus_entered"]
+[connection signal="focus_entered" from="Windows/Browser/ColorRect3/WackyPedia/Result/EWorkerResult/Text" to="Windows/Browser/ColorRect3/WackyPedia/Result/EWorkerResult/Text" method="_on_focus_entered"]
+[connection signal="focus_entered" from="Windows/Browser/ColorRect3/WackyPedia/Result/ECenterResult/Text" to="Windows/Browser/ColorRect3/WackyPedia/Result/ECenterResult/Text" method="_on_focus_entered"]
 [connection signal="pressed" from="Windows/Folders/Root/BackButton" to="Windows/Folders/FolderManager" method="_on_back_button_pressed"]
 [connection signal="pressed" from="Windows/Folders/Root/WorkButton" to="Windows/Folders/FolderManager" method="_on_work_button_pressed"]
 [connection signal="pressed" from="Windows/Folders/Root/ImportantButton" to="Windows/Folders/FolderManager" method="_on_important_button_pressed"]
