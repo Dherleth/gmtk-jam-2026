@@ -922,6 +922,7 @@ shortcut_keys_enabled = false
 drag_and_drop_selection_enabled = false
 
 [node name="Open4AllResult" type="Control" parent="Windows/Browser/ColorRect3/WackyPedia/Result" unique_id=1553801568]
+visible = false
 anchors_preset = 0
 offset_top = 40.999985
 offset_right = 40.0
@@ -1082,6 +1083,248 @@ autowrap_mode = 2
 shortcut_keys_enabled = false
 drag_and_drop_selection_enabled = false
 
+[node name="MhResult" type="Control" parent="Windows/Browser/ColorRect3/WackyPedia/Result" unique_id=1211582330]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Text" type="RichTextLabel" parent="Windows/Browser/ColorRect3/WackyPedia/Result/MhResult" unique_id=1362641904]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = 57.856033
+offset_top = 6.3093157
+offset_right = 796.456
+offset_bottom = 190.74931
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_sp806")
+bbcode_enabled = true
+text = "May also refer to:
+
+
+
+"
+autowrap_mode = 2
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="WackyPediaButton" parent="Windows/Browser/ColorRect3/WackyPedia/Result/MhResult" unique_id=605058749 instance=ExtResource("16_mfkbl")]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 39.999985
+offset_right = 59.0
+offset_bottom = 39.999985
+text = "Melon"
+search_term = "melon"
+
+[node name="WackyPediaButton2" parent="Windows/Browser/ColorRect3/WackyPedia/Result/MhResult" unique_id=1937963601 instance=ExtResource("16_mfkbl")]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 55.999985
+offset_right = 59.0
+offset_bottom = 55.999985
+text = "Husk"
+search_term = "husk"
+
+[node name="WackyPediaButton3" parent="Windows/Browser/ColorRect3/WackyPedia/Result/MhResult" unique_id=1900620099 instance=ExtResource("16_mfkbl")]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 71.999985
+offset_right = 59.0
+offset_bottom = 71.999985
+text = "Melon Husk (businessman)"
+search_term = "melon husk (businessman)"
+
+[node name="MelonResult" type="Control" parent="Windows/Browser/ColorRect3/WackyPedia/Result" unique_id=281891381]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Text" type="RichTextLabel" parent="Windows/Browser/ColorRect3/WackyPedia/Result/MelonResult" unique_id=1787691432]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = 57.856033
+offset_top = 6.3093157
+offset_right = 796.456
+offset_bottom = 190.74931
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_sp806")
+bbcode_enabled = true
+text = "A melon is a type of fruit in the cucurbitaceae family.
+They were thought to have originated in Africa, but recent studies suggest a southwest Asian origin. It was one of the oldest plants to be domesticated."
+autowrap_mode = 2
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="HuskResult" type="Control" parent="Windows/Browser/ColorRect3/WackyPedia/Result" unique_id=1890707533]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Text" type="RichTextLabel" parent="Windows/Browser/ColorRect3/WackyPedia/Result/HuskResult" unique_id=1132052179]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = 57.856033
+offset_top = 6.3093157
+offset_right = 796.456
+offset_bottom = 190.74931
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_sp806")
+bbcode_enabled = true
+text = "A husk is the outer shell of a seed.
+It can also refer to the exuvia of insects.
+The term probably comes from the middle dutch word huusken meaning \"little house\""
+autowrap_mode = 2
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="MhBusinessmanResult" type="Control" parent="Windows/Browser/ColorRect3/WackyPedia/Result" unique_id=1852439156]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Text" type="RichTextLabel" parent="Windows/Browser/ColorRect3/WackyPedia/Result/MhBusinessmanResult" unique_id=694434906]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = 57.856033
+offset_top = 6.3093157
+offset_right = 796.456
+offset_bottom = 190.74931
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_sp806")
+bbcode_enabled = true
+text = "Melon Husk is a businessman and the wealthiest person in the world.
+
+Born into a wealthy family in 1961. He studied at University of Pennys before pursuint capitalistic ventures. He used his family money to start different businesses that he later sold.
+After being the largest supporter of the current president, Husk benefits from large tax cuts helping him stay the richest man in the world.
+
+He helped co-found "
+autowrap_mode = 2
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="WackyPediaButton" parent="Windows/Browser/ColorRect3/WackyPedia/Result/MhBusinessmanResult" unique_id=1397048980 instance=ExtResource("16_mfkbl")]
+layout_mode = 0
+offset_left = 190.00002
+offset_top = 119.999985
+offset_right = 190.00002
+offset_bottom = 119.999985
+text = "open4all"
+search_term = "open4all"
+
+[node name="WackyPediaButton2" parent="Windows/Browser/ColorRect3/WackyPedia/Result/MhBusinessmanResult" unique_id=387511750 instance=ExtResource("16_mfkbl")]
+layout_mode = 0
+offset_left = 482.0
+offset_top = 119.999985
+offset_right = 482.0
+offset_bottom = 119.999985
+text = "closeB$"
+search_term = "closeb$"
+
+[node name="Label" type="Label" parent="Windows/Browser/ColorRect3/WackyPedia/Result/MhBusinessmanResult" unique_id=764312369]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = 246.35602
+offset_top = 118.30933
+offset_right = 439.95602
+offset_bottom = 98.74933
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+theme_override_font_sizes/font_size = 16
+text = "and stayed CTO even after it became"
+horizontal_alignment = 1
+
+[node name="CloseBResult" type="Control" parent="Windows/Browser/ColorRect3/WackyPedia/Result" unique_id=541165525]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Text" type="RichTextLabel" parent="Windows/Browser/ColorRect3/WackyPedia/Result/CloseBResult" unique_id=240516459]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = 57.856033
+offset_top = 6.3093157
+offset_right = 796.456
+offset_bottom = 190.74931
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_sp806")
+bbcode_enabled = true
+text = "CloseB$ is the rebranding of the company open4all.
+It is specialized in e-helpers, e-workers and has been expanding its e-centers to power it all.
+The goal of the organization is to help companies save money on salaries by reducing their workforce, help them solve inhumane tasks and increase their capital.
+
+It is now promoting its new e-worker quickly being adopted by large companies."
+autowrap_mode = 2
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="WackyPediaButton" parent="Windows/Browser/ColorRect3/WackyPedia/Result/CloseBResult" unique_id=1863619988 instance=ExtResource("16_mfkbl")]
+layout_mode = 0
+offset_left = 320.85602
+offset_top = 8.189316
+offset_right = 320.85602
+offset_bottom = 8.189316
+text = "open4all"
+search_term = "open4all"
+
+[node name="Label" type="Label" parent="Windows/Browser/ColorRect3/WackyPedia/Result/CloseBResult" unique_id=1413430550]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = 393.21204
+offset_top = 6.498662
+offset_right = 357.81204
+offset_bottom = -13.0613365
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+theme_override_font_sizes/font_size = 16
+text = "."
+horizontal_alignment = 1
+
 [connection signal="pressed" from="TaskBar/Start" to="." method="_on_start_pressed"]
 [connection signal="caret_changed" from="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" to="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" method="_on_caret_changed"]
 [connection signal="focus_entered" from="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" to="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" method="_on_focus_entered"]
@@ -1095,8 +1338,10 @@ drag_and_drop_selection_enabled = false
 [connection signal="pressed" from="Windows/Browser/ColorRect3/WackyPedia/Result/BackButton" to="Windows/Browser/ColorRect3/WackyPedia" method="_on_back_button_pressed"]
 [connection signal="focus_entered" from="Windows/Browser/ColorRect3/WackyPedia/Result/UnknownResult/Text2" to="Windows/Browser/ColorRect3/WackyPedia/Result/UnknownResult/Text2" method="_on_focus_entered"]
 [connection signal="focus_entered" from="Windows/Browser/ColorRect3/WackyPedia/Result/Open4AllResult/Text" to="Windows/Browser/ColorRect3/WackyPedia/Result/Open4AllResult/Text" method="_on_focus_entered"]
-[connection signal="wacky_link_pressed" from="Windows/Browser/ColorRect3/WackyPedia/Result/Open4AllResult/MhButton" to="Windows/Browser/ColorRect3/WackyPedia" method="_on_melon_husk_button_wacky_link_pressed"]
-[connection signal="wacky_link_pressed" from="Windows/Browser/ColorRect3/WackyPedia/Result/Open4AllResult/MsButton" to="Windows/Browser/ColorRect3/WackyPedia" method="_on_melon_husk_button_wacky_link_pressed"]
-[connection signal="wacky_link_pressed" from="Windows/Browser/ColorRect3/WackyPedia/Result/Open4AllResult/JsButton" to="Windows/Browser/ColorRect3/WackyPedia" method="_on_melon_husk_button_wacky_link_pressed"]
 [connection signal="focus_entered" from="Windows/Browser/ColorRect3/WackyPedia/Result/BohResult/Text2" to="Windows/Browser/ColorRect3/WackyPedia/Result/BohResult/Text2" method="_on_focus_entered"]
 [connection signal="focus_entered" from="Windows/Browser/ColorRect3/WackyPedia/Result/XcMotherloadResult/Text" to="Windows/Browser/ColorRect3/WackyPedia/Result/XcMotherloadResult/Text" method="_on_focus_entered"]
+[connection signal="focus_entered" from="Windows/Browser/ColorRect3/WackyPedia/Result/MhResult/Text" to="Windows/Browser/ColorRect3/WackyPedia/Result/MhResult/Text" method="_on_focus_entered"]
+[connection signal="focus_entered" from="Windows/Browser/ColorRect3/WackyPedia/Result/MelonResult/Text" to="Windows/Browser/ColorRect3/WackyPedia/Result/MelonResult/Text" method="_on_focus_entered"]
+[connection signal="focus_entered" from="Windows/Browser/ColorRect3/WackyPedia/Result/HuskResult/Text" to="Windows/Browser/ColorRect3/WackyPedia/Result/HuskResult/Text" method="_on_focus_entered"]
+[connection signal="focus_entered" from="Windows/Browser/ColorRect3/WackyPedia/Result/MhBusinessmanResult/Text" to="Windows/Browser/ColorRect3/WackyPedia/Result/MhBusinessmanResult/Text" method="_on_focus_entered"]
+[connection signal="focus_entered" from="Windows/Browser/ColorRect3/WackyPedia/Result/CloseBResult/Text" to="Windows/Browser/ColorRect3/WackyPedia/Result/CloseBResult/Text" method="_on_focus_entered"]
