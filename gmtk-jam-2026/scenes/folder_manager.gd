@@ -5,6 +5,8 @@ extends Control
 @onready var important_folder_content: ColorRect = $"../ImportantFolderContent"
 @onready var not_important_folder_content: ColorRect = $"../NotImportantFolderContent"
 @onready var signed_contracts_folder_content: ColorRect = $"../WorkFolderContent/SignedContractsFolderContent"
+@onready var articles_folder_content: ColorRect = $"../WorkFolderContent/ArticlesFolderContent"
+
 
 var back_goes_to := "root"
 
@@ -14,6 +16,7 @@ func _ready() -> void:
 	important_folder_content.hide()
 	not_important_folder_content.hide()
 	signed_contracts_folder_content.hide()
+	articles_folder_content.hide()
 
 
 func _on_work_button_pressed() -> void:
@@ -46,4 +49,10 @@ func _on_back_button_pressed() -> void:
 		"work":
 			work_folder_content.show()
 			signed_contracts_folder_content.hide()
+			articles_folder_content.hide()
 			back_goes_to = 'root'
+
+
+func _on_articles_buttons_pressed() -> void:
+	back_goes_to = "work"
+	articles_folder_content.show()
