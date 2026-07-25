@@ -15,7 +15,9 @@
 [ext_resource type="Shader" uid="uid://n0fjxglnrli1" path="res://themes/screen.gdshader" id="17_1regh"]
 [ext_resource type="Texture2D" uid="uid://dbi477e0vo7yj" path="res://assets/images/Windows_95_!.png" id="17_dfejr"]
 [ext_resource type="Script" uid="uid://dwpwhc0ywbbl7" path="res://scenes/folder_manager.gd" id="18_mml8x"]
+[ext_resource type="Texture2D" uid="uid://dlnpux1c7qrim" path="res://assets/images/stat_numbers.png" id="19_sp806"]
 [ext_resource type="AudioStream" uid="uid://dginvyreg7pco" path="res://assets/audio/win_small_notif.wav" id="20_4sqgv"]
+[ext_resource type="Texture2D" uid="uid://bhwkeb11kqor6" path="res://assets/images/Monthly_revenue_in_Millions.png" id="20_06c6w"]
 [ext_resource type="AudioStream" uid="uid://dm4x8gw3k6xpq" path="res://assets/audio/LOOP_Electric Drift.wav" id="24_2uju1"]
 [ext_resource type="AudioStream" uid="uid://bi47cnlxch3wb" path="res://assets/audio/win_pos_notif.wav" id="29_4sqgv"]
 
@@ -2117,7 +2119,6 @@ theme_override_fonts/font = ExtResource("3_sp806")
 text = "150KB"
 
 [node name="WorkFolderContent" type="ColorRect" parent="Windows/Folders" unique_id=328288790]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.019
@@ -2238,9 +2239,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 345.68542
+offset_left = 353.68542
 offset_top = -25.79
-offset_right = 449.68542
+offset_right = 457.68542
 offset_bottom = -9.790001
 grow_horizontal = 2
 grow_vertical = 0
@@ -2248,7 +2249,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_sp806")
 text = "300KB"
 
-[node name="ArticlesButtons" type="TextureButton" parent="Windows/Folders/WorkFolderContent" unique_id=1948765295 groups=["apps"]]
+[node name="ArticlesButton" type="TextureButton" parent="Windows/Folders/WorkFolderContent" unique_id=1948765295 groups=["apps"]]
 layout_mode = 0
 offset_left = 15.8220215
 offset_top = 85.20999
@@ -2258,7 +2259,7 @@ texture_normal = ExtResource("11_wydk0")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="Windows/Folders/WorkFolderContent/ArticlesButtons" unique_id=321607790]
+[node name="Label" type="Label" parent="Windows/Folders/WorkFolderContent/ArticlesButton" unique_id=321607790]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -2276,7 +2277,7 @@ theme_override_fonts/font = ExtResource("3_sp806")
 text = "Articles"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="Windows/Folders/WorkFolderContent/ArticlesButtons" unique_id=643273310]
+[node name="Label2" type="Label" parent="Windows/Folders/WorkFolderContent/ArticlesButton" unique_id=643273310]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -2293,7 +2294,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_sp806")
 text = "02/11/01"
 
-[node name="Label3" type="Label" parent="Windows/Folders/WorkFolderContent/ArticlesButtons" unique_id=401048792]
+[node name="Label3" type="Label" parent="Windows/Folders/WorkFolderContent/ArticlesButton" unique_id=401048792]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -2310,16 +2311,16 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_sp806")
 text = "Folder"
 
-[node name="Label4" type="Label" parent="Windows/Folders/WorkFolderContent/ArticlesButtons" unique_id=382856792]
+[node name="Label4" type="Label" parent="Windows/Folders/WorkFolderContent/ArticlesButton" unique_id=382856792]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 345.68542
+offset_left = 367.68542
 offset_top = -26.79
-offset_right = 449.68542
+offset_right = 394.68542
 offset_bottom = -10.790001
 grow_horizontal = 2
 grow_vertical = 0
@@ -2327,38 +2328,84 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_sp806")
 text = "2Mo"
 
-[node name="Numbers" type="VBoxContainer" parent="Windows/Folders/WorkFolderContent" unique_id=1226518182]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.02
-anchor_top = 0.056
-anchor_right = 0.98
-anchor_bottom = 0.944
-offset_left = 4.4691496
-offset_top = 123.15825
-offset_right = 4.789154
-offset_bottom = -43.948227
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 4
+[node name="StatsButton" type="TextureButton" parent="Windows/Folders/WorkFolderContent" unique_id=1760943434 groups=["apps"]]
+layout_mode = 0
+offset_left = 15.8220215
+offset_top = 145.20999
+offset_right = 54.45117
+offset_bottom = 185.20999
+texture_normal = ExtResource("11_wydk0")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="NumbersButton" type="Button" parent="Windows/Folders/WorkFolderContent/Numbers" unique_id=613321287 node_paths=PackedStringArray("window", "parent")]
-layout_mode = 2
-focus_mode = 0
-mouse_default_cursor_shape = 2
+[node name="Label" type="Label" parent="Windows/Folders/WorkFolderContent/StatsButton" unique_id=1369885991]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 11.685425
+offset_top = -27.790009
+offset_right = 75.685425
+offset_bottom = -11.790009
+grow_horizontal = 2
+grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_sp806")
-text = "numbers.txt                           01/11/01      Text Document         100KB"
-flat = true
-alignment = 0
-script = ExtResource("14_38t0m")
-window = NodePath("../../../Windows/NumbersWindow")
-parent = NodePath("../../../../..")
+text = "Stats"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Windows/Folders/WorkFolderContent/StatsButton" unique_id=720780413]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 148.68542
+offset_top = -26.79
+offset_right = 252.68542
+offset_bottom = -10.790001
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "03/11/01"
+
+[node name="Label3" type="Label" parent="Windows/Folders/WorkFolderContent/StatsButton" unique_id=300112720]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 220.68542
+offset_top = -26.79
+offset_right = 324.68542
+offset_bottom = -10.790001
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "Folder"
+
+[node name="Label4" type="Label" parent="Windows/Folders/WorkFolderContent/StatsButton" unique_id=83045373]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 367.68542
+offset_top = -26.79
+offset_right = 394.68542
+offset_bottom = -10.790001
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "4Mo"
 
 [node name="SignedContractsFolderContent" type="ColorRect" parent="Windows/Folders/WorkFolderContent" unique_id=314107182]
 visible = false
@@ -2649,6 +2696,109 @@ script = ExtResource("14_38t0m")
 window = NodePath("../../../../Windows/ArticleUWindow")
 parent = NodePath("../../../../../..")
 
+[node name="StatsFolderContent" type="ColorRect" parent="Windows/Folders/WorkFolderContent" unique_id=1528530785]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.019
+anchor_top = 0.174
+anchor_right = 0.981
+anchor_bottom = 0.957
+offset_left = -9.063218
+offset_top = -44.9896
+offset_right = 8.063263
+offset_bottom = 10.39415
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Windows/Folders/WorkFolderContent/StatsFolderContent" unique_id=1078672627]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Windows/Folders/WorkFolderContent/StatsFolderContent" unique_id=1556709713]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/WorkFolderContent/StatsFolderContent" unique_id=1853006620]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Windows/Folders/WorkFolderContent/StatsFolderContent" unique_id=1208570774]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="Stats" type="VBoxContainer" parent="Windows/Folders/WorkFolderContent/StatsFolderContent" unique_id=1226518182]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.02
+anchor_top = 0.056
+anchor_right = 0.98
+anchor_bottom = 0.944
+offset_left = 0.65999985
+offset_top = 5.608
+offset_right = 0.980011
+offset_bottom = -161.49847
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 4
+
+[node name="StatAButton" type="Button" parent="Windows/Folders/WorkFolderContent/StatsFolderContent/Stats" unique_id=613321287 node_paths=PackedStringArray("window", "parent")]
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "impact.xls                              01/11/01      Excel Document         100KB"
+flat = true
+alignment = 0
+script = ExtResource("14_38t0m")
+window = NodePath("../../../../Windows/ImpactWindow")
+parent = NodePath("../../../../../..")
+
+[node name="StatButton" type="Button" parent="Windows/Folders/WorkFolderContent/StatsFolderContent/Stats" unique_id=1755699971 node_paths=PackedStringArray("window", "parent")]
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "revenue.xls                           01/11/01      Excel Document         100KB"
+flat = true
+alignment = 0
+script = ExtResource("14_38t0m")
+window = NodePath("../../../../Windows/RevenueWindow")
+parent = NodePath("../../../../../..")
+
 [node name="ImportantFolderContent" type="ColorRect" parent="Windows/Folders" unique_id=700225264]
 visible = false
 layout_mode = 1
@@ -2763,6 +2913,7 @@ flat = true
 alignment = 0
 
 [node name="NotImportantFolderContent" type="ColorRect" parent="Windows/Folders" unique_id=638249582]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.019
@@ -3812,7 +3963,7 @@ middle_mouse_paste_enabled = false
 autowrap_mode = 0
 virtual_keyboard_enabled = false
 
-[node name="NumbersWindow" parent="Windows/Folders/Windows" unique_id=855811944 groups=["window"] instance=ExtResource("10_2hmho")]
+[node name="ImpactWindow" parent="Windows/Folders/Windows" unique_id=855811944 groups=["window"] instance=ExtResource("10_2hmho")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
@@ -3820,27 +3971,27 @@ anchor_left = 0.146
 anchor_top = 0.049
 anchor_right = 0.146
 anchor_bottom = 0.049
-offset_left = -38.839985
+offset_left = -27.839985
 offset_top = -8.959998
-offset_right = 482.16
-offset_bottom = 230.04001
-title = "numbers.txt"
+offset_right = 664.16
+offset_bottom = 455.04
+title = "impact.xls"
 
-[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/Windows/NumbersWindow" unique_id=2142817875]
+[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/Windows/ImpactWindow" unique_id=2142817875]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.019
 anchor_top = 0.174
 anchor_right = 0.981
 anchor_bottom = 0.957
-offset_left = -0.0560007
-offset_top = -0.0160027
-offset_right = 0.0559692
-offset_bottom = -0.0879974
+offset_left = -0.05600071
+offset_top = -41.736
+offset_right = 0.05596924
+offset_bottom = -0.08798218
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="Windows/Folders/Windows/NumbersWindow/ColorRect3" unique_id=76342965]
+[node name="ColorRect" type="ColorRect" parent="Windows/Folders/Windows/ImpactWindow/ColorRect3" unique_id=76342965]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -3848,7 +3999,7 @@ offset_bottom = 1.0
 grow_horizontal = 2
 color = Color(0.125911, 0.125911, 0.125911, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="Windows/Folders/Windows/NumbersWindow/ColorRect3" unique_id=1850315003]
+[node name="ColorRect2" type="ColorRect" parent="Windows/Folders/Windows/ImpactWindow/ColorRect3" unique_id=1850315003]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -3856,7 +4007,7 @@ offset_right = 1.0
 grow_vertical = 2
 color = Color(0.125911, 0.125911, 0.125911, 1)
 
-[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/Windows/NumbersWindow/ColorRect3" unique_id=1114655847]
+[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/Windows/ImpactWindow/ColorRect3" unique_id=1114655847]
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -3867,7 +4018,7 @@ grow_horizontal = 0
 grow_vertical = 2
 color = Color(0.818447, 0.839665, 0.842692, 1)
 
-[node name="ColorRect4" type="ColorRect" parent="Windows/Folders/Windows/NumbersWindow/ColorRect3" unique_id=793969416]
+[node name="ColorRect4" type="ColorRect" parent="Windows/Folders/Windows/ImpactWindow/ColorRect3" unique_id=793969416]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -3878,30 +4029,89 @@ grow_horizontal = 2
 grow_vertical = 0
 color = Color(0.818447, 0.839665, 0.842692, 1)
 
-[node name="DontTxt" type="TextEdit" parent="Windows/Folders/Windows/NumbersWindow/ColorRect3" unique_id=1597084064]
+[node name="TextureRect" type="TextureRect" parent="Windows/Folders/Windows/ImpactWindow/ColorRect3" unique_id=2022933130]
+layout_mode = 0
+offset_left = 22.490005
+offset_top = 13.406006
+offset_right = 636.1234
+offset_bottom = 392.836
+texture = ExtResource("19_sp806")
+expand_mode = 1
+
+[node name="RevenueWindow" parent="Windows/Folders/Windows" unique_id=2026751915 groups=["window"] instance=ExtResource("10_2hmho")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchor_left = 0.146
+anchor_top = 0.049
+anchor_right = 0.146
+anchor_bottom = 0.049
+offset_left = -27.839985
+offset_top = -8.959998
+offset_right = 664.16
+offset_bottom = 455.04
+title = "revenue.xls"
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/Windows/RevenueWindow" unique_id=1019201041]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.025
-anchor_top = 0.047
-anchor_right = 0.985
-anchor_bottom = 0.936
-offset_left = -0.2
-offset_top = 0.232
-offset_right = 0.119965
-offset_bottom = 0.215988
+anchor_left = 0.019
+anchor_top = 0.174
+anchor_right = 0.981
+anchor_bottom = 0.957
+offset_left = -0.05600071
+offset_top = -41.736
+offset_right = 0.05596924
+offset_bottom = -0.08798218
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/background_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "A bunch of stats and numbers, mostly going down"
-context_menu_enabled = false
-emoji_menu_enabled = false
-shortcut_keys_enabled = false
-drag_and_drop_selection_enabled = false
-middle_mouse_paste_enabled = false
-autowrap_mode = 0
-virtual_keyboard_enabled = false
+
+[node name="ColorRect" type="ColorRect" parent="Windows/Folders/Windows/RevenueWindow/ColorRect3" unique_id=1140583242]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Windows/Folders/Windows/RevenueWindow/ColorRect3" unique_id=422956587]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/Windows/RevenueWindow/ColorRect3" unique_id=67368718]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Windows/Folders/Windows/RevenueWindow/ColorRect3" unique_id=915523835]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Windows/Folders/Windows/RevenueWindow/ColorRect3" unique_id=348885075]
+layout_mode = 0
+offset_left = 22.490005
+offset_top = 13.406006
+offset_right = 636.1234
+offset_bottom = 392.836
+texture = ExtResource("20_06c6w")
+expand_mode = 1
 
 [connection signal="pressed" from="TaskBar/Start" to="." method="_on_start_pressed"]
 [connection signal="caret_changed" from="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" to="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" method="_on_caret_changed"]
@@ -3935,7 +4145,8 @@ virtual_keyboard_enabled = false
 [connection signal="pressed" from="Windows/Folders/Root/ImportantButton" to="Windows/Folders/FolderManager" method="_on_important_button_pressed"]
 [connection signal="pressed" from="Windows/Folders/Root/NotImportantButton" to="Windows/Folders/FolderManager" method="_on_not_important_button_pressed"]
 [connection signal="pressed" from="Windows/Folders/WorkFolderContent/SignedContractsButton" to="Windows/Folders/FolderManager" method="_on_signed_contracts_button_pressed"]
-[connection signal="pressed" from="Windows/Folders/WorkFolderContent/ArticlesButtons" to="Windows/Folders/FolderManager" method="_on_articles_buttons_pressed"]
+[connection signal="pressed" from="Windows/Folders/WorkFolderContent/ArticlesButton" to="Windows/Folders/FolderManager" method="_on_articles_buttons_pressed"]
+[connection signal="pressed" from="Windows/Folders/WorkFolderContent/StatsButton" to="Windows/Folders/FolderManager" method="_on_stats_button_pressed"]
 [connection signal="pressed" from="Windows/Folders/NotImportantFolderContent/PicturesButton" to="Windows/Folders/FolderManager" method="_on_pictures_button_pressed"]
 [connection signal="pressed" from="Windows/Folders/NotImportantFolderContent/MusicButton" to="Windows/Folders/FolderManager" method="_on_music_button_pressed"]
 [connection signal="caret_changed" from="Windows/Folders/Windows/TheContractWindow/ColorRect3/DontTxt" to="Windows/Folders/Windows/TheContractWindow/ColorRect3/DontTxt" method="_on_caret_changed"]
@@ -3950,5 +4161,3 @@ virtual_keyboard_enabled = false
 [connection signal="focus_entered" from="Windows/Folders/Windows/ArticleFWindow/ColorRect3/DontTxt" to="Windows/Folders/Windows/ArticleFWindow/ColorRect3/DontTxt" method="_on_focus_entered"]
 [connection signal="caret_changed" from="Windows/Folders/Windows/ArticleUWindow/ColorRect3/DontTxt" to="Windows/Folders/Windows/ArticleUWindow/ColorRect3/DontTxt" method="_on_caret_changed"]
 [connection signal="focus_entered" from="Windows/Folders/Windows/ArticleUWindow/ColorRect3/DontTxt" to="Windows/Folders/Windows/ArticleUWindow/ColorRect3/DontTxt" method="_on_focus_entered"]
-[connection signal="caret_changed" from="Windows/Folders/Windows/NumbersWindow/ColorRect3/DontTxt" to="Windows/Folders/Windows/NumbersWindow/ColorRect3/DontTxt" method="_on_caret_changed"]
-[connection signal="focus_entered" from="Windows/Folders/Windows/NumbersWindow/ColorRect3/DontTxt" to="Windows/Folders/Windows/NumbersWindow/ColorRect3/DontTxt" method="_on_focus_entered"]
