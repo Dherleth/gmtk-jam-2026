@@ -1804,6 +1804,7 @@ script = ExtResource("14_38t0m")
 parent = NodePath("../../../../..")
 
 [node name="Folders" parent="Windows" unique_id=280454610 groups=["window"] instance=ExtResource("10_2hmho")]
+visible = false
 layout_mode = 1
 anchor_left = 0.146
 anchor_top = 0.049
@@ -2122,6 +2123,7 @@ theme_override_fonts/font = ExtResource("3_sp806")
 text = "150KB"
 
 [node name="WorkFolderContent" type="ColorRect" parent="Windows/Folders" unique_id=328288790]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.019
@@ -2916,6 +2918,7 @@ flat = true
 alignment = 0
 
 [node name="NotImportantFolderContent" type="ColorRect" parent="Windows/Folders" unique_id=638249582]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.019
@@ -3422,6 +3425,81 @@ theme_override_fonts/font = ExtResource("3_sp806")
 text = "Pump up the jam.wav                   02/11/01            Sound file          420Mb"
 flat = true
 alignment = 0
+
+[node name="VideoFolderContent" type="ColorRect" parent="Windows/Folders/NotImportantFolderContent" unique_id=1560749979]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.019
+anchor_top = 0.174
+anchor_right = 0.981
+anchor_bottom = 0.957
+offset_left = -9.063218
+offset_top = -44.9896
+offset_right = 8.063263
+offset_bottom = 10.39415
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Windows/Folders/NotImportantFolderContent/VideoFolderContent" unique_id=1678909060]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Windows/Folders/NotImportantFolderContent/VideoFolderContent" unique_id=25800237]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/NotImportantFolderContent/VideoFolderContent" unique_id=2071545498]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Windows/Folders/NotImportantFolderContent/VideoFolderContent" unique_id=1484568991]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="Files" type="VBoxContainer" parent="Windows/Folders/NotImportantFolderContent/VideoFolderContent" unique_id=891557252]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.02
+anchor_top = 0.056
+anchor_right = 0.98
+anchor_bottom = 0.944
+offset_left = 4.6600075
+offset_top = 2.6079998
+offset_right = -0.66000366
+offset_bottom = -89.608
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 4
+
+[node name="Empty" type="Label" parent="Windows/Folders/NotImportantFolderContent/VideoFolderContent/Files" unique_id=1848968528]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "This folder is empty."
 
 [node name="Windows" type="Control" parent="Windows/Folders" unique_id=141348702]
 anchors_preset = 0
@@ -4385,6 +4463,7 @@ expand_mode = 1
 [connection signal="pressed" from="Windows/Folders/WorkFolderContent/StatsButton" to="Windows/Folders/FolderManager" method="_on_stats_button_pressed"]
 [connection signal="pressed" from="Windows/Folders/NotImportantFolderContent/PicturesButton" to="Windows/Folders/FolderManager" method="_on_pictures_button_pressed"]
 [connection signal="pressed" from="Windows/Folders/NotImportantFolderContent/MusicButton" to="Windows/Folders/FolderManager" method="_on_music_button_pressed"]
+[connection signal="pressed" from="Windows/Folders/NotImportantFolderContent/VideoButton" to="Windows/Folders/FolderManager" method="_on_video_button_pressed"]
 [connection signal="caret_changed" from="Windows/Folders/Windows/TheContractWindow/ColorRect3/DontTxt" to="Windows/Folders/Windows/TheContractWindow/ColorRect3/DontTxt" method="_on_caret_changed"]
 [connection signal="focus_entered" from="Windows/Folders/Windows/TheContractWindow/ColorRect3/DontTxt" to="Windows/Folders/Windows/TheContractWindow/ColorRect3/DontTxt" method="_on_focus_entered"]
 [connection signal="caret_changed" from="Windows/Folders/Windows/ArticleAWindow/ColorRect3/DontTxt" to="Windows/Folders/Windows/ArticleAWindow/ColorRect3/DontTxt" method="_on_caret_changed"]

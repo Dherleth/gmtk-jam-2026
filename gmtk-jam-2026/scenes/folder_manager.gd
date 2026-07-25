@@ -9,6 +9,7 @@ extends Control
 @onready var pictures_folder_content: ColorRect = $"../NotImportantFolderContent/PicturesFolderContent"
 @onready var music_folder_content: ColorRect = $"../NotImportantFolderContent/MusicFolderContent"
 @onready var stats_folder_content: ColorRect = $"../WorkFolderContent/StatsFolderContent"
+@onready var video_folder_content: ColorRect = $"../NotImportantFolderContent/VideoFolderContent"
 
 
 var back_goes_to := "root"
@@ -23,6 +24,7 @@ func _ready() -> void:
 	pictures_folder_content.hide()
 	music_folder_content.hide()
 	stats_folder_content.hide()
+	video_folder_content.hide()
 
 
 func _on_work_button_pressed() -> void:
@@ -62,7 +64,11 @@ func _on_pictures_button_pressed() -> void:
 func _on_music_button_pressed() -> void:
 	back_goes_to = "not_important"
 	music_folder_content.show()
-	
+
+
+func _on_video_button_pressed() -> void:
+	back_goes_to = "not_important"
+	video_folder_content.show()
 
 func _on_back_button_pressed() -> void:
 	match back_goes_to:
@@ -81,5 +87,6 @@ func _on_back_button_pressed() -> void:
 			not_important_folder_content.show()
 			pictures_folder_content.hide()
 			music_folder_content.hide()
+			video_folder_content.hide()
 			back_goes_to = 'root'
-			
+		
