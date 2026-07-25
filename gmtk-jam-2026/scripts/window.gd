@@ -10,6 +10,7 @@ var mousePos: Vector2 = Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	hide()
 	$TextureRect/Label.text = title
 	pivot_offset = Vector2(size.x/2, size.y/2)
 

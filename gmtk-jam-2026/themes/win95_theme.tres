@@ -55,7 +55,6 @@ texture_margin_bottom = 2.0
 modulate_color = Color(0.537012, 0.537011, 0.537011, 1)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s01h0"]
-load_path = "res://.godot/imported/career3.png-c08f210e9b48b1ac6af5df3797b78cc4.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7m1ao"]
 atlas = SubResource("CompressedTexture2D_s01h0")
@@ -66,7 +65,6 @@ atlas = SubResource("CompressedTexture2D_s01h0")
 region = Rect2(62, 88, 7, 7)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pys47"]
-load_path = "res://.godot/imported/triangle.png-81d9911a043b3b982b4bbd30d008317a.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_867i1"]
 atlas = SubResource("CompressedTexture2D_pys47")

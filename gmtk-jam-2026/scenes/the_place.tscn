@@ -190,15 +190,14 @@ unique_name_in_owner = true
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_fkjan")
 
-[node name="AreaLight3D" type="AreaLight3D" parent="." unique_id=961263180]
+[node name="ScreenLightEmission" type="AreaLight3D" parent="." unique_id=961263180]
 transform = Transform3D(-1, 1.1524127e-08, -8.665989e-08, 1.8342526e-08, 0.99686694, -0.079096645, 8.5476856e-08, -0.079096645, -0.99686694, 3.8944569, 1.0993409, 4.2921543)
 light_color = Color(0, 1, 1, 1)
 light_energy = 4.222
 area_range = 95.758
 
-[node name="AreaLight3D2" type="AreaLight3D" parent="." unique_id=290036661]
+[node name="ScreenBrightness" type="AreaLight3D" parent="." unique_id=290036661]
 transform = Transform3D(1, -4.609278e-09, 1.7380876e-07, 1.8342527e-08, 0.99686694, -0.079096645, -1.7289963e-07, 0.079096645, 0.99686694, 3.8944569, 1.0993409, 4.4520817)
-visible = false
 light_color = Color(0.69650686, 0.9999998, 0.9959976, 1)
 light_energy = 4.381
 area_range = 0.237
