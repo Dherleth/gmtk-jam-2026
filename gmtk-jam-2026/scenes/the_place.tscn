@@ -23,7 +23,7 @@ background_mode = 2
 sky = SubResource("Sky_bymrv")
 tonemap_mode = 1
 fog_enabled = true
-fog_light_color = Color(0.234518, 0.257582, 0.29384, 1)
+fog_light_color = Color(0.0674873, 0.077762015, 0.09317391, 1)
 fog_density = 0.005
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yubay"]
