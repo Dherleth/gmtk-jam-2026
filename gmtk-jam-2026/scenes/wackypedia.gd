@@ -103,6 +103,9 @@ func _ready() -> void:
 
 
 func _on_search_pressed() -> void:
+	if searchterm == "":
+		return
+	
 	history.push_back(searchterm)
 	
 	for result in results:
@@ -144,6 +147,7 @@ func _on_back_button_pressed() -> void:
 	if history.size() == 1:
 		history = []
 		searchterm_input.text = ""
+		searchterm = ""
 		result.hide()
 		home_page.show()
 	else:
@@ -165,5 +169,6 @@ func _on_wacky_link_pressed(searchTerm: String) -> void:
 func _on_title_pressed() -> void:
 	history = []
 	searchterm_input.text = ""
+	searchterm = ""
 	result.hide()
 	home_page.show()
