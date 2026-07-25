@@ -2341,7 +2341,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 4
 
-[node name="Guidelines" type="Button" parent="Windows/Folders/WorkFolderContent/Numbers" unique_id=613321287 node_paths=PackedStringArray("window", "parent")]
+[node name="NumbersButton" type="Button" parent="Windows/Folders/WorkFolderContent/Numbers" unique_id=613321287 node_paths=PackedStringArray("window", "parent")]
 layout_mode = 2
 focus_mode = 0
 mouse_default_cursor_shape = 2
@@ -2356,10 +2356,11 @@ text = "numbers.txt                           01/11/01      Text Document       
 flat = true
 alignment = 0
 script = ExtResource("14_38t0m")
-window = NodePath("../../../../BinWindows/GuideLinesWindow")
+window = NodePath("../../../Windows/NumbersWindow")
 parent = NodePath("../../../../..")
 
 [node name="SignedContractsFolderContent" type="ColorRect" parent="Windows/Folders/WorkFolderContent" unique_id=314107182]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.019
@@ -2490,6 +2491,7 @@ flat = true
 alignment = 0
 
 [node name="ArticlesFolderContent" type="ColorRect" parent="Windows/Folders/WorkFolderContent" unique_id=1802600047]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.019
@@ -3166,7 +3168,7 @@ offset_left = -38.839985
 offset_top = -8.959998
 offset_right = 482.16
 offset_bottom = 230.04001
-title = "TheContract.txt"
+title = "ArticleA.txt"
 
 [node name="ColorRect3" type="ColorRect" parent="Windows/Folders/Windows/ArticleAWindow" unique_id=1754263161]
 layout_mode = 1
@@ -3257,7 +3259,7 @@ offset_left = -38.839985
 offset_top = -8.959998
 offset_right = 482.16
 offset_bottom = 230.04001
-title = "TheContract.txt"
+title = "ArticleB.txt"
 
 [node name="ColorRect3" type="ColorRect" parent="Windows/Folders/Windows/ArticleBWindow" unique_id=541020350]
 layout_mode = 1
@@ -3348,7 +3350,7 @@ offset_left = -38.839985
 offset_top = -8.959998
 offset_right = 482.16
 offset_bottom = 230.04001
-title = "TheContract.txt"
+title = "ArticleC.txt"
 
 [node name="ColorRect3" type="ColorRect" parent="Windows/Folders/Windows/ArticleCWindow" unique_id=1512353361]
 layout_mode = 1
@@ -3439,7 +3441,7 @@ offset_left = -38.839985
 offset_top = -8.959998
 offset_right = 482.16
 offset_bottom = 230.04001
-title = "TheContract.txt"
+title = "ArticleF.txt"
 
 [node name="ColorRect3" type="ColorRect" parent="Windows/Folders/Windows/ArticleFWindow" unique_id=1738739245]
 layout_mode = 1
@@ -3530,7 +3532,7 @@ offset_left = -38.839985
 offset_top = -8.959998
 offset_right = 482.16
 offset_bottom = 230.04001
-title = "TheContract.txt"
+title = "ArticleU.txt"
 
 [node name="ColorRect3" type="ColorRect" parent="Windows/Folders/Windows/ArticleUWindow" unique_id=2045557942]
 layout_mode = 1
@@ -3609,6 +3611,97 @@ middle_mouse_paste_enabled = false
 autowrap_mode = 0
 virtual_keyboard_enabled = false
 
+[node name="NumbersWindow" parent="Windows/Folders/Windows" unique_id=855811944 groups=["window"] instance=ExtResource("10_2hmho")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchor_left = 0.146
+anchor_top = 0.049
+anchor_right = 0.146
+anchor_bottom = 0.049
+offset_left = -38.839985
+offset_top = -8.959998
+offset_right = 482.16
+offset_bottom = 230.04001
+title = "numbers.txt"
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/Windows/NumbersWindow" unique_id=2142817875]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.019
+anchor_top = 0.174
+anchor_right = 0.981
+anchor_bottom = 0.957
+offset_left = -0.0560007
+offset_top = -0.0160027
+offset_right = 0.0559692
+offset_bottom = -0.0879974
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Windows/Folders/Windows/NumbersWindow/ColorRect3" unique_id=76342965]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Windows/Folders/Windows/NumbersWindow/ColorRect3" unique_id=1850315003]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/Windows/NumbersWindow/ColorRect3" unique_id=1114655847]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Windows/Folders/Windows/NumbersWindow/ColorRect3" unique_id=793969416]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="DontTxt" type="TextEdit" parent="Windows/Folders/Windows/NumbersWindow/ColorRect3" unique_id=1597084064]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = -0.2
+offset_top = 0.232
+offset_right = 0.119965
+offset_bottom = 0.215988
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/background_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "A bunch of stats and numbers, mostly going down"
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+middle_mouse_paste_enabled = false
+autowrap_mode = 0
+virtual_keyboard_enabled = false
+
 [connection signal="pressed" from="TaskBar/Start" to="." method="_on_start_pressed"]
 [connection signal="caret_changed" from="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" to="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" method="_on_caret_changed"]
 [connection signal="focus_entered" from="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" to="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" method="_on_focus_entered"]
@@ -3654,3 +3747,5 @@ virtual_keyboard_enabled = false
 [connection signal="focus_entered" from="Windows/Folders/Windows/ArticleFWindow/ColorRect3/DontTxt" to="Windows/Folders/Windows/ArticleFWindow/ColorRect3/DontTxt" method="_on_focus_entered"]
 [connection signal="caret_changed" from="Windows/Folders/Windows/ArticleUWindow/ColorRect3/DontTxt" to="Windows/Folders/Windows/ArticleUWindow/ColorRect3/DontTxt" method="_on_caret_changed"]
 [connection signal="focus_entered" from="Windows/Folders/Windows/ArticleUWindow/ColorRect3/DontTxt" to="Windows/Folders/Windows/ArticleUWindow/ColorRect3/DontTxt" method="_on_focus_entered"]
+[connection signal="caret_changed" from="Windows/Folders/Windows/NumbersWindow/ColorRect3/DontTxt" to="Windows/Folders/Windows/NumbersWindow/ColorRect3/DontTxt" method="_on_caret_changed"]
+[connection signal="focus_entered" from="Windows/Folders/Windows/NumbersWindow/ColorRect3/DontTxt" to="Windows/Folders/Windows/NumbersWindow/ColorRect3/DontTxt" method="_on_focus_entered"]
