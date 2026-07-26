@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://px0li53gqdi" path="res://scenes/encrypted_message.gd" id="12_2uju1"]
 [ext_resource type="Script" uid="uid://cce5u0j8xgbhy" path="res://scripts/window_button_plain.gd" id="14_38t0m"]
 [ext_resource type="Script" uid="uid://dcmbog0g538u7" path="res://scenes/wackypedia.gd" id="15_ufolh"]
+[ext_resource type="Theme" uid="uid://b2kkavm1kjn46" path="res://themes/win95_theme.tres" id="16_5syhw"]
 [ext_resource type="PackedScene" uid="uid://cbd1u2j608rx6" path="res://scenes/WackyPediaButton.tscn" id="16_mfkbl"]
 [ext_resource type="Shader" uid="uid://n0fjxglnrli1" path="res://themes/screen.gdshader" id="17_1regh"]
 [ext_resource type="Script" uid="uid://bphx6lewx2hot" path="res://scenes/access.gd" id="17_5syhw"]
@@ -954,9 +955,20 @@ offset_right = 156.13647
 offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 0
+theme = ExtResource("16_5syhw")
 theme_override_constants/caret_width = 2
 placeholder_text = "Do your own research"
 caret_blink = true
+
+[node name="ColorRect" type="ColorRect" parent="Windows/Browser/ColorRect3/WackyPedia/HomePage/SearchTerm" unique_id=1614175441]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -27.007446
+offset_top = -17.310669
+offset_right = 412.99255
+offset_bottom = 54.68933
+color = Color(0.8732984, 0.8732984, 0.8732984, 1)
 
 [node name="SearchButton" type="Button" parent="Windows/Browser/ColorRect3/WackyPedia/HomePage" unique_id=1678937485]
 layout_mode = 1
@@ -971,6 +983,8 @@ offset_right = 234.5
 offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 0
+theme = ExtResource("16_5syhw")
 text = "Search"
 
 [node name="Recent" type="Control" parent="Windows/Browser/ColorRect3/WackyPedia/HomePage" unique_id=2057569653]
@@ -1056,6 +1070,8 @@ offset_right = 426.85602
 offset_bottom = -100.810684
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 0
+theme = ExtResource("16_5syhw")
 text = "Back"
 
 [node name="SearchTerm" type="Label" parent="Windows/Browser/ColorRect3/WackyPedia/Result" unique_id=1683314955]
@@ -2026,12 +2042,22 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="ColorRect" type="ColorRect" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/Access" unique_id=1439173409]
+layout_mode = 0
+offset_left = 148.92201
+offset_top = -184.73303
+offset_right = 412.922
+offset_bottom = -72.73303
+color = Color(0.87483674, 0.88985187, 0.8919917, 1)
+
 [node name="Username" type="LineEdit" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/Access" unique_id=153016094]
 layout_mode = 0
 offset_left = 168.31178
 offset_top = -165.91672
 offset_right = 393.31177
 offset_bottom = -134.91672
+focus_mode = 0
+theme = ExtResource("16_5syhw")
 theme_override_colors/font_uneditable_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
 theme_override_fonts/font = ExtResource("3_sp806")
 text = "M.Saltman"
@@ -2043,6 +2069,8 @@ offset_left = 168.31178
 offset_top = -130.91672
 offset_right = 393.31177
 offset_bottom = -99.91672
+focus_mode = 0
+theme = ExtResource("16_5syhw")
 theme_override_fonts/font = ExtResource("3_sp806")
 placeholder_text = "Password"
 secret = true
@@ -3308,7 +3336,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_sp806")
-text = "old_passport.txt                   01/11/01      Text Document         100KB"
+text = "travelguide.txt                      08/08/01      Text Document         100KB"
 flat = true
 alignment = 0
 
@@ -3323,7 +3351,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_sp806")
-text = "codes.txt                               01/11/01      Text Document         100KB"
+text = "how2make_money.txt       01/11/01        Text Document         100KB"
 flat = true
 alignment = 0
 
@@ -3338,7 +3366,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_sp806")
-text = "contacts.txt                           01/11/01      Text Document         100KB"
+text = "contacts.txt                         17/09/01       Text Document         100KB"
 flat = true
 alignment = 0
 
