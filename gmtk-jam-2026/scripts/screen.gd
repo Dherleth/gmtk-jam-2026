@@ -36,6 +36,5 @@ func show_encrypted_window() -> void:
 	encrypted_button.pressed.emit()
 	encrypted_button.set_pressed_no_signal(true)
 	
-	
 func start_count_down() -> void:
 	countdown_timer.start()
