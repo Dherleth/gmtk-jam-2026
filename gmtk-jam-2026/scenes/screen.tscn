@@ -4803,7 +4803,6 @@ texture = ExtResource("23_dfejr")
 expand_mode = 1
 
 [node name="EncryptedMessage" type="Control" parent="Windows" unique_id=12912388]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
