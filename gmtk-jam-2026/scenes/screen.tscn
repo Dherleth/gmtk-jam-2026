@@ -851,7 +851,6 @@ virtual_keyboard_enabled = false
 
 [node name="Browser" parent="Windows" unique_id=1415093049 groups=["window"] instance=ExtResource("10_2hmho")]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchor_left = 0.146
 anchor_top = 0.049
@@ -1062,9 +1061,9 @@ offset_right = -566.904
 offset_bottom = -113.25069
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.24705882, 0.17254902, 0.8117647, 1)
 theme_override_colors/font_pressed_color = Color(1, 0.39607844, 1, 1)
-theme_override_colors/font_hover_color = Color(0.28627452, 0, 0.94509804, 1)
+theme_override_colors/font_hover_color = Color(0.44586748, 0.46229517, 1, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("3_sp806")
 theme_override_font_sizes/font_size = 35
@@ -4804,6 +4803,7 @@ texture = ExtResource("23_dfejr")
 expand_mode = 1
 
 [node name="EncryptedMessage" type="Control" parent="Windows" unique_id=12912388]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0

@@ -14,10 +14,10 @@ func _process(delta: float) -> void:
 		seconds.text = str(int(countdown_timer.time_left) % 60).pad_zeros(2)
 		
 		if countdown_timer.time_left > 180:
-			button_label.text =  "chill"
+			button_label.text =  "countdown"
 		elif countdown_timer.time_left > 120:
-			button_label.text =  "going down"
+			button_label.text =  "countdown"
 		elif countdown_timer.time_left > 60:
-			button_label.text =  "hurry"
+			button_label.text =  "countdown"
 		elif countdown_timer.time_left > 0:
-			button_label.text =  "damn"
+			button_label.text =  "< 60s"
