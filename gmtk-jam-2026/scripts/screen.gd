@@ -14,12 +14,12 @@ var played_ticking_sound = false
 var reverted = true
 
 func _process(delta: float) -> void:
-	if countdown_timer.time_left <= 10 and countdown_timer.time_left > 0 and not played_ticking_sound:
+	if countdown_timer.time_left <= 11 and countdown_timer.time_left > 0 and not played_ticking_sound:
 		office_music.stop()
 		tick_sound.play()
 		reverted = false
 		played_ticking_sound = true
-	elif countdown_timer.time_left >= 10 and not reverted:
+	elif countdown_timer.time_left >= 11 and not reverted:
 		office_music.play()
 		tick_sound.stop()
 		reverted = true
