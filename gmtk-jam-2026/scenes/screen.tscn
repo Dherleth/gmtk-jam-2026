@@ -2049,6 +2049,7 @@ offset_left = 148.92201
 offset_top = -184.73303
 offset_right = 412.922
 offset_bottom = -72.73303
+mouse_filter = 2
 color = Color(0.87483674, 0.88985187, 0.8919917, 1)
 
 [node name="Username" type="LineEdit" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/Access" unique_id=153016094]
