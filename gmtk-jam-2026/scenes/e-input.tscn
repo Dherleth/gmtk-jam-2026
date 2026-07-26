@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c2h0iof2f0jt8"]
+
+[ext_resource type="Script" uid="uid://dkknqyt7cqclo" path="res://scenes/e_input.gd" id="1_fir5l"]
+[ext_resource type="FontFile" uid="uid://cexbk66whqwso" path="res://assets/fonts/w95fa/w95f.woff" id="1_t2o7e"]
+
+[node name="EInput" type="LineEdit" unique_id=915415110]
+offset_right = 68.5
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0.059, 0.855, 0.632, 1)
+theme_override_colors/font_uneditable_color = Color(0, 255, 0, 1)
+theme_override_fonts/font = ExtResource("1_t2o7e")
+script = ExtResource("1_fir5l")
+
+[connection signal="text_changed" from="." to="." method="_on_text_changed"]

@@ -15,8 +15,6 @@ func _ready() -> void:
 	pivot_offset = Vector2(size.x/2, size.y/2)
 
 
-
-
 func _on_gui_input(event: InputEvent) -> void:
 	pressed = event.is_pressed()
 	var diff = mousePos - get_global_mouse_position()

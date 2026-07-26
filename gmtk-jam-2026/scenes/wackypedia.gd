@@ -70,14 +70,23 @@ extends Control
 		'e-helper': {'searchTermLabel': 'e-helper', 'node': e_helper_result},
 		'ehelper': {'searchTermLabel': 'e-helper', 'node': e_helper_result},
 		'e helper': {'searchTermLabel': 'e-helper', 'node': e_helper_result},
+		'e-helpers': {'searchTermLabel': 'e-helper', 'node': e_helper_result},
+		'ehelpers': {'searchTermLabel': 'e-helper', 'node': e_helper_result},
+		'e helpers': {'searchTermLabel': 'e-helper', 'node': e_helper_result},
 		
 		'e-worker': {'searchTermLabel': 'e-worker', 'node': e_worker_result},
 		'eworker': {'searchTermLabel': 'e-worker', 'node': e_worker_result},
 		'e worker': {'searchTermLabel': 'e-worker', 'node': e_worker_result},
+		'e-workers': {'searchTermLabel': 'e-worker', 'node': e_worker_result},
+		'eworkers': {'searchTermLabel': 'e-worker', 'node': e_worker_result},
+		'e workers': {'searchTermLabel': 'e-worker', 'node': e_worker_result},
 		
 		'e-center': {'searchTermLabel': 'e-center', 'node': e_center_result},
+		'e-centers': {'searchTermLabel': 'e-center', 'node': e_center_result},
 		'ecenter': {'searchTermLabel': 'e-center', 'node': e_center_result},
+		'ecenters': {'searchTermLabel': 'e-center', 'node': e_center_result},
 		'e center': {'searchTermLabel': 'e-center', 'node': e_center_result},
+		'e centers': {'searchTermLabel': 'e-center', 'node': e_center_result},
 	}
 @onready var wacky_pedia_buttons := [
 		$Result/Open4AllResult/MhButton,

@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c08umx5trny1e" path="res://scenes/window.tscn" id="10_2hmho"]
 [ext_resource type="Texture2D" uid="uid://bq6xc7mjmgren" path="res://assets/images/Windows_95_Highlights_in_program.png" id="10_esotp"]
 [ext_resource type="Texture2D" uid="uid://lfuedn4ag0ct" path="res://assets/images/Windows_95_FOLDER.png" id="11_wydk0"]
+[ext_resource type="Script" uid="uid://px0li53gqdi" path="res://scenes/encrypted_message.gd" id="12_2uju1"]
 [ext_resource type="Script" uid="uid://cce5u0j8xgbhy" path="res://scripts/window_button_plain.gd" id="14_38t0m"]
 [ext_resource type="Script" uid="uid://dcmbog0g538u7" path="res://scenes/wackypedia.gd" id="15_ufolh"]
 [ext_resource type="PackedScene" uid="uid://cbd1u2j608rx6" path="res://scenes/WackyPediaButton.tscn" id="16_mfkbl"]
@@ -22,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://bql7cgsf6jrtb" path="res://assets/images/my_beloved.png" id="22_2uju1"]
 [ext_resource type="Texture2D" uid="uid://bfg24qoiv2tly" path="res://icon.png" id="23_dfejr"]
 [ext_resource type="AudioStream" uid="uid://dm4x8gw3k6xpq" path="res://assets/audio/LOOP_Electric Drift.wav" id="24_2uju1"]
+[ext_resource type="PackedScene" uid="uid://c2h0iof2f0jt8" path="res://scenes/e-input.tscn" id="25_dfejr"]
 [ext_resource type="AudioStream" uid="uid://bi47cnlxch3wb" path="res://assets/audio/win_pos_notif.wav" id="29_4sqgv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sanry"]
@@ -108,6 +110,20 @@ text = "00:00"
 flat = true
 script = ExtResource("4_06c6w")
 
+[node name="EncryptedButton" type="TextureButton" parent="TaskBar" unique_id=71384057 node_paths=PackedStringArray("window", "parent") groups=["apps"]]
+layout_mode = 0
+offset_left = 92.0
+offset_top = -1.0
+offset_right = 193.0
+offset_bottom = 40.0
+texture_normal = ExtResource("10_esotp")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("6_2hpia")
+window = NodePath("../../Windows/EncryptedMessage/EncryptedWindow")
+parent = NodePath("../..")
+is_in_task_bar = true
+
 [node name="ColorRect3" type="ColorRect" parent="." unique_id=2135553702]
 layout_mode = 1
 anchors_preset = 12
@@ -141,12 +157,12 @@ autoplay = true
 stream = ExtResource("29_4sqgv")
 volume_db = -10.0
 
-[node name="Buttons" type="Control" parent="." unique_id=913680300]
+[node name="Desktop" type="Control" parent="." unique_id=913680300]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="BinButton" type="TextureButton" parent="Buttons" unique_id=1250734270 node_paths=PackedStringArray("window", "parent") groups=["apps"]]
+[node name="BinButton" type="TextureButton" parent="Desktop" unique_id=1250734270 node_paths=PackedStringArray("window", "parent") groups=["apps"]]
 layout_mode = 0
 offset_left = 72.0
 offset_top = 72.0
@@ -159,7 +175,7 @@ script = ExtResource("6_2hpia")
 window = NodePath("../../Windows/BinWindows/BinWindow")
 parent = NodePath("../..")
 
-[node name="Label" type="Label" parent="Buttons/BinButton" unique_id=933255462]
+[node name="Label" type="Label" parent="Desktop/BinButton" unique_id=933255462]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -176,7 +192,7 @@ theme_override_fonts/font = ExtResource("3_sp806")
 text = "Recycle Bin"
 horizontal_alignment = 1
 
-[node name="BrowserButton" type="TextureButton" parent="Buttons" unique_id=90696947 node_paths=PackedStringArray("window", "parent") groups=["apps"]]
+[node name="BrowserButton" type="TextureButton" parent="Desktop" unique_id=90696947 node_paths=PackedStringArray("window", "parent") groups=["apps"]]
 layout_mode = 0
 offset_left = 70.0
 offset_top = 175.0
@@ -189,7 +205,7 @@ script = ExtResource("6_2hpia")
 window = NodePath("../../Windows/Browser")
 parent = NodePath("../..")
 
-[node name="Label" type="Label" parent="Buttons/BrowserButton" unique_id=1324344127]
+[node name="Label" type="Label" parent="Desktop/BrowserButton" unique_id=1324344127]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -206,7 +222,7 @@ theme_override_fonts/font = ExtResource("3_sp806")
 text = "Browser"
 horizontal_alignment = 1
 
-[node name="EmployeeMgmtButton" type="TextureButton" parent="Buttons" unique_id=1551815386 node_paths=PackedStringArray("window", "parent") groups=["apps"]]
+[node name="EmployeeMgmtButton" type="TextureButton" parent="Desktop" unique_id=1551815386 node_paths=PackedStringArray("window", "parent") groups=["apps"]]
 layout_mode = 0
 offset_left = 70.0
 offset_top = 269.0
@@ -219,7 +235,7 @@ script = ExtResource("6_2hpia")
 window = NodePath("../../Windows/EmployeeMgmtWindow")
 parent = NodePath("../..")
 
-[node name="Label" type="Label" parent="Buttons/EmployeeMgmtButton" unique_id=1581491320]
+[node name="Label" type="Label" parent="Desktop/EmployeeMgmtButton" unique_id=1581491320]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -236,7 +252,7 @@ theme_override_fonts/font = ExtResource("3_sp806")
 text = "Employee Management"
 horizontal_alignment = 1
 
-[node name="FoldersButton" type="TextureButton" parent="Buttons" unique_id=2057457581 node_paths=PackedStringArray("window", "parent") groups=["apps"]]
+[node name="FoldersButton" type="TextureButton" parent="Desktop" unique_id=2057457581 node_paths=PackedStringArray("window", "parent") groups=["apps"]]
 layout_mode = 0
 offset_left = 77.0
 offset_top = 372.0
@@ -249,7 +265,7 @@ script = ExtResource("6_2hpia")
 window = NodePath("../../Windows/Folders")
 parent = NodePath("../..")
 
-[node name="Label" type="Label" parent="Buttons/FoldersButton" unique_id=84156265]
+[node name="Label" type="Label" parent="Desktop/FoldersButton" unique_id=84156265]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -270,138 +286,6 @@ horizontal_alignment = 1
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-
-[node name="EncryptedWindow" parent="Windows" unique_id=1942496214 groups=["window"] instance=ExtResource("10_2hmho")]
-visible = false
-layout_mode = 1
-anchor_left = 0.146
-anchor_top = 0.049
-anchor_right = 0.146
-anchor_bottom = 0.049
-offset_left = 52.16
-offset_top = 30.039999
-offset_right = 1102.16
-offset_bottom = 590.04
-title = "E-Crypted"
-
-[node name="ColorRect3" type="ColorRect" parent="Windows/EncryptedWindow" unique_id=960787740]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.019
-anchor_top = 0.174
-anchor_right = 0.981
-anchor_bottom = 0.957
-offset_left = -0.055999756
-offset_top = -57.439987
-offset_right = 0.055908203
-offset_bottom = -0.08795166
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0.097664915, 0.00379085, 1)
-
-[node name="ColorRect" type="ColorRect" parent="Windows/EncryptedWindow/ColorRect3" unique_id=2022587866]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 1.0
-grow_horizontal = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="Windows/EncryptedWindow/ColorRect3" unique_id=109938686]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 1.0
-grow_vertical = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="Windows/EncryptedWindow/ColorRect3" unique_id=993799136]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-grow_horizontal = 0
-grow_vertical = 2
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="Windows/EncryptedWindow/ColorRect3" unique_id=1611928894]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -1.0
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Windows/EncryptedWindow/ColorRect3" unique_id=18820923]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.02
-anchor_top = 0.056
-anchor_right = 0.98
-anchor_bottom = 0.944
-offset_left = -0.160001
-offset_top = -0.0640001
-offset_right = 0.160004
-offset_bottom = 0.0639954
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 4
-
-[node name="Guidelines" type="Button" parent="Windows/EncryptedWindow/ColorRect3/VBoxContainer" unique_id=888615610 node_paths=PackedStringArray("parent")]
-layout_mode = 2
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "guidelines.txt                           01/11/01      Text Document         5KB"
-flat = true
-alignment = 0
-script = ExtResource("14_38t0m")
-parent = NodePath("../../../../..")
-
-[node name="Notes" type="Button" parent="Windows/EncryptedWindow/ColorRect3/VBoxContainer" unique_id=691540344 node_paths=PackedStringArray("parent")]
-layout_mode = 2
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "notes.txt                                   03/11/01      Text Document         2KB"
-flat = true
-alignment = 0
-script = ExtResource("14_38t0m")
-parent = NodePath("../../../../..")
-
-[node name="LookingMilf" type="Button" parent="Windows/EncryptedWindow/ColorRect3/VBoxContainer" unique_id=1991166657 node_paths=PackedStringArray("parent")]
-layout_mode = 2
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "Looking for a MILF?               07/11/01      Text Document         3KB"
-flat = true
-alignment = 0
-script = ExtResource("14_38t0m")
-parent = NodePath("../../../../..")
 
 [node name="BinWindows" type="Control" parent="Windows" unique_id=1725221252]
 anchors_preset = 0
@@ -872,6 +756,7 @@ volume_db = -10.0
 
 [node name="Browser" parent="Windows" unique_id=1415093049 groups=["window"] instance=ExtResource("10_2hmho")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchor_left = 0.146
 anchor_top = 0.049
@@ -4632,6 +4517,320 @@ offset_bottom = 77.46399
 texture = ExtResource("23_dfejr")
 expand_mode = 1
 
+[node name="EncryptedMessage" type="Control" parent="Windows" unique_id=12912388]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("12_2uju1")
+
+[node name="EncryptedWindow" parent="Windows/EncryptedMessage" unique_id=1942496214 groups=["window"] instance=ExtResource("10_2hmho")]
+layout_mode = 1
+anchor_left = 0.146
+anchor_top = 0.049
+anchor_right = 0.146
+anchor_bottom = 0.049
+offset_left = 30.16
+offset_top = 9.04
+offset_right = 993.16
+offset_bottom = 593.04
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/EncryptedMessage/EncryptedWindow" unique_id=960787740]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.019
+anchor_top = 0.174
+anchor_right = 0.981
+anchor_bottom = 0.957
+offset_left = -0.055999756
+offset_top = -57.439987
+offset_right = 0.055908203
+offset_bottom = -0.08795166
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.18270123, 0.011282642, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3" unique_id=2022587866]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3" unique_id=109938686]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3" unique_id=993799136]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3" unique_id=1611928894]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="Text" type="RichTextLabel" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=760542630]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = -13.595848
+offset_top = -480.84705
+offset_right = 8.252258
+offset_bottom = -23.165066
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.60336375, 0.99999994, 0.81171376, 1)
+theme_override_fonts/normal_font = ExtResource("3_sp806")
+bbcode_enabled = true
+text = "Quick ! We're missing crucial information about the e-center:
+
+The company is called __________________________
+It was founded by __________________________, __________________________ and __________________________
+People were __________________________ about the __________________________.
+
+I see, could you send us more info about the CEO ?
+
+The company was __________________________ to __________________________
+and Martin Saltman __________________________ shortly after.
+
+He __________________________ to __________________________.
+
+Why ?
+
+The company was losing __________________________
+because the __________________________ use a lot of __________________________
+and the terrible __________________________ forced the company to __________________________ their e-helper.
+
+What happened then ?
+
+The __________________________ was created which started taking __________________________ away from people.
+It is capable of __________________________ people and will be used as such.
+__________________________ was the first person to be __________________________ by an __________________________.
+
+Great, now that you found your name on that list and all their secrets it's time to blow things up, don't you think ?"
+autowrap_mode = 2
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="EInput" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=915415110 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 154.759
+offset_top = -460.80005
+offset_right = 225.509
+offset_bottom = -429.80005
+placeholder_text = "open4all"
+to_find = Array[String](["open4all", "open 4 all"])
+
+[node name="EInput2" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=1598234536 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 227.759
+offset_top = -441.80005
+offset_right = 310.759
+offset_bottom = -410.80005
+placeholder_text = "melon husk"
+to_find = Array[String](["melon husk"])
+
+[node name="EInput3" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=1566777648 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 368.759
+offset_top = -442.80005
+offset_right = 469.759
+offset_bottom = -411.80005
+placeholder_text = "martin saltman"
+to_find = Array[String](["martin saltman"])
+
+[node name="EInput4" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=1728969754 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 641.75903
+offset_top = -442.80005
+offset_right = 758.75903
+offset_bottom = -411.80005
+placeholder_text = "john schoolman"
+to_find = Array[String](["john schoolman"])
+
+[node name="EInput5" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=1532507617 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 92.759
+offset_top = -423.80005
+offset_right = 193.759
+offset_bottom = -392.80005
+placeholder_text = "optimistic"
+to_find = Array[String](["optimistic", "interested", "positiv"])
+
+[node name="EInput6" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=20534744 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 470.759
+offset_top = -421.80005
+offset_right = 571.75903
+offset_bottom = -390.80005
+placeholder_text = "e-centers"
+to_find = Array[String](["e-centers", "ecenters", "e-helpers", "ehelpers"])
+
+[node name="EInput7" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=28882638 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 124.759
+offset_top = -359.80005
+offset_right = 225.759
+offset_bottom = -328.80005
+placeholder_text = "sold"
+to_find = Array[String](["sold"])
+
+[node name="EInput8" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=566348220 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 388.759
+offset_top = -358.80005
+offset_right = 489.759
+offset_bottom = -327.80005
+placeholder_text = "closeb$"
+to_find = Array[String](["closeb$"])
+
+[node name="EInput9" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=1293727678 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 226.759
+offset_top = -340.80005
+offset_right = 327.759
+offset_bottom = -309.80005
+placeholder_text = "disappeared"
+to_find = Array[String](["disappeared", "vanished"])
+
+[node name="EInput10" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=1711640653 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 28.759003
+offset_top = -311.80005
+offset_right = 129.759
+offset_bottom = -280.80005
+placeholder_text = "???"
+to_find = Array[String](["???"])
+
+[node name="EInput11" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=2007084264 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 290.759
+offset_top = -311.80005
+offset_right = 391.759
+offset_bottom = -280.80005
+placeholder_text = "???"
+to_find = Array[String](["???"])
+
+[node name="EInput12" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=512236299 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 191.759
+offset_top = -250.80005
+offset_right = 292.759
+offset_bottom = -219.80005
+placeholder_text = "money"
+to_find = Array[String](["money"])
+
+[node name="EInput13" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=356420135 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 88.759
+offset_top = -231.80005
+offset_right = 189.759
+offset_bottom = -200.80005
+placeholder_text = "e-centers"
+to_find = Array[String](["e-centers", "ecenters"])
+
+[node name="EInput14" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=942491050 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 407.759
+offset_top = -231.80005
+offset_right = 508.759
+offset_bottom = -200.80005
+placeholder_text = "energy"
+to_find = Array[String](["energy", "resources", "materials", "rare materials"])
+
+[node name="EInput15" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=204526372 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 192.759
+offset_top = -212.80005
+offset_right = 293.759
+offset_bottom = -181.80005
+placeholder_text = "???"
+to_find = Array[String](["???"])
+
+[node name="EInput16" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=1130432391 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 505.75903
+offset_top = -216.80005
+offset_right = 606.75903
+offset_bottom = -185.80005
+placeholder_text = "???"
+to_find = Array[String](["???"])
+
+[node name="EInput17" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=942137360 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 39.759033
+offset_top = -152.80005
+offset_right = 157.759
+offset_bottom = -121.80005
+placeholder_text = "hyperscope hub"
+to_find = Array[String](["hyperscope hub"])
+
+[node name="EInput18" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=1494552172 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 495.759
+offset_top = -150.80005
+offset_right = 596.75903
+offset_bottom = -119.80005
+placeholder_text = "jobs"
+to_find = Array[String](["jobs"])
+
+[node name="EInput19" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=2006345174 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 160.759
+offset_top = -136.80005
+offset_right = 261.75903
+offset_bottom = -105.80005
+placeholder_text = "immitating"
+to_find = Array[String](["immitating"])
+
+[node name="EInput20" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=2058525909 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 9.759003
+offset_top = -118.80005
+offset_right = 110.75903
+offset_bottom = -87.80005
+placeholder_text = "???"
+to_find = Array[String](["???"])
+
+[node name="EInput21" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=1247196156 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 413.759
+offset_top = -119.80005
+offset_right = 514.75903
+offset_bottom = -88.80005
+placeholder_text = "killed"
+to_find = Array[String](["killed"])
+
+[node name="EInput22" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=464289757 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 117.759
+offset_top = -101.80005
+offset_right = 218.759
+offset_bottom = -70.80005
+placeholder_text = "e-worker"
+to_find = Array[String](["e-worker", "e-workers", "eworker", "eworkers", "e worker", "e workers"])
+
 [connection signal="pressed" from="TaskBar/Start" to="." method="_on_start_pressed"]
 [connection signal="caret_changed" from="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" to="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" method="_on_caret_changed"]
 [connection signal="focus_entered" from="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" to="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" method="_on_focus_entered"]
@@ -4679,3 +4878,4 @@ expand_mode = 1
 [connection signal="focus_entered" from="Windows/Folders/Windows/ArticleBWindow/ColorRect3/Text" to="Windows/Folders/Windows/ArticleBWindow/ColorRect3/Text" method="_on_focus_entered"]
 [connection signal="focus_entered" from="Windows/Folders/Windows/ArticleCWindow/ColorRect3/Text" to="Windows/Folders/Windows/ArticleCWindow/ColorRect3/Text" method="_on_focus_entered"]
 [connection signal="focus_entered" from="Windows/Folders/Windows/ArticleFWindow/ColorRect3/Text" to="Windows/Folders/Windows/ArticleFWindow/ColorRect3/Text" method="_on_focus_entered"]
+[connection signal="focus_entered" from="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/Text" to="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/Text" method="_on_focus_entered"]
