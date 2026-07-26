@@ -4901,8 +4901,8 @@ offset_left = 160.759
 offset_top = -136.80005
 offset_right = 261.75903
 offset_bottom = -105.80005
-placeholder_text = "immitating"
-to_find = Array[String](["immitating"])
+placeholder_text = "imitating"
+to_find = Array[String](["imitating"])
 
 [node name="EInput20" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/InputGroup4" unique_id=2058525909 instance=ExtResource("25_dfejr")]
 layout_mode = 0

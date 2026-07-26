@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://b4q7j7mh8qp6h" path="res://assets/pizza_doggy_psx/Electronics & Misc/pc_mouse_mp_2.glb" id="4_1q8xy"]
 [ext_resource type="PackedScene" uid="uid://b8frmuvg1dk5s" path="res://scenes/pc.tscn" id="5_6b4fl"]
 [ext_resource type="Script" uid="uid://cjdhnlyk3iqvi" path="res://scenes/pc.gd" id="6_qf88h"]
-[ext_resource type="Script" uid="uid://6e57g8xl36j3" path="res://scripts/monitor.gd" id="7_so6na"]
 [ext_resource type="Script" uid="uid://fxiqyw61okkw" path="res://scripts/camera.gd" id="8_gqsbp"]
 [ext_resource type="Script" uid="uid://dwf4img7pcm2x" path="res://scripts/interaction_controller.gd" id="9_0g6a5"]
 [ext_resource type="FontFile" uid="uid://cexbk66whqwso" path="res://assets/fonts/w95fa/w95f.woff" id="10_w03o1"]
@@ -151,8 +150,6 @@ script = ExtResource("6_qf88h")
 
 [node name="Monitor" type="StaticBody3D" parent="Desk/Pc" unique_id=1798687184]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013662338, 0.284306, -0.14868021)
-script = ExtResource("7_so6na")
-interact_prompt = "Work"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Desk/Pc/Monitor" unique_id=540416747]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.067871094, -0.17541504, -0.27856207)
@@ -201,3 +198,9 @@ transform = Transform3D(1, -4.609278e-09, 1.7380876e-07, 1.8342527e-08, 0.996866
 light_color = Color(0.69650686, 0.9999998, 0.9959976, 1)
 light_energy = 4.381
 area_range = 0.237
+
+[node name="StartWorkingTimer" type="Timer" parent="." unique_id=360170907]
+one_shot = true
+
+[node name="ShowEncryptedWindowTimer" type="Timer" parent="." unique_id=469986093]
+one_shot = true

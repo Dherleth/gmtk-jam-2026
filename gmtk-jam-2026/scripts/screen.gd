@@ -1,6 +1,7 @@
 extends Control
 
 signal dezoom
+@onready var encrypted_button: TextureButton = $TaskBar/EncryptedButton
 
 
 func spawn(window):
@@ -20,3 +21,8 @@ func despawn_and_disable():
 		window.despawn()
 	for button in get_tree().get_nodes_in_group("apps"):
 		button.disabled = true
+		
+		
+func show_encrypted_window() -> void:
+	encrypted_button.pressed.emit()
+	encrypted_button.set_pressed_no_signal(true)
