@@ -5049,23 +5049,23 @@ to_find = Array[String](["open4all", "open 4 all"])
 layout_mode = 0
 offset_left = 122.759
 offset_top = -433.80005
-offset_right = 205.759
+offset_right = 211.759
 offset_bottom = -418.80005
 theme_override_colors/font_color = Color(0.38039216, 0.7764706, 1, 1)
 theme_override_colors/font_uneditable_color = Color(0, 1, 0, 1)
 placeholder_text = "melon husk"
-to_find = Array[String](["melon husk"])
+to_find = Array[String](["melon husk", "martin saltman", "john schoolman"])
 
 [node name="EInput3" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/InputGroup" unique_id=1566777648 instance=ExtResource("25_dfejr")]
 layout_mode = 0
-offset_left = 214.759
+offset_left = 219.759
 offset_top = -433.80005
-offset_right = 313.759
+offset_right = 320.759
 offset_bottom = -418.80005
 theme_override_colors/font_color = Color(0.38039216, 0.7764706, 1, 1)
 theme_override_colors/font_uneditable_color = Color(0, 1, 0, 1)
 placeholder_text = "martin saltman"
-to_find = Array[String](["martin saltman"])
+to_find = Array[String](["martin saltman", "melon husk", "john schoolman"])
 
 [node name="EInput4" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/InputGroup" unique_id=1728969754 instance=ExtResource("25_dfejr")]
 layout_mode = 0
@@ -5076,7 +5076,7 @@ offset_bottom = -418.80005
 theme_override_colors/font_color = Color(0.38039216, 0.7764706, 1, 1)
 theme_override_colors/font_uneditable_color = Color(0, 1, 0, 1)
 placeholder_text = "john schoolman"
-to_find = Array[String](["john schoolman"])
+to_find = Array[String](["john schoolman", "melon husk", "martin saltman"])
 
 [node name="EInput5" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/InputGroup" unique_id=1532507617 instance=ExtResource("25_dfejr")]
 layout_mode = 0
