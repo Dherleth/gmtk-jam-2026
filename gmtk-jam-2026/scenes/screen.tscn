@@ -968,6 +968,7 @@ offset_left = -27.007446
 offset_top = -17.310669
 offset_right = 412.99255
 offset_bottom = 54.68933
+mouse_filter = 2
 color = Color(0.8732984, 0.8732984, 0.8732984, 1)
 
 [node name="SearchButton" type="Button" parent="Windows/Browser/ColorRect3/WackyPedia/HomePage" unique_id=1678937485]
