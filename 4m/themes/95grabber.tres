@@ -1,0 +1,10 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://bvatismnqn8hl"]
+
+[ext_resource type="Texture2D" uid="uid://5o1p6p4bjnl" path="res://assets/images/Windows_95_resize.png" id="1_hu6wv"]
+
+[resource]
+texture = ExtResource("1_hu6wv")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0

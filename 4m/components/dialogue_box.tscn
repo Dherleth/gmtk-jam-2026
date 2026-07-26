@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://4cyajmpvya0t"]
+
+[ext_resource type="Theme" uid="uid://da71cetq7x7kd" path="res://addons/dialogue_manager/theme.tres" id="1_yaf6g"]
+[ext_resource type="Script" uid="uid://ccava50u55qgg" path="res://components/dialogue_box.gd" id="2_l304u"]
+[ext_resource type="Script" uid="uid://g32um0mltv5d" path="res://addons/dialogue_manager/dialogue_label.gd" id="2_qkucv"]
+[ext_resource type="Texture2D" uid="uid://b6stlfhtnvf46" path="res://portraits/nathan.svg" id="3_sx16g"]
+[ext_resource type="FontFile" uid="uid://cexbk66whqwso" path="res://assets/fonts/w95fa/w95f.woff" id="4_7jpml"]
+[ext_resource type="Texture2D" uid="uid://cglpxh712akfg" path="res://portraits/coco.svg" id="5_dhpuu"]
+
+[sub_resource type="FontVariation" id="FontVariation_drmuo"]
+base_font = ExtResource("4_7jpml")
+variation_embolden = 0.43
+
+[sub_resource type="FontVariation" id="FontVariation_7p155"]
+base_font = ExtResource("4_7jpml")
+variation_embolden = 0.32
+
+[sub_resource type="FontVariation" id="FontVariation_hdsdu"]
+base_font = ExtResource("4_7jpml")
+variation_transform = Transform2D(1, 0.2, 0, 1, 0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cs1qt"]
+font_color = Color(1, 0.512959, 0, 1)
+
+[node name="DialogueBox" type="MarginContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 128.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+script = ExtResource("2_l304u")
+
+[node name="Dialogue" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme = ExtResource("1_yaf6g")
+
+[node name="LeftCharacter" type="TextureRect" parent="Dialogue"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_sx16g")
+expand_mode = 1
+
+[node name="Background" type="ColorRect" parent="Dialogue"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
+[node name="MarginContainer" type="MarginContainer" parent="Dialogue/Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Dialogue/Background/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="CharacterName" type="Label" parent="Dialogue/Background/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_drmuo")
+text = "Character"
+
+[node name="DialogueLabel" type="RichTextLabel" parent="Dialogue/Background/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("4_7jpml")
+theme_override_fonts/bold_font = SubResource("FontVariation_7p155")
+theme_override_fonts/italics_font = SubResource("FontVariation_hdsdu")
+bbcode_enabled = true
+text = "djewpidfuohnwpuirfpioujpwaodij3poqiwujpdoij jfipweoiufhj weouijfpowiehjf o84ehwjf poiwjf po4iwjfop8 hjgfpo8hwepo igh
+fwjuip fuihewpfi8uh pwf
+fjiwr pguhrwe99ig 
+fgjruwie9 pg98hurep98gh 9e
+jgr e89p8guher"
+fit_content = true
+scroll_active = false
+script = ExtResource("2_qkucv")
+skip_pause_at_abbreviations = PackedStringArray("Mr", "Mrs", "Ms", "Dr", "etc", "eg", "ex")
+
+[node name="RightCharacter" type="TextureRect" parent="Dialogue"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("5_dhpuu")
+expand_mode = 1
+
+[node name="ActionLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+label_settings = SubResource("LabelSettings_cs1qt")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="finished_typing" from="Dialogue/Background/MarginContainer/VBoxContainer/DialogueLabel" to="Dialogue" method="_on_dialogue_label_finished_typing"]
