@@ -29,6 +29,7 @@
 [ext_resource type="Script" uid="uid://c43xehsvog50c" path="res://scenes/count_down_manager.gd" id="25_5syhw"]
 [ext_resource type="PackedScene" uid="uid://c2h0iof2f0jt8" path="res://scenes/e-input.tscn" id="25_dfejr"]
 [ext_resource type="AudioStream" uid="uid://bi47cnlxch3wb" path="res://assets/audio/win_pos_notif.wav" id="29_4sqgv"]
+[ext_resource type="AudioStream" uid="uid://dopvhkhbi2veo" path="res://assets/audio/explosion_close_long_ufx_1.ogg" id="30_38t0m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sanry"]
 atlas = ExtResource("2_mml8x")
@@ -1968,6 +1969,7 @@ shortcut_keys_enabled = false
 drag_and_drop_selection_enabled = false
 
 [node name="EmployeeMgmtWindow" parent="Windows" unique_id=1445978554 groups=["window"] instance=ExtResource("10_2hmho")]
+visible = false
 layout_mode = 1
 anchor_left = 0.146
 anchor_top = 0.049
@@ -4795,7 +4797,6 @@ offset_bottom = 40.0
 script = ExtResource("12_2uju1")
 
 [node name="EncryptedWindow" parent="Windows/EncryptedMessage" unique_id=1942496214 groups=["window"] instance=ExtResource("10_2hmho")]
-visible = false
 layout_mode = 1
 anchor_left = 0.146
 anchor_top = 0.049
@@ -4955,7 +4956,7 @@ bbcode_enabled = true
 text = "What happened then ?
 
 The _____________ were created and started taking ___________ away from people.
-It is capable of _________ people and will be used as such.
+They are capable of _________ like people and will be used as such.
 ___________ was the first person to be ________ by an __________."
 autowrap_mode = 2
 shortcut_keys_enabled = false
@@ -4968,19 +4969,52 @@ anchor_left = 0.025
 anchor_top = 0.047
 anchor_right = 0.985
 anchor_bottom = 0.936
-offset_left = -13.595848
-offset_top = -64.847046
-offset_right = 8.252258
-offset_bottom = -47.73605
+offset_left = -13.403946
+offset_top = -94.847046
+offset_right = 8.444153
+offset_bottom = -1.7360488
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/default_color = Color(0.60336375, 0.99999994, 0.81171376, 1)
 theme_override_fonts/normal_font = ExtResource("3_sp806")
 bbcode_enabled = true
-text = "Great, now that you found your name on that list and all their secrets it's time to blow things up, don't you think ?"
+text = "Great, now that you found my name on that list, I'd like to thank you for being such a good and diligent e-worker. But I think it's time to blow things up, don't you think?
+This is your last assignment. You will not be missed."
 autowrap_mode = 2
 shortcut_keys_enabled = false
 drag_and_drop_selection_enabled = false
+
+[node name="BlowItUp" type="RichTextLabel" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/Text5" unique_id=1339820697]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = -29.782633
+offset_top = 38.227
+offset_right = 14.364258
+offset_bottom = 7.0159836
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(1, 0.16862746, 0.28627452, 1)
+theme_override_fonts/normal_font = ExtResource("3_sp806")
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "Blow it all up"
+autowrap_mode = 2
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+drag_and_drop_selection_enabled = false
+
+[node name="Button" type="Button" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/Text5" unique_id=1619986848]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 52.0
+offset_right = 745.1919
+offset_bottom = 87.0
+flat = true
 
 [node name="InputGroup" type="Control" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=1150804292]
 anchors_preset = 0
@@ -5206,14 +5240,14 @@ to_find = Array[String](["jobs", "work", "revenue"])
 
 [node name="EInput19" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/InputGroup4" unique_id=2006345174 instance=ExtResource("25_dfejr")]
 layout_mode = 0
-offset_left = 101.759
+offset_left = 138.759
 offset_top = -128.80005
-offset_right = 188.759
+offset_right = 225.759
 offset_bottom = -113.80005
 theme_override_colors/font_color = Color(0.38039216, 0.7764706, 1, 1)
 theme_override_colors/font_uneditable_color = Color(0, 1, 0, 1)
-placeholder_text = "killing"
-to_find = Array[String](["killing"])
+placeholder_text = "working"
+to_find = Array[String](["working", "walking", "speaking", "understanding", "behaving"])
 
 [node name="EInput20" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/InputGroup4" unique_id=2058525909 instance=ExtResource("25_dfejr")]
 layout_mode = 0
@@ -5396,6 +5430,107 @@ vertical_alignment = 1
 
 [node name="CountdownTimer" type="Timer" parent="Windows/CountDownWindow" unique_id=1114284354]
 wait_time = 240.0
+one_shot = true
+
+[node name="CreditWindow" parent="Windows" unique_id=398991263 groups=["window"] instance=ExtResource("10_2hmho")]
+visible = false
+layout_mode = 1
+anchor_left = 0.146
+anchor_top = 0.049
+anchor_right = 0.146
+anchor_bottom = 0.049
+offset_left = 1307.16
+offset_top = 517.04
+offset_right = 1307.16
+offset_bottom = 517.04
+title = "Credits"
+
+[node name="ColorRect" type="ColorRect" parent="Windows/CreditWindow" unique_id=872266509]
+layout_mode = 0
+offset_left = -1790.0
+offset_top = -738.0
+offset_right = 957.0
+offset_bottom = 540.0
+color = Color(0.13319641, 0.13319641, 0.13319638, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/CreditWindow" unique_id=1936503677]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.019
+anchor_top = 0.174
+anchor_right = 0.981
+anchor_bottom = 0.957
+offset_left = -0.0560007
+offset_top = -0.0160027
+offset_right = 0.0559692
+offset_bottom = -0.0879974
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Windows/CreditWindow/ColorRect3" unique_id=2032691757]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Windows/CreditWindow/ColorRect3" unique_id=1365595810]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/CreditWindow/ColorRect3" unique_id=1859739409]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Windows/CreditWindow/ColorRect3" unique_id=115936685]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="Text3" type="RichTextLabel" parent="Windows/CreditWindow" unique_id=1995926397]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = -1363.0
+offset_top = -520.0
+offset_right = -218.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.60336375, 0.99999994, 0.81171376, 1)
+theme_override_fonts/normal_font = ExtResource("3_sp806")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "The e-center blew up"
+autowrap_mode = 2
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+drag_and_drop_selection_enabled = false
+
+[node name="ExplosionSound" type="AudioStreamPlayer" parent="." unique_id=992342386]
+stream = ExtResource("30_38t0m")
 
 [connection signal="pressed" from="TaskBar/Start" to="." method="_on_start_pressed"]
 [connection signal="caret_changed" from="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" to="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" method="_on_caret_changed"]
@@ -5451,3 +5586,7 @@ wait_time = 240.0
 [connection signal="focus_entered" from="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/Text3" to="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/Text3" method="_on_focus_entered"]
 [connection signal="focus_entered" from="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/Text4" to="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/Text4" method="_on_focus_entered"]
 [connection signal="focus_entered" from="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/Text5" to="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/Text5" method="_on_focus_entered"]
+[connection signal="focus_entered" from="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/Text5/BlowItUp" to="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/Text5/BlowItUp" method="_on_focus_entered"]
+[connection signal="pressed" from="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/Text5/Button" to="." method="_on_blow_it_up_button_pressed"]
+[connection signal="timeout" from="Windows/CountDownWindow/CountdownTimer" to="." method="_on_countdown_timer_timeout"]
+[connection signal="focus_entered" from="Windows/CreditWindow/Text3" to="Windows/CreditWindow/Text3" method="_on_focus_entered"]

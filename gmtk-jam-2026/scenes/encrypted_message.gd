@@ -74,3 +74,7 @@ func _on_input_solved(_text) -> void:
 	animation_player.play("pop")
 	countdown_timer.wait_time = new_left_time
 	countdown_timer.start()
+
+
+func _on_button_pressed() -> void:
+	pass # Replace with function body.

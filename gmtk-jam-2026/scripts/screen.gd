@@ -5,6 +5,9 @@ signal dezoom
 @onready var count_down_button: TextureButton = $TaskBar/CountDownButton
 @onready var countdown_timer: Timer = $Windows/CountDownWindow/CountdownTimer
 @onready var notif: AudioStreamPlayer = $Windows/CountDownWindow/Notif
+@onready var office_music: AudioStreamPlayer = $Office
+@onready var explosion_sound: AudioStreamPlayer = $ExplosionSound
+@onready var credit_window: Control = $Windows/CreditWindow
 
 
 func spawn(window):
@@ -40,3 +43,19 @@ func show_encrypted_window() -> void:
 	
 func start_count_down() -> void:
 	countdown_timer.start()
+
+
+func _on_blow_it_up_button_pressed() -> void:
+	office_music.stop()
+	count_down_button.pressed.emit()
+	count_down_button.set_pressed_no_signal(false)
+	encrypted_button.pressed.emit()
+	encrypted_button.set_pressed_no_signal(false)
+	countdown_timer.wait_time = 10
+	countdown_timer.start()
+	
+
+func _on_countdown_timer_timeout() -> void:
+	office_music.stop()
+	explosion_sound.play()
+	credit_window.spawn()
