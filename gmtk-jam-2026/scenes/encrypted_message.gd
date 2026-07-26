@@ -60,12 +60,13 @@ func _test_group(group) -> bool:
 			
 	return solved
 	
+	
 func _connect_inputs_solved(group) -> void:
 	for input: EInput in group.get_children():
 		input.solved.connect(_on_input_solved)
 		
 
 func _on_input_solved(_text) -> void:
-	var new_left_time = clamp(countdown_timer.time_left + 30.0, 0, 240)
+	var new_left_time = countdown_timer.time_left + 30.0
 	countdown_timer.wait_time = new_left_time
 	countdown_timer.start()
