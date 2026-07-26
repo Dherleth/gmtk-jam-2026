@@ -85,6 +85,15 @@ texture_margin_right = 2.0
 texture_margin_bottom = 2.0
 expand_margin_bottom = 1.0
 
+[sub_resource type="FontVariation" id="FontVariation_1cylc"]
+base_font = ExtResource("1_p3to3")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q2i2y"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_color = Color(0.0768358, 0.07683583, 0.07683576, 1)
+
 [resource]
 Button/colors/font_color = Color(0, 0, 0, 1)
 Button/colors/font_disabled_color = Color(0.691357, 0.691357, 0.691357, 1)
@@ -104,6 +113,12 @@ HSlider/icons/tick = SubResource("AtlasTexture_867i1")
 HSlider/styles/grabber_area = null
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxTexture_682lf")
 HSlider/styles/slider = SubResource("StyleBoxTexture_v8i21")
+LineEdit/colors/caret_color = Color(0.08078321, 0.080783345, 0.08078361, 1)
+LineEdit/colors/font_color = Color(0.05629144, 0.056291677, 0.056291506, 1)
+LineEdit/colors/font_placeholder_color = Color(0.45064765, 0.4506486, 0.45064783, 0.6)
+LineEdit/colors/font_selected_color = Color(0.18717614, 0.18717614, 0.18717614, 1)
+LineEdit/fonts/font = SubResource("FontVariation_1cylc")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_q2i2y")
 VScrollBar/icons/decrement = ExtResource("1_u7chb")
 VScrollBar/icons/increment = ExtResource("1_u7chb")
 VScrollBar/styles/grabber = ExtResource("3_3ujxn")
