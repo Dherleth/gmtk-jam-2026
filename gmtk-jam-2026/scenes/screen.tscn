@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://dcmbog0g538u7" path="res://scenes/wackypedia.gd" id="15_ufolh"]
 [ext_resource type="PackedScene" uid="uid://cbd1u2j608rx6" path="res://scenes/WackyPediaButton.tscn" id="16_mfkbl"]
 [ext_resource type="Shader" uid="uid://n0fjxglnrli1" path="res://themes/screen.gdshader" id="17_1regh"]
+[ext_resource type="Script" uid="uid://bphx6lewx2hot" path="res://scenes/access.gd" id="17_5syhw"]
 [ext_resource type="Texture2D" uid="uid://dbi477e0vo7yj" path="res://assets/images/Windows_95_!.png" id="17_dfejr"]
 [ext_resource type="Script" uid="uid://dwpwhc0ywbbl7" path="res://scenes/folder_manager.gd" id="18_mml8x"]
 [ext_resource type="Texture2D" uid="uid://dlnpux1c7qrim" path="res://assets/images/stat_numbers.png" id="19_sp806"]
@@ -1951,7 +1952,6 @@ shortcut_keys_enabled = false
 drag_and_drop_selection_enabled = false
 
 [node name="EmployeeMgmtWindow" parent="Windows" unique_id=1445978554 groups=["window"] instance=ExtResource("10_2hmho")]
-visible = false
 layout_mode = 1
 anchor_left = 0.146
 anchor_top = 0.049
@@ -1959,8 +1959,8 @@ anchor_right = 0.146
 anchor_bottom = 0.049
 offset_left = 162.15999
 offset_top = 30.039999
-offset_right = 648.16
-offset_bottom = 214.04001
+offset_right = 748.16
+offset_bottom = 383.04
 title = "Employee Management"
 
 [node name="ColorRect3" type="ColorRect" parent="Windows/EmployeeMgmtWindow" unique_id=890814412]
@@ -2015,71 +2015,280 @@ grow_horizontal = 2
 grow_vertical = 0
 color = Color(0.818447, 0.839665, 0.842692, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Windows/EmployeeMgmtWindow/ColorRect3" unique_id=1053834085]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.02
-anchor_top = 0.056
-anchor_right = 0.98
-anchor_bottom = 0.944
-offset_left = -0.160001
-offset_top = -0.0640001
-offset_right = 0.160004
-offset_bottom = 0.0639954
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 4
+[node name="AccessManager" type="Control" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4" unique_id=2100854253]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("17_5syhw")
 
-[node name="Guidelines" type="Button" parent="Windows/EmployeeMgmtWindow/ColorRect3/VBoxContainer" unique_id=1375910579 node_paths=PackedStringArray("parent")]
-layout_mode = 2
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "guidelines.txt                           01/11/01      Text Document         5KB"
-flat = true
-alignment = 0
-script = ExtResource("14_38t0m")
-parent = NodePath("../../../../..")
+[node name="Access" type="Control" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4" unique_id=1094140359]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Notes" type="Button" parent="Windows/EmployeeMgmtWindow/ColorRect3/VBoxContainer" unique_id=1889976498 node_paths=PackedStringArray("parent")]
-layout_mode = 2
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+[node name="Username" type="LineEdit" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/Access" unique_id=153016094]
+layout_mode = 0
+offset_left = 168.31178
+offset_top = -165.91672
+offset_right = 393.31177
+offset_bottom = -134.91672
+theme_override_colors/font_uneditable_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
 theme_override_fonts/font = ExtResource("3_sp806")
-text = "notes.txt                                   03/11/01      Text Document         2KB"
-flat = true
-alignment = 0
-script = ExtResource("14_38t0m")
-parent = NodePath("../../../../..")
+text = "M.Saltman"
+placeholder_text = "Username"
 
-[node name="LookingMilf" type="Button" parent="Windows/EmployeeMgmtWindow/ColorRect3/VBoxContainer" unique_id=1948899813 node_paths=PackedStringArray("parent")]
-layout_mode = 2
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+[node name="Password" type="LineEdit" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/Access" unique_id=776577002]
+layout_mode = 0
+offset_left = 168.31178
+offset_top = -130.91672
+offset_right = 393.31177
+offset_bottom = -99.91672
 theme_override_fonts/font = ExtResource("3_sp806")
-text = "Looking for a MILF?               07/11/01      Text Document         3KB"
-flat = true
-alignment = 0
-script = ExtResource("14_38t0m")
-parent = NodePath("../../../../..")
+placeholder_text = "Password"
+secret = true
+
+[node name="Hint" type="Label" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/Access" unique_id=367487947]
+layout_mode = 0
+offset_left = 168.92201
+offset_top = -92.73303
+offset_right = 392.922
+offset_bottom = -76.73303
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "Hint: name of childhood dog"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/Access" unique_id=1300705704]
+layout_mode = 0
+offset_left = 11.116882
+offset_top = -259.91675
+offset_right = 552.1169
+offset_bottom = -224.91675
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "Locked.
+You need to login with a username and a password"
+horizontal_alignment = 1
+
+[node name="List" type="Control" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4" unique_id=2098528421]
+visible = false
+anchors_preset = 0
+offset_left = 66.92201
+offset_top = 25.266968
+offset_right = 106.92201
+offset_bottom = 65.26697
+
+[node name="Names" type="VBoxContainer" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/List" unique_id=494325050]
+layout_mode = 0
+offset_left = -43.0
+offset_top = -273.73303
+offset_right = 159.0
+offset_bottom = -77.73303
+theme_override_constants/separation = 7
+
+[node name="Label" type="Label" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/List/Names" unique_id=1532996874]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "Jane Deer"
+
+[node name="Label2" type="Label" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/List/Names" unique_id=672063462]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "JohnDeer"
+
+[node name="Label3" type="Label" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/List/Names" unique_id=196618700]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "Leroy Jenkins"
+
+[node name="Label4" type="Label" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/List/Names" unique_id=2135190781]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "Bodhi Carter"
+
+[node name="Label5" type="Label" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/List/Names" unique_id=1375690606]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "Sage Farrel"
+
+[node name="Label6" type="Label" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/List/Names" unique_id=601589581]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "Porter McClain"
+
+[node name="Label7" type="Label" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/List/Names" unique_id=1119113561]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "Janelle Higgins"
+
+[node name="Label8" type="Label" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/List/Names" unique_id=1563090800]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "Cillian Wu"
+
+[node name="Label9" type="Label" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/List/Names" unique_id=981265164]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "Xavier Proctor"
+
+[node name="Label10" type="Label" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/List/Names" unique_id=633937972]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "Mac Martinez"
+
+[node name="Status" type="VBoxContainer" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/List" unique_id=903393395]
+layout_mode = 0
+offset_left = 164.92201
+offset_top = -273.73303
+offset_right = 325.0
+offset_bottom = -77.73303
+theme_override_constants/separation = 7
+
+[node name="Label" type="Label" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/List/Status" unique_id=1827041482]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "status: working"
+
+[node name="Label2" type="Label" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/List/Status" unique_id=2132463879]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "status: working"
+
+[node name="Label3" type="Label" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/List/Status" unique_id=600308292]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "status: replaced"
+
+[node name="Label4" type="Label" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/List/Status" unique_id=595818187]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "status: replaced"
+
+[node name="Label5" type="Label" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/List/Status" unique_id=1456643148]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "status: replaced"
+
+[node name="Label6" type="Label" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/List/Status" unique_id=1594403708]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "status: replaced"
+
+[node name="Label7" type="Label" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/List/Status" unique_id=1681882622]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "status: replaced"
+
+[node name="Label8" type="Label" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/List/Status" unique_id=154804295]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "status: replaced"
+
+[node name="Label9" type="Label" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/List/Status" unique_id=1323056291]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "status: replaced"
+
+[node name="Label10" type="Label" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/List/Status" unique_id=629799853]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "status: replaced"
+
+[node name="Date" type="VBoxContainer" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/List" unique_id=1319290692]
+layout_mode = 0
+offset_left = 311.0
+offset_top = -273.73303
+offset_right = 455.0
+offset_bottom = -77.73303
+theme_override_constants/separation = 7
+
+[node name="Label" type="Label" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/List/Date" unique_id=2038318012]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/List/Date" unique_id=1494881610]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+horizontal_alignment = 2
+
+[node name="Label3" type="Label" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/List/Date" unique_id=1339301025]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "14.04.01"
+horizontal_alignment = 2
+
+[node name="Label4" type="Label" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/List/Date" unique_id=622896920]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "15.04.01"
+horizontal_alignment = 2
+
+[node name="Label5" type="Label" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/List/Date" unique_id=1108565157]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "08.05.01"
+horizontal_alignment = 2
+
+[node name="Label6" type="Label" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/List/Date" unique_id=2048719660]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "08.05.01"
+horizontal_alignment = 2
+
+[node name="Label7" type="Label" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/List/Date" unique_id=1696049010]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "08.05.01"
+horizontal_alignment = 2
+
+[node name="Label8" type="Label" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/List/Date" unique_id=593095478]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "27.07.01"
+horizontal_alignment = 2
+
+[node name="Label9" type="Label" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/List/Date" unique_id=1599699160]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "27.07.01"
+horizontal_alignment = 2
+
+[node name="Label10" type="Label" parent="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/List/Date" unique_id=1728295826]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "27.07.01"
+horizontal_alignment = 2
 
 [node name="Folders" parent="Windows" unique_id=280454610 groups=["window"] instance=ExtResource("10_2hmho")]
 visible = false
@@ -4558,6 +4767,7 @@ offset_bottom = 40.0
 script = ExtResource("12_2uju1")
 
 [node name="EncryptedWindow" parent="Windows/EncryptedMessage" unique_id=1942496214 groups=["window"] instance=ExtResource("10_2hmho")]
+visible = false
 layout_mode = 1
 anchor_left = 0.146
 anchor_top = 0.049
@@ -5190,6 +5400,8 @@ wait_time = 240.0
 [connection signal="focus_entered" from="Windows/Browser/ColorRect3/WackyPedia/Result/EHelperResult/Text" to="Windows/Browser/ColorRect3/WackyPedia/Result/EHelperResult/Text" method="_on_focus_entered"]
 [connection signal="focus_entered" from="Windows/Browser/ColorRect3/WackyPedia/Result/EWorkerResult/Text" to="Windows/Browser/ColorRect3/WackyPedia/Result/EWorkerResult/Text" method="_on_focus_entered"]
 [connection signal="focus_entered" from="Windows/Browser/ColorRect3/WackyPedia/Result/ECenterResult/Text" to="Windows/Browser/ColorRect3/WackyPedia/Result/ECenterResult/Text" method="_on_focus_entered"]
+[connection signal="text_changed" from="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/Access/Username" to="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/AccessManager" method="_on_username_text_changed"]
+[connection signal="text_submitted" from="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/Access/Password" to="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/AccessManager" method="_on_password_text_submitted"]
 [connection signal="pressed" from="Windows/Folders/Root/BackButton" to="Windows/Folders/FolderManager" method="_on_back_button_pressed"]
 [connection signal="pressed" from="Windows/Folders/Root/WorkButton" to="Windows/Folders/FolderManager" method="_on_work_button_pressed"]
 [connection signal="pressed" from="Windows/Folders/Root/ImportantButton" to="Windows/Folders/FolderManager" method="_on_important_button_pressed"]
