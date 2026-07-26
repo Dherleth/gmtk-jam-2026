@@ -208,3 +208,6 @@ one_shot = true
 
 [node name="ShowCountdownTimer" type="Timer" parent="." unique_id=973084322]
 one_shot = true
+
+[node name="StartCountdownTimer" type="Timer" parent="." unique_id=1812990959]
+one_shot = true

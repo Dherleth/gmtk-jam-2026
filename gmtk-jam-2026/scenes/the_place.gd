@@ -5,6 +5,7 @@ var screen_scene = preload("res://scenes/screen.tscn")
 @onready var start_working_timer: Timer = $StartWorkingTimer
 @onready var show_encrypted_window_timer: Timer = $ShowEncryptedWindowTimer
 @onready var show_countdown_timer: Timer = $ShowCountdownTimer
+@onready var start_countdown_timer: Timer = $StartCountdownTimer
 
 var screen_instance
 
@@ -16,6 +17,7 @@ func _ready() -> void:
 	show_encrypted_window_timer.timeout.connect(_on_show_encrypted_window_timer_timeout)
 	show_countdown_timer.timeout.connect(_on_show_countdown_timer_timeout)
 	start_working_timer.timeout.connect(_on_start_working_timer_timeout)
+	start_countdown_timer.timeout.connect(_on_start_countdown_timer_timeout)
 	
 	show_countdown_timer.start()
 
@@ -30,4 +32,8 @@ func _on_show_encrypted_window_timer_timeout() ->void:
 	
 func _on_show_countdown_timer_timeout() ->void:
 	screen_instance.show_countdown_window()
+	start_countdown_timer.start()
+	
+func _on_start_countdown_timer_timeout() ->void:
+	screen_instance.start_count_down()
 	start_working_timer.start()
