@@ -9,6 +9,8 @@ extends Control
 @onready var input_group_2: Control = $EncryptedWindow/ColorRect3/ColorRect4/InputGroup2
 @onready var input_group_3: Control = $EncryptedWindow/ColorRect3/ColorRect4/InputGroup3
 @onready var input_group_4: Control = $EncryptedWindow/ColorRect3/ColorRect4/InputGroup4
+@onready var countdown_timer: Timer = $"../CountDownWindow/CountdownTimer"
+
 var group1_solved := false
 var group2_solved := false
 var group3_solved := false
@@ -25,8 +27,11 @@ func _ready() -> void:
 	input_group_2.hide()
 	input_group_3.hide()
 	input_group_4.hide()
+	_connect_inputs_solved(input_group)
+	_connect_inputs_solved(input_group_2)
+	_connect_inputs_solved(input_group_3)
+	_connect_inputs_solved(input_group_4)
 	
-
 func _process(delta: float) -> void:
 	if not group1_solved:
 		group1_solved = _test_group(input_group)
@@ -54,3 +59,13 @@ func _test_group(group) -> bool:
 			break
 			
 	return solved
+	
+func _connect_inputs_solved(group) -> void:
+	for input: EInput in group.get_children():
+		input.solved.connect(_on_input_solved)
+		
+
+func _on_input_solved(_text) -> void:
+	var new_left_time = clamp(countdown_timer.time_left + 30.0, 0, 240)
+	countdown_timer.wait_time = new_left_time
+	countdown_timer.start()
