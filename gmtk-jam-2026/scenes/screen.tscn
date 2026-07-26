@@ -32,6 +32,67 @@
 atlas = ExtResource("2_mml8x")
 region = Rect2(20, 40, 540, 220)
 
+[sub_resource type="Animation" id="Animation_0kugv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(7, 2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_5syhw"]
+resource_name = "pop"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.23333335, 0.6666667, 1.5, 1.8, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 2), Vector2(31, 2), Vector2(31, 2), Vector2(31, 2), Vector2(31, 2), Vector2(-100, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.033333335, 1.8666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4sqgv"]
+_data = {
+&"RESET": SubResource("Animation_0kugv"),
+&"pop": SubResource("Animation_5syhw")
+}
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0pa6k"]
 shader = ExtResource("17_1regh")
 shader_parameter/resolution = Vector2(640, 480)
@@ -169,14 +230,17 @@ offset_bottom = 41.0
 layout_mode = 0
 offset_left = 7.0
 offset_top = 2.0
-offset_right = 121.0
-offset_bottom = 29.0
+offset_right = 120.99974
+offset_bottom = 32.000103
 theme_override_colors/font_color = Color(0.99999994, 0.17005175, 0.28454703, 1)
 theme_override_fonts/font = ExtResource("3_sp806")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 25
 text = " +30s"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TaskBar/CountDownButton/Control" unique_id=1491375432]
+libraries/ = SubResource("AnimationLibrary_4sqgv")
 
 [node name="ColorRect3" type="ColorRect" parent="." unique_id=2135553702]
 layout_mode = 1
@@ -2711,51 +2775,6 @@ alignment = 0
 script = ExtResource("14_38t0m")
 window = NodePath("../../../../Windows/TheContractWindow")
 parent = NodePath("../../../../../..")
-
-[node name="Contract2" type="Button" parent="Windows/Folders/WorkFolderContent/SignedContractsFolderContent/Contracts" unique_id=1770243659]
-layout_mode = 2
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "Contract2.txt                         02/11/01      Text Document         50KB"
-flat = true
-alignment = 0
-
-[node name="Contract3" type="Button" parent="Windows/Folders/WorkFolderContent/SignedContractsFolderContent/Contracts" unique_id=1607438411]
-layout_mode = 2
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "ContractX.txt                        01/11/01       Text Document         200KB"
-flat = true
-alignment = 0
-
-[node name="Contract4" type="Button" parent="Windows/Folders/WorkFolderContent/SignedContractsFolderContent/Contracts" unique_id=1759266187]
-layout_mode = 2
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "ContractY.txt                        03/11/01      Text Document         100KB"
-flat = true
-alignment = 0
 
 [node name="ArticlesFolderContent" type="ColorRect" parent="Windows/Folders/WorkFolderContent" unique_id=1802600047]
 visible = false

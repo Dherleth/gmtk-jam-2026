@@ -206,7 +206,9 @@ one_shot = true
 one_shot = true
 
 [node name="ShowCountdownTimer" type="Timer" parent="." unique_id=973084322]
+wait_time = 0.75
 one_shot = true
 
 [node name="StartCountdownTimer" type="Timer" parent="." unique_id=1812990959]
+wait_time = 0.5
 one_shot = true

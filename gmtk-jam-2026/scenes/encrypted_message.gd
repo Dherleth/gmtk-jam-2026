@@ -10,6 +10,8 @@ extends Control
 @onready var input_group_3: Control = $EncryptedWindow/ColorRect3/ColorRect4/InputGroup3
 @onready var input_group_4: Control = $EncryptedWindow/ColorRect3/ColorRect4/InputGroup4
 @onready var countdown_timer: Timer = $"../CountDownWindow/CountdownTimer"
+@onready var animation_player: AnimationPlayer = $"../../TaskBar/CountDownButton/Control/AnimationPlayer"
+@onready var more_time_label: Label = $"../../TaskBar/CountDownButton/Control/Label"
 
 var group1_solved := false
 var group2_solved := false
@@ -27,6 +29,7 @@ func _ready() -> void:
 	input_group_2.hide()
 	input_group_3.hide()
 	input_group_4.hide()
+	more_time_label.hide()
 	_connect_inputs_solved(input_group)
 	_connect_inputs_solved(input_group_2)
 	_connect_inputs_solved(input_group_3)
@@ -68,5 +71,6 @@ func _connect_inputs_solved(group) -> void:
 
 func _on_input_solved(_text) -> void:
 	var new_left_time = countdown_timer.time_left + 30.0
+	animation_player.play("pop")
 	countdown_timer.wait_time = new_left_time
 	countdown_timer.start()
