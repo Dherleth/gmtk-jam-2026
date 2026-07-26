@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://cjtnmkaudgxic" path="res://scripts/time.gd" id="4_06c6w"]
 [ext_resource type="Texture2D" uid="uid://cwwm4tgs5raod" path="res://assets/images/win95bin.png" id="5_ed25v"]
 [ext_resource type="Script" uid="uid://ltw678giy6qt" path="res://scripts/window_button.gd" id="6_2hpia"]
+[ext_resource type="Texture2D" uid="uid://batdj5mg8cbym" path="res://assets/images/Windows_95.png" id="7_0kugv"]
 [ext_resource type="PackedScene" uid="uid://c08umx5trny1e" path="res://scenes/window.tscn" id="10_2hmho"]
 [ext_resource type="Texture2D" uid="uid://bq6xc7mjmgren" path="res://assets/images/Windows_95_Highlights_in_program.png" id="10_esotp"]
 [ext_resource type="Texture2D" uid="uid://lfuedn4ag0ct" path="res://assets/images/Windows_95_FOLDER.png" id="11_wydk0"]
@@ -23,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://bql7cgsf6jrtb" path="res://assets/images/my_beloved.png" id="22_2uju1"]
 [ext_resource type="Texture2D" uid="uid://bfg24qoiv2tly" path="res://icon.png" id="23_dfejr"]
 [ext_resource type="AudioStream" uid="uid://dm4x8gw3k6xpq" path="res://assets/audio/LOOP_Electric Drift.wav" id="24_2uju1"]
+[ext_resource type="Script" uid="uid://c43xehsvog50c" path="res://scenes/count_down_manager.gd" id="25_5syhw"]
 [ext_resource type="PackedScene" uid="uid://c2h0iof2f0jt8" path="res://scenes/e-input.tscn" id="25_dfejr"]
 [ext_resource type="AudioStream" uid="uid://bi47cnlxch3wb" path="res://assets/audio/win_pos_notif.wav" id="29_4sqgv"]
 
@@ -48,6 +50,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wydk0")
+metadata/_edit_vertical_guides_ = [776.0]
 
 [node name="BgColor" type="ColorRect" parent="." unique_id=727069245]
 layout_mode = 1
@@ -121,6 +124,20 @@ ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("6_2hpia")
 window = NodePath("../../Windows/EncryptedMessage/EncryptedWindow")
+parent = NodePath("../..")
+is_in_task_bar = true
+
+[node name="CountDownButton" type="TextureButton" parent="TaskBar" unique_id=1736174403 node_paths=PackedStringArray("window", "parent") groups=["apps"]]
+layout_mode = 0
+offset_left = 187.0
+offset_top = 4.0
+offset_right = 284.0
+offset_bottom = 35.0
+texture_normal = ExtResource("7_0kugv")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("6_2hpia")
+window = NodePath("../../Windows/CountDownWindow")
 parent = NodePath("../..")
 is_in_task_bar = true
 
@@ -714,45 +731,6 @@ drag_and_drop_selection_enabled = false
 middle_mouse_paste_enabled = false
 autowrap_mode = 0
 virtual_keyboard_enabled = false
-
-[node name="NotificationWindow" parent="Windows" unique_id=2088697027 groups=["window"] instance=ExtResource("10_2hmho")]
-visible = false
-layout_mode = 1
-anchor_left = 0.73600006
-anchor_top = 0.358
-anchor_right = 0.73600006
-anchor_bottom = 0.358
-offset_left = 778.56
-offset_top = 209.68
-offset_right = 1034.56
-offset_bottom = 313.68
-title = "Notification"
-
-[node name="Warning" type="TextureRect" parent="Windows/NotificationWindow" unique_id=288938246]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 40.0
-offset_right = 56.0
-offset_bottom = 80.0
-texture = ExtResource("17_dfejr")
-expand_mode = 1
-
-[node name="Label" type="Label" parent="Windows/NotificationWindow" unique_id=2117243756]
-custom_minimum_size = Vector2(180, 0)
-layout_mode = 0
-offset_left = 64.0
-offset_top = 32.0
-offset_right = 250.0
-offset_bottom = 94.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "New level reached!
-New rule added!"
-vertical_alignment = 1
-
-[node name="Notif" type="AudioStreamPlayer" parent="Windows/NotificationWindow" unique_id=1053801789]
-stream = ExtResource("20_4sqgv")
-volume_db = -10.0
 
 [node name="Browser" parent="Windows" unique_id=1415093049 groups=["window"] instance=ExtResource("10_2hmho")]
 unique_name_in_owner = true
@@ -4930,6 +4908,155 @@ offset_right = 218.759
 offset_bottom = -70.80005
 placeholder_text = "e-worker"
 to_find = Array[String](["e-worker", "e-workers", "eworker", "eworkers", "e worker", "e workers"])
+
+[node name="CountDownWindow" parent="Windows" unique_id=2088697027 groups=["window"] instance=ExtResource("10_2hmho")]
+layout_mode = 1
+anchor_left = 0.73600006
+anchor_top = 0.358
+anchor_right = 0.73600006
+anchor_bottom = 0.358
+offset_left = 324.56
+offset_top = 179.68
+offset_right = 755.56
+offset_bottom = 360.68
+title = "Countdown"
+
+[node name="CountDownManager" type="Control" parent="Windows/CountDownWindow" unique_id=1223211438]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("25_5syhw")
+
+[node name="Warning" type="TextureRect" parent="Windows/CountDownWindow" unique_id=288938246]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 40.0
+offset_right = 56.0
+offset_bottom = 80.0
+texture = ExtResource("17_dfejr")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Windows/CountDownWindow" unique_id=2117243756]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 0
+offset_left = 64.0
+offset_top = 32.0
+offset_right = 250.0
+offset_bottom = 94.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "New level reached!
+New rule added!"
+vertical_alignment = 1
+
+[node name="Notif" type="AudioStreamPlayer" parent="Windows/CountDownWindow" unique_id=1053801789]
+stream = ExtResource("20_4sqgv")
+volume_db = -10.0
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/CountDownWindow" unique_id=645220613]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.019
+anchor_top = 0.174
+anchor_right = 0.981
+anchor_bottom = 0.957
+offset_left = -0.055999756
+offset_top = 0.5059967
+offset_right = 0.055908203
+offset_bottom = -0.08795166
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.056525104, 0.0018825742, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Windows/CountDownWindow/ColorRect3" unique_id=435261104]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Windows/CountDownWindow/ColorRect3" unique_id=200304036]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/CountDownWindow/ColorRect3" unique_id=1041490442]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Windows/CountDownWindow/ColorRect3" unique_id=1909365865]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="Label" type="Label" parent="Windows/CountDownWindow/ColorRect3/ColorRect4" unique_id=1178501095]
+layout_mode = 0
+offset_left = 102.867004
+offset_top = -139.12906
+offset_right = 146.867
+offset_bottom = -1.1290588
+theme_override_colors/font_color = Color(0.99999994, 0.17005175, 0.28454703, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+theme_override_font_sizes/font_size = 87
+text = "0"
+vertical_alignment = 1
+
+[node name="Minute" type="Label" parent="Windows/CountDownWindow/ColorRect3/ColorRect4" unique_id=359757602]
+layout_mode = 0
+offset_left = 148.867
+offset_top = -139.12906
+offset_right = 192.867
+offset_bottom = -1.1290588
+theme_override_colors/font_color = Color(0.99999994, 0.17005175, 0.28454703, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+theme_override_font_sizes/font_size = 87
+text = "4"
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Windows/CountDownWindow/ColorRect3/ColorRect4" unique_id=1157558467]
+layout_mode = 0
+offset_left = 196.867
+offset_top = -139.12906
+offset_right = 212.867
+offset_bottom = -1.1290588
+theme_override_colors/font_color = Color(0.99999994, 0.17005175, 0.28454703, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+theme_override_font_sizes/font_size = 87
+text = ":"
+vertical_alignment = 1
+
+[node name="Seconds" type="Label" parent="Windows/CountDownWindow/ColorRect3/ColorRect4" unique_id=860849353]
+layout_mode = 0
+offset_left = 213.867
+offset_top = -139.12906
+offset_right = 300.867
+offset_bottom = -1.1290588
+theme_override_colors/font_color = Color(0.99999994, 0.17005175, 0.28454703, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+theme_override_font_sizes/font_size = 87
+text = "59"
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="Windows/CountDownWindow" unique_id=1114284354]
+wait_time = 240.0
+one_shot = true
 
 [connection signal="pressed" from="TaskBar/Start" to="." method="_on_start_pressed"]
 [connection signal="caret_changed" from="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" to="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" method="_on_caret_changed"]
