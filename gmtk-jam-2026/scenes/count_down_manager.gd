@@ -10,7 +10,7 @@ extends Control
 
 func _process(delta: float) -> void:
 	if not countdown_timer.is_stopped():
-		minute.text =  str(int(countdown_timer.time_left / 60))
+		minute.text =  str(int(countdown_timer.time_left / 60)).pad_zeros(2)
 		seconds.text = str(int(countdown_timer.time_left) % 60).pad_zeros(2)
 		
 		if countdown_timer.time_left > 180:

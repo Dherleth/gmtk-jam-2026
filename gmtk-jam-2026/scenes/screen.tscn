@@ -5260,7 +5260,7 @@ offset_bottom = -113.80005
 theme_override_colors/font_color = Color(0.38039216, 0.7764706, 1, 1)
 theme_override_colors/font_uneditable_color = Color(0, 1, 0, 1)
 placeholder_text = "working"
-to_find = Array[String](["working", "walking", "speaking", "understanding", "behaving"])
+to_find = Array[String](["working", "walking", "speaking", "understanding", "behaving", "acting"])
 
 [node name="EInput20" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/InputGroup4" unique_id=2058525909 instance=ExtResource("25_dfejr")]
 layout_mode = 0
@@ -5296,7 +5296,6 @@ placeholder_text = "e-worker"
 to_find = Array[String](["e-worker", "e-workers", "eworker", "eworkers", "e worker", "e workers"])
 
 [node name="CountDownWindow" parent="Windows" unique_id=2088697027 groups=["window"] instance=ExtResource("10_2hmho")]
-visible = false
 layout_mode = 1
 anchor_left = 0.73600006
 anchor_top = 0.358
@@ -5393,28 +5392,16 @@ grow_horizontal = 2
 grow_vertical = 0
 color = Color(0.818447, 0.839665, 0.842692, 1)
 
-[node name="Label" type="Label" parent="Windows/CountDownWindow/ColorRect3/ColorRect4" unique_id=1178501095]
-layout_mode = 0
-offset_left = 102.867004
-offset_top = -139.12906
-offset_right = 146.867
-offset_bottom = -1.1290588
-theme_override_colors/font_color = Color(0.99999994, 0.17005175, 0.28454703, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-theme_override_font_sizes/font_size = 87
-text = "0"
-vertical_alignment = 1
-
 [node name="Minute" type="Label" parent="Windows/CountDownWindow/ColorRect3/ColorRect4" unique_id=359757602]
 layout_mode = 0
-offset_left = 148.867
+offset_left = 107.867004
 offset_top = -139.12906
-offset_right = 192.867
+offset_right = 194.867
 offset_bottom = -1.1290588
 theme_override_colors/font_color = Color(0.99999994, 0.17005175, 0.28454703, 1)
 theme_override_fonts/font = ExtResource("3_sp806")
 theme_override_font_sizes/font_size = 87
-text = "4"
+text = "04"
 vertical_alignment = 1
 
 [node name="Label3" type="Label" parent="Windows/CountDownWindow/ColorRect3/ColorRect4" unique_id=1157558467]
@@ -5442,7 +5429,7 @@ text = "00"
 vertical_alignment = 1
 
 [node name="CountdownTimer" type="Timer" parent="Windows/CountDownWindow" unique_id=1114284354]
-wait_time = 20.0
+wait_time = 240.0
 one_shot = true
 
 [node name="CreditWindow" parent="Windows" unique_id=398991263 groups=["window"] instance=ExtResource("10_2hmho")]

@@ -9,6 +9,7 @@ signal dezoom
 @onready var explosion_sound: AudioStreamPlayer = $ExplosionSound
 @onready var credit_window: Control = $Windows/CreditWindow
 @onready var tick_sound: AudioStreamPlayer = $Tick
+@onready var count_down_window: Control = $Windows/CountDownWindow
 
 var played_ticking_sound = false
 var reverted = true
@@ -63,8 +64,7 @@ func start_count_down() -> void:
 func _on_blow_it_up_button_pressed() -> void:
 	office_music.stop()
 	tick_sound.play()
-	count_down_button.pressed.emit()
-	count_down_button.set_pressed_no_signal(false)
+	count_down_window.spawn()
 	encrypted_button.pressed.emit()
 	encrypted_button.set_pressed_no_signal(false)
 	countdown_timer.wait_time = 10
