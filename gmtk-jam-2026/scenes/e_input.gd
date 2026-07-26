@@ -6,8 +6,8 @@ signal solved(text: String)
 
 @export var to_find: Array[String]
 
-var color_found = Color(0, 255, 0, 1)
-var color_standard = Color(0.059, 0.855, 0.632, 1.0)
+var color_found = Color("00ff00ff")
+var color_standard = Color("61c6ff")
 var found = false
 
 
