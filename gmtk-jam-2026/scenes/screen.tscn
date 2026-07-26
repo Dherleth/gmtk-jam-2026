@@ -4595,9 +4595,9 @@ anchor_top = 0.047
 anchor_right = 0.985
 anchor_bottom = 0.936
 offset_left = -13.595848
-offset_top = -480.84705
+offset_top = -492.84705
 offset_right = 8.252258
-offset_bottom = -23.165066
+offset_bottom = -400.73605
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/default_color = Color(0.60336375, 0.99999994, 0.81171376, 1)
@@ -4607,33 +4607,115 @@ text = "Quick ! We're missing crucial information about the e-center:
 
 The company is called __________________________
 It was founded by __________________________, __________________________ and __________________________
-People were __________________________ about the __________________________.
-
-I see, could you send us more info about the CEO ?
-
-The company was __________________________ to __________________________
-and Martin Saltman __________________________ shortly after.
-
-He __________________________ to __________________________.
-
-Why ?
-
-The company was losing __________________________
-because the __________________________ use a lot of __________________________
-and the terrible __________________________ forced the company to __________________________ their e-helper.
-
-What happened then ?
-
-The __________________________ was created which started taking __________________________ away from people.
-It is capable of __________________________ people and will be used as such.
-__________________________ was the first person to be __________________________ by an __________________________.
-
-Great, now that you found your name on that list and all their secrets it's time to blow things up, don't you think ?"
+People were __________________________ about the __________________________."
 autowrap_mode = 2
 shortcut_keys_enabled = false
 drag_and_drop_selection_enabled = false
 
-[node name="EInput" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=915415110 instance=ExtResource("25_dfejr")]
+[node name="Text2" type="RichTextLabel" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=14463866]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = -12.403946
+offset_top = -396.84705
+offset_right = 9.444153
+offset_bottom = -286.73605
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.60336375, 0.99999994, 0.81171376, 1)
+theme_override_fonts/normal_font = ExtResource("3_sp806")
+bbcode_enabled = true
+text = "I see, could you send us more info about the CEO ?
+
+The company was __________________________ to __________________________
+and Martin Saltman __________________________ shortly after.
+
+He __________________________ to __________________________."
+autowrap_mode = 2
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Text3" type="RichTextLabel" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=635880576]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = -13.595848
+offset_top = -284.84705
+offset_right = 8.252258
+offset_bottom = -201.73605
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.60336375, 0.99999994, 0.81171376, 1)
+theme_override_fonts/normal_font = ExtResource("3_sp806")
+bbcode_enabled = true
+text = "Why ?
+
+The company was losing __________________________
+because the __________________________ use a lot of __________________________
+and the terrible __________________________ forced the company to __________________________ their e-helper."
+autowrap_mode = 2
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Text4" type="RichTextLabel" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=748743762]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = -13.595848
+offset_top = -187.84705
+offset_right = 8.252258
+offset_bottom = -81.736046
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.60336375, 0.99999994, 0.81171376, 1)
+theme_override_fonts/normal_font = ExtResource("3_sp806")
+bbcode_enabled = true
+text = "What happened then ?
+
+The __________________________ was created which started taking __________________________ away from people.
+It is capable of __________________________ people and will be used as such.
+__________________________ was the first person to be __________________________ by an __________________________."
+autowrap_mode = 2
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Text5" type="RichTextLabel" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=473521191]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = -13.595848
+offset_top = -64.847046
+offset_right = 8.252258
+offset_bottom = -47.73605
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.60336375, 0.99999994, 0.81171376, 1)
+theme_override_fonts/normal_font = ExtResource("3_sp806")
+bbcode_enabled = true
+text = "Great, now that you found your name on that list and all their secrets it's time to blow things up, don't you think ?"
+autowrap_mode = 2
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="InputGroup" type="Control" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=1150804292]
+anchors_preset = 0
+offset_top = -12.0
+offset_right = 40.0
+offset_bottom = 28.0
+
+[node name="EInput" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/InputGroup" unique_id=915415110 instance=ExtResource("25_dfejr")]
 layout_mode = 0
 offset_left = 154.759
 offset_top = -460.80005
@@ -4642,7 +4724,7 @@ offset_bottom = -429.80005
 placeholder_text = "open4all"
 to_find = Array[String](["open4all", "open 4 all"])
 
-[node name="EInput2" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=1598234536 instance=ExtResource("25_dfejr")]
+[node name="EInput2" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/InputGroup" unique_id=1598234536 instance=ExtResource("25_dfejr")]
 layout_mode = 0
 offset_left = 227.759
 offset_top = -441.80005
@@ -4651,7 +4733,7 @@ offset_bottom = -410.80005
 placeholder_text = "melon husk"
 to_find = Array[String](["melon husk"])
 
-[node name="EInput3" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=1566777648 instance=ExtResource("25_dfejr")]
+[node name="EInput3" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/InputGroup" unique_id=1566777648 instance=ExtResource("25_dfejr")]
 layout_mode = 0
 offset_left = 368.759
 offset_top = -442.80005
@@ -4660,7 +4742,7 @@ offset_bottom = -411.80005
 placeholder_text = "martin saltman"
 to_find = Array[String](["martin saltman"])
 
-[node name="EInput4" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=1728969754 instance=ExtResource("25_dfejr")]
+[node name="EInput4" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/InputGroup" unique_id=1728969754 instance=ExtResource("25_dfejr")]
 layout_mode = 0
 offset_left = 641.75903
 offset_top = -442.80005
@@ -4669,7 +4751,7 @@ offset_bottom = -411.80005
 placeholder_text = "john schoolman"
 to_find = Array[String](["john schoolman"])
 
-[node name="EInput5" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=1532507617 instance=ExtResource("25_dfejr")]
+[node name="EInput5" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/InputGroup" unique_id=1532507617 instance=ExtResource("25_dfejr")]
 layout_mode = 0
 offset_left = 92.759
 offset_top = -423.80005
@@ -4678,7 +4760,7 @@ offset_bottom = -392.80005
 placeholder_text = "optimistic"
 to_find = Array[String](["optimistic", "interested", "positiv"])
 
-[node name="EInput6" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=20534744 instance=ExtResource("25_dfejr")]
+[node name="EInput6" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/InputGroup" unique_id=20534744 instance=ExtResource("25_dfejr")]
 layout_mode = 0
 offset_left = 470.759
 offset_top = -421.80005
@@ -4687,7 +4769,13 @@ offset_bottom = -390.80005
 placeholder_text = "e-centers"
 to_find = Array[String](["e-centers", "ecenters", "e-helpers", "ehelpers"])
 
-[node name="EInput7" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=28882638 instance=ExtResource("25_dfejr")]
+[node name="InputGroup2" type="Control" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=1170084851]
+anchors_preset = 0
+offset_top = -12.0
+offset_right = 40.0
+offset_bottom = 28.0
+
+[node name="EInput7" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/InputGroup2" unique_id=28882638 instance=ExtResource("25_dfejr")]
 layout_mode = 0
 offset_left = 124.759
 offset_top = -359.80005
@@ -4696,7 +4784,7 @@ offset_bottom = -328.80005
 placeholder_text = "sold"
 to_find = Array[String](["sold"])
 
-[node name="EInput8" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=566348220 instance=ExtResource("25_dfejr")]
+[node name="EInput8" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/InputGroup2" unique_id=566348220 instance=ExtResource("25_dfejr")]
 layout_mode = 0
 offset_left = 388.759
 offset_top = -358.80005
@@ -4705,7 +4793,7 @@ offset_bottom = -327.80005
 placeholder_text = "closeb$"
 to_find = Array[String](["closeb$"])
 
-[node name="EInput9" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=1293727678 instance=ExtResource("25_dfejr")]
+[node name="EInput9" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/InputGroup2" unique_id=1293727678 instance=ExtResource("25_dfejr")]
 layout_mode = 0
 offset_left = 226.759
 offset_top = -340.80005
@@ -4714,7 +4802,7 @@ offset_bottom = -309.80005
 placeholder_text = "disappeared"
 to_find = Array[String](["disappeared", "vanished"])
 
-[node name="EInput10" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=1711640653 instance=ExtResource("25_dfejr")]
+[node name="EInput10" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/InputGroup2" unique_id=1711640653 instance=ExtResource("25_dfejr")]
 layout_mode = 0
 offset_left = 28.759003
 offset_top = -311.80005
@@ -4723,7 +4811,7 @@ offset_bottom = -280.80005
 placeholder_text = "???"
 to_find = Array[String](["???"])
 
-[node name="EInput11" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=2007084264 instance=ExtResource("25_dfejr")]
+[node name="EInput11" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/InputGroup2" unique_id=2007084264 instance=ExtResource("25_dfejr")]
 layout_mode = 0
 offset_left = 290.759
 offset_top = -311.80005
@@ -4732,7 +4820,13 @@ offset_bottom = -280.80005
 placeholder_text = "???"
 to_find = Array[String](["???"])
 
-[node name="EInput12" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=512236299 instance=ExtResource("25_dfejr")]
+[node name="InputGroup3" type="Control" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=800949996]
+anchors_preset = 0
+offset_top = -12.0
+offset_right = 40.0
+offset_bottom = 28.0
+
+[node name="EInput12" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/InputGroup3" unique_id=512236299 instance=ExtResource("25_dfejr")]
 layout_mode = 0
 offset_left = 191.759
 offset_top = -250.80005
@@ -4741,7 +4835,7 @@ offset_bottom = -219.80005
 placeholder_text = "money"
 to_find = Array[String](["money"])
 
-[node name="EInput13" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=356420135 instance=ExtResource("25_dfejr")]
+[node name="EInput13" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/InputGroup3" unique_id=356420135 instance=ExtResource("25_dfejr")]
 layout_mode = 0
 offset_left = 88.759
 offset_top = -231.80005
@@ -4750,7 +4844,7 @@ offset_bottom = -200.80005
 placeholder_text = "e-centers"
 to_find = Array[String](["e-centers", "ecenters"])
 
-[node name="EInput14" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=942491050 instance=ExtResource("25_dfejr")]
+[node name="EInput14" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/InputGroup3" unique_id=942491050 instance=ExtResource("25_dfejr")]
 layout_mode = 0
 offset_left = 407.759
 offset_top = -231.80005
@@ -4759,7 +4853,7 @@ offset_bottom = -200.80005
 placeholder_text = "energy"
 to_find = Array[String](["energy", "resources", "materials", "rare materials"])
 
-[node name="EInput15" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=204526372 instance=ExtResource("25_dfejr")]
+[node name="EInput15" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/InputGroup3" unique_id=204526372 instance=ExtResource("25_dfejr")]
 layout_mode = 0
 offset_left = 192.759
 offset_top = -212.80005
@@ -4768,16 +4862,22 @@ offset_bottom = -181.80005
 placeholder_text = "???"
 to_find = Array[String](["???"])
 
-[node name="EInput16" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=1130432391 instance=ExtResource("25_dfejr")]
+[node name="EInput16" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/InputGroup3" unique_id=1130432391 instance=ExtResource("25_dfejr")]
 layout_mode = 0
-offset_left = 505.75903
+offset_left = 505.759
 offset_top = -216.80005
 offset_right = 606.75903
 offset_bottom = -185.80005
 placeholder_text = "???"
 to_find = Array[String](["???"])
 
-[node name="EInput17" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=942137360 instance=ExtResource("25_dfejr")]
+[node name="InputGroup4" type="Control" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=232299104]
+anchors_preset = 0
+offset_top = -12.0
+offset_right = 40.0
+offset_bottom = 28.0
+
+[node name="EInput17" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/InputGroup4" unique_id=942137360 instance=ExtResource("25_dfejr")]
 layout_mode = 0
 offset_left = 39.759033
 offset_top = -152.80005
@@ -4786,7 +4886,7 @@ offset_bottom = -121.80005
 placeholder_text = "hyperscope hub"
 to_find = Array[String](["hyperscope hub"])
 
-[node name="EInput18" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=1494552172 instance=ExtResource("25_dfejr")]
+[node name="EInput18" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/InputGroup4" unique_id=1494552172 instance=ExtResource("25_dfejr")]
 layout_mode = 0
 offset_left = 495.759
 offset_top = -150.80005
@@ -4795,7 +4895,7 @@ offset_bottom = -119.80005
 placeholder_text = "jobs"
 to_find = Array[String](["jobs"])
 
-[node name="EInput19" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=2006345174 instance=ExtResource("25_dfejr")]
+[node name="EInput19" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/InputGroup4" unique_id=2006345174 instance=ExtResource("25_dfejr")]
 layout_mode = 0
 offset_left = 160.759
 offset_top = -136.80005
@@ -4804,7 +4904,7 @@ offset_bottom = -105.80005
 placeholder_text = "immitating"
 to_find = Array[String](["immitating"])
 
-[node name="EInput20" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=2058525909 instance=ExtResource("25_dfejr")]
+[node name="EInput20" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/InputGroup4" unique_id=2058525909 instance=ExtResource("25_dfejr")]
 layout_mode = 0
 offset_left = 9.759003
 offset_top = -118.80005
@@ -4813,7 +4913,7 @@ offset_bottom = -87.80005
 placeholder_text = "???"
 to_find = Array[String](["???"])
 
-[node name="EInput21" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=1247196156 instance=ExtResource("25_dfejr")]
+[node name="EInput21" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/InputGroup4" unique_id=1247196156 instance=ExtResource("25_dfejr")]
 layout_mode = 0
 offset_left = 413.759
 offset_top = -119.80005
@@ -4822,7 +4922,7 @@ offset_bottom = -88.80005
 placeholder_text = "killed"
 to_find = Array[String](["killed"])
 
-[node name="EInput22" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=464289757 instance=ExtResource("25_dfejr")]
+[node name="EInput22" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/InputGroup4" unique_id=464289757 instance=ExtResource("25_dfejr")]
 layout_mode = 0
 offset_left = 117.759
 offset_top = -101.80005
@@ -4879,3 +4979,7 @@ to_find = Array[String](["e-worker", "e-workers", "eworker", "eworkers", "e work
 [connection signal="focus_entered" from="Windows/Folders/Windows/ArticleCWindow/ColorRect3/Text" to="Windows/Folders/Windows/ArticleCWindow/ColorRect3/Text" method="_on_focus_entered"]
 [connection signal="focus_entered" from="Windows/Folders/Windows/ArticleFWindow/ColorRect3/Text" to="Windows/Folders/Windows/ArticleFWindow/ColorRect3/Text" method="_on_focus_entered"]
 [connection signal="focus_entered" from="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/Text" to="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/Text" method="_on_focus_entered"]
+[connection signal="focus_entered" from="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/Text2" to="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/Text2" method="_on_focus_entered"]
+[connection signal="focus_entered" from="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/Text3" to="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/Text3" method="_on_focus_entered"]
+[connection signal="focus_entered" from="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/Text4" to="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/Text4" method="_on_focus_entered"]
+[connection signal="focus_entered" from="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/Text5" to="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/Text5" method="_on_focus_entered"]

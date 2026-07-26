@@ -1,5 +1,6 @@
 @tool
 extends LineEdit
+class_name EInput
 
 signal solved(text: String)
 
@@ -7,6 +8,7 @@ signal solved(text: String)
 
 var color_found = Color(0, 255, 0, 1)
 var color_standard = Color(0.059, 0.855, 0.632, 1.0)
+var found = false
 
 
 func _ready() -> void:
@@ -28,6 +30,7 @@ func _on_text_changed(new_text: String) -> void:
 	if to_find.has(new_text.to_lower()):
 		editable = false
 		add_theme_color_override("font_color", color_found)
+		found = true
 		solved.emit(new_text)
 	else:
 		add_theme_color_override("font_color", color_standard)
