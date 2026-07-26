@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://c2h0iof2f0jt8" path="res://scenes/e-input.tscn" id="25_dfejr"]
 [ext_resource type="AudioStream" uid="uid://bi47cnlxch3wb" path="res://assets/audio/win_pos_notif.wav" id="29_4sqgv"]
 [ext_resource type="AudioStream" uid="uid://dopvhkhbi2veo" path="res://assets/audio/explosion_close_long_ufx_1.ogg" id="30_38t0m"]
+[ext_resource type="AudioStream" uid="uid://2apal32ij5m8" path="res://assets/audio/487725__lilmati__ticking-timer-05-sec.wav" id="31_cdnxo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sanry"]
 atlas = ExtResource("2_mml8x")
@@ -5441,7 +5442,7 @@ text = "00"
 vertical_alignment = 1
 
 [node name="CountdownTimer" type="Timer" parent="Windows/CountDownWindow" unique_id=1114284354]
-wait_time = 240.0
+wait_time = 20.0
 one_shot = true
 
 [node name="CreditWindow" parent="Windows" unique_id=398991263 groups=["window"] instance=ExtResource("10_2hmho")]
@@ -5543,6 +5544,9 @@ drag_and_drop_selection_enabled = false
 
 [node name="ExplosionSound" type="AudioStreamPlayer" parent="." unique_id=992342386]
 stream = ExtResource("30_38t0m")
+
+[node name="Tick" type="AudioStreamPlayer" parent="." unique_id=163704445]
+stream = ExtResource("31_cdnxo")
 
 [connection signal="pressed" from="TaskBar/Start" to="." method="_on_start_pressed"]
 [connection signal="caret_changed" from="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" to="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" method="_on_caret_changed"]
