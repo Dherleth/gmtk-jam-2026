@@ -176,19 +176,32 @@ text = "00:00"
 flat = true
 script = ExtResource("4_06c6w")
 
-[node name="EncryptedButton" type="TextureButton" parent="TaskBar" unique_id=71384057 node_paths=PackedStringArray("window", "parent") groups=["apps"]]
+[node name="EncryptedButton" type="TextureButton" parent="TaskBar" unique_id=1194831103 node_paths=PackedStringArray("window", "parent") groups=["apps"]]
 layout_mode = 0
-offset_left = 92.0
-offset_top = -1.0
-offset_right = 193.0
-offset_bottom = 40.0
-texture_normal = ExtResource("10_esotp")
+offset_left = 98.0
+offset_top = 4.0
+offset_right = 181.0
+offset_bottom = 35.0
+texture_normal = ExtResource("7_0kugv")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("6_2hpia")
 window = NodePath("../../Windows/EncryptedMessage/EncryptedWindow")
 parent = NodePath("../..")
 is_in_task_bar = true
+
+[node name="Label" type="Label" parent="TaskBar/EncryptedButton" unique_id=534038550]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 1.0
+offset_right = 73.0
+offset_bottom = 27.0
+theme_override_colors/font_color = Color(0.12222696, 0.6646925, 0.30863708, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+theme_override_font_sizes/font_size = 20
+text = "xx"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CountDownButton" type="TextureButton" parent="TaskBar" unique_id=1736174403 node_paths=PackedStringArray("window", "parent") groups=["apps"]]
 layout_mode = 0
