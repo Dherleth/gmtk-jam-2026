@@ -5159,7 +5159,7 @@ offset_bottom = -291.80005
 theme_override_colors/font_color = Color(0.38039216, 0.7764706, 1, 1)
 theme_override_colors/font_uneditable_color = Color(0, 1, 0, 1)
 placeholder_text = "hawaii"
-to_find = Array[String](["hawaii"])
+to_find = Array[String](["hawaii", "honolulu"])
 
 [node name="InputGroup3" type="Control" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=800949996]
 anchors_preset = 0
@@ -5220,7 +5220,7 @@ offset_bottom = -194.80005
 theme_override_colors/font_color = Color(0.38039216, 0.7764706, 1, 1)
 theme_override_colors/font_uneditable_color = Color(0, 1, 0, 1)
 placeholder_text = "upgrade"
-to_find = Array[String](["upgrade"])
+to_find = Array[String](["upgrade", "update"])
 
 [node name="InputGroup4" type="Control" parent="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4" unique_id=232299104]
 anchors_preset = 0
