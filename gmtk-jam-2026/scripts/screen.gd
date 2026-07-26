@@ -4,6 +4,7 @@ signal dezoom
 @onready var encrypted_button: TextureButton = $TaskBar/EncryptedButton
 @onready var count_down_button: TextureButton = $TaskBar/CountDownButton
 @onready var countdown_timer: Timer = $Windows/CountDownWindow/CountdownTimer
+@onready var notif: AudioStreamPlayer = $Windows/CountDownWindow/Notif
 
 
 func spawn(window):
@@ -34,6 +35,7 @@ func hide_countdown_window() ->void:
 	
 func show_encrypted_window() -> void:
 	encrypted_button.pressed.emit()
+	notif.play()
 	encrypted_button.set_pressed_no_signal(true)
 	
 func start_count_down() -> void:
