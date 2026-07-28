@@ -1,0 +1,5 @@
+res://scenes/the_office.tscn
+res://themes/win95_theme.tres
+res://addons/dialogue_manager/theme.tres
+res://scripts/monitor.gd
+res://scenes/screen.tscn

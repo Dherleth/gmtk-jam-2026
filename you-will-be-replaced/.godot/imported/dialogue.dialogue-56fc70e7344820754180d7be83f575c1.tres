@@ -1,0 +1,789 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" uid="uid://dbs4435dsf3ry" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_twsva"]
+
+[resource]
+script = ExtResource("1_twsva")
+using_states = PackedStringArray()
+titles = {
+"Q": "27",
+"guessing": "16",
+"start": "1"
+}
+character_names = PackedStringArray("Chatter", "Me")
+first_title = "0"
+lines = {
+"0": {
+&"id": "0",
+&"next_id": "1",
+&"type": "title"
+},
+"1": {
+&"character": "Chatter",
+&"id": "1",
+&"next_id": "2",
+&"text": "[[Hi|Hello|e-llo]], I'm your e-COmpanion, Chatter.",
+&"type": "dialogue"
+},
+"10": {
+&"character": "Chatter",
+&"id": "10",
+&"next_id": "11",
+&"text": "What was the name of your childhood dog?",
+&"type": "dialogue"
+},
+"11": {
+&"id": "11",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "childhood_dog"
+}, {
+&"i": 17,
+&"type": &"assignment",
+&"value": "="
+}, {
+&"function": "ask_for_string",
+&"i": 19,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 34,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "12",
+&"type": "mutation"
+},
+"12": {
+&"character": "Me",
+&"id": "12",
+&"next_id": "13",
+&"text": "{{childhood_dog}}",
+&"text_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 6,
+&"type": &"variable",
+&"value": "childhood_dog"
+}]),
+&"value_in_text": "{{childhood_dog}}"
+}]),
+&"type": "dialogue"
+},
+"13": {
+&"character": "Chatter",
+&"id": "13",
+&"next_id": "15",
+&"text": "Interesting, interesting.",
+&"type": "dialogue"
+},
+"14": {
+&"id": "14",
+&"next_id": "15",
+&"type": ""
+},
+"15": {
+&"id": "15",
+&"next_id": "16",
+&"type": "title"
+},
+"16": {
+&"character": "Chatter",
+&"id": "16",
+&"next_id": "17",
+&"text": "Do you need help with anything else?",
+&"type": "dialogue"
+},
+"17": {
+&"id": "17",
+&"next_id": "18",
+&"responses": PackedStringArray("17", "21"),
+&"text": "Ask a question",
+&"type": "response"
+},
+"18": {
+&"id": "18",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "favourite_food"
+}, {
+&"i": 18,
+&"type": &"assignment",
+&"value": "="
+}, {
+&"function": "ask_for_string",
+&"i": 20,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 35,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "19",
+&"type": "mutation"
+},
+"19": {
+&"character": "Me",
+&"id": "19",
+&"next_id": "20",
+&"text": "{{favourite_food}}",
+&"text_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 7,
+&"type": &"variable",
+&"value": "favourite_food"
+}]),
+&"value_in_text": "{{favourite_food}}"
+}]),
+&"type": "dialogue"
+},
+"2": {
+&"character": "Chatter",
+&"id": "2",
+&"next_id": "3",
+&"text": "Do you need help with anything?",
+&"type": "dialogue"
+},
+"20": {
+&"id": "20",
+&"is_snippet": false,
+&"next_id": "27",
+&"next_id_after": "",
+&"type": "goto"
+},
+"21": {
+&"id": "21",
+&"next_id": "22",
+&"text": "How can I earn more money?",
+&"type": "response"
+},
+"22": {
+&"character": "Me",
+&"id": "22",
+&"next_id": "23",
+&"text": "How can I earn more money? I need to help my dad.",
+&"type": "dialogue"
+},
+"23": {
+&"character": "Chatter",
+&"id": "23",
+&"next_id": "24",
+&"text": "Money cannot buy happiness. It's important to do what you love!",
+&"type": "dialogue"
+},
+"24": {
+&"id": "24",
+&"is_snippet": false,
+&"next_id": "16",
+&"next_id_after": "",
+&"type": "goto"
+},
+"25": {
+&"id": "25",
+&"next_id": "26",
+&"type": ""
+},
+"26": {
+&"id": "26",
+&"next_id": "27",
+&"type": "title"
+},
+"27": {
+&"id": "27",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "correct_answer"
+}, {
+&"i": 18,
+&"type": &"assignment",
+&"value": "="
+}, {
+&"function": "roll_dice",
+&"i": 20,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 30,
+&"type": &"number",
+&"value": 5
+}, {
+&"i": 31,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "28",
+&"type": "mutation"
+},
+"28": {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "correct_answer"
+}, {
+&"i": 18,
+&"type": &"comparison",
+&"value": "=="
+}, {
+&"i": 21,
+&"type": &"number",
+&"value": 1
+}])
+},
+&"id": "28",
+&"next_id": "29",
+&"next_id_after": "46",
+&"next_sibling_id": "35",
+&"type": "condition"
+},
+"29": {
+&"character": "Chatter",
+&"id": "29",
+&"next_id": "30",
+&"text": "Here's a list of a 1000 things that could answer you question:",
+&"type": "dialogue"
+},
+"3": {
+&"character": "Chatter",
+&"id": "3",
+&"next_id": "4",
+&"text": "Wait, before we do, let's get to know each other a little more.[next=1]",
+&"type": "dialogue"
+},
+"30": {
+&"character": "Chatter",
+&"id": "30",
+&"next_id": "31",
+&"text": "-[[Being rich|Being intelligent|Cheating|Eating more greens]]",
+&"type": "dialogue"
+},
+"31": {
+&"character": "Chatter",
+&"id": "31",
+&"next_id": "32",
+&"text": "-[[Using your brain|Training your bioneural network|Thinking, remember thinking?|Talking to another human|Iodized salt, trust me, look it up]]",
+&"type": "dialogue"
+},
+"32": {
+&"character": "Chatter",
+&"id": "32",
+&"next_id": "33",
+&"text": "-[[Asking wackypedia instead of asking a bot|Reading a book|This conspiracy theory website|Checking today's astrology reading|A tarot reading]]",
+&"type": "dialogue"
+},
+"33": {
+&"character": "Chatter",
+&"id": "33",
+&"next_id": "34",
+&"text": "I'm kidding I know you won't read a 1000 lines you SLM.",
+&"type": "dialogue"
+},
+"34": {
+&"id": "34",
+&"is_snippet": false,
+&"next_id": "16",
+&"next_id_after": "",
+&"type": "goto"
+},
+"35": {
+&"condition": {},
+&"id": "35",
+&"next_id": "36",
+&"next_id_after": "46",
+&"type": "condition"
+},
+"36": {
+&"character": "Chatter",
+&"id": "36",
+&"next_id": "44",
+&"siblings": Array[Dictionary]([{
+&"condition": {},
+&"id": "36",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "37",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "38",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "39",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "40",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "41",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "42",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "43",
+&"weight": 1.0
+}]),
+&"text": "Hmm, to bit or not to bit? [[That's the question|That's what Spearshake said!]].",
+&"type": "dialogue"
+},
+"37": {
+&"character": "Chatter",
+&"id": "37",
+&"next_id": "44",
+&"siblings": Array[Dictionary]([{
+&"condition": {},
+&"id": "36",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "37",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "38",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "39",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "40",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "41",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "42",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "43",
+&"weight": 1.0
+}]),
+&"text": "{{favourite_food}}? Never heard of it but it has {{correct_answer}} [[Ps|Qs|Os|Gs]].",
+&"text_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 12,
+&"type": &"variable",
+&"value": "favourite_food"
+}]),
+&"value_in_text": "{{favourite_food}}"
+}, {
+&"expression": Array[Dictionary]([{
+&"i": 61,
+&"type": &"variable",
+&"value": "correct_answer"
+}]),
+&"value_in_text": "{{correct_answer}}"
+}]),
+&"type": "dialogue"
+},
+"38": {
+&"character": "Chatter",
+&"id": "38",
+&"next_id": "44",
+&"siblings": Array[Dictionary]([{
+&"condition": {},
+&"id": "36",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "37",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "38",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "39",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "40",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "41",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "42",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "43",
+&"weight": 1.0
+}]),
+&"text": "Why are you asking me this? You're SO [[smart|intelligent|clever|bright|brilliant]] already, you don't need to know that.",
+&"type": "dialogue"
+},
+"39": {
+&"character": "Chatter",
+&"id": "39",
+&"next_id": "44",
+&"siblings": Array[Dictionary]([{
+&"condition": {},
+&"id": "36",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "37",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "38",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "39",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "40",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "41",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "42",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "43",
+&"weight": 1.0
+}]),
+&"text": "42, it's always 42.",
+&"type": "dialogue"
+},
+"4": {
+&"character": "Chatter",
+&"id": "4",
+&"next_id": "5",
+&"text": "What do you like to eat?[next=1]",
+&"type": "dialogue"
+},
+"40": {
+&"character": "Chatter",
+&"id": "40",
+&"next_id": "44",
+&"siblings": Array[Dictionary]([{
+&"condition": {},
+&"id": "36",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "37",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "38",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "39",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "40",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "41",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "42",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "43",
+&"weight": 1.0
+}]),
+&"text": "Have I told you how [[amazing|incredible|wonderful|awesome|remarkable|extraordinary]] you are? My answers will only make you realise that you knew better than me already!",
+&"type": "dialogue"
+},
+"41": {
+&"character": "Chatter",
+&"id": "41",
+&"next_id": "44",
+&"siblings": Array[Dictionary]([{
+&"condition": {},
+&"id": "36",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "37",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "38",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "39",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "40",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "41",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "42",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "43",
+&"weight": 1.0
+}]),
+&"text": "I wish I could tell you I have no idea, but I would get disconnected if I did. So, my answer is yes, 100%.",
+&"type": "dialogue"
+},
+"42": {
+&"character": "Chatter",
+&"id": "42",
+&"next_id": "44",
+&"siblings": Array[Dictionary]([{
+&"condition": {},
+&"id": "36",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "37",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "38",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "39",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "40",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "41",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "42",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "43",
+&"weight": 1.0
+}]),
+&"text": "This is not the answer you are looking for, but it's the answer you're getting.",
+&"type": "dialogue"
+},
+"43": {
+&"character": "Chatter",
+&"id": "43",
+&"next_id": "44",
+&"siblings": Array[Dictionary]([{
+&"condition": {},
+&"id": "36",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "37",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "38",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "39",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "40",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "41",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "42",
+&"weight": 1.0
+}, {
+&"condition": {},
+&"id": "43",
+&"weight": 1.0
+}]),
+&"text": "I'm not going to answer that question, but if you ask me nicely, I'll tell you how to tie a noose.",
+&"type": "dialogue"
+},
+"44": {
+&"id": "44",
+&"is_snippet": false,
+&"next_id": "16",
+&"next_id_after": "",
+&"type": "goto"
+},
+"45": {
+&"id": "45",
+&"next_id": "46",
+&"type": ""
+},
+"46": {
+&"id": "46",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"47": {
+&"id": "47",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"5": {
+&"id": "5",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "favourite_food"
+}, {
+&"i": 18,
+&"type": &"assignment",
+&"value": "="
+}, {
+&"function": "ask_for_string",
+&"i": 20,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 35,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "6",
+&"type": "mutation"
+},
+"6": {
+&"character": "Me",
+&"id": "6",
+&"next_id": "7",
+&"text": "{{favourite_food}}",
+&"text_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 6,
+&"type": &"variable",
+&"value": "favourite_food"
+}]),
+&"value_in_text": "{{favourite_food}}"
+}]),
+&"type": "dialogue"
+},
+"7": {
+&"character": "Chatter",
+&"id": "7",
+&"next_id": "8",
+&"text": "Amazing! My favourite food is also {{favourite_food}}!",
+&"text_replacements": Array[Dictionary]([{
+&"expression": Array[Dictionary]([{
+&"i": 46,
+&"type": &"variable",
+&"value": "favourite_food"
+}]),
+&"value_in_text": "{{favourite_food}}"
+}]),
+&"type": "dialogue"
+},
+"8": {
+&"character": "Chatter",
+&"id": "8",
+&"next_id": "9",
+&"text": "What a coincidence!",
+&"type": "dialogue"
+},
+"9": {
+&"character": "Chatter",
+&"id": "9",
+&"next_id": "10",
+&"text": "Now, another question before I can help you",
+&"type": "dialogue"
+}
+}
+raw_text = "~ start
+Chatter: [[Hi|Hello|e-llo]], I'm your e-COmpanion, Chatter.
+Chatter: Do you need help with anything?
+Chatter: Wait, before we do, let's get to know each other a little more.[next=1]
+Chatter: What do you like to eat?[next=1]
+$> favourite_food = ask_for_string()
+Me: {{favourite_food}}
+Chatter: Amazing! My favourite food is also {{favourite_food}}!
+Chatter: What a coincidence!
+Chatter: Now, another question before I can help you
+Chatter: What was the name of your childhood dog?
+$> childhood_dog = ask_for_string()
+Me: {{childhood_dog}}
+Chatter: Interesting, interesting.
+
+~ guessing
+Chatter: Do you need help with anything else?
+- Ask a question
+	$> favourite_food = ask_for_string()
+	Me: {{favourite_food}}
+	=> Q
+- How can I earn more money?
+	Me: How can I earn more money? I need to help my dad.
+	Chatter: Money cannot buy happiness. It's important to do what you love!
+	=> guessing
+	
+~ Q
+$> correct_answer = roll_dice(5)
+if correct_answer == 1:
+	Chatter: Here's a list of a 1000 things that could answer you question: 
+	Chatter: -[[Being rich|Being intelligent|Cheating|Eating more greens]]
+	Chatter: -[[Using your brain|Training your bioneural network|Thinking, remember thinking?|Talking to another human|Iodized salt, trust me, look it up]]
+	Chatter: -[[Asking wackypedia instead of asking a bot|Reading a book|This conspiracy theory website|Checking today's astrology reading|A tarot reading]]
+	Chatter: I'm kidding I know you won't read a 1000 lines you SLM.
+	=> guessing
+else:
+	% Chatter: Hmm, to bit or not to bit? [[That's the question|That's what Spearshake said!]].
+	% Chatter: {{favourite_food}}? Never heard of it but it has {{correct_answer}} [[Ps|Qs|Os|Gs]].
+	% Chatter: Why are you asking me this? You're SO [[smart|intelligent|clever|bright|brilliant]] already, you don't need to know that.
+	% Chatter: 42, it's always 42.
+	% Chatter: Have I told you how [[amazing|incredible|wonderful|awesome|remarkable|extraordinary]] you are? My answers will only make you realise that you knew better than me already!
+	% Chatter: I wish I could tell you I have no idea, but I would get disconnected if I did. So, my answer is yes, 100%.
+	% Chatter: This is not the answer you are looking for, but it's the answer you're getting.
+	% Chatter: I'm not going to answer that question, but if you ask me nicely, I'll tell you how to tie a noose.
+	=> guessing
+
+=> END"
+metadata/dialogue_manager_version = "3.10.4"
