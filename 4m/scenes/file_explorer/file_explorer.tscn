@@ -77,7 +77,7 @@ color = Color(0.818447, 0.839665, 0.842692, 1)
 
 [node name="Content" type="MarginContainer" parent="Window/ColorRect3" unique_id=1191563206]
 layout_mode = 0
-offset_left = 1.0
+offset_left = 1.0839844
 offset_top = 1.0
 offset_right = 757.084
 offset_bottom = 271.0

@@ -1,7 +1,6 @@
 @tool
 extends Control
 
-
 var name_column: Column
 var modified_column: Column
 var type_column: Column
@@ -26,6 +25,10 @@ func _ready() -> void:
 		
 
 func _structure_changed() -> void:
+	print("========================================")
+	_print_folder_content(structure)
+	print("========================================")
+	
 	if _get_columns():
 		name_column.empty()
 		modified_column.empty()
@@ -70,3 +73,14 @@ func _disconnect_resources():
 
 func _on_resource_changed():
 	_structure_changed()
+	
+
+func _print_folder_content(base: Array[FileExplorerEntry], tab := ""):
+	for entry in base:
+		if entry:
+			if entry.type == FileExplorerEntry.FileType.FOLDER:
+				var new_tab = tab + "\t"
+				print(tab, entry.file_name)
+				_print_folder_content(entry.folder_content, new_tab)
+			else:
+				print(tab, entry.file_name)
