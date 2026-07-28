@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://b77wn2mksdrav"]
+
+[ext_resource type="Script" uid="uid://b6hguo4lu7rfd" path="res://scenes/file_explorer/column/column.gd" id="1_2hfsu"]
+[ext_resource type="Texture2D" uid="uid://batdj5mg8cbym" path="res://assets/images/Windows_95.png" id="2_wjrg0"]
+[ext_resource type="FontFile" uid="uid://bueekk14nownm" path="res://assets/fonts/w95fa/W95F.otf" id="3_j3si8"]
+
+[node name="Column" type="MarginContainer" unique_id=781196372]
+offset_right = 284.0
+offset_bottom = 98.0
+script = ExtResource("1_2hfsu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1172077634]
+layout_mode = 2
+
+[node name="ColumnName" type="NinePatchRect" parent="VBoxContainer" unique_id=1539931616]
+custom_minimum_size = Vector2(40, 24)
+layout_mode = 2
+texture = ExtResource("2_wjrg0")
+region_rect = Rect2(94.258545, 95.58736, 719.0363, 580.8795)
+
+[node name="ColumnNameLabel" type="Label" parent="VBoxContainer/ColumnName" unique_id=742725787]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 15.0
+offset_top = -9.0
+offset_right = 99.0
+offset_bottom = 9.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_j3si8")
+text = "column name"
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=1026358753]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="LinesContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer" unique_id=1397294448]
+layout_mode = 2

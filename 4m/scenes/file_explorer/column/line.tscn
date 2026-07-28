@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://qdbwhi28mrch"]
+
+[ext_resource type="Texture2D" uid="uid://lfuedn4ag0ct" path="res://assets/images/Windows_95_FOLDER.png" id="1_iln04"]
+[ext_resource type="Script" uid="uid://dmaw4vrncaf32" path="res://scenes/file_explorer/column/line.gd" id="1_te81d"]
+[ext_resource type="FontFile" uid="uid://bueekk14nownm" path="res://assets/fonts/w95fa/W95F.otf" id="2_c5465"]
+
+[node name="Line" type="Control" unique_id=1175852061]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_te81d")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=116776352]
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 20.0
+
+[node name="Icon" type="Control" parent="HBoxContainer" unique_id=74018379]
+visible = false
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Icon" unique_id=847895169]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_vertical = 2
+texture = ExtResource("1_iln04")
+expand_mode = 1
+
+[node name="TextLabel" type="Label" parent="HBoxContainer" unique_id=1291778446]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_c5465")
+text = "some text"

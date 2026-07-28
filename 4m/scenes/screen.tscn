@@ -852,6 +852,7 @@ virtual_keyboard_enabled = false
 
 [node name="Browser" parent="Windows" unique_id=1415093049 groups=["window"] instance=ExtResource("10_2hmho")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchor_left = 0.146
 anchor_top = 0.049
@@ -4804,6 +4805,7 @@ texture = ExtResource("23_dfejr")
 expand_mode = 1
 
 [node name="EncryptedMessage" type="Control" parent="Windows" unique_id=12912388]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -5296,6 +5298,7 @@ placeholder_text = "e-worker"
 to_find = Array[String](["e-worker", "e-workers", "eworker", "eworkers", "e worker", "e workers"])
 
 [node name="CountDownWindow" parent="Windows" unique_id=2088697027 groups=["window"] instance=ExtResource("10_2hmho")]
+visible = false
 layout_mode = 1
 anchor_left = 0.73600006
 anchor_top = 0.358
