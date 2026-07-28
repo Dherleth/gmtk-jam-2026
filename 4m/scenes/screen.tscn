@@ -31,6 +31,8 @@
 [ext_resource type="AudioStream" uid="uid://bi47cnlxch3wb" path="res://assets/audio/win_pos_notif.wav" id="29_4sqgv"]
 [ext_resource type="AudioStream" uid="uid://dopvhkhbi2veo" path="res://assets/audio/explosion_close_long_ufx_1.ogg" id="30_38t0m"]
 [ext_resource type="AudioStream" uid="uid://ci0as80q34vjx" path="res://assets/audio/countdown.wav" id="31_cdnxo"]
+[ext_resource type="PackedScene" uid="uid://bxwvt7pkm8o36" path="res://scenes/file_explorer/file_explorer.tscn" id="32_1regh"]
+[ext_resource type="Script" uid="uid://bx2yrr211ihq5" path="res://scenes/file_explorer/file_explorer_entry.gd" id="33_a66ve"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sanry"]
 atlas = ExtResource("2_mml8x")
@@ -106,6 +108,26 @@ shader_parameter/vignette_amount = 0.205
 shader_parameter/vignette_intensity = 0.3
 shader_parameter/grille_amount = 0.05
 shader_parameter/brightness_boost = 1.2
+
+[sub_resource type="Resource" id="Resource_1regh"]
+script = ExtResource("33_a66ve")
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
+
+[sub_resource type="Resource" id="Resource_a66ve"]
+script = ExtResource("33_a66ve")
+type = 3
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
+
+[sub_resource type="Resource" id="Resource_0xeun"]
+script = ExtResource("33_a66ve")
+type = 3
+folder_content = Array[ExtResource("33_a66ve")]([SubResource("Resource_1regh"), SubResource("Resource_a66ve")])
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
+
+[sub_resource type="Resource" id="Resource_ee4v2"]
+script = ExtResource("33_a66ve")
+folder_content = null
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
 
 [node name="Screen" type="Control" unique_id=53907799]
 layout_mode = 3
@@ -5538,6 +5560,10 @@ stream = ExtResource("30_38t0m")
 [node name="Tick" type="AudioStreamPlayer" parent="." unique_id=163704445]
 stream = ExtResource("31_cdnxo")
 volume_db = -15.0
+
+[node name="FileExplorer" parent="." unique_id=414043701 instance=ExtResource("32_1regh")]
+layout_mode = 1
+structure = Array[ExtResource("33_a66ve")]([SubResource("Resource_0xeun"), SubResource("Resource_ee4v2")])
 
 [connection signal="pressed" from="TaskBar/Start" to="." method="_on_start_pressed"]
 [connection signal="caret_changed" from="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" to="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" method="_on_caret_changed"]

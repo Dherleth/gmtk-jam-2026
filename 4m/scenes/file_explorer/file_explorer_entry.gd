@@ -44,8 +44,7 @@ const FILE_TYPE_NAMES := {
 					
 			if not type_found:
 				type = FileType.FOLDER
-				
-	
+			
 			emit_changed()
 @export var modified := "01.01.01":
 	set(value):
@@ -56,9 +55,21 @@ const FILE_TYPE_NAMES := {
 	set(value):
 		if type != value:
 			type = value
+			notify_property_list_changed()
 			emit_changed()
 @export var size := "1 Ko":
 	set(value):
 		if size != value:
 			size = value
 			emit_changed()
+@export var folder_content: Array[FileExplorerEntry]:
+	set(value):
+		folder_content = value
+
+
+func _validate_property(property: Dictionary) -> void:
+	if property.name == "folder_content":
+		if type != FileType.FOLDER:
+			property.usage |= PROPERTY_USAGE_READ_ONLY
+		else:
+			property.usage &= ~PROPERTY_USAGE_READ_ONLY

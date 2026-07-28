@@ -9,23 +9,32 @@ enum Alignement {
 }
 
 @export var horizontal_alignment: Alignement = Alignement.LEFT
-@export var column_name := "column name"
-@export var column_name_x_offset := 0.0
+@export var column_name := "column name":
+	set(value):
+		column_name = value
+		if not column_name_label:
+			column_name_label = find_child("ColumnNameLabel")
+		
+		if column_name_label:
+			column_name_label.text = column_name
+			column_name_label.position.x = column_name_label_base_pos + column_name_x_offset
+			
+@export var column_name_x_offset := 0.0:
+	set(value):
+		column_name_x_offset = value
+		
+		if not column_name_label:
+			column_name_label = find_child("ColumnNameLabel")
+		
+		if column_name_label:
+			column_name_label.position.x = column_name_label_base_pos + column_name_x_offset
+			
 	
 var texture_rect: NinePatchRect
 var lines_container: VBoxContainer
 var column_name_label: Label
 var column_name_label_base_pos = 15
 var line_scene = preload("res://scenes/file_explorer/column/line.tscn")
-
-
-func _process(delta: float) -> void:
-	if Engine.is_editor_hint():
-		if not column_name_label:
-			column_name_label = find_child("ColumnNameLabel")
-		else:
-			column_name_label.text = column_name
-			column_name_label.position.x = column_name_label_base_pos + column_name_x_offset
 			
 			
 func add_line(text: String, display_icon := false):

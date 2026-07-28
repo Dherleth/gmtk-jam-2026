@@ -7,6 +7,8 @@ var modified_column: Column
 var type_column: Column
 var size_column: Column
 
+@onready var window: Control = $Window
+
 
 @export var structure :Array[FileExplorerEntry] = []:
 	set(value):
@@ -19,7 +21,9 @@ var size_column: Column
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		_structure_changed()
-	
+	else:
+		window.spawn()
+		
 
 func _structure_changed() -> void:
 	if _get_columns():
