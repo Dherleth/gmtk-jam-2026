@@ -8,15 +8,20 @@
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 3
 anchors_preset = 0
+offset_right = 135.0
+offset_bottom = 20.0
+size_flags_horizontal = 3
 script = ExtResource("1_te81d")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=116776352]
-layout_mode = 0
-offset_right = 50.0
-offset_bottom = 20.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Icon" type="Control" parent="HBoxContainer" unique_id=74018379]
-visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 
@@ -31,6 +36,7 @@ expand_mode = 1
 
 [node name="TextLabel" type="Label" parent="HBoxContainer" unique_id=1291778446]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_c5465")
 text = "some text"

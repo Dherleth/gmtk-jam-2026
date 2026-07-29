@@ -30,8 +30,8 @@
 [ext_resource type="AudioStream" uid="uid://bi47cnlxch3wb" path="res://assets/audio/win_pos_notif.wav" id="29_4sqgv"]
 [ext_resource type="AudioStream" uid="uid://dopvhkhbi2veo" path="res://assets/audio/explosion_close_long_ufx_1.ogg" id="30_38t0m"]
 [ext_resource type="AudioStream" uid="uid://ci0as80q34vjx" path="res://assets/audio/countdown.wav" id="31_cdnxo"]
-[ext_resource type="PackedScene" uid="uid://bxwvt7pkm8o36" path="res://scenes/file_explorer/file_explorer.tscn" id="32_1regh"]
-[ext_resource type="Script" uid="uid://bx2yrr211ihq5" path="res://scenes/file_explorer/file_explorer_entry.gd" id="33_a66ve"]
+[ext_resource type="PackedScene" uid="uid://bxwvt7pkm8o36" path="res://scenes/file_explorer/file_explorer.tscn" id="31_qg81j"]
+[ext_resource type="Script" uid="uid://bx2yrr211ihq5" path="res://scenes/file_explorer/file_explorer_entry.gd" id="32_qg81j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sanry"]
 atlas = ExtResource("2_mml8x")
@@ -124,25 +124,12 @@ func _on_button_pressed():
 	
 "
 
-[sub_resource type="Resource" id="Resource_1regh"]
-script = ExtResource("33_a66ve")
-file_name = "Folder A1"
-type = 3
-metadata/_custom_type_script = "uid://bx2yrr211ihq5"
-
-[sub_resource type="Resource" id="Resource_a66ve"]
-script = ExtResource("33_a66ve")
-metadata/_custom_type_script = "uid://bx2yrr211ihq5"
-
-[sub_resource type="Resource" id="Resource_s01h0"]
-script = ExtResource("33_a66ve")
-file_name = "Folder A"
-type = 3
-folder_content = Array[ExtResource("33_a66ve")]([SubResource("Resource_1regh"), SubResource("Resource_a66ve")])
+[sub_resource type="Resource" id="Resource_ee4v2"]
+script = ExtResource("32_qg81j")
 metadata/_custom_type_script = "uid://bx2yrr211ihq5"
 
 [sub_resource type="Resource" id="Resource_qg81j"]
-script = ExtResource("33_a66ve")
+script = ExtResource("32_qg81j")
 metadata/_custom_type_script = "uid://bx2yrr211ihq5"
 
 [node name="Screen" type="Control" unique_id=53907799]
@@ -150,6 +137,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -16.0
+offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wydk0")
@@ -5558,9 +5547,10 @@ stream = ExtResource("30_38t0m")
 stream = ExtResource("31_cdnxo")
 volume_db = -15.0
 
-[node name="FileExplorer" parent="." unique_id=414043701 instance=ExtResource("32_1regh")]
+[node name="FileExplorer" parent="." unique_id=414043701 instance=ExtResource("31_qg81j")]
 layout_mode = 1
-structure = Array[ExtResource("33_a66ve")]([SubResource("Resource_s01h0"), SubResource("Resource_qg81j")])
+offset_right = -54.0
+structure = Array[ExtResource("32_qg81j")]([SubResource("Resource_ee4v2"), SubResource("Resource_qg81j")])
 
 [connection signal="pressed" from="TaskBar/Start" to="." method="_on_start_pressed"]
 [connection signal="caret_changed" from="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" to="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" method="_on_caret_changed"]

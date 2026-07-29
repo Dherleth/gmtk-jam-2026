@@ -10,6 +10,15 @@ class_name ColumnLine
 	set(value):
 		display_icon = value
 		_display_icon_updated()
+@export var horizontal_alignment := HorizontalAlignment.HORIZONTAL_ALIGNMENT_LEFT:
+	set(value):
+		horizontal_alignment = value
+		
+		if not text_node:
+			text_node = find_child("TextLabel")
+			
+		if text_node:
+			text_node.horizontal_alignment = horizontal_alignment
 
 var icon_node: Control
 var text_node: Label

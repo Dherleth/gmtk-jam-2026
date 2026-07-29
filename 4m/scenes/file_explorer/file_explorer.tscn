@@ -12,7 +12,7 @@ anchor_bottom = 1.0
 offset_left = 182.0
 offset_top = 163.0
 offset_right = -182.0
-offset_bottom = -163.0
+offset_bottom = -122.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tsstm")
@@ -81,7 +81,17 @@ anchors_preset = 0
 offset_left = 1.0839844
 offset_top = 1.0
 offset_right = 757.084
-offset_bottom = 271.0
+offset_bottom = 303.866
+
+[node name="BackLinesContainer" type="VBoxContainer" parent="Window/ColorRect3/Content" unique_id=658437645]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 33.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ColumnsContainer" type="HBoxContainer" parent="Window/ColorRect3/Content" unique_id=2050434994]
 layout_mode = 0
@@ -111,7 +121,7 @@ layout_mode = 2
 horizontal_alignment = 2
 column_name = "Size"
 
-[node name="FeLinesContainer" type="VBoxContainer" parent="Window/ColorRect3/Content" unique_id=317819736]
+[node name="FrontLinesContainer" type="VBoxContainer" parent="Window/ColorRect3/Content" unique_id=317819736]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

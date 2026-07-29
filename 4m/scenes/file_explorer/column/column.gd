@@ -2,13 +2,16 @@
 extends MarginContainer
 class_name Column
 
-enum Alignement {
-	LEFT,
-	CENTER,
-	RIGHT,
-}
-
-@export var horizontal_alignment: Alignement = Alignement.LEFT
+@export var horizontal_alignment: HorizontalAlignment = HorizontalAlignment.HORIZONTAL_ALIGNMENT_LEFT:
+	set(value):
+		horizontal_alignment = value
+		if not lines_container:
+			lines_container = find_child("LinesContainer")
+			
+		if lines_container:
+			for line: ColumnLine in lines_container.get_children():
+				line.horizontal_alignment = horizontal_alignment
+			
 @export var column_name := "column name":
 	set(value):
 		column_name = value
