@@ -40,7 +40,7 @@ func spawn(window):
 	
 func despawn_and_disable():
 	for window in get_tree().get_nodes_in_group("window"):
-		window.despawn()
+		window.minimize()
 	for button in get_tree().get_nodes_in_group("apps"):
 		button.disabled = true
 		
@@ -64,7 +64,7 @@ func start_count_down() -> void:
 func _on_blow_it_up_button_pressed() -> void:
 	office_music.stop()
 	tick_sound.play()
-	count_down_window.spawn()
+	count_down_window.display()
 	encrypted_button.pressed.emit()
 	encrypted_button.set_pressed_no_signal(false)
 	countdown_timer.wait_time = 10

@@ -1,8 +1,9 @@
 extends Control
+class_name OsWindow
 
 @export var title: String = "Title"
 
-signal closed
+signal minimized
 
 var pressed
 var mousePos: Vector2 = Vector2.ZERO
@@ -25,9 +26,10 @@ func _on_gui_input(event: InputEvent) -> void:
 			
 			
 func _on_x_pressed() -> void:
-	despawn()
+	minimize()
 	
-func despawn():
+	
+func minimize():
 	modulate.a = 1.0 # invisible
 	pivot_offset.y = size.y # pivot at bottom (for scaling)
 	
@@ -38,10 +40,10 @@ func despawn():
 	tween.parallel().tween_property(self, "scale:y", 0.0, 0.2).from(1.5)
 	
 	# optional, emits the spawned signal once the whole tween is done
-	tween.tween_callback(closed.emit)
+	tween.tween_callback(minimized.emit)
 	
 	
-func spawn():
+func display():
 	modulate.a = 0.0 # invisible
 	show()
 	pivot_offset.y = size.y # pivot at bottom (for scaling)
@@ -53,5 +55,5 @@ func spawn():
 	tween.parallel().tween_property(self, "scale:y", 1.0, 0.2).from(-1)
 
 
-func _on_closed() -> void:
+func _on_minimized() -> void:
 	hide()

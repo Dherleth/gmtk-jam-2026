@@ -1,12 +1,10 @@
 [gd_scene format=3 uid="uid://51mqgnjjcx5s"]
 
 [ext_resource type="Script" uid="uid://dhst6k5ej2vic" path="res://scripts/screen.gd" id="1_wydk0"]
-[ext_resource type="Texture2D" uid="uid://5wo7qpq4yiuh" path="res://assets/images/Start_button_Windows_4.00.337.png" id="2_mml8x"]
+[ext_resource type="PackedScene" uid="uid://b0un45hg8cb3h" path="res://scenes/task_bar/task_bar.tscn" id="2_38t0m"]
 [ext_resource type="FontFile" uid="uid://cexbk66whqwso" path="res://assets/fonts/w95fa/w95f.woff" id="3_sp806"]
-[ext_resource type="Script" uid="uid://cjtnmkaudgxic" path="res://scripts/time.gd" id="4_06c6w"]
 [ext_resource type="Texture2D" uid="uid://cwwm4tgs5raod" path="res://assets/images/win95bin.png" id="5_ed25v"]
 [ext_resource type="Script" uid="uid://ltw678giy6qt" path="res://scripts/window_button.gd" id="6_2hpia"]
-[ext_resource type="Texture2D" uid="uid://batdj5mg8cbym" path="res://assets/images/Windows_95.png" id="7_0kugv"]
 [ext_resource type="PackedScene" uid="uid://c08umx5trny1e" path="res://scenes/window.tscn" id="10_2hmho"]
 [ext_resource type="Texture2D" uid="uid://bq6xc7mjmgren" path="res://assets/images/Windows_95_Highlights_in_program.png" id="10_esotp"]
 [ext_resource type="Texture2D" uid="uid://lfuedn4ag0ct" path="res://assets/images/Windows_95_FOLDER.png" id="11_wydk0"]
@@ -32,71 +30,6 @@
 [ext_resource type="AudioStream" uid="uid://ci0as80q34vjx" path="res://assets/audio/countdown.wav" id="31_cdnxo"]
 [ext_resource type="PackedScene" uid="uid://bxwvt7pkm8o36" path="res://scenes/file_explorer/file_explorer.tscn" id="32_1regh"]
 [ext_resource type="Script" uid="uid://bx2yrr211ihq5" path="res://scenes/file_explorer/file_explorer_entry.gd" id="33_a66ve"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sanry"]
-atlas = ExtResource("2_mml8x")
-region = Rect2(20, 40, 540, 220)
-
-[sub_resource type="Animation" id="Animation_0kugv"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Label:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(7, 2)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Label:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_5syhw"]
-resource_name = "pop"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Label:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.23333335, 0.6666667, 1.5, 1.8, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 2), Vector2(31, 2), Vector2(31, 2), Vector2(31, 2), Vector2(31, 2), Vector2(-100, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Label:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.033333335, 1.8666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_4sqgv"]
-_data = {
-&"RESET": SubResource("Animation_0kugv"),
-&"pop": SubResource("Animation_5syhw")
-}
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0pa6k"]
 shader = ExtResource("17_1regh")
@@ -163,137 +96,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.105882, 0.552941, 0.552941, 1)
 metadata/_edit_lock_ = true
-
-[node name="TaskBar" type="ColorRect" parent="." unique_id=1639196275]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -40.0
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(0.764706, 0.780392, 0.796078, 1)
-metadata/_edit_lock_ = true
-
-[node name="Start" type="TextureButton" parent="TaskBar" unique_id=1307060762 groups=["apps"]]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 7.0
-offset_top = -15.5
-offset_right = 90.0
-offset_bottom = 15.5
-grow_vertical = 2
-texture_normal = SubResource("AtlasTexture_sanry")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Time" type="Button" parent="TaskBar" unique_id=1996146339 groups=["apps"]]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -72.0
-offset_top = -11.0
-offset_bottom = 13.0
-grow_horizontal = 0
-grow_vertical = 2
-focus_mode = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-disabled = true
-text = "00:00"
-flat = true
-script = ExtResource("4_06c6w")
-
-[node name="EncryptedButton" type="TextureButton" parent="TaskBar" unique_id=1194831103 node_paths=PackedStringArray("window") groups=["apps"]]
-layout_mode = 0
-offset_left = 98.0
-offset_top = 4.0
-offset_right = 181.0
-offset_bottom = 35.0
-texture_normal = ExtResource("7_0kugv")
-ignore_texture_size = true
-stretch_mode = 0
-script = ExtResource("6_2hpia")
-window = NodePath("../../Windows/EncryptedMessage/EncryptedWindow")
-is_in_task_bar = true
-
-[node name="Label" type="Label" parent="TaskBar/EncryptedButton" unique_id=534038550]
-layout_mode = 0
-offset_left = 7.0
-offset_top = 1.0
-offset_right = 73.0
-offset_bottom = 27.0
-theme_override_colors/font_color = Color(0.12222696, 0.6646925, 0.30863708, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-theme_override_font_sizes/font_size = 20
-text = "xx"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="CountDownButton" type="TextureButton" parent="TaskBar" unique_id=1736174403 node_paths=PackedStringArray("window") groups=["apps"]]
-layout_mode = 0
-offset_left = 187.0
-offset_top = 4.0
-offset_right = 325.0
-offset_bottom = 35.0
-texture_normal = ExtResource("7_0kugv")
-ignore_texture_size = true
-stretch_mode = 0
-script = ExtResource("6_2hpia")
-window = NodePath("../../Windows/CountDownWindow")
-is_in_task_bar = true
-
-[node name="Digits" type="Control" parent="TaskBar/CountDownButton" unique_id=1532663539]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Label" type="Label" parent="TaskBar/CountDownButton/Digits" unique_id=433793458]
-layout_mode = 0
-offset_left = 7.0
-offset_top = 2.0
-offset_right = 121.0
-offset_bottom = 29.0
-theme_override_colors/font_color = Color(0.99999994, 0.17005175, 0.28454703, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-theme_override_font_sizes/font_size = 20
-text = " "
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Control" type="Control" parent="TaskBar/CountDownButton" unique_id=1625954689]
-anchors_preset = 0
-offset_left = 97.0
-offset_top = 1.0
-offset_right = 137.0
-offset_bottom = 41.0
-
-[node name="Label" type="Label" parent="TaskBar/CountDownButton/Control" unique_id=533580742]
-layout_mode = 0
-offset_left = 7.0
-offset_top = 2.0
-offset_right = 120.99974
-offset_bottom = 32.000103
-theme_override_colors/font_color = Color(0.99999994, 0.17005175, 0.28454703, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-theme_override_font_sizes/font_size = 25
-text = " +30s"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="TaskBar/CountDownButton/Control" unique_id=1491375432]
-libraries/ = SubResource("AnimationLibrary_4sqgv")
 
 [node name="ColorRect3" type="ColorRect" parent="." unique_id=2135553702]
 layout_mode = 1
@@ -5562,7 +5364,11 @@ volume_db = -15.0
 layout_mode = 1
 structure = Array[ExtResource("33_a66ve")]([SubResource("Resource_s01h0"), SubResource("Resource_qg81j")])
 
-[connection signal="pressed" from="TaskBar/Start" to="." method="_on_start_pressed"]
+[node name="TaskBar" parent="." unique_id=799073870 instance=ExtResource("2_38t0m")]
+layout_mode = 1
+grow_horizontal = 1
+grow_vertical = 1
+
 [connection signal="caret_changed" from="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" to="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" method="_on_caret_changed"]
 [connection signal="focus_entered" from="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" to="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" method="_on_focus_entered"]
 [connection signal="caret_changed" from="Windows/BinWindows/NotesWindow/ColorRect3/DontTxt" to="Windows/BinWindows/NotesWindow/ColorRect3/DontTxt" method="_on_caret_changed"]

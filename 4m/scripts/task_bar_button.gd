@@ -1,4 +1,5 @@
-extends TextureButton
+extends Button
+class_name TaskBarButton
 
 
 @export var window: OsWindow

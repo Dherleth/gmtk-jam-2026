@@ -24,6 +24,7 @@ config/icon="uid://bfg24qoiv2tly"
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 Menu="*uid://6l0f32ac4oxn"
+OperatingSystem="*uid://cf0hsn3tlkf0v"
 
 [dialogue_manager]
 

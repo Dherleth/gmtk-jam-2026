@@ -21,7 +21,7 @@ func _ready() -> void:
 	if Engine.is_editor_hint():
 		_structure_changed()
 	else:
-		window.spawn()
+		window.display()
 		
 
 func _structure_changed() -> void:
@@ -113,4 +113,4 @@ func _on_line_button_pressed(entry: FileExplorerEntry) -> void:
 	else:
 		if entry.target_window:
 			var window = get_node(entry.target_window)
-			window.spawn()
+			window.display()
