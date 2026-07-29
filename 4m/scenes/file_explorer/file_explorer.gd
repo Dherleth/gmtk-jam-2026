@@ -7,6 +7,7 @@ var type_column: Column
 var size_column: Column
 
 @onready var window: Control = $Window
+@onready var columns: HBoxContainer = $Window/ColorRect3/Content/Columns
 
 
 @export var structure :Array[FileExplorerEntry] = []:
@@ -37,13 +38,25 @@ func _structure_changed() -> void:
 		
 		for entry in structure:
 			if entry:
-				name_column.add_line(entry.file_name, entry.type == FileExplorerEntry.FileType.FOLDER)
+				var line_instance = name_column.add_line(entry.file_name, entry.type == FileExplorerEntry.FileType.FOLDER)
 				modified_column.add_line(entry.modified)
 				type_column.add_line(FileExplorerEntry.FILE_TYPE_NAMES[entry.type])
 				size_column.add_line(entry.size)
+				
+				var line_button = Button.new()
+				line_button.size.y = line_instance.size.y
+				line_button.size.x = columns.size.x
+				line_instance.add_child(line_button)
+				line_button.position.x -= name_column.get_inside_margin()
+				line_button.pressed.connect(_on_line_button_pressed)
+			
+				
 	
 
 func _get_columns() -> bool:
+	if not columns:
+		columns = find_child("Columns")
+		
 	if not name_column:
 		name_column = find_child("NameColumn")
 		
@@ -84,3 +97,7 @@ func _print_folder_content(base: Array[FileExplorerEntry], tab := ""):
 				_print_folder_content(entry.folder_content, new_tab)
 			else:
 				print(tab, entry.file_name)
+
+
+func _on_line_button_pressed() -> void:
+	print("fdsjhfsl")

@@ -37,7 +37,7 @@ var column_name_label_base_pos = 15
 var line_scene = preload("res://scenes/file_explorer/column/line.tscn")
 			
 			
-func add_line(text: String, display_icon := false):
+func add_line(text: String, display_icon := false) -> ColumnLine:
 	if not lines_container:
 		lines_container = find_child("LinesContainer")
 		
@@ -47,6 +47,8 @@ func add_line(text: String, display_icon := false):
 	line_instance.text = text
 		
 	lines_container.add_child(line_instance)
+	
+	return line_instance
 		
 		
 func empty() -> void:
@@ -56,4 +58,6 @@ func empty() -> void:
 	for child in lines_container.get_children():
 		child.queue_free()
 	
-	
+
+func get_inside_margin() -> int:
+	return 5

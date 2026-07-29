@@ -1,8 +1,17 @@
 [gd_scene format=3 uid="uid://bxwvt7pkm8o36"]
 
 [ext_resource type="Script" uid="uid://cwsmustvxtwf4" path="res://scenes/file_explorer/file_explorer.gd" id="1_tsstm"]
+[ext_resource type="Script" uid="uid://bx2yrr211ihq5" path="res://scenes/file_explorer/file_explorer_entry.gd" id="2_0xeun"]
 [ext_resource type="PackedScene" uid="uid://c08umx5trny1e" path="res://scenes/window.tscn" id="2_rupmg"]
 [ext_resource type="PackedScene" uid="uid://b77wn2mksdrav" path="res://scenes/file_explorer/column/column.tscn" id="3_ee4v2"]
+
+[sub_resource type="Resource" id="Resource_ee4v2"]
+script = ExtResource("2_0xeun")
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
+
+[sub_resource type="Resource" id="Resource_0xeun"]
+script = ExtResource("2_0xeun")
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
 
 [node name="FileExplorer" type="Control" unique_id=414043701]
 layout_mode = 3
@@ -16,6 +25,7 @@ offset_bottom = -163.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tsstm")
+structure = Array[ExtResource("2_0xeun")]([SubResource("Resource_ee4v2"), SubResource("Resource_0xeun")])
 
 [node name="Window" parent="." unique_id=1942496214 instance=ExtResource("2_rupmg")]
 layout_mode = 1
@@ -75,16 +85,17 @@ grow_horizontal = 2
 grow_vertical = 0
 color = Color(0.818447, 0.839665, 0.842692, 1)
 
-[node name="Content" type="MarginContainer" parent="Window/ColorRect3" unique_id=1191563206]
-layout_mode = 0
+[node name="Content" type="Control" parent="Window/ColorRect3" unique_id=66597105]
+anchors_preset = 0
 offset_left = 1.0839844
 offset_top = 1.0
 offset_right = 757.084
 offset_bottom = 271.0
-theme_override_constants/margin_bottom = 15
 
 [node name="Columns" type="HBoxContainer" parent="Window/ColorRect3/Content" unique_id=2050434994]
-layout_mode = 2
+layout_mode = 0
+offset_right = 756.0
+offset_bottom = 58.0
 theme_override_constants/separation = 1
 
 [node name="NameColumn" parent="Window/ColorRect3/Content/Columns" unique_id=781196372 instance=ExtResource("3_ee4v2")]
@@ -106,3 +117,13 @@ column_name = "Type"
 custom_minimum_size = Vector2(104, 0)
 layout_mode = 2
 column_name = "Size"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/ColorRect3/Content" unique_id=1435038676]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 33.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2

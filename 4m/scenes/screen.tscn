@@ -134,12 +134,19 @@ file_name = "Folder A"
 modified = "01.01.02"
 type = 3
 folder_content = Array[ExtResource("33_a66ve")]([SubResource("Resource_ee4v2"), SubResource("Resource_0xeun")])
-target_window = null
 metadata/_custom_type_script = "uid://bx2yrr211ihq5"
 
 [sub_resource type="Resource" id="Resource_a66ve"]
 script = ExtResource("33_a66ve")
 target_window = NodePath("../Windows/BinWindows/LookingMilfWindow")
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
+
+[sub_resource type="Resource" id="Resource_vegeo"]
+script = ExtResource("33_a66ve")
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
+
+[sub_resource type="Resource" id="Resource_bgcim"]
+script = ExtResource("33_a66ve")
 metadata/_custom_type_script = "uid://bx2yrr211ihq5"
 
 [node name="Screen" type="Control" unique_id=53907799]
@@ -5576,7 +5583,7 @@ volume_db = -15.0
 
 [node name="FileExplorer" parent="." unique_id=414043701 instance=ExtResource("32_1regh")]
 layout_mode = 1
-structure = Array[ExtResource("33_a66ve")]([SubResource("Resource_1regh"), SubResource("Resource_a66ve")])
+structure = Array[ExtResource("33_a66ve")]([SubResource("Resource_1regh"), SubResource("Resource_a66ve"), SubResource("Resource_vegeo"), SubResource("Resource_bgcim")])
 
 [connection signal="pressed" from="TaskBar/Start" to="." method="_on_start_pressed"]
 [connection signal="caret_changed" from="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" to="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" method="_on_caret_changed"]
