@@ -17,7 +17,6 @@ enum Alignement {
 		
 		if column_name_label:
 			column_name_label.text = column_name
-			column_name_label.position.x = column_name_label_base_pos + column_name_x_offset
 			
 @export var column_name_x_offset := 0.0:
 	set(value):
@@ -29,7 +28,6 @@ enum Alignement {
 		if column_name_label:
 			column_name_label.position.x = column_name_label_base_pos + column_name_x_offset
 			
-	
 var texture_rect: NinePatchRect
 var lines_container: VBoxContainer
 var column_name_label: Label
@@ -58,6 +56,3 @@ func empty() -> void:
 	for child in lines_container.get_children():
 		child.queue_free()
 	
-
-func get_inside_margin() -> int:
-	return 5

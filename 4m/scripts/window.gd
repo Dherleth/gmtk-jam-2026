@@ -1,7 +1,6 @@
 extends Control
 
 @export var title: String = "Title"
-@export var parent: Node = null
 
 signal closed
 
@@ -22,17 +21,9 @@ func _on_gui_input(event: InputEvent) -> void:
 	
 	if event is InputEventMouseMotion:
 		if event.button_mask == MOUSE_BUTTON_MASK_LEFT:
-				if parent != null:
-					parent.global_position -= diff
-				else:
-					global_position -= diff
-				
-				
-		if event is InputEventMouseButton and pressed:
-			if event.button_mask == MOUSE_BUTTON_MASK_RIGHT:
-				queue_free()
-
-
+			global_position -= diff
+			
+			
 func _on_x_pressed() -> void:
 	despawn()
 	
@@ -48,6 +39,7 @@ func despawn():
 	
 	# optional, emits the spawned signal once the whole tween is done
 	tween.tween_callback(closed.emit)
+	
 	
 func spawn():
 	modulate.a = 0.0 # invisible

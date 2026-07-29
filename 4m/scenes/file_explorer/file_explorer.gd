@@ -1,14 +1,7 @@
 @tool
 extends Control
 
-var name_column: Column
-var modified_column: Column
-var type_column: Column
-var size_column: Column
-
 @onready var window: Control = $Window
-@onready var columns: HBoxContainer = $Window/ColorRect3/Content/Columns
-
 
 @export var structure :Array[FileExplorerEntry] = []:
 	set(value):
@@ -17,6 +10,12 @@ var size_column: Column
 		_connect_resources()
 		_structure_changed()
 		
+var name_column: Column
+var modified_column: Column
+var type_column: Column
+var size_column: Column
+var lines_container: VBoxContainer
+var columns_container: HBoxContainer
 		
 func _ready() -> void:
 	if Engine.is_editor_hint():
@@ -30,32 +29,12 @@ func _structure_changed() -> void:
 	_print_folder_content(structure)
 	print("========================================")
 	
-	if _get_columns():
-		name_column.empty()
-		modified_column.empty()
-		type_column.empty()
-		size_column.empty()
-		
-		for entry in structure:
-			if entry:
-				var line_instance = name_column.add_line(entry.file_name, entry.type == FileExplorerEntry.FileType.FOLDER)
-				modified_column.add_line(entry.modified)
-				type_column.add_line(FileExplorerEntry.FILE_TYPE_NAMES[entry.type])
-				size_column.add_line(entry.size)
-				
-				var line_button = Button.new()
-				line_button.size.y = line_instance.size.y
-				line_button.size.x = columns.size.x
-				line_instance.add_child(line_button)
-				line_button.position.x -= name_column.get_inside_margin()
-				line_button.pressed.connect(_on_line_button_pressed)
-			
-				
-	
+	_draw_explorer_content(structure)
+
 
 func _get_columns() -> bool:
-	if not columns:
-		columns = find_child("Columns")
+	if not columns_container:
+		columns_container = find_child("ColumnsContainer")
 		
 	if not name_column:
 		name_column = find_child("NameColumn")
@@ -68,6 +47,10 @@ func _get_columns() -> bool:
 		
 	if not size_column:
 		size_column = find_child("SizeColumn")
+		
+	if not lines_container:
+		lines_container = find_child("FeLinesContainer")
+	
 		
 	return name_column and modified_column and type_column and size_column
 		
@@ -99,5 +82,35 @@ func _print_folder_content(base: Array[FileExplorerEntry], tab := ""):
 				print(tab, entry.file_name)
 
 
-func _on_line_button_pressed() -> void:
-	print("fdsjhfsl")
+func _draw_explorer_content(content: Array[FileExplorerEntry]) -> void:
+	if _get_columns():
+		# Removes previous content
+		name_column.empty()
+		modified_column.empty()
+		type_column.empty()
+		size_column.empty()
+		
+		for child in lines_container.get_children():
+			child.queue_free()
+			
+	for entry in content:
+		if entry:
+			var line_instance = name_column.add_line(entry.file_name, entry.type == FileExplorerEntry.FileType.FOLDER)
+			modified_column.add_line(entry.modified)
+			type_column.add_line(FileExplorerEntry.FILE_TYPE_NAMES[entry.type])
+			size_column.add_line(entry.size)
+			
+			var line_button = Button.new()
+			lines_container.add_child(line_button)
+			line_button.custom_minimum_size.y = line_instance.size.y
+			line_button.custom_minimum_size.x = lines_container.size.x
+			line_button.pressed.connect(func(): _on_line_button_pressed(entry))
+
+
+func _on_line_button_pressed(entry: FileExplorerEntry) -> void:
+	if entry.type == FileExplorerEntry.FileType.FOLDER:
+		_draw_explorer_content(entry.folder_content)
+	else:
+		if entry.target_window:
+			var window = get_node(entry.target_window)
+			window.spawn()

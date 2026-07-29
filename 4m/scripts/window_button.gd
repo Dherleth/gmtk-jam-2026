@@ -2,7 +2,6 @@ extends TextureButton
 
 
 @export var window: Control
-@export var parent: Control
 @export var is_in_task_bar := false
 
 
@@ -11,7 +10,7 @@ func _ready() -> void:
 	
 		
 func _on_button_pressed():
-	if !window.visible && parent != null:
-		parent.spawn(window)
+	if !window.visible:
+		window.spawn()
 	elif is_in_task_bar && window.visible:
 		window.despawn()

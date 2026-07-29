@@ -2,7 +2,6 @@
 extends Control
 class_name ColumnLine
 
-
 @export var text: String:
 	set(value):
 		text = value
@@ -14,6 +13,7 @@ class_name ColumnLine
 
 var icon_node: Control
 var text_node: Label
+
 
 func _display_icon_updated() -> void:
 	if not icon_node:
