@@ -261,8 +261,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -16.0
-offset_bottom = -16.0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 1.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wydk0")
@@ -572,21 +574,21 @@ text = "Work"
 horizontal_alignment = 1
 
 [node name="Windows" type="Control" parent="." unique_id=1130820464]
+layout_mode = 1
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="Browser" parent="Windows" unique_id=1415093049 instance=ExtResource("10_2hmho")]
 visible = false
 layout_mode = 1
-anchor_left = 0.146
-anchor_top = 0.049
-anchor_right = 0.146
-anchor_bottom = 0.049
-offset_left = 129.16
-offset_top = 23.04
-offset_right = 977.44794
-offset_bottom = 526.77594
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 166.0
+offset_top = 33.0
+offset_right = 1014.28796
+offset_bottom = 536.73596
+grow_horizontal = 1
+grow_vertical = 1
 title = "Browser - WackyPedia"
 
 [node name="ColorRect3" type="ColorRect" parent="Windows/Browser" unique_id=343786833]
@@ -1710,14 +1712,15 @@ drag_and_drop_selection_enabled = false
 [node name="EmployeeMgmtWindow" parent="Windows" unique_id=1445978554 instance=ExtResource("10_2hmho")]
 visible = false
 layout_mode = 1
-anchor_left = 0.146
-anchor_top = 0.049
-anchor_right = 0.146
-anchor_bottom = 0.049
-offset_left = 162.15999
-offset_top = 30.039999
-offset_right = 748.16
-offset_bottom = 383.04
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 166.0
+offset_top = 33.0
+offset_right = 752.0
+offset_bottom = 386.0
+grow_horizontal = 1
+grow_vertical = 1
 title = "Employee Management"
 
 [node name="ColorRect3" type="ColorRect" parent="Windows/EmployeeMgmtWindow" unique_id=890814412]
@@ -2061,9 +2064,12 @@ horizontal_alignment = 2
 
 [node name="EncryptedMessage" type="Control" parent="Windows" unique_id=12912388]
 visible = false
+layout_mode = 1
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 76.0
+offset_top = 4.0
+offset_right = 116.0
+offset_bottom = 44.0
 script = ExtResource("12_2uju1")
 
 [node name="EncryptedWindow" parent="Windows/EncryptedMessage" unique_id=1942496214 groups=["window"] instance=ExtResource("10_2hmho")]
@@ -2555,14 +2561,15 @@ to_find = Array[String](["e-worker", "e-workers", "eworker", "eworkers", "e work
 [node name="CountDownWindow" parent="Windows" unique_id=2088697027 instance=ExtResource("10_2hmho")]
 visible = false
 layout_mode = 1
-anchor_left = 0.73600006
-anchor_top = 0.358
-anchor_right = 0.73600006
-anchor_bottom = 0.358
-offset_left = 290.56
-offset_top = 178.68
-offset_right = 721.56
-offset_bottom = 359.68
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 301.0
+offset_top = 211.0
+offset_right = 732.0
+offset_bottom = 392.0
+grow_horizontal = 1
+grow_vertical = 1
 title = "Countdown"
 
 [node name="CountDownManager" type="Control" parent="Windows/CountDownWindow" unique_id=1223211438]
@@ -2693,14 +2700,15 @@ one_shot = true
 [node name="CreditWindow" parent="Windows" unique_id=398991263 instance=ExtResource("10_2hmho")]
 visible = false
 layout_mode = 1
-anchor_left = 0.146
-anchor_top = 0.049
-anchor_right = 0.146
-anchor_bottom = 0.049
-offset_left = 1307.16
-offset_top = 517.04
-offset_right = 1307.16
-offset_bottom = 517.04
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 1188.0
+offset_top = 420.0
+offset_right = 1188.0
+offset_bottom = 420.0
+grow_horizontal = 1
+grow_vertical = 1
 title = "Credits"
 
 [node name="ColorRect" type="ColorRect" parent="Windows/CreditWindow" unique_id=872266509]
@@ -2790,14 +2798,15 @@ drag_and_drop_selection_enabled = false
 [node name="GuideLinesWindow" parent="Windows" unique_id=480753331 instance=ExtResource("10_2hmho")]
 visible = false
 layout_mode = 1
-anchor_left = 0.146
-anchor_top = 0.049
-anchor_right = 0.146
-anchor_bottom = 0.049
-offset_left = 36.16
-offset_top = 5.04
-offset_right = 703.44794
-offset_bottom = 329.776
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 166.0
+offset_top = 33.0
+offset_right = 833.28796
+offset_bottom = 357.73596
+grow_horizontal = 1
+grow_vertical = 1
 title = "guidelines.txt"
 
 [node name="ColorRect3" type="ColorRect" parent="Windows/GuideLinesWindow" unique_id=1029618765]
@@ -2889,14 +2898,15 @@ virtual_keyboard_enabled = false
 [node name="NotesWindow" parent="Windows" unique_id=891963243 instance=ExtResource("10_2hmho")]
 visible = false
 layout_mode = 1
-anchor_left = 0.146
-anchor_top = 0.049
-anchor_right = 0.146
-anchor_bottom = 0.049
-offset_left = 223.87201
-offset_top = 39.304
-offset_right = 891.16
-offset_bottom = 364.04
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 166.0
+offset_top = 33.0
+offset_right = 833.28796
+offset_bottom = 357.73602
+grow_horizontal = 1
+grow_vertical = 1
 title = "notes.txt"
 
 [node name="ColorRect3" type="ColorRect" parent="Windows/NotesWindow" unique_id=1425130053]
@@ -2982,14 +2992,15 @@ virtual_keyboard_enabled = false
 [node name="LookingMilfWindow" parent="Windows" unique_id=2105439069 instance=ExtResource("10_2hmho")]
 visible = false
 layout_mode = 1
-anchor_left = 0.146
-anchor_top = 0.049
-anchor_right = 0.146
-anchor_bottom = 0.049
-offset_left = 223.87201
-offset_top = 39.304
-offset_right = 891.16
-offset_bottom = 364.04
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 166.0
+offset_top = 33.0
+offset_right = 833.28796
+offset_bottom = 357.73602
+grow_horizontal = 1
+grow_vertical = 1
 title = "Looking for a MILF?.txt"
 
 [node name="ColorRect3" type="ColorRect" parent="Windows/LookingMilfWindow" unique_id=2130351187]
@@ -3076,14 +3087,15 @@ virtual_keyboard_enabled = false
 [node name="TheContractWindow" parent="Windows" unique_id=1913558977 instance=ExtResource("10_2hmho")]
 visible = false
 layout_mode = 1
-anchor_left = 0.146
-anchor_top = 0.049
-anchor_right = 0.146
-anchor_bottom = 0.049
-offset_left = -19.839985
-offset_top = -13.96
-offset_right = 501.16
-offset_bottom = 225.04001
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 166.0
+offset_top = 33.0
+offset_right = 687.0
+offset_bottom = 272.0
+grow_horizontal = 1
+grow_vertical = 1
 title = "TheContract.txt"
 
 [node name="ColorRect3" type="ColorRect" parent="Windows/TheContractWindow" unique_id=464666719]
@@ -3166,14 +3178,15 @@ virtual_keyboard_enabled = false
 [node name="ArticleAWindow" parent="Windows" unique_id=711997872 instance=ExtResource("10_2hmho")]
 visible = false
 layout_mode = 1
-anchor_left = 0.146
-anchor_top = 0.049
-anchor_right = 0.146
-anchor_bottom = 0.049
-offset_left = -19.839985
-offset_top = -13.96
-offset_right = 515.16
-offset_bottom = 263.04
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 166.0
+offset_top = 33.0
+offset_right = 701.0
+offset_bottom = 310.0
+grow_horizontal = 1
+grow_vertical = 1
 title = "Grand opening.txt"
 
 [node name="ColorRect3" type="ColorRect" parent="Windows/ArticleAWindow" unique_id=1754263161]
@@ -3258,14 +3271,15 @@ drag_and_drop_selection_enabled = false
 [node name="ArticleBWindow" parent="Windows" unique_id=836066278 instance=ExtResource("10_2hmho")]
 visible = false
 layout_mode = 1
-anchor_left = 0.146
-anchor_top = 0.049
-anchor_right = 0.146
-anchor_bottom = 0.049
-offset_left = -19.839985
-offset_top = -13.96
-offset_right = 514.16
-offset_bottom = 261.04
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 166.0
+offset_top = 33.0
+offset_right = 700.0
+offset_bottom = 308.0
+grow_horizontal = 1
+grow_vertical = 1
 title = "E-helper adoption boom.txt"
 
 [node name="ColorRect3" type="ColorRect" parent="Windows/ArticleBWindow" unique_id=1551955853]
@@ -3347,14 +3361,15 @@ drag_and_drop_selection_enabled = false
 [node name="ArticleCWindow" parent="Windows" unique_id=1890807154 instance=ExtResource("10_2hmho")]
 visible = false
 layout_mode = 1
-anchor_left = 0.146
-anchor_top = 0.049
-anchor_right = 0.146
-anchor_bottom = 0.049
-offset_left = -19.839985
-offset_top = -13.96
-offset_right = 513.16
-offset_bottom = 263.04
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 166.0
+offset_top = 33.0
+offset_right = 699.0
+offset_bottom = 310.0
+grow_horizontal = 1
+grow_vertical = 1
 title = "First incident.txt"
 
 [node name="ColorRect3" type="ColorRect" parent="Windows/ArticleCWindow" unique_id=1604274321]
@@ -3436,14 +3451,15 @@ drag_and_drop_selection_enabled = false
 [node name="ArticleFWindow" parent="Windows" unique_id=2043210571 instance=ExtResource("10_2hmho")]
 visible = false
 layout_mode = 1
-anchor_left = 0.146
-anchor_top = 0.049
-anchor_right = 0.146
-anchor_bottom = 0.049
-offset_left = -19.839985
-offset_top = -13.96
-offset_right = 512.16
-offset_bottom = 262.04
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 166.0
+offset_top = 33.0
+offset_right = 698.0
+offset_bottom = 309.0
+grow_horizontal = 1
+grow_vertical = 1
 title = "The Great Replacement.txt"
 
 [node name="ColorRect3" type="ColorRect" parent="Windows/ArticleFWindow" unique_id=1683851334]
@@ -3525,14 +3541,15 @@ drag_and_drop_selection_enabled = false
 [node name="ImpactWindow" parent="Windows" unique_id=855811944 instance=ExtResource("10_2hmho")]
 visible = false
 layout_mode = 1
-anchor_left = 0.146
-anchor_top = 0.049
-anchor_right = 0.146
-anchor_bottom = 0.049
-offset_left = -8.839985
-offset_top = -13.96
-offset_right = 683.16
-offset_bottom = 450.04
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 166.0
+offset_top = 33.0
+offset_right = 858.0
+offset_bottom = 497.0
+grow_horizontal = 1
+grow_vertical = 1
 title = "impact.xls"
 
 [node name="ColorRect3" type="ColorRect" parent="Windows/ImpactWindow" unique_id=2142817875]
@@ -3599,14 +3616,15 @@ expand_mode = 1
 [node name="RevenueWindow" parent="Windows" unique_id=2026751915 instance=ExtResource("10_2hmho")]
 visible = false
 layout_mode = 1
-anchor_left = 0.146
-anchor_top = 0.049
-anchor_right = 0.146
-anchor_bottom = 0.049
-offset_left = -8.839985
-offset_top = -13.96
-offset_right = 683.16
-offset_bottom = 450.04
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 166.0
+offset_top = 33.0
+offset_right = 858.0
+offset_bottom = 497.0
+grow_horizontal = 1
+grow_vertical = 1
 title = "revenue.xls"
 
 [node name="ColorRect3" type="ColorRect" parent="Windows/RevenueWindow" unique_id=1019201041]
@@ -3673,14 +3691,15 @@ expand_mode = 1
 [node name="Image1Window" parent="Windows" unique_id=1550086900 instance=ExtResource("10_2hmho")]
 visible = false
 layout_mode = 1
-anchor_left = 0.146
-anchor_top = 0.049
-anchor_right = 0.146
-anchor_bottom = 0.049
-offset_left = -8.839985
-offset_top = -13.96
-offset_right = 437.16
-offset_bottom = 424.04
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 166.0
+offset_top = 33.0
+offset_right = 612.0
+offset_bottom = 471.0
+grow_horizontal = 1
+grow_vertical = 1
 title = "image1.png"
 
 [node name="ColorRect3" type="ColorRect" parent="Windows/Image1Window" unique_id=276546277]
@@ -3747,14 +3766,15 @@ expand_mode = 1
 [node name="MyBelovedWindow" parent="Windows" unique_id=807335605 instance=ExtResource("10_2hmho")]
 visible = false
 layout_mode = 1
-anchor_left = 0.146
-anchor_top = 0.049
-anchor_right = 0.146
-anchor_bottom = 0.049
-offset_left = -8.839985
-offset_top = -13.96
-offset_right = 437.16
-offset_bottom = 424.04
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 166.0
+offset_top = 33.0
+offset_right = 612.0
+offset_bottom = 471.0
+grow_horizontal = 1
+grow_vertical = 1
 title = "mybeloved.png"
 
 [node name="ColorRect3" type="ColorRect" parent="Windows/MyBelovedWindow" unique_id=1094021772]
@@ -3821,14 +3841,15 @@ expand_mode = 1
 [node name="IconWindow" parent="Windows" unique_id=1148099425 instance=ExtResource("10_2hmho")]
 visible = false
 layout_mode = 1
-anchor_left = 0.146
-anchor_top = 0.049
-anchor_right = 0.146
-anchor_bottom = 0.049
-offset_left = -42.839985
-offset_top = -13.96
-offset_right = 299.16
-offset_bottom = 314.04
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 166.0
+offset_top = 33.0
+offset_right = 508.0
+offset_bottom = 361.0
+grow_horizontal = 1
+grow_vertical = 1
 title = "icon.png"
 
 [node name="ColorRect3" type="ColorRect" parent="Windows/IconWindow" unique_id=1033755042]
@@ -3893,6 +3914,7 @@ texture = ExtResource("23_dfejr")
 expand_mode = 1
 
 [node name="FileExplorer" parent="." unique_id=414043701 instance=ExtResource("31_qg81j")]
+visible = false
 layout_mode = 1
 offset_left = 193.0
 offset_top = 63.0

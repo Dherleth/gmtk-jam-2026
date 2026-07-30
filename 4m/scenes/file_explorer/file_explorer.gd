@@ -29,6 +29,8 @@ var current_structure_button: FileSystemStructureButton
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		_structure_changed()
+	else:
+		show()
 
 
 func _structure_changed() -> void:
@@ -210,8 +212,7 @@ func get_availables_paths_as_strings() -> Array[String]:
 
 func open(path: String):
 	for button: FileSystemStructureButton in file_system_structure_container.get_children():
-		print(path)
-		print(path, "-", "/".join(button.path))
 		if path == "/".join(button.path):
-			window.spawn()
+			if not window.visible:
+				window.spawn()
 			button.pressed.emit()
