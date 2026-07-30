@@ -1,6 +1,10 @@
 @tool
 extends Control
 class_name FileSystemStructureButton
+signal pressed
+
+var margin_container: MarginContainer
+
 
 @export var text: String:
 	set(value):
@@ -12,15 +16,26 @@ class_name FileSystemStructureButton
 		_display_icon_updated()
 @export var deepness := 0:
 	set(value):
-		print("in comp", value)
 		deepness = value
-		position.x = deepness * deepness_offset_px
+		
+		if not margin_container:
+			margin_container = find_child("MarginContainer")
+			
+		if margin_container:
+			margin_container.position.x = deepness * deepness_offset_px
 @export var deepness_offset_px := 20:
 	set(value):
 		deepness_offset_px = value
-		position.x = deepness * deepness_offset_px
+		
+		if not margin_container:
+			margin_container = find_child("MarginContainer")
+			
+		if margin_container:
+			margin_container.position.x = deepness * deepness_offset_px
 		
 @onready var color_rect: ColorRect = $ColorRect
+
+var current := false
 
 var icon_node: Control
 var text_node: Label
@@ -47,4 +62,11 @@ func _on_button_mouse_entered() -> void:
 
 
 func _on_button_mouse_exited() -> void:
-	color_rect.color = Color("ffffff00")
+	if not current:
+		color_rect.color = Color("ffffff00")
+	else:
+		color_rect.color = Color("57a0ffff")
+
+
+func _on_button_pressed() -> void:
+	pressed.emit()

@@ -124,7 +124,47 @@ func _on_button_pressed():
 	
 "
 
+[sub_resource type="Resource" id="Resource_jlbor"]
+script = ExtResource("32_qg81j")
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
+
+[sub_resource type="Resource" id="Resource_y5y8x"]
+script = ExtResource("32_qg81j")
+file_name = "Contracts"
+type = 3
+folder_content = Array[ExtResource("32_qg81j")]([SubResource("Resource_jlbor")])
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
+
+[sub_resource type="Resource" id="Resource_qg81j"]
+script = ExtResource("32_qg81j")
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
+
 [sub_resource type="Resource" id="Resource_mxaxw"]
+script = ExtResource("32_qg81j")
+file_name = "Work"
+modified = "03/11/01"
+type = 3
+size = "300 Ko"
+folder_content = Array[ExtResource("32_qg81j")]([SubResource("Resource_y5y8x"), SubResource("Resource_qg81j")])
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
+
+[sub_resource type="Resource" id="Resource_ort76"]
+script = ExtResource("32_qg81j")
+file_name = "filenameb.txt"
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
+
+[sub_resource type="Resource" id="Resource_s01h0"]
+script = ExtResource("32_qg81j")
+file_name = "dsff"
+type = 3
+folder_content = Array[ExtResource("32_qg81j")]([SubResource("Resource_ort76")])
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
+
+[sub_resource type="Resource" id="Resource_pys47"]
+script = ExtResource("32_qg81j")
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
+
+[sub_resource type="Resource" id="Resource_1regh"]
 script = ExtResource("32_qg81j")
 metadata/_custom_type_script = "uid://bx2yrr211ihq5"
 
@@ -5546,7 +5586,7 @@ volume_db = -15.0
 [node name="FileExplorer" parent="." unique_id=414043701 instance=ExtResource("31_qg81j")]
 layout_mode = 1
 offset_right = -54.0
-structure = Array[ExtResource("32_qg81j")]([SubResource("Resource_mxaxw")])
+structure = Array[ExtResource("32_qg81j")]([SubResource("Resource_mxaxw"), SubResource("Resource_s01h0"), SubResource("Resource_pys47"), SubResource("Resource_1regh")])
 
 [connection signal="pressed" from="TaskBar/Start" to="." method="_on_start_pressed"]
 [connection signal="caret_changed" from="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" to="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" method="_on_caret_changed"]

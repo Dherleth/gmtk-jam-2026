@@ -1,6 +1,8 @@
 @tool
 extends Control
 
+signal folder_selected(path: String)
+
 @onready var window: Control = $Window
 
 @export var structure :Array[FileExplorerEntry] = []:
@@ -19,7 +21,11 @@ var columns_container: HBoxContainer
 var back_lines_container: VBoxContainer # Colors behind the lines
 var file_system_structure_container: VBoxContainer
 var fs_structure_button_scene = preload("res://scenes/file_explorer/file_system_structure_button.tscn")
-	
+var current_folder_path_label: Label
+
+var current_folder_path: Array[String] = [] # Work/Important for example, lists only folders
+
+
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		_structure_changed()
@@ -28,10 +34,6 @@ func _ready() -> void:
 		
 
 func _structure_changed() -> void:
-	print("========================================")
-	_print_folder_content(structure)
-	print("========================================")
-	
 	_draw_explorer_content(structure)
 	_draw_fs_structure(structure)
 
@@ -58,13 +60,19 @@ func _get_useful_nodes(for_structure := false) -> bool:
 			
 		if not back_lines_container:
 			back_lines_container = find_child("BackLinesContainer")
-	
-		return name_column and modified_column and type_column and size_column and front_lines_container and back_lines_container
+		
+		if not current_folder_path_label:
+			current_folder_path_label = find_child("PathLabel")
+			
+		return name_column and modified_column and type_column and size_column and front_lines_container and back_lines_container and current_folder_path_label
 	
 	if not file_system_structure_container:
 		file_system_structure_container = find_child("FileSystemStructureContainer")
 		
-	return file_system_structure_container != null
+	if not current_folder_path_label:
+		current_folder_path_label = find_child("PathLabel")
+		
+	return file_system_structure_container and current_folder_path_label
 
 func _connect_resources():
 	for entry in structure:
@@ -80,17 +88,6 @@ func _disconnect_resources():
 
 func _on_resource_changed():
 	_structure_changed()
-	
-
-func _print_folder_content(base: Array[FileExplorerEntry], tab := ""):
-	for entry in base:
-		if entry:
-			if entry.type == FileExplorerEntry.FileType.FOLDER:
-				var new_tab = tab + "\t"
-				print(tab, entry.file_name)
-				_print_folder_content(entry.folder_content, new_tab)
-			else:
-				print(tab, entry.file_name)
 
 
 func _draw_explorer_content(content: Array[FileExplorerEntry]) -> void:
@@ -109,8 +106,10 @@ func _draw_explorer_content(content: Array[FileExplorerEntry]) -> void:
 			
 		for entry in content:
 			if entry:
+				var is_folder = entry.type == FileExplorerEntry.FileType.FOLDER
+			
 				# Populate the columns
-				var line_instance = name_column.add_line(entry.file_name, entry.type == FileExplorerEntry.FileType.FOLDER)
+				var line_instance = name_column.add_line(entry.file_name, is_folder)
 				modified_column.add_line(entry.modified)
 				type_column.add_line(FileExplorerEntry.FILE_TYPE_NAMES[entry.type])
 				size_column.add_line(entry.size)
@@ -134,7 +133,7 @@ func _draw_explorer_content(content: Array[FileExplorerEntry]) -> void:
 		size_column.horizontal_alignment = size_column.horizontal_alignment
 
 
-func _draw_fs_structure(structure: Array[FileExplorerEntry], deepness := 0) -> void:
+func _draw_fs_structure(structure: Array[FileExplorerEntry], deepness := 0, path: Array[String] = []) -> void:
 	if _get_useful_nodes(true):
 		if deepness == 0: # We are at the beginning so we clean the past version
 				for entry in file_system_structure_container.get_children():
@@ -142,7 +141,12 @@ func _draw_fs_structure(structure: Array[FileExplorerEntry], deepness := 0) -> v
 
 		for entry in structure:
 			if entry:
+				var entry_path := path.duplicate()
 				var is_folder = entry.type == FileExplorerEntry.FileType.FOLDER
+				
+				if is_folder:
+					entry_path.append(entry.file_name)
+				
 				var button_instance: FileSystemStructureButton = fs_structure_button_scene.instantiate()
 				button_instance.display_icon = is_folder
 				button_instance.text = entry.file_name
@@ -154,18 +158,31 @@ func _draw_fs_structure(structure: Array[FileExplorerEntry], deepness := 0) -> v
 				button_instance.deepness = deepness
 				
 				if is_folder:
-					_draw_fs_structure(entry.folder_content, deepness + 1)
+					_draw_fs_structure(entry.folder_content, deepness + 1, entry_path)
+					
+				button_instance.pressed.connect(func(): _on_fs_structure_button_pressed(entry, entry_path))
 			
 	
-
 func _on_line_button_pressed(entry: FileExplorerEntry) -> void:
 	if entry.type == FileExplorerEntry.FileType.FOLDER:
+		current_folder_path.push_back(entry.file_name)
+		current_folder_path_label.text = ">://" + "/".join(current_folder_path)
 		_draw_explorer_content(entry.folder_content)
 	else:
 		if entry.target_window:
-			var window = get_node(entry.target_window)
-			window.spawn()
+			var target_window = get_node(entry.target_window)
+			target_window.spawn()
+			
 
+func _on_fs_structure_button_pressed(entry: FileExplorerEntry, path: Array[String]) -> void:
+	if entry.type == FileExplorerEntry.FileType.FOLDER:
+		current_folder_path = path.duplicate()
+		current_folder_path_label.text = ">://" + "/".join(path)
+		_draw_explorer_content(entry.folder_content)
+	else:
+		if entry.target_window:
+			pass
+		
 
 func _on_line_button_mouse_entered(color_rect: ColorRect) -> void:
 	color_rect.color = Color("afafafff")
