@@ -17,7 +17,9 @@ var size_column: Column
 var front_lines_container: VBoxContainer # Buttons on top of the lines
 var columns_container: HBoxContainer
 var back_lines_container: VBoxContainer # Colors behind the lines
-		
+var file_system_structure_container: VBoxContainer
+var fs_structure_button_scene = preload("res://scenes/file_explorer/file_system_structure_button.tscn")
+	
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		_structure_changed()
@@ -31,33 +33,38 @@ func _structure_changed() -> void:
 	print("========================================")
 	
 	_draw_explorer_content(structure)
+	_draw_fs_structure(structure)
 
 
-func _get_useful_nodes() -> bool:
-	if not columns_container:
-		columns_container = find_child("ColumnsContainer")
-		
-	if not name_column:
-		name_column = find_child("NameColumn")
-		
-	if not modified_column:
-		modified_column = find_child("ModifiedColumn")
-		
-	if not type_column:
-		type_column = find_child("TypeColumn")
-		
-	if not size_column:
-		size_column = find_child("SizeColumn")
-		
-	if not front_lines_container:
-		front_lines_container = find_child("FrontLinesContainer")
-		
-	if not back_lines_container:
-		back_lines_container = find_child("BackLinesContainer")
+func _get_useful_nodes(for_structure := false) -> bool:
+	if not for_structure:
+		if not columns_container:
+			columns_container = find_child("ColumnsContainer")
+			
+		if not name_column:
+			name_column = find_child("NameColumn")
+			
+		if not modified_column:
+			modified_column = find_child("ModifiedColumn")
+			
+		if not type_column:
+			type_column = find_child("TypeColumn")
+			
+		if not size_column:
+			size_column = find_child("SizeColumn")
+			
+		if not front_lines_container:
+			front_lines_container = find_child("FrontLinesContainer")
+			
+		if not back_lines_container:
+			back_lines_container = find_child("BackLinesContainer")
 	
+		return name_column and modified_column and type_column and size_column and front_lines_container and back_lines_container
+	
+	if not file_system_structure_container:
+		file_system_structure_container = find_child("FileSystemStructureContainer")
 		
-	return name_column and modified_column and type_column and size_column and front_lines_container
-		
+	return file_system_structure_container != null
 
 func _connect_resources():
 	for entry in structure:
@@ -126,6 +133,30 @@ func _draw_explorer_content(content: Array[FileExplorerEntry]) -> void:
 		# Resets the property to notify the new lines to align correctly
 		size_column.horizontal_alignment = size_column.horizontal_alignment
 
+
+func _draw_fs_structure(structure: Array[FileExplorerEntry], deepness := 0) -> void:
+	if _get_useful_nodes(true):
+		if deepness == 0: # We are at the beginning so we clean the past version
+				for entry in file_system_structure_container.get_children():
+					entry.queue_free()
+
+		for entry in structure:
+			if entry:
+				var is_folder = entry.type == FileExplorerEntry.FileType.FOLDER
+				var button_instance: FileSystemStructureButton = fs_structure_button_scene.instantiate()
+				button_instance.display_icon = is_folder
+				button_instance.text = entry.file_name
+				# Control wrapper to be able to move the button horizontally in the VBoxContainer
+				var control = Control.new()
+				control.custom_minimum_size = button_instance.custom_minimum_size
+				control.add_child(button_instance)
+				file_system_structure_container.add_child(control)
+				button_instance.deepness = deepness
+				
+				if is_folder:
+					_draw_fs_structure(entry.folder_content, deepness + 1)
+			
+	
 
 func _on_line_button_pressed(entry: FileExplorerEntry) -> void:
 	if entry.type == FileExplorerEntry.FileType.FOLDER:

@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://bm8gu2odm5n7m"]
+
+[ext_resource type="Script" uid="uid://b1drsidj7kkuf" path="res://scenes/file_explorer/file_system_structure_button.gd" id="1_2tgwq"]
+[ext_resource type="Texture2D" uid="uid://lfuedn4ag0ct" path="res://assets/images/Windows_95_FOLDER.png" id="2_y5y8x"]
+[ext_resource type="FontFile" uid="uid://bueekk14nownm" path="res://assets/fonts/w95fa/W95F.otf" id="3_jlbor"]
+
+[node name="FileSystemStructureButton" type="Control" unique_id=125740646]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 135.0
+offset_bottom = 20.0
+size_flags_horizontal = 3
+script = ExtResource("1_2tgwq")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1526323302]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=386454607]
+layout_mode = 1
+offset_right = 84.0
+offset_bottom = 20.0
+
+[node name="Icon" type="Control" parent="HBoxContainer" unique_id=1285414941]
+visible = false
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Icon" unique_id=974336784]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_vertical = 2
+texture = ExtResource("2_y5y8x")
+expand_mode = 1
+
+[node name="TextLabel" type="Label" parent="HBoxContainer" unique_id=1806169368]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jlbor")
+text = "some text"
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=1222119397]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="." method="_on_button_mouse_exited"]

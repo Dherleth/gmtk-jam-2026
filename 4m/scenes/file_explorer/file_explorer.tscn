@@ -16,7 +16,6 @@ offset_bottom = -122.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tsstm")
-metadata/_edit_horizontal_guides_ = [234.0]
 
 [node name="Window" parent="." unique_id=1942496214 instance=ExtResource("2_rupmg")]
 layout_mode = 1
@@ -26,19 +25,19 @@ anchor_bottom = 1.0
 offset_right = 0.0
 offset_bottom = 0.0
 
-[node name="ColorRect3" type="ColorRect" parent="Window" unique_id=415833549]
+[node name="EmplacementContent" type="ColorRect" parent="Window" unique_id=415833549]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.019
 anchor_top = 0.174
 anchor_right = 0.981
 anchor_bottom = 0.957
-offset_left = -0.055999756
+offset_left = 137.028
 offset_top = -19.028
 offset_right = 0.055908203
 offset_bottom = -0.088012695
 
-[node name="ColorRect" type="ColorRect" parent="Window/ColorRect3" unique_id=885496259]
+[node name="ColorRect" type="ColorRect" parent="Window/EmplacementContent" unique_id=885496259]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -46,7 +45,7 @@ offset_bottom = 1.0
 grow_horizontal = 2
 color = Color(0.125911, 0.125911, 0.125911, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="Window/ColorRect3" unique_id=1141220578]
+[node name="ColorRect2" type="ColorRect" parent="Window/EmplacementContent" unique_id=1141220578]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -54,7 +53,7 @@ offset_right = 1.0
 grow_vertical = 2
 color = Color(0.125911, 0.125911, 0.125911, 1)
 
-[node name="ColorRect3" type="ColorRect" parent="Window/ColorRect3" unique_id=7639169]
+[node name="ColorRect3" type="ColorRect" parent="Window/EmplacementContent" unique_id=7639169]
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -65,7 +64,7 @@ grow_horizontal = 0
 grow_vertical = 2
 color = Color(0.818447, 0.839665, 0.842692, 1)
 
-[node name="ColorRect4" type="ColorRect" parent="Window/ColorRect3" unique_id=524232449]
+[node name="ColorRect4" type="ColorRect" parent="Window/EmplacementContent" unique_id=524232449]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -76,14 +75,14 @@ grow_horizontal = 2
 grow_vertical = 0
 color = Color(0.818447, 0.839665, 0.842692, 1)
 
-[node name="Content" type="Control" parent="Window/ColorRect3" unique_id=66597105]
+[node name="Content" type="Control" parent="Window/EmplacementContent" unique_id=66597105]
 anchors_preset = 0
 offset_left = 1.0839844
 offset_top = 1.0
-offset_right = 757.084
+offset_right = 620.0
 offset_bottom = 303.866
 
-[node name="BackLinesContainer" type="VBoxContainer" parent="Window/ColorRect3/Content" unique_id=658437645]
+[node name="BackLinesContainer" type="VBoxContainer" parent="Window/EmplacementContent/Content" unique_id=658437645]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -93,35 +92,34 @@ offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColumnsContainer" type="HBoxContainer" parent="Window/ColorRect3/Content" unique_id=2050434994]
+[node name="ColumnsContainer" type="HBoxContainer" parent="Window/EmplacementContent/Content" unique_id=2050434994]
 layout_mode = 0
 offset_right = 756.0
 offset_bottom = 58.0
 theme_override_constants/separation = 1
-alignment = 2
 
-[node name="NameColumn" parent="Window/ColorRect3/Content/ColumnsContainer" unique_id=781196372 instance=ExtResource("3_ee4v2")]
-custom_minimum_size = Vector2(321, 0)
+[node name="NameColumn" parent="Window/EmplacementContent/Content/ColumnsContainer" unique_id=781196372 instance=ExtResource("3_ee4v2")]
+custom_minimum_size = Vector2(286, 0)
 layout_mode = 2
 column_name = "Name"
 
-[node name="ModifiedColumn" parent="Window/ColorRect3/Content/ColumnsContainer" unique_id=545735215 instance=ExtResource("3_ee4v2")]
-custom_minimum_size = Vector2(179, 0)
+[node name="ModifiedColumn" parent="Window/EmplacementContent/Content/ColumnsContainer" unique_id=545735215 instance=ExtResource("3_ee4v2")]
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 column_name = "Modified"
 
-[node name="TypeColumn" parent="Window/ColorRect3/Content/ColumnsContainer" unique_id=1226161336 instance=ExtResource("3_ee4v2")]
-custom_minimum_size = Vector2(149, 0)
+[node name="TypeColumn" parent="Window/EmplacementContent/Content/ColumnsContainer" unique_id=1226161336 instance=ExtResource("3_ee4v2")]
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 column_name = "Type"
 
-[node name="SizeColumn" parent="Window/ColorRect3/Content/ColumnsContainer" unique_id=1028263003 instance=ExtResource("3_ee4v2")]
-custom_minimum_size = Vector2(104, 0)
+[node name="SizeColumn" parent="Window/EmplacementContent/Content/ColumnsContainer" unique_id=1028263003 instance=ExtResource("3_ee4v2")]
+custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
 horizontal_alignment = 2
 column_name = "Size"
 
-[node name="FrontLinesContainer" type="VBoxContainer" parent="Window/ColorRect3/Content" unique_id=317819736]
+[node name="FrontLinesContainer" type="VBoxContainer" parent="Window/EmplacementContent/Content" unique_id=317819736]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -131,3 +129,77 @@ offset_top = 33.0
 offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="FileSystemStructure" type="ColorRect" parent="Window" unique_id=168823284]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.019
+anchor_top = 0.174
+anchor_right = 0.981
+anchor_bottom = 0.957
+offset_left = -2.9719992
+offset_top = -19.027996
+offset_right = -627.028
+offset_bottom = -0.088012695
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Window/FileSystemStructure" unique_id=904607710]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Window/FileSystemStructure" unique_id=1829381672]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Window/FileSystemStructure" unique_id=1588937903]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Window/FileSystemStructure" unique_id=1908582509]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="Content" type="Control" parent="Window/FileSystemStructure" unique_id=1165785317]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0
+offset_bottom = -1.1689758
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Window/FileSystemStructure/Content" unique_id=1472110231]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 128.0
+offset_bottom = 297.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FileSystemStructureContainer" type="VBoxContainer" parent="Window/FileSystemStructure/Content/ScrollContainer" unique_id=332387136]
+custom_minimum_size = Vector2(123, 292)
+layout_mode = 2

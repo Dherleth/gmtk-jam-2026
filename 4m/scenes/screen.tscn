@@ -124,11 +124,7 @@ func _on_button_pressed():
 	
 "
 
-[sub_resource type="Resource" id="Resource_ee4v2"]
-script = ExtResource("32_qg81j")
-metadata/_custom_type_script = "uid://bx2yrr211ihq5"
-
-[sub_resource type="Resource" id="Resource_qg81j"]
+[sub_resource type="Resource" id="Resource_mxaxw"]
 script = ExtResource("32_qg81j")
 metadata/_custom_type_script = "uid://bx2yrr211ihq5"
 
@@ -5550,7 +5546,7 @@ volume_db = -15.0
 [node name="FileExplorer" parent="." unique_id=414043701 instance=ExtResource("31_qg81j")]
 layout_mode = 1
 offset_right = -54.0
-structure = Array[ExtResource("32_qg81j")]([SubResource("Resource_ee4v2"), SubResource("Resource_qg81j")])
+structure = Array[ExtResource("32_qg81j")]([SubResource("Resource_mxaxw")])
 
 [connection signal="pressed" from="TaskBar/Start" to="." method="_on_start_pressed"]
 [connection signal="caret_changed" from="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" to="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" method="_on_caret_changed"]
