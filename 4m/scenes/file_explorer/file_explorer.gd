@@ -159,7 +159,7 @@ func _draw_fs_structure(structure: Array[FileExplorerEntry], deepness := 0, path
 						_draw_fs_structure(entry.folder_content, deepness + 1, entry_path)
 						
 					button_instance.pressed.connect(func(): _on_fs_structure_button_pressed(button_instance, entry, entry_path))
-	
+		
 func _on_line_button_pressed(entry: FileExplorerEntry) -> void:
 	if entry.type == FileExplorerEntry.FileType.FOLDER:
 		current_folder_path.push_back(entry.file_name)
@@ -210,6 +210,8 @@ func get_availables_paths_as_strings() -> Array[String]:
 
 func open(path: String):
 	for button: FileSystemStructureButton in file_system_structure_container.get_children():
+		print(path)
+		print(path, "-", "/".join(button.path))
 		if path == "/".join(button.path):
 			window.spawn()
 			button.pressed.emit()

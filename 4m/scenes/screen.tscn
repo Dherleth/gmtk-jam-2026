@@ -18,7 +18,6 @@
 [ext_resource type="Shader" uid="uid://n0fjxglnrli1" path="res://themes/screen.gdshader" id="17_1regh"]
 [ext_resource type="Script" uid="uid://bphx6lewx2hot" path="res://scenes/access.gd" id="17_5syhw"]
 [ext_resource type="Texture2D" uid="uid://dbi477e0vo7yj" path="res://assets/images/Windows_95_!.png" id="17_dfejr"]
-[ext_resource type="Script" uid="uid://dwpwhc0ywbbl7" path="res://scenes/folder_manager.gd" id="18_mml8x"]
 [ext_resource type="Texture2D" uid="uid://dlnpux1c7qrim" path="res://assets/images/stat_numbers.png" id="19_sp806"]
 [ext_resource type="AudioStream" uid="uid://dginvyreg7pco" path="res://assets/audio/win_small_notif.wav" id="20_4sqgv"]
 [ext_resource type="Texture2D" uid="uid://bhwkeb11kqor6" path="res://assets/images/Monthly_revenue_in_Millions.png" id="20_06c6w"]
@@ -109,82 +108,152 @@ shader_parameter/vignette_intensity = 0.3
 shader_parameter/grille_amount = 0.05
 shader_parameter/brightness_boost = 1.2
 
-[sub_resource type="GDScript" id="GDScript_qg81j"]
-script/source = "extends Button
-
-
-@export var window: Control
-
-func _ready() -> void:
-	pressed.connect(_on_button_pressed)
-	
-
-func _on_button_pressed():
-	if !window.visible:
-		window.spawn()
-	
-"
-
-[sub_resource type="Resource" id="Resource_jlbor"]
+[sub_resource type="Resource" id="Resource_pys47"]
 script = ExtResource("32_qg81j")
-metadata/_custom_type_script = "uid://bx2yrr211ihq5"
-
-[sub_resource type="Resource" id="Resource_y5y8x"]
-script = ExtResource("32_qg81j")
-file_name = "Contracts"
-type = 3
-folder_content = Array[ExtResource("32_qg81j")]([SubResource("Resource_jlbor")])
-metadata/_custom_type_script = "uid://bx2yrr211ihq5"
-
-[sub_resource type="Resource" id="Resource_qg81j"]
-script = ExtResource("32_qg81j")
-metadata/_custom_type_script = "uid://bx2yrr211ihq5"
-
-[sub_resource type="Resource" id="Resource_mxaxw"]
-script = ExtResource("32_qg81j")
-file_name = "Work"
-modified = "03/11/01"
-type = 3
-size = "300 Ko"
-folder_content = Array[ExtResource("32_qg81j")]([SubResource("Resource_y5y8x"), SubResource("Resource_qg81j")])
-metadata/_custom_type_script = "uid://bx2yrr211ihq5"
-
-[sub_resource type="Resource" id="Resource_ort76"]
-script = ExtResource("32_qg81j")
-file_name = "filenameb.txt"
+file_name = "The Contract.txt"
+target_window = NodePath("../Windows/TheContractWindow")
 metadata/_custom_type_script = "uid://bx2yrr211ihq5"
 
 [sub_resource type="Resource" id="Resource_s01h0"]
 script = ExtResource("32_qg81j")
-file_name = "Important"
+file_name = "Signed Contracts"
 type = 3
-folder_content = Array[ExtResource("32_qg81j")]([SubResource("Resource_ort76")])
+folder_content = Array[ExtResource("32_qg81j")]([SubResource("Resource_pys47")])
 metadata/_custom_type_script = "uid://bx2yrr211ihq5"
 
-[sub_resource type="Resource" id="Resource_vegeo"]
+[sub_resource type="Resource" id="Resource_wnwny"]
 script = ExtResource("32_qg81j")
-file_name = "Open4All Guidelines.txt"
+file_name = "Impact.doc"
+target_window = NodePath("../Windows/ImpactWindow")
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
+
+[sub_resource type="Resource" id="Resource_7m1ao"]
+script = ExtResource("32_qg81j")
+file_name = "Revenue.doc"
+target_window = NodePath("../Windows/RevenueWindow")
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
+
+[sub_resource type="Resource" id="Resource_scdrk"]
+script = ExtResource("32_qg81j")
+file_name = "Numbers"
+type = 3
+folder_content = Array[ExtResource("32_qg81j")]([SubResource("Resource_wnwny"), SubResource("Resource_7m1ao")])
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
+
+[sub_resource type="Resource" id="Resource_867i1"]
+script = ExtResource("32_qg81j")
+file_name = "Grand opening.txt"
+target_window = NodePath("../Windows/ArticleAWindow")
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
+
+[sub_resource type="Resource" id="Resource_682lf"]
+script = ExtResource("32_qg81j")
+file_name = "E-helper adoption boom.txt"
+target_window = NodePath("../Windows/ArticleBWindow")
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
+
+[sub_resource type="Resource" id="Resource_v8i21"]
+script = ExtResource("32_qg81j")
+file_name = "First Incident.txt"
+target_window = NodePath("../Windows/ArticleCWindow")
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
+
+[sub_resource type="Resource" id="Resource_w4ms8"]
+script = ExtResource("32_qg81j")
+file_name = "TheGreat Replacement.txt"
+target_window = NodePath("../Windows/ArticleFWindow")
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
+
+[sub_resource type="Resource" id="Resource_jgqdk"]
+script = ExtResource("32_qg81j")
+file_name = "Articles"
+type = 3
+folder_content = Array[ExtResource("32_qg81j")]([SubResource("Resource_867i1"), SubResource("Resource_682lf"), SubResource("Resource_v8i21"), SubResource("Resource_w4ms8")])
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
+
+[sub_resource type="Resource" id="Resource_35pa5"]
+script = ExtResource("32_qg81j")
+file_name = "Work"
+type = 3
+folder_content = Array[ExtResource("32_qg81j")]([SubResource("Resource_s01h0"), SubResource("Resource_scdrk"), SubResource("Resource_jgqdk")])
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
+
+[sub_resource type="Resource" id="Resource_a12s4"]
+script = ExtResource("32_qg81j")
+file_name = "Important"
+type = 3
 metadata/_custom_type_script = "uid://bx2yrr211ihq5"
 
 [sub_resource type="Resource" id="Resource_a66ve"]
 script = ExtResource("32_qg81j")
-file_name = "Recycle Bin"
-type = 3
-folder_content = Array[ExtResource("32_qg81j")]([SubResource("Resource_vegeo")])
+file_name = "image1.jpg"
+type = 1
+target_window = NodePath("../Windows/Image1Window")
 metadata/_custom_type_script = "uid://bx2yrr211ihq5"
 
-[sub_resource type="Resource" id="Resource_1regh"]
+[sub_resource type="Resource" id="Resource_vegeo"]
 script = ExtResource("32_qg81j")
+file_name = "mybeloved.jpg"
+type = 1
+target_window = NodePath("../Windows/MyBelovedWindow")
 metadata/_custom_type_script = "uid://bx2yrr211ihq5"
 
 [sub_resource type="Resource" id="Resource_bgcim"]
 script = ExtResource("32_qg81j")
+file_name = "icon.png"
+type = 1
+target_window = NodePath("../Windows/IconWindow")
 metadata/_custom_type_script = "uid://bx2yrr211ihq5"
 
-[sub_resource type="Resource" id="Resource_vs5sd"]
+[sub_resource type="Resource" id="Resource_4qo0x"]
 script = ExtResource("32_qg81j")
-file_name = "New folder"
+file_name = "Pictures"
 type = 3
+folder_content = Array[ExtResource("32_qg81j")]([SubResource("Resource_a66ve"), SubResource("Resource_vegeo"), SubResource("Resource_bgcim")])
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
+
+[sub_resource type="Resource" id="Resource_qg81j"]
+script = ExtResource("32_qg81j")
+file_name = "Music"
+type = 3
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
+
+[sub_resource type="Resource" id="Resource_1regh"]
+script = ExtResource("32_qg81j")
+file_name = "Videos"
+type = 3
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
+
+[sub_resource type="Resource" id="Resource_j7bf7"]
+script = ExtResource("32_qg81j")
+file_name = "Not Important"
+type = 3
+folder_content = Array[ExtResource("32_qg81j")]([SubResource("Resource_4qo0x"), SubResource("Resource_qg81j"), SubResource("Resource_1regh")])
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
+
+[sub_resource type="Resource" id="Resource_t2sxr"]
+script = ExtResource("32_qg81j")
+file_name = "guidelines.txt"
+target_window = NodePath("../Windows/GuideLinesWindow")
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
+
+[sub_resource type="Resource" id="Resource_j73wx"]
+script = ExtResource("32_qg81j")
+file_name = "notes.txt"
+target_window = NodePath("../Windows/NotesWindow")
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
+
+[sub_resource type="Resource" id="Resource_a2w57"]
+script = ExtResource("32_qg81j")
+file_name = "Looking for a MILF?.txt"
+target_window = NodePath("../Windows/LookingMilfWindow")
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
+
+[sub_resource type="Resource" id="Resource_r7acc"]
+script = ExtResource("32_qg81j")
+file_name = "Recycle Bin"
+type = 3
+folder_content = Array[ExtResource("32_qg81j")]([SubResource("Resource_t2sxr"), SubResource("Resource_j73wx"), SubResource("Resource_a2w57")])
 metadata/_custom_type_script = "uid://bx2yrr211ihq5"
 
 [node name="Screen" type="Control" unique_id=53907799]
@@ -372,6 +441,13 @@ autoplay = true
 stream = ExtResource("29_4sqgv")
 volume_db = -10.0
 
+[node name="ExplosionSound" type="AudioStreamPlayer" parent="." unique_id=992342386]
+stream = ExtResource("30_38t0m")
+
+[node name="Tick" type="AudioStreamPlayer" parent="." unique_id=163704445]
+stream = ExtResource("31_cdnxo")
+volume_db = -15.0
+
 [node name="Desktop" type="Control" parent="." unique_id=913680300]
 anchors_preset = 0
 offset_right = 40.0
@@ -465,36 +541,7 @@ theme_override_fonts/font = ExtResource("3_sp806")
 text = "Employee Management"
 horizontal_alignment = 1
 
-[node name="FoldersButton" type="TextureButton" parent="Desktop" unique_id=2057457581 node_paths=PackedStringArray("window") groups=["apps"]]
-layout_mode = 0
-offset_left = 74.0
-offset_top = 479.0
-offset_right = 112.0
-offset_bottom = 517.0
-texture_normal = ExtResource("11_wydk0")
-ignore_texture_size = true
-stretch_mode = 0
-script = ExtResource("6_2hpia")
-window = NodePath("../../Windows/Folders")
-
-[node name="Label" type="Label" parent="Desktop/FoldersButton" unique_id=84156265]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -32.0
-offset_top = 3.0
-offset_right = 32.0
-offset_bottom = 26.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "Folders"
-horizontal_alignment = 1
-
-[node name="FileExplorerButton" type="TextureButton" parent="Desktop" unique_id=933141806 node_paths=PackedStringArray("file_explorer")]
+[node name="WorkButton" type="TextureButton" parent="Desktop" unique_id=933141806 node_paths=PackedStringArray("file_explorer")]
 layout_mode = 0
 offset_left = 77.0
 offset_top = 372.0
@@ -507,7 +554,7 @@ script = ExtResource("13_1regh")
 file_explorer = NodePath("../../FileExplorer")
 path = "Work"
 
-[node name="Label" type="Label" parent="Desktop/FileExplorerButton" unique_id=1689474353]
+[node name="Label" type="Label" parent="Desktop/WorkButton" unique_id=1689474353]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -521,7 +568,7 @@ offset_bottom = 26.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("3_sp806")
-text = "Explorer"
+text = "Work"
 horizontal_alignment = 1
 
 [node name="Windows" type="Control" parent="." unique_id=1130820464]
@@ -529,433 +576,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="BinWindows" type="Control" parent="Windows" unique_id=1725221252]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="BinWindow" parent="Windows/BinWindows" unique_id=832344523 groups=["window"] instance=ExtResource("10_2hmho")]
-visible = false
-layout_mode = 1
-anchor_left = 0.146
-anchor_top = 0.049
-anchor_right = 0.146
-anchor_bottom = 0.049
-offset_left = 162.15999
-offset_top = 30.039999
-offset_right = 648.16
-offset_bottom = 214.04001
-title = "Recycle Bin"
-
-[node name="ColorRect3" type="ColorRect" parent="Windows/BinWindows/BinWindow" unique_id=1781659433]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.019
-anchor_top = 0.174
-anchor_right = 0.981
-anchor_bottom = 0.957
-offset_left = -0.0560007
-offset_top = -0.0160027
-offset_right = 0.0559692
-offset_bottom = -0.0879974
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="Windows/BinWindows/BinWindow/ColorRect3" unique_id=1936403136]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 1.0
-grow_horizontal = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="Windows/BinWindows/BinWindow/ColorRect3" unique_id=700357179]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 1.0
-grow_vertical = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="Windows/BinWindows/BinWindow/ColorRect3" unique_id=1024477408]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-grow_horizontal = 0
-grow_vertical = 2
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="Windows/BinWindows/BinWindow/ColorRect3" unique_id=1898205586]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -1.0
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Windows/BinWindows/BinWindow/ColorRect3" unique_id=1565283147]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.02
-anchor_top = 0.056
-anchor_right = 0.98
-anchor_bottom = 0.944
-offset_left = -0.160001
-offset_top = -0.0640001
-offset_right = 0.160004
-offset_bottom = 0.0639954
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 4
-
-[node name="Guidelines" type="Button" parent="Windows/BinWindows/BinWindow/ColorRect3/VBoxContainer" unique_id=1505618228 node_paths=PackedStringArray("window")]
-layout_mode = 2
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "guidelines.txt                           01/11/01      Text Document         5KB"
-flat = true
-alignment = 0
-script = SubResource("GDScript_qg81j")
-window = NodePath("../../../../GuideLinesWindow")
-
-[node name="Notes" type="Button" parent="Windows/BinWindows/BinWindow/ColorRect3/VBoxContainer" unique_id=873265939 node_paths=PackedStringArray("window")]
-layout_mode = 2
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "notes.txt                                   03/11/01      Text Document         2KB"
-flat = true
-alignment = 0
-script = SubResource("GDScript_qg81j")
-window = NodePath("../../../../NotesWindow")
-
-[node name="LookingMilf" type="Button" parent="Windows/BinWindows/BinWindow/ColorRect3/VBoxContainer" unique_id=1888529828 node_paths=PackedStringArray("window")]
-layout_mode = 2
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "Looking for a MILF?               07/11/01      Text Document         3KB"
-flat = true
-alignment = 0
-script = SubResource("GDScript_qg81j")
-window = NodePath("../../../../LookingMilfWindow")
-
-[node name="GuideLinesWindow" parent="Windows/BinWindows" unique_id=480753331 groups=["window"] instance=ExtResource("10_2hmho")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchor_left = 0.146
-anchor_top = 0.049
-anchor_right = 0.146
-anchor_bottom = 0.049
-offset_left = 223.87201
-offset_top = 39.304
-offset_right = 891.16
-offset_bottom = 364.04
-title = "guidelines.txt"
-
-[node name="ColorRect3" type="ColorRect" parent="Windows/BinWindows/GuideLinesWindow" unique_id=1029618765]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.019
-anchor_top = 0.174
-anchor_right = 0.981
-anchor_bottom = 0.957
-offset_left = -0.0560007
-offset_top = -0.0160027
-offset_right = 0.0559692
-offset_bottom = -0.0879974
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="Windows/BinWindows/GuideLinesWindow/ColorRect3" unique_id=1264499478]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 1.0
-grow_horizontal = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="Windows/BinWindows/GuideLinesWindow/ColorRect3" unique_id=876949219]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 1.0
-grow_vertical = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="Windows/BinWindows/GuideLinesWindow/ColorRect3" unique_id=696519576]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-grow_horizontal = 0
-grow_vertical = 2
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="Windows/BinWindows/GuideLinesWindow/ColorRect3" unique_id=1802027448]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -1.0
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="DontTxt" type="TextEdit" parent="Windows/BinWindows/GuideLinesWindow/ColorRect3" unique_id=2087573528]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.025
-anchor_top = 0.047
-anchor_right = 0.985
-anchor_bottom = 0.936
-offset_left = -0.2
-offset_top = 0.232
-offset_right = 0.119965
-offset_bottom = 0.215988
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/background_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "Open4All Guidelines
-
-The e-center's new tools need to follow strict safety and responsibility regulations.
-The empowerment of its users and the innovations are only possible if the policies are respected.
-
-- Respect users
-- Respect their privacy
-- Protect the employees
-- Fair wages
-- Protect the environment"
-context_menu_enabled = false
-emoji_menu_enabled = false
-shortcut_keys_enabled = false
-drag_and_drop_selection_enabled = false
-middle_mouse_paste_enabled = false
-autowrap_mode = 0
-virtual_keyboard_enabled = false
-
-[node name="NotesWindow" parent="Windows/BinWindows" unique_id=891963243 groups=["window"] instance=ExtResource("10_2hmho")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchor_left = 0.146
-anchor_top = 0.049
-anchor_right = 0.146
-anchor_bottom = 0.049
-offset_left = 223.87201
-offset_top = 39.304
-offset_right = 891.16
-offset_bottom = 364.04
-title = "notes.txt"
-
-[node name="ColorRect3" type="ColorRect" parent="Windows/BinWindows/NotesWindow" unique_id=1425130053]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.019
-anchor_top = 0.174
-anchor_right = 0.981
-anchor_bottom = 0.957
-offset_left = -0.0560007
-offset_top = -0.0160027
-offset_right = 0.0559692
-offset_bottom = -0.0879974
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="Windows/BinWindows/NotesWindow/ColorRect3" unique_id=1487056593]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 1.0
-grow_horizontal = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="Windows/BinWindows/NotesWindow/ColorRect3" unique_id=1147121150]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 1.0
-grow_vertical = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="Windows/BinWindows/NotesWindow/ColorRect3" unique_id=1420161019]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-grow_horizontal = 0
-grow_vertical = 2
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="Windows/BinWindows/NotesWindow/ColorRect3" unique_id=286524095]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -1.0
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="DontTxt" type="TextEdit" parent="Windows/BinWindows/NotesWindow/ColorRect3" unique_id=619192230]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.025
-anchor_top = 0.047
-anchor_right = 0.985
-anchor_bottom = 0.936
-offset_left = -0.2
-offset_top = 0.232
-offset_right = 0.119965
-offset_bottom = 0.215988
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/background_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "To Do:
-- Book meeting with future buyer
-- Transfer money to B.o.H
-- Buy one-way plane ticket"
-context_menu_enabled = false
-emoji_menu_enabled = false
-shortcut_keys_enabled = false
-drag_and_drop_selection_enabled = false
-middle_mouse_paste_enabled = false
-autowrap_mode = 0
-virtual_keyboard_enabled = false
-
-[node name="LookingMilfWindow" parent="Windows/BinWindows" unique_id=2105439069 groups=["window"] instance=ExtResource("10_2hmho")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchor_left = 0.146
-anchor_top = 0.049
-anchor_right = 0.146
-anchor_bottom = 0.049
-offset_left = 223.87201
-offset_top = 39.304
-offset_right = 891.16
-offset_bottom = 364.04
-title = "Looking for a MILF?.txt"
-
-[node name="ColorRect3" type="ColorRect" parent="Windows/BinWindows/LookingMilfWindow" unique_id=2130351187]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.019
-anchor_top = 0.174
-anchor_right = 0.981
-anchor_bottom = 0.957
-offset_left = -0.0560007
-offset_top = -0.0160027
-offset_right = 0.0559692
-offset_bottom = -0.0879974
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="Windows/BinWindows/LookingMilfWindow/ColorRect3" unique_id=1288139526]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 1.0
-grow_horizontal = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="Windows/BinWindows/LookingMilfWindow/ColorRect3" unique_id=76287778]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 1.0
-grow_vertical = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="Windows/BinWindows/LookingMilfWindow/ColorRect3" unique_id=781503949]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-grow_horizontal = 0
-grow_vertical = 2
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="Windows/BinWindows/LookingMilfWindow/ColorRect3" unique_id=594702344]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -1.0
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="DontTxt" type="TextEdit" parent="Windows/BinWindows/LookingMilfWindow/ColorRect3" unique_id=806049191]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.025
-anchor_top = 0.047
-anchor_right = 0.985
-anchor_bottom = 0.936
-offset_left = -0.2
-offset_top = 0.232
-offset_right = 0.119965
-offset_bottom = 0.215988
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/background_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "Blonde? Brunette? Big breast?
-Real? Fake?
-We have what you're looking for!
-Call XC Motherload now!
-XXX-800-85X"
-context_menu_enabled = false
-emoji_menu_enabled = false
-shortcut_keys_enabled = false
-drag_and_drop_selection_enabled = false
-middle_mouse_paste_enabled = false
-autowrap_mode = 0
-virtual_keyboard_enabled = false
-
-[node name="Browser" parent="Windows" unique_id=1415093049 groups=["window"] instance=ExtResource("10_2hmho")]
-unique_name_in_owner = true
+[node name="Browser" parent="Windows" unique_id=1415093049 instance=ExtResource("10_2hmho")]
 visible = false
 layout_mode = 1
 anchor_left = 0.146
@@ -2086,7 +1707,7 @@ autowrap_mode = 2
 shortcut_keys_enabled = false
 drag_and_drop_selection_enabled = false
 
-[node name="EmployeeMgmtWindow" parent="Windows" unique_id=1445978554 groups=["window"] instance=ExtResource("10_2hmho")]
+[node name="EmployeeMgmtWindow" parent="Windows" unique_id=1445978554 instance=ExtResource("10_2hmho")]
 visible = false
 layout_mode = 1
 anchor_left = 0.146
@@ -2437,2466 +2058,6 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_sp806")
 text = "27.07.01"
 horizontal_alignment = 2
-
-[node name="Folders" parent="Windows" unique_id=280454610 groups=["window"] instance=ExtResource("10_2hmho")]
-visible = false
-layout_mode = 1
-anchor_left = 0.146
-anchor_top = 0.049
-anchor_right = 0.146
-anchor_bottom = 0.049
-offset_left = 162.15999
-offset_top = 30.039999
-offset_right = 648.16
-offset_bottom = 353.04
-title = "Folders"
-
-[node name="FolderManager" type="Control" parent="Windows/Folders" unique_id=248969052]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("18_mml8x")
-
-[node name="Root" type="ColorRect" parent="Windows/Folders" unique_id=1729942179]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.019
-anchor_top = 0.174
-anchor_right = 0.981
-anchor_bottom = 0.957
-offset_left = -0.05600071
-offset_top = -0.016002655
-offset_right = 0.055999756
-offset_bottom = -0.08798218
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="BackButton" type="Button" parent="Windows/Folders/Root" unique_id=1575192308]
-layout_mode = 0
-offset_left = 1.8220215
-offset_top = -27.185997
-offset_right = 46.82202
-offset_bottom = 3.814003
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "Back"
-flat = true
-
-[node name="ColorRect" type="ColorRect" parent="Windows/Folders/Root" unique_id=1276008301]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 1.0
-grow_horizontal = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="Windows/Folders/Root" unique_id=1221732547]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 1.0
-grow_vertical = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/Root" unique_id=1743839688]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-grow_horizontal = 0
-grow_vertical = 2
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="Windows/Folders/Root" unique_id=556641551]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -1.0
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="WorkButton" type="TextureButton" parent="Windows/Folders/Root" unique_id=1453006883 groups=["apps"]]
-layout_mode = 0
-offset_left = 30.822021
-offset_top = 23.814003
-offset_right = 69.45117
-offset_bottom = 63.814003
-texture_normal = ExtResource("11_wydk0")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="Windows/Folders/Root/WorkButton" unique_id=1976030815]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 17.685425
-offset_top = -27.0
-offset_right = 81.685425
-offset_bottom = -4.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "Work"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="Windows/Folders/Root/WorkButton" unique_id=1817752110]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 148.68542
-offset_top = -26.79
-offset_right = 252.68542
-offset_bottom = -10.790001
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "03/11/01"
-
-[node name="Label3" type="Label" parent="Windows/Folders/Root/WorkButton" unique_id=1477695310]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 232.68542
-offset_top = -26.79
-offset_right = 336.68542
-offset_bottom = -10.790001
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "Folder"
-
-[node name="Label4" type="Label" parent="Windows/Folders/Root/WorkButton" unique_id=1444859812]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 345.68542
-offset_top = -26.79
-offset_right = 449.68542
-offset_bottom = -10.790001
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "300KB"
-
-[node name="ImportantButton" type="TextureButton" parent="Windows/Folders/Root" unique_id=2016198356 groups=["apps"]]
-layout_mode = 0
-offset_left = 30.822021
-offset_top = 91.81401
-offset_right = 69.45117
-offset_bottom = 131.81401
-texture_normal = ExtResource("11_wydk0")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="Windows/Folders/Root/ImportantButton" unique_id=1724667448]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 28.685425
-offset_top = -27.0
-offset_right = 92.685425
-offset_bottom = -4.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "Important"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="Windows/Folders/Root/ImportantButton" unique_id=1040046468]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 148.68542
-offset_top = -26.79
-offset_right = 252.68542
-offset_bottom = -10.790001
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "03/11/01"
-
-[node name="Label3" type="Label" parent="Windows/Folders/Root/ImportantButton" unique_id=2135018332]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 232.68542
-offset_top = -26.79
-offset_right = 336.68542
-offset_bottom = -10.790001
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "Folder"
-
-[node name="Label4" type="Label" parent="Windows/Folders/Root/ImportantButton" unique_id=109276338]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 345.68542
-offset_top = -26.79
-offset_right = 449.68542
-offset_bottom = -10.790001
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "100KB"
-
-[node name="NotImportantButton" type="TextureButton" parent="Windows/Folders/Root" unique_id=1209652647 groups=["apps"]]
-layout_mode = 0
-offset_left = 30.822021
-offset_top = 164.21
-offset_right = 69.45117
-offset_bottom = 204.21
-texture_normal = ExtResource("11_wydk0")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="Windows/Folders/Root/NotImportantButton" unique_id=2137034560]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 29.685425
-offset_top = -28.395996
-offset_right = 112.685425
-offset_bottom = -5.395996
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "Not important"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="Windows/Folders/Root/NotImportantButton" unique_id=1456369311]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 148.68542
-offset_top = -27.79
-offset_right = 252.68542
-offset_bottom = -11.790001
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "03/11/01"
-
-[node name="Label3" type="Label" parent="Windows/Folders/Root/NotImportantButton" unique_id=923553361]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 232.68542
-offset_top = -27.79
-offset_right = 336.68542
-offset_bottom = -11.790001
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "Folder"
-
-[node name="Label4" type="Label" parent="Windows/Folders/Root/NotImportantButton" unique_id=946173046]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 345.68542
-offset_top = -27.79
-offset_right = 449.68542
-offset_bottom = -11.790001
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "150KB"
-
-[node name="WorkFolderContent" type="ColorRect" parent="Windows/Folders" unique_id=328288790]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.019
-anchor_top = 0.174
-anchor_right = 0.981
-anchor_bottom = 0.957
-offset_left = -0.05600071
-offset_top = -0.01599884
-offset_right = 0.055999756
-offset_bottom = 4.5670166
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="Windows/Folders/WorkFolderContent" unique_id=1687635234]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 1.0
-grow_horizontal = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="Windows/Folders/WorkFolderContent" unique_id=1294988968]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 1.0
-grow_vertical = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/WorkFolderContent" unique_id=1518332881]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-grow_horizontal = 0
-grow_vertical = 2
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="Windows/Folders/WorkFolderContent" unique_id=1962319759]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -1.0
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="SignedContractsButton" type="TextureButton" parent="Windows/Folders/WorkFolderContent" unique_id=817341421 groups=["apps"]]
-layout_mode = 0
-offset_left = 28.822021
-offset_top = 25.21
-offset_right = 67.45117
-offset_bottom = 65.21
-texture_normal = ExtResource("11_wydk0")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="Windows/Folders/WorkFolderContent/SignedContractsButton" unique_id=2027008698]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 27.685425
-offset_top = -25.79
-offset_right = 133.68542
-offset_bottom = -9.790001
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "Signed contracts"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="Windows/Folders/WorkFolderContent/SignedContractsButton" unique_id=1422824232]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 148.68542
-offset_top = -25.79
-offset_right = 252.68542
-offset_bottom = -9.790001
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "03/11/01"
-
-[node name="Label3" type="Label" parent="Windows/Folders/WorkFolderContent/SignedContractsButton" unique_id=1444705150]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 220.68542
-offset_top = -25.79
-offset_right = 324.68542
-offset_bottom = -9.790001
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "Folder"
-
-[node name="Label4" type="Label" parent="Windows/Folders/WorkFolderContent/SignedContractsButton" unique_id=1184161846]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 353.68542
-offset_top = -25.79
-offset_right = 457.68542
-offset_bottom = -9.790001
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "300KB"
-
-[node name="ArticlesButton" type="TextureButton" parent="Windows/Folders/WorkFolderContent" unique_id=1948765295 groups=["apps"]]
-layout_mode = 0
-offset_left = 28.822021
-offset_top = 85.20999
-offset_right = 67.45117
-offset_bottom = 125.20999
-texture_normal = ExtResource("11_wydk0")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="Windows/Folders/WorkFolderContent/ArticlesButton" unique_id=321607790]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 20.685425
-offset_top = -27.790009
-offset_right = 84.685425
-offset_bottom = -11.790009
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "Articles"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="Windows/Folders/WorkFolderContent/ArticlesButton" unique_id=643273310]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 148.68542
-offset_top = -26.79
-offset_right = 252.68542
-offset_bottom = -10.790001
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "02/11/01"
-
-[node name="Label3" type="Label" parent="Windows/Folders/WorkFolderContent/ArticlesButton" unique_id=401048792]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 220.68542
-offset_top = -26.79
-offset_right = 324.68542
-offset_bottom = -10.790001
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "Folder"
-
-[node name="Label4" type="Label" parent="Windows/Folders/WorkFolderContent/ArticlesButton" unique_id=382856792]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 367.68542
-offset_top = -26.79
-offset_right = 394.68542
-offset_bottom = -10.790001
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "2Mo"
-
-[node name="StatsButton" type="TextureButton" parent="Windows/Folders/WorkFolderContent" unique_id=1760943434 groups=["apps"]]
-layout_mode = 0
-offset_left = 28.822021
-offset_top = 145.20999
-offset_right = 67.45117
-offset_bottom = 185.20999
-texture_normal = ExtResource("11_wydk0")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="Windows/Folders/WorkFolderContent/StatsButton" unique_id=1369885991]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 11.685425
-offset_top = -27.790009
-offset_right = 75.685425
-offset_bottom = -11.790009
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "Stats"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="Windows/Folders/WorkFolderContent/StatsButton" unique_id=720780413]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 148.68542
-offset_top = -26.79
-offset_right = 252.68542
-offset_bottom = -10.790001
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "03/11/01"
-
-[node name="Label3" type="Label" parent="Windows/Folders/WorkFolderContent/StatsButton" unique_id=300112720]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 220.68542
-offset_top = -26.79
-offset_right = 324.68542
-offset_bottom = -10.790001
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "Folder"
-
-[node name="Label4" type="Label" parent="Windows/Folders/WorkFolderContent/StatsButton" unique_id=83045373]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 367.68542
-offset_top = -26.79
-offset_right = 394.68542
-offset_bottom = -10.790001
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "4Mo"
-
-[node name="SignedContractsFolderContent" type="ColorRect" parent="Windows/Folders/WorkFolderContent" unique_id=314107182]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.019
-anchor_top = 0.174
-anchor_right = 0.981
-anchor_bottom = 0.957
-offset_left = -9.063218
-offset_top = -44.9896
-offset_right = 8.063263
-offset_bottom = 10.39415
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="Windows/Folders/WorkFolderContent/SignedContractsFolderContent" unique_id=1872896109]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 1.0
-grow_horizontal = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="Windows/Folders/WorkFolderContent/SignedContractsFolderContent" unique_id=1654612675]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 1.0
-grow_vertical = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/WorkFolderContent/SignedContractsFolderContent" unique_id=1035912150]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-grow_horizontal = 0
-grow_vertical = 2
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="Windows/Folders/WorkFolderContent/SignedContractsFolderContent" unique_id=413323223]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -1.0
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="Contracts" type="VBoxContainer" parent="Windows/Folders/WorkFolderContent/SignedContractsFolderContent" unique_id=140808300]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.02
-anchor_top = 0.056
-anchor_right = 0.98
-anchor_bottom = 0.944
-offset_left = 1.6600075
-offset_top = 5.608
-offset_right = -0.66000366
-offset_bottom = -114.608
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 4
-
-[node name="Contract" type="Button" parent="Windows/Folders/WorkFolderContent/SignedContractsFolderContent/Contracts" unique_id=1556739624 node_paths=PackedStringArray("window")]
-layout_mode = 2
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "TheContract.txt                     01/11/01       Text Document        66KB"
-flat = true
-alignment = 0
-script = SubResource("GDScript_qg81j")
-window = NodePath("../../../../Windows/TheContractWindow")
-
-[node name="ArticlesFolderContent" type="ColorRect" parent="Windows/Folders/WorkFolderContent" unique_id=1802600047]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.019
-anchor_top = 0.174
-anchor_right = 0.981
-anchor_bottom = 0.957
-offset_left = -9.063218
-offset_top = -44.9896
-offset_right = 8.063263
-offset_bottom = 10.39415
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="Windows/Folders/WorkFolderContent/ArticlesFolderContent" unique_id=1925817726]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 1.0
-grow_horizontal = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="Windows/Folders/WorkFolderContent/ArticlesFolderContent" unique_id=510547361]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 1.0
-grow_vertical = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/WorkFolderContent/ArticlesFolderContent" unique_id=274885365]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-grow_horizontal = 0
-grow_vertical = 2
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="Windows/Folders/WorkFolderContent/ArticlesFolderContent" unique_id=1639886621]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -1.0
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="Articles" type="VBoxContainer" parent="Windows/Folders/WorkFolderContent/ArticlesFolderContent" unique_id=1563571545]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.02
-anchor_top = 0.056
-anchor_right = 0.98
-anchor_bottom = 0.944
-offset_left = -0.8399925
-offset_top = 2.6079998
-offset_right = 3.8399963
-offset_bottom = -89.608
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 4
-
-[node name="ArticleA" type="Button" parent="Windows/Folders/WorkFolderContent/ArticlesFolderContent/Articles" unique_id=587195367 node_paths=PackedStringArray("window")]
-layout_mode = 2
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "Grand opening.txt                         03/09/99      Text Document           10KB"
-flat = true
-alignment = 0
-script = SubResource("GDScript_qg81j")
-window = NodePath("../../../../Windows/ArticleAWindow")
-
-[node name="ArticleB" type="Button" parent="Windows/Folders/WorkFolderContent/ArticlesFolderContent/Articles" unique_id=1342636134 node_paths=PackedStringArray("window")]
-layout_mode = 2
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "E-helper adoption boom.txt        13/05/00       Text Document        676KB"
-flat = true
-alignment = 0
-script = SubResource("GDScript_qg81j")
-window = NodePath("../../../../Windows/ArticleBWindow")
-
-[node name="ArticleC" type="Button" parent="Windows/Folders/WorkFolderContent/ArticlesFolderContent/Articles" unique_id=621815400 node_paths=PackedStringArray("window")]
-layout_mode = 2
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "First incident.txt                             20/01/01       Text Document          66KB"
-flat = true
-alignment = 0
-script = SubResource("GDScript_qg81j")
-window = NodePath("../../../../Windows/ArticleCWindow")
-
-[node name="ArticleF" type="Button" parent="Windows/Folders/WorkFolderContent/ArticlesFolderContent/Articles" unique_id=2092359580 node_paths=PackedStringArray("window")]
-layout_mode = 2
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "The Great Replacement.txt         08/08/01       Text Document          33KB"
-flat = true
-alignment = 0
-script = SubResource("GDScript_qg81j")
-window = NodePath("../../../../Windows/ArticleFWindow")
-
-[node name="StatsFolderContent" type="ColorRect" parent="Windows/Folders/WorkFolderContent" unique_id=1528530785]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.019
-anchor_top = 0.174
-anchor_right = 0.981
-anchor_bottom = 0.957
-offset_left = -9.063218
-offset_top = -44.9896
-offset_right = 8.063263
-offset_bottom = 10.39415
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="Windows/Folders/WorkFolderContent/StatsFolderContent" unique_id=1078672627]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 1.0
-grow_horizontal = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="Windows/Folders/WorkFolderContent/StatsFolderContent" unique_id=1556709713]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 1.0
-grow_vertical = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/WorkFolderContent/StatsFolderContent" unique_id=1853006620]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-grow_horizontal = 0
-grow_vertical = 2
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="Windows/Folders/WorkFolderContent/StatsFolderContent" unique_id=1208570774]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -1.0
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="Stats" type="VBoxContainer" parent="Windows/Folders/WorkFolderContent/StatsFolderContent" unique_id=1226518182]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.02
-anchor_top = 0.056
-anchor_right = 0.98
-anchor_bottom = 0.944
-offset_left = 0.65999985
-offset_top = 5.608
-offset_right = 0.980011
-offset_bottom = -161.49847
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 4
-
-[node name="StatAButton" type="Button" parent="Windows/Folders/WorkFolderContent/StatsFolderContent/Stats" unique_id=613321287 node_paths=PackedStringArray("window")]
-layout_mode = 2
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "impact.xls                              01/11/01      Excel Document         100KB"
-flat = true
-alignment = 0
-script = SubResource("GDScript_qg81j")
-window = NodePath("../../../../Windows/ImpactWindow")
-
-[node name="StatButton" type="Button" parent="Windows/Folders/WorkFolderContent/StatsFolderContent/Stats" unique_id=1755699971 node_paths=PackedStringArray("window")]
-layout_mode = 2
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "revenue.xls                           01/11/01      Excel Document         100KB"
-flat = true
-alignment = 0
-script = SubResource("GDScript_qg81j")
-window = NodePath("../../../../Windows/RevenueWindow")
-
-[node name="ImportantFolderContent" type="ColorRect" parent="Windows/Folders" unique_id=700225264]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.019
-anchor_top = 0.174
-anchor_right = 0.981
-anchor_bottom = 0.957
-offset_left = -0.05600071
-offset_top = -0.01599884
-offset_right = 0.055999756
-offset_bottom = 4.5670166
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="Windows/Folders/ImportantFolderContent" unique_id=1652792216]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 1.0
-grow_horizontal = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="Windows/Folders/ImportantFolderContent" unique_id=1192441437]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 1.0
-grow_vertical = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/ImportantFolderContent" unique_id=1194555833]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-grow_horizontal = 0
-grow_vertical = 2
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="Windows/Folders/ImportantFolderContent" unique_id=588028223]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -1.0
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="Files" type="VBoxContainer" parent="Windows/Folders/ImportantFolderContent" unique_id=1264936351]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.02
-anchor_top = 0.056
-anchor_right = 0.98
-anchor_bottom = 0.944
-offset_left = 4.4691496
-offset_top = 5.158252
-offset_right = 4.789154
-offset_bottom = -161.94823
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 4
-
-[node name="OldPassport" type="Button" parent="Windows/Folders/ImportantFolderContent/Files" unique_id=1499299152]
-layout_mode = 2
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "travelguide.txt                      08/08/01      Text Document         100KB"
-flat = true
-alignment = 0
-
-[node name="Codes" type="Button" parent="Windows/Folders/ImportantFolderContent/Files" unique_id=1101590446]
-layout_mode = 2
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "how2make_money.txt       01/11/01        Text Document         100KB"
-flat = true
-alignment = 0
-
-[node name="Contacts" type="Button" parent="Windows/Folders/ImportantFolderContent/Files" unique_id=960932894]
-layout_mode = 2
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "contacts.txt                         17/09/01       Text Document         100KB"
-flat = true
-alignment = 0
-
-[node name="NotImportantFolderContent" type="ColorRect" parent="Windows/Folders" unique_id=638249582]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.019
-anchor_top = 0.174
-anchor_right = 0.981
-anchor_bottom = 0.957
-offset_left = -0.05600071
-offset_top = -0.01599884
-offset_right = 0.055999756
-offset_bottom = 4.5670166
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="Windows/Folders/NotImportantFolderContent" unique_id=1671787693]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 1.0
-grow_horizontal = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="Windows/Folders/NotImportantFolderContent" unique_id=422635423]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 1.0
-grow_vertical = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/NotImportantFolderContent" unique_id=1478024066]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-grow_horizontal = 0
-grow_vertical = 2
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="Windows/Folders/NotImportantFolderContent" unique_id=1452240756]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -1.0
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="PicturesButton" type="TextureButton" parent="Windows/Folders/NotImportantFolderContent" unique_id=744542022 groups=["apps"]]
-layout_mode = 0
-offset_left = 29.822021
-offset_top = 23.814003
-offset_right = 68.45117
-offset_bottom = 63.814003
-texture_normal = ExtResource("11_wydk0")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="Windows/Folders/NotImportantFolderContent/PicturesButton" unique_id=1575345767]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 24.685425
-offset_top = -27.0
-offset_right = 88.685425
-offset_bottom = -4.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "Pictures"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="Windows/Folders/NotImportantFolderContent/PicturesButton" unique_id=339091660]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 148.68542
-offset_top = -26.79
-offset_right = 252.68542
-offset_bottom = -10.790001
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "03/11/01"
-
-[node name="Label3" type="Label" parent="Windows/Folders/NotImportantFolderContent/PicturesButton" unique_id=1488924082]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 232.68542
-offset_top = -26.79
-offset_right = 336.68542
-offset_bottom = -10.790001
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "Folder"
-
-[node name="Label4" type="Label" parent="Windows/Folders/NotImportantFolderContent/PicturesButton" unique_id=805462557]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 345.68542
-offset_top = -26.79
-offset_right = 449.68542
-offset_bottom = -10.790001
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "300KB"
-
-[node name="MusicButton" type="TextureButton" parent="Windows/Folders/NotImportantFolderContent" unique_id=1590458874 groups=["apps"]]
-layout_mode = 0
-offset_left = 29.822021
-offset_top = 77.814
-offset_right = 68.45117
-offset_bottom = 117.814
-texture_normal = ExtResource("11_wydk0")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="Windows/Folders/NotImportantFolderContent/MusicButton" unique_id=2085674335]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 17.685425
-offset_top = -27.0
-offset_right = 81.685425
-offset_bottom = -4.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "Music"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="Windows/Folders/NotImportantFolderContent/MusicButton" unique_id=1121384352]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 148.68542
-offset_top = -26.79
-offset_right = 252.68542
-offset_bottom = -10.790001
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "03/11/01"
-
-[node name="Label3" type="Label" parent="Windows/Folders/NotImportantFolderContent/MusicButton" unique_id=1232982273]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 232.68542
-offset_top = -26.79
-offset_right = 336.68542
-offset_bottom = -10.790001
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "Folder"
-
-[node name="Label4" type="Label" parent="Windows/Folders/NotImportantFolderContent/MusicButton" unique_id=779284189]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 345.68542
-offset_top = -26.79
-offset_right = 449.68542
-offset_bottom = -10.790001
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "50Mo"
-
-[node name="VideoButton" type="TextureButton" parent="Windows/Folders/NotImportantFolderContent" unique_id=766302159 groups=["apps"]]
-layout_mode = 0
-offset_left = 29.822021
-offset_top = 132.814
-offset_right = 68.45117
-offset_bottom = 172.814
-texture_normal = ExtResource("11_wydk0")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="Windows/Folders/NotImportantFolderContent/VideoButton" unique_id=1752991541]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 19.685425
-offset_top = -27.0
-offset_right = 83.685425
-offset_bottom = -4.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "Videos"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="Windows/Folders/NotImportantFolderContent/VideoButton" unique_id=319598893]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 148.68542
-offset_top = -26.79
-offset_right = 252.68542
-offset_bottom = -10.790001
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "03/11/01"
-
-[node name="Label3" type="Label" parent="Windows/Folders/NotImportantFolderContent/VideoButton" unique_id=1445143280]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 232.68542
-offset_top = -26.79
-offset_right = 336.68542
-offset_bottom = -10.790001
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "Folder"
-
-[node name="Label4" type="Label" parent="Windows/Folders/NotImportantFolderContent/VideoButton" unique_id=2036082123]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 345.68542
-offset_top = -26.79
-offset_right = 449.68542
-offset_bottom = -10.790001
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "0Kb"
-
-[node name="PicturesFolderContent" type="ColorRect" parent="Windows/Folders/NotImportantFolderContent" unique_id=476875724]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.019
-anchor_top = 0.174
-anchor_right = 0.981
-anchor_bottom = 0.957
-offset_left = -9.063218
-offset_top = -44.9896
-offset_right = 8.063263
-offset_bottom = 10.39415
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="Windows/Folders/NotImportantFolderContent/PicturesFolderContent" unique_id=1767825742]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 1.0
-grow_horizontal = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="Windows/Folders/NotImportantFolderContent/PicturesFolderContent" unique_id=978819159]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 1.0
-grow_vertical = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/NotImportantFolderContent/PicturesFolderContent" unique_id=1310368686]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-grow_horizontal = 0
-grow_vertical = 2
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="Windows/Folders/NotImportantFolderContent/PicturesFolderContent" unique_id=2083417516]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -1.0
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="Files" type="VBoxContainer" parent="Windows/Folders/NotImportantFolderContent/PicturesFolderContent" unique_id=200438636]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.02
-anchor_top = 0.056
-anchor_right = 0.98
-anchor_bottom = 0.944
-offset_left = 1.6600075
-offset_top = 2.6079998
-offset_right = -0.66000366
-offset_bottom = -89.608
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 4
-
-[node name="PictureA" type="Button" parent="Windows/Folders/NotImportantFolderContent/PicturesFolderContent/Files" unique_id=944567129 node_paths=PackedStringArray("window")]
-layout_mode = 2
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "image1.jpg                        01/11/01                       Image                         10KB"
-flat = true
-alignment = 0
-script = SubResource("GDScript_qg81j")
-window = NodePath("../../../../Windows/Image1Window")
-
-[node name="PictureB" type="Button" parent="Windows/Folders/NotImportantFolderContent/PicturesFolderContent/Files" unique_id=97813170 node_paths=PackedStringArray("window")]
-layout_mode = 2
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "mybeloved.jpg                 02/11/01                      Image                         50KB"
-flat = true
-alignment = 0
-script = SubResource("GDScript_qg81j")
-window = NodePath("../../../../Windows/MyBelovedWindow")
-
-[node name="PictureC" type="Button" parent="Windows/Folders/NotImportantFolderContent/PicturesFolderContent/Files" unique_id=2139523804 node_paths=PackedStringArray("window")]
-layout_mode = 2
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "icon.jpg                             03/11/01                      Image                         66KB"
-flat = true
-alignment = 0
-script = SubResource("GDScript_qg81j")
-window = NodePath("../../../../Windows/IconWindow")
-
-[node name="MusicFolderContent" type="ColorRect" parent="Windows/Folders/NotImportantFolderContent" unique_id=84453408]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.019
-anchor_top = 0.174
-anchor_right = 0.981
-anchor_bottom = 0.957
-offset_left = -9.063218
-offset_top = -44.9896
-offset_right = 8.063263
-offset_bottom = 10.39415
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="Windows/Folders/NotImportantFolderContent/MusicFolderContent" unique_id=1717510649]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 1.0
-grow_horizontal = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="Windows/Folders/NotImportantFolderContent/MusicFolderContent" unique_id=668606110]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 1.0
-grow_vertical = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/NotImportantFolderContent/MusicFolderContent" unique_id=2070845091]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-grow_horizontal = 0
-grow_vertical = 2
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="Windows/Folders/NotImportantFolderContent/MusicFolderContent" unique_id=1440787377]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -1.0
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="Files" type="VBoxContainer" parent="Windows/Folders/NotImportantFolderContent/MusicFolderContent" unique_id=1761837563]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.02
-anchor_top = 0.056
-anchor_right = 0.98
-anchor_bottom = 0.944
-offset_left = 4.6600075
-offset_top = 2.6079998
-offset_right = -0.66000366
-offset_bottom = -89.608
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 4
-
-[node name="MusicA" type="Button" parent="Windows/Folders/NotImportantFolderContent/MusicFolderContent/Files" unique_id=2097280651]
-layout_mode = 2
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "Darude-Sandstorm.wav               01/11/01            Sound file               1Mb"
-flat = true
-alignment = 0
-
-[node name="MusicB" type="Button" parent="Windows/Folders/NotImportantFolderContent/MusicFolderContent/Files" unique_id=553764454]
-layout_mode = 2
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "Pump up the jam.wav                   02/11/01            Sound file          420Mb"
-flat = true
-alignment = 0
-
-[node name="VideoFolderContent" type="ColorRect" parent="Windows/Folders/NotImportantFolderContent" unique_id=1560749979]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.019
-anchor_top = 0.174
-anchor_right = 0.981
-anchor_bottom = 0.957
-offset_left = -9.063218
-offset_top = -44.9896
-offset_right = 8.063263
-offset_bottom = 10.39415
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="Windows/Folders/NotImportantFolderContent/VideoFolderContent" unique_id=1678909060]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 1.0
-grow_horizontal = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="Windows/Folders/NotImportantFolderContent/VideoFolderContent" unique_id=25800237]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 1.0
-grow_vertical = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/NotImportantFolderContent/VideoFolderContent" unique_id=2071545498]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-grow_horizontal = 0
-grow_vertical = 2
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="Windows/Folders/NotImportantFolderContent/VideoFolderContent" unique_id=1484568991]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -1.0
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="Files" type="VBoxContainer" parent="Windows/Folders/NotImportantFolderContent/VideoFolderContent" unique_id=891557252]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.02
-anchor_top = 0.056
-anchor_right = 0.98
-anchor_bottom = 0.944
-offset_left = 4.6600075
-offset_top = 2.6079998
-offset_right = -0.66000366
-offset_bottom = -89.608
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 4
-
-[node name="Empty" type="Label" parent="Windows/Folders/NotImportantFolderContent/VideoFolderContent/Files" unique_id=1848968528]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "This folder is empty."
-
-[node name="Windows" type="Control" parent="Windows/Folders" unique_id=141348702]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TheContractWindow" parent="Windows/Folders/Windows" unique_id=1913558977 groups=["window"] instance=ExtResource("10_2hmho")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchor_left = 0.146
-anchor_top = 0.049
-anchor_right = 0.146
-anchor_bottom = 0.049
-offset_left = -38.839985
-offset_top = -8.959998
-offset_right = 482.16
-offset_bottom = 230.04001
-title = "TheContract.txt"
-
-[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/Windows/TheContractWindow" unique_id=464666719]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.019
-anchor_top = 0.174
-anchor_right = 0.981
-anchor_bottom = 0.957
-offset_left = -0.0560007
-offset_top = -0.0160027
-offset_right = 0.0559692
-offset_bottom = -0.0879974
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="Windows/Folders/Windows/TheContractWindow/ColorRect3" unique_id=1362332139]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 1.0
-grow_horizontal = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="Windows/Folders/Windows/TheContractWindow/ColorRect3" unique_id=1792395224]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 1.0
-grow_vertical = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/Windows/TheContractWindow/ColorRect3" unique_id=1893048805]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-grow_horizontal = 0
-grow_vertical = 2
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="Windows/Folders/Windows/TheContractWindow/ColorRect3" unique_id=641092944]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -1.0
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="DontTxt" type="TextEdit" parent="Windows/Folders/Windows/TheContractWindow/ColorRect3" unique_id=260569055]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.025
-anchor_top = 0.047
-anchor_right = 0.985
-anchor_bottom = 0.936
-offset_left = -0.2
-offset_top = 0.232
-offset_right = 0.119965
-offset_bottom = 0.215988
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/background_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_sp806")
-text = "Signed contract giving all rights and ownership of Open4All to CloseB$"
-context_menu_enabled = false
-emoji_menu_enabled = false
-shortcut_keys_enabled = false
-drag_and_drop_selection_enabled = false
-middle_mouse_paste_enabled = false
-autowrap_mode = 0
-virtual_keyboard_enabled = false
-
-[node name="ArticleAWindow" parent="Windows/Folders/Windows" unique_id=711997872 groups=["window"] instance=ExtResource("10_2hmho")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchor_left = 0.146
-anchor_top = 0.049
-anchor_right = 0.146
-anchor_bottom = 0.049
-offset_left = -38.839985
-offset_top = -8.959998
-offset_right = 496.16
-offset_bottom = 268.04
-title = "Grand opening.txt"
-
-[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/Windows/ArticleAWindow" unique_id=1754263161]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.019
-anchor_top = 0.174
-anchor_right = 0.981
-anchor_bottom = 0.957
-offset_left = -0.0560007
-offset_top = -0.0160027
-offset_right = 0.0559692
-offset_bottom = -0.0879974
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="Windows/Folders/Windows/ArticleAWindow/ColorRect3" unique_id=889993967]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 1.0
-grow_horizontal = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="Windows/Folders/Windows/ArticleAWindow/ColorRect3" unique_id=1998607702]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 1.0
-grow_vertical = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/Windows/ArticleAWindow/ColorRect3" unique_id=463633463]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-grow_horizontal = 0
-grow_vertical = 2
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="Windows/Folders/Windows/ArticleAWindow/ColorRect3" unique_id=1624661841]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -1.0
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="Text" type="RichTextLabel" parent="Windows/Folders/Windows/ArticleAWindow/ColorRect3" unique_id=276105751]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.025
-anchor_top = 0.047
-anchor_right = 0.985
-anchor_bottom = 0.936
-offset_left = 9.624147
-offset_top = 3.6379433
-offset_right = -8.637299
-offset_bottom = 5.3371277
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("3_sp806")
-bbcode_enabled = true
-text = "[b]Grand opening[/b]
-03.09.99
-
-The construction of the biggest e-center in the world is nearing completion.
-The general mood is rather optimistic. The locals are expecting the e-helpers to be able to help with daily tasks and jobs.
-The hyperscope hub is being built in a disadvantaged area.
-People are hoping this will have a positive impact on local economy and infrastructure."
-autowrap_mode = 2
-shortcut_keys_enabled = false
-drag_and_drop_selection_enabled = false
-
-[node name="ArticleBWindow" parent="Windows/Folders/Windows" unique_id=836066278 groups=["window"] instance=ExtResource("10_2hmho")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchor_left = 0.146
-anchor_top = 0.049
-anchor_right = 0.146
-anchor_bottom = 0.049
-offset_left = -38.839985
-offset_top = -8.959998
-offset_right = 495.16
-offset_bottom = 266.04
-title = "E-helper adoption boom.txt"
-
-[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/Windows/ArticleBWindow" unique_id=1551955853]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.019
-anchor_top = 0.174
-anchor_right = 0.981
-anchor_bottom = 0.957
-offset_left = -0.0560007
-offset_top = -0.0160027
-offset_right = 0.0559692
-offset_bottom = -0.0879974
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="Windows/Folders/Windows/ArticleBWindow/ColorRect3" unique_id=53793464]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 1.0
-grow_horizontal = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="Windows/Folders/Windows/ArticleBWindow/ColorRect3" unique_id=1648284961]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 1.0
-grow_vertical = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/Windows/ArticleBWindow/ColorRect3" unique_id=179156181]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-grow_horizontal = 0
-grow_vertical = 2
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="Windows/Folders/Windows/ArticleBWindow/ColorRect3" unique_id=1270441635]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -1.0
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="Text" type="RichTextLabel" parent="Windows/Folders/Windows/ArticleBWindow/ColorRect3" unique_id=748847966]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.025
-anchor_top = 0.047
-anchor_right = 0.985
-anchor_bottom = 0.936
-offset_left = 9.624147
-offset_top = 3.6379433
-offset_right = -8.637299
-offset_bottom = 5.3371277
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("3_sp806")
-bbcode_enabled = true
-text = "[b]E-helper adoption boom[/b]
-13.05.00
-
-A majority of people have adopted e-helpers. 88% of the users are satisfied by the small chores they are able to accomplish. 36% would like the e-helpers to be able to do more complicated assignments. 12% have observed odd behaviours, but hope the next update will improve those characteristics."
-autowrap_mode = 2
-shortcut_keys_enabled = false
-drag_and_drop_selection_enabled = false
-
-[node name="ArticleCWindow" parent="Windows/Folders/Windows" unique_id=1890807154 groups=["window"] instance=ExtResource("10_2hmho")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchor_left = 0.146
-anchor_top = 0.049
-anchor_right = 0.146
-anchor_bottom = 0.049
-offset_left = -38.839985
-offset_top = -8.959998
-offset_right = 494.16
-offset_bottom = 268.04
-title = "First incident.txt"
-
-[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/Windows/ArticleCWindow" unique_id=1604274321]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.019
-anchor_top = 0.174
-anchor_right = 0.981
-anchor_bottom = 0.957
-offset_left = -0.0560007
-offset_top = -0.0160027
-offset_right = 0.0559692
-offset_bottom = -0.0879974
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="Windows/Folders/Windows/ArticleCWindow/ColorRect3" unique_id=788487105]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 1.0
-grow_horizontal = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="Windows/Folders/Windows/ArticleCWindow/ColorRect3" unique_id=1753191060]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 1.0
-grow_vertical = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/Windows/ArticleCWindow/ColorRect3" unique_id=248882375]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-grow_horizontal = 0
-grow_vertical = 2
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="Windows/Folders/Windows/ArticleCWindow/ColorRect3" unique_id=1377749228]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -1.0
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="Text" type="RichTextLabel" parent="Windows/Folders/Windows/ArticleCWindow/ColorRect3" unique_id=1727783661]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.025
-anchor_top = 0.047
-anchor_right = 0.985
-anchor_bottom = 0.936
-offset_left = 9.624147
-offset_top = 3.6379433
-offset_right = -8.637299
-offset_bottom = 5.3371277
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("3_sp806")
-bbcode_enabled = true
-text = "[b]First incident[/b]
-20.01.01
-
-A user has died because of an e-helper. The police is still investigating. According to a family member, the person explicitely asked the e-helper to end their life. e-companies have assured the population that there are safety measures in place for such requests. They are promising new fixes and updates in the new e-worker models."
-autowrap_mode = 2
-shortcut_keys_enabled = false
-drag_and_drop_selection_enabled = false
-
-[node name="ArticleFWindow" parent="Windows/Folders/Windows" unique_id=2043210571 groups=["window"] instance=ExtResource("10_2hmho")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchor_left = 0.146
-anchor_top = 0.049
-anchor_right = 0.146
-anchor_bottom = 0.049
-offset_left = -38.839985
-offset_top = -8.959998
-offset_right = 493.16
-offset_bottom = 267.04
-title = "The Great Replacement.txt"
-
-[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/Windows/ArticleFWindow" unique_id=1683851334]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.019
-anchor_top = 0.174
-anchor_right = 0.981
-anchor_bottom = 0.957
-offset_left = -0.0560007
-offset_top = -0.0160027
-offset_right = 0.0559692
-offset_bottom = -0.0879974
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="Windows/Folders/Windows/ArticleFWindow/ColorRect3" unique_id=1269126333]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 1.0
-grow_horizontal = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="Windows/Folders/Windows/ArticleFWindow/ColorRect3" unique_id=204575232]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 1.0
-grow_vertical = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/Windows/ArticleFWindow/ColorRect3" unique_id=873267055]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-grow_horizontal = 0
-grow_vertical = 2
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="Windows/Folders/Windows/ArticleFWindow/ColorRect3" unique_id=1428147168]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -1.0
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="Text" type="RichTextLabel" parent="Windows/Folders/Windows/ArticleFWindow/ColorRect3" unique_id=1250973652]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.025
-anchor_top = 0.047
-anchor_right = 0.985
-anchor_bottom = 0.936
-offset_left = 9.624147
-offset_top = 3.6379433
-offset_right = -8.637299
-offset_bottom = 5.3371277
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("3_sp806")
-bbcode_enabled = true
-text = "[b]The Great Replacement[/b]
-08.08.01
-
-The e-workers have taken over nearly all of the labour available. Many users have seen their work completely taken away from them. The revenue made by e-workers goes straight to the manufacturing and designing companies leaving population in situations of extreme precarity."
-autowrap_mode = 2
-shortcut_keys_enabled = false
-drag_and_drop_selection_enabled = false
-
-[node name="ImpactWindow" parent="Windows/Folders/Windows" unique_id=855811944 groups=["window"] instance=ExtResource("10_2hmho")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchor_left = 0.146
-anchor_top = 0.049
-anchor_right = 0.146
-anchor_bottom = 0.049
-offset_left = -27.839985
-offset_top = -8.959998
-offset_right = 664.16
-offset_bottom = 455.04
-title = "impact.xls"
-
-[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/Windows/ImpactWindow" unique_id=2142817875]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.019
-anchor_top = 0.174
-anchor_right = 0.981
-anchor_bottom = 0.957
-offset_left = -0.05600071
-offset_top = -41.736
-offset_right = 0.05596924
-offset_bottom = -0.08798218
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="Windows/Folders/Windows/ImpactWindow/ColorRect3" unique_id=76342965]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 1.0
-grow_horizontal = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="Windows/Folders/Windows/ImpactWindow/ColorRect3" unique_id=1850315003]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 1.0
-grow_vertical = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/Windows/ImpactWindow/ColorRect3" unique_id=1114655847]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-grow_horizontal = 0
-grow_vertical = 2
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="Windows/Folders/Windows/ImpactWindow/ColorRect3" unique_id=793969416]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -1.0
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="TextureRect" type="TextureRect" parent="Windows/Folders/Windows/ImpactWindow/ColorRect3" unique_id=2022933130]
-layout_mode = 0
-offset_left = 22.490005
-offset_top = 13.406006
-offset_right = 636.1234
-offset_bottom = 392.836
-texture = ExtResource("19_sp806")
-expand_mode = 1
-
-[node name="RevenueWindow" parent="Windows/Folders/Windows" unique_id=2026751915 groups=["window"] instance=ExtResource("10_2hmho")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchor_left = 0.146
-anchor_top = 0.049
-anchor_right = 0.146
-anchor_bottom = 0.049
-offset_left = -27.839985
-offset_top = -8.959998
-offset_right = 664.16
-offset_bottom = 455.04
-title = "revenue.xls"
-
-[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/Windows/RevenueWindow" unique_id=1019201041]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.019
-anchor_top = 0.174
-anchor_right = 0.981
-anchor_bottom = 0.957
-offset_left = -0.05600071
-offset_top = -41.736
-offset_right = 0.05596924
-offset_bottom = -0.08798218
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="Windows/Folders/Windows/RevenueWindow/ColorRect3" unique_id=1140583242]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 1.0
-grow_horizontal = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="Windows/Folders/Windows/RevenueWindow/ColorRect3" unique_id=422956587]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 1.0
-grow_vertical = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/Windows/RevenueWindow/ColorRect3" unique_id=67368718]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-grow_horizontal = 0
-grow_vertical = 2
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="Windows/Folders/Windows/RevenueWindow/ColorRect3" unique_id=915523835]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -1.0
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="TextureRect" type="TextureRect" parent="Windows/Folders/Windows/RevenueWindow/ColorRect3" unique_id=348885075]
-layout_mode = 0
-offset_left = 22.490005
-offset_top = 13.406006
-offset_right = 636.1234
-offset_bottom = 392.836
-texture = ExtResource("20_06c6w")
-expand_mode = 1
-
-[node name="Image1Window" parent="Windows/Folders/Windows" unique_id=1550086900 groups=["window"] instance=ExtResource("10_2hmho")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchor_left = 0.146
-anchor_top = 0.049
-anchor_right = 0.146
-anchor_bottom = 0.049
-offset_left = -27.839985
-offset_top = -8.959998
-offset_right = 418.16
-offset_bottom = 429.04
-title = "image1.png"
-
-[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/Windows/Image1Window" unique_id=276546277]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.019
-anchor_top = 0.174
-anchor_right = 0.981
-anchor_bottom = 0.957
-offset_left = -0.05600071
-offset_top = -45.082
-offset_right = 0.05596924
-offset_bottom = -0.08792114
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="Windows/Folders/Windows/Image1Window/ColorRect3" unique_id=962867936]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 1.0
-grow_horizontal = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="Windows/Folders/Windows/Image1Window/ColorRect3" unique_id=1722110056]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 1.0
-grow_vertical = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/Windows/Image1Window/ColorRect3" unique_id=2095239324]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-grow_horizontal = 0
-grow_vertical = 2
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="Windows/Folders/Windows/Image1Window/ColorRect3" unique_id=123131110]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -1.0
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="TextureRect" type="TextureRect" parent="Windows/Folders/Windows/Image1Window/ColorRect3" unique_id=1292950782]
-layout_mode = 0
-offset_left = 23.490005
-offset_top = 27.406006
-offset_right = 402.63965
-offset_bottom = 357.0
-texture = ExtResource("21_n8qyt")
-expand_mode = 1
-
-[node name="MyBelovedWindow" parent="Windows/Folders/Windows" unique_id=807335605 groups=["window"] instance=ExtResource("10_2hmho")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchor_left = 0.146
-anchor_top = 0.049
-anchor_right = 0.146
-anchor_bottom = 0.049
-offset_left = -27.839985
-offset_top = -8.959998
-offset_right = 418.16
-offset_bottom = 429.04
-title = "mybeloved.png"
-
-[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/Windows/MyBelovedWindow" unique_id=1094021772]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.019
-anchor_top = 0.174
-anchor_right = 0.981
-anchor_bottom = 0.957
-offset_left = -0.05600071
-offset_top = -45.082
-offset_right = 0.05596924
-offset_bottom = -0.08792114
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="Windows/Folders/Windows/MyBelovedWindow/ColorRect3" unique_id=528061583]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 1.0
-grow_horizontal = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="Windows/Folders/Windows/MyBelovedWindow/ColorRect3" unique_id=472560623]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 1.0
-grow_vertical = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/Windows/MyBelovedWindow/ColorRect3" unique_id=1046758305]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-grow_horizontal = 0
-grow_vertical = 2
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="Windows/Folders/Windows/MyBelovedWindow/ColorRect3" unique_id=766610003]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -1.0
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="TextureRect" type="TextureRect" parent="Windows/Folders/Windows/MyBelovedWindow/ColorRect3" unique_id=202699364]
-layout_mode = 0
-offset_left = 23.490005
-offset_top = 27.406006
-offset_right = 402.63965
-offset_bottom = 357.0
-texture = ExtResource("22_2uju1")
-expand_mode = 1
-
-[node name="IconWindow" parent="Windows/Folders/Windows" unique_id=1148099425 groups=["window"] instance=ExtResource("10_2hmho")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchor_left = 0.146
-anchor_top = 0.049
-anchor_right = 0.146
-anchor_bottom = 0.049
-offset_left = -61.839985
-offset_top = -8.959998
-offset_right = 280.16
-offset_bottom = 319.04
-title = "icon.png"
-
-[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/Windows/IconWindow" unique_id=1033755042]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.019
-anchor_top = 0.174
-anchor_right = 0.981
-anchor_bottom = 0.957
-offset_left = 5.978973
-offset_top = -17.071999
-offset_right = -5.979004
-offset_bottom = -3.604004
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="Windows/Folders/Windows/IconWindow/ColorRect3" unique_id=2002269474]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 1.0
-grow_horizontal = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="Windows/Folders/Windows/IconWindow/ColorRect3" unique_id=1737042676]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 1.0
-grow_vertical = 2
-color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="Windows/Folders/Windows/IconWindow/ColorRect3" unique_id=1424632011]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-grow_horizontal = 0
-grow_vertical = 2
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="Windows/Folders/Windows/IconWindow/ColorRect3" unique_id=2029499357]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -1.0
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(0.818447, 0.839665, 0.842692, 1)
-
-[node name="TextureRect" type="TextureRect" parent="Windows/Folders/Windows/IconWindow/ColorRect3" unique_id=1509359494]
-layout_mode = 0
-offset_left = 16.523026
-offset_top = 12.0
-offset_right = 83.26868
-offset_bottom = 77.46399
-texture = ExtResource("23_dfejr")
-expand_mode = 1
 
 [node name="EncryptedMessage" type="Control" parent="Windows" unique_id=12912388]
 visible = false
@@ -5391,7 +2552,7 @@ theme_override_colors/font_uneditable_color = Color(0, 1, 0, 1)
 placeholder_text = "e-worker"
 to_find = Array[String](["e-worker", "e-workers", "eworker", "eworkers", "e worker", "e workers"])
 
-[node name="CountDownWindow" parent="Windows" unique_id=2088697027 groups=["window"] instance=ExtResource("10_2hmho")]
+[node name="CountDownWindow" parent="Windows" unique_id=2088697027 instance=ExtResource("10_2hmho")]
 visible = false
 layout_mode = 1
 anchor_left = 0.73600006
@@ -5529,7 +2690,7 @@ vertical_alignment = 1
 wait_time = 240.0
 one_shot = true
 
-[node name="CreditWindow" parent="Windows" unique_id=398991263 groups=["window"] instance=ExtResource("10_2hmho")]
+[node name="CreditWindow" parent="Windows" unique_id=398991263 instance=ExtResource("10_2hmho")]
 visible = false
 layout_mode = 1
 anchor_left = 0.146
@@ -5626,25 +2787,1120 @@ horizontal_alignment = 1
 vertical_alignment = 1
 drag_and_drop_selection_enabled = false
 
-[node name="ExplosionSound" type="AudioStreamPlayer" parent="." unique_id=992342386]
-stream = ExtResource("30_38t0m")
+[node name="GuideLinesWindow" parent="Windows" unique_id=480753331 instance=ExtResource("10_2hmho")]
+visible = false
+layout_mode = 1
+anchor_left = 0.146
+anchor_top = 0.049
+anchor_right = 0.146
+anchor_bottom = 0.049
+offset_left = 36.16
+offset_top = 5.04
+offset_right = 703.44794
+offset_bottom = 329.776
+title = "guidelines.txt"
 
-[node name="Tick" type="AudioStreamPlayer" parent="." unique_id=163704445]
-stream = ExtResource("31_cdnxo")
-volume_db = -15.0
+[node name="ColorRect3" type="ColorRect" parent="Windows/GuideLinesWindow" unique_id=1029618765]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.019
+anchor_top = 0.174
+anchor_right = 0.981
+anchor_bottom = 0.957
+offset_left = -0.0560007
+offset_top = -0.0160027
+offset_right = 0.0559692
+offset_bottom = -0.0879974
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Windows/GuideLinesWindow/ColorRect3" unique_id=1264499478]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Windows/GuideLinesWindow/ColorRect3" unique_id=876949219]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/GuideLinesWindow/ColorRect3" unique_id=696519576]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Windows/GuideLinesWindow/ColorRect3" unique_id=1802027448]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="DontTxt" type="TextEdit" parent="Windows/GuideLinesWindow/ColorRect3" unique_id=2087573528]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = -0.2
+offset_top = 0.232
+offset_right = 0.119965
+offset_bottom = 0.215988
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/background_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "Open4All Guidelines
+
+The e-center's new tools need to follow strict safety and responsibility regulations.
+The empowerment of its users and the innovations are only possible if the policies are respected.
+
+- Respect users
+- Respect their privacy
+- Protect the employees
+- Fair wages
+- Protect the environment"
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+middle_mouse_paste_enabled = false
+autowrap_mode = 0
+virtual_keyboard_enabled = false
+
+[node name="NotesWindow" parent="Windows" unique_id=891963243 instance=ExtResource("10_2hmho")]
+visible = false
+layout_mode = 1
+anchor_left = 0.146
+anchor_top = 0.049
+anchor_right = 0.146
+anchor_bottom = 0.049
+offset_left = 223.87201
+offset_top = 39.304
+offset_right = 891.16
+offset_bottom = 364.04
+title = "notes.txt"
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/NotesWindow" unique_id=1425130053]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.019
+anchor_top = 0.174
+anchor_right = 0.981
+anchor_bottom = 0.957
+offset_left = -0.0560007
+offset_top = -0.0160027
+offset_right = 0.0559692
+offset_bottom = -0.0879974
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Windows/NotesWindow/ColorRect3" unique_id=1487056593]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Windows/NotesWindow/ColorRect3" unique_id=1147121150]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/NotesWindow/ColorRect3" unique_id=1420161019]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Windows/NotesWindow/ColorRect3" unique_id=286524095]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="DontTxt" type="TextEdit" parent="Windows/NotesWindow/ColorRect3" unique_id=619192230]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = -0.2
+offset_top = 0.232
+offset_right = 0.119965
+offset_bottom = 0.215988
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/background_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "To Do:
+- Book meeting with future buyer
+- Transfer money to B.o.H
+- Buy one-way plane ticket"
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+middle_mouse_paste_enabled = false
+autowrap_mode = 0
+virtual_keyboard_enabled = false
+
+[node name="LookingMilfWindow" parent="Windows" unique_id=2105439069 instance=ExtResource("10_2hmho")]
+visible = false
+layout_mode = 1
+anchor_left = 0.146
+anchor_top = 0.049
+anchor_right = 0.146
+anchor_bottom = 0.049
+offset_left = 223.87201
+offset_top = 39.304
+offset_right = 891.16
+offset_bottom = 364.04
+title = "Looking for a MILF?.txt"
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/LookingMilfWindow" unique_id=2130351187]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.019
+anchor_top = 0.174
+anchor_right = 0.981
+anchor_bottom = 0.957
+offset_left = -0.0560007
+offset_top = -0.0160027
+offset_right = 0.0559692
+offset_bottom = -0.0879974
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Windows/LookingMilfWindow/ColorRect3" unique_id=1288139526]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Windows/LookingMilfWindow/ColorRect3" unique_id=76287778]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/LookingMilfWindow/ColorRect3" unique_id=781503949]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Windows/LookingMilfWindow/ColorRect3" unique_id=594702344]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="DontTxt" type="TextEdit" parent="Windows/LookingMilfWindow/ColorRect3" unique_id=806049191]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = -0.2
+offset_top = 0.232
+offset_right = 0.119965
+offset_bottom = 0.215988
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/background_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "Blonde? Brunette? Big breast?
+Real? Fake?
+We have what you're looking for!
+Call XC Motherload now!
+XXX-800-85X"
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+middle_mouse_paste_enabled = false
+autowrap_mode = 0
+virtual_keyboard_enabled = false
+
+[node name="TheContractWindow" parent="Windows" unique_id=1913558977 instance=ExtResource("10_2hmho")]
+visible = false
+layout_mode = 1
+anchor_left = 0.146
+anchor_top = 0.049
+anchor_right = 0.146
+anchor_bottom = 0.049
+offset_left = -19.839985
+offset_top = -13.96
+offset_right = 501.16
+offset_bottom = 225.04001
+title = "TheContract.txt"
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/TheContractWindow" unique_id=464666719]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.019
+anchor_top = 0.174
+anchor_right = 0.981
+anchor_bottom = 0.957
+offset_left = -0.0560007
+offset_top = -0.0160027
+offset_right = 0.0559692
+offset_bottom = -0.0879974
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Windows/TheContractWindow/ColorRect3" unique_id=1362332139]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Windows/TheContractWindow/ColorRect3" unique_id=1792395224]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/TheContractWindow/ColorRect3" unique_id=1893048805]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Windows/TheContractWindow/ColorRect3" unique_id=641092944]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="DontTxt" type="TextEdit" parent="Windows/TheContractWindow/ColorRect3" unique_id=260569055]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = -0.2
+offset_top = 0.232
+offset_right = 0.119965
+offset_bottom = 0.215988
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/background_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "Signed contract giving all rights and ownership of Open4All to CloseB$"
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+middle_mouse_paste_enabled = false
+autowrap_mode = 0
+virtual_keyboard_enabled = false
+
+[node name="ArticleAWindow" parent="Windows" unique_id=711997872 instance=ExtResource("10_2hmho")]
+visible = false
+layout_mode = 1
+anchor_left = 0.146
+anchor_top = 0.049
+anchor_right = 0.146
+anchor_bottom = 0.049
+offset_left = -19.839985
+offset_top = -13.96
+offset_right = 515.16
+offset_bottom = 263.04
+title = "Grand opening.txt"
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/ArticleAWindow" unique_id=1754263161]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.019
+anchor_top = 0.174
+anchor_right = 0.981
+anchor_bottom = 0.957
+offset_left = -0.0560007
+offset_top = -0.0160027
+offset_right = 0.0559692
+offset_bottom = -0.0879974
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Windows/ArticleAWindow/ColorRect3" unique_id=889993967]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Windows/ArticleAWindow/ColorRect3" unique_id=1998607702]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/ArticleAWindow/ColorRect3" unique_id=463633463]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Windows/ArticleAWindow/ColorRect3" unique_id=1624661841]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="Text" type="RichTextLabel" parent="Windows/ArticleAWindow/ColorRect3" unique_id=276105751]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = 9.624147
+offset_top = 3.6379433
+offset_right = -8.637299
+offset_bottom = 5.3371277
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_sp806")
+bbcode_enabled = true
+text = "[b]Grand opening[/b]
+03.09.99
+
+The construction of the biggest e-center in the world is nearing completion.
+The general mood is rather optimistic. The locals are expecting the e-helpers to be able to help with daily tasks and jobs.
+The hyperscope hub is being built in a disadvantaged area.
+People are hoping this will have a positive impact on local economy and infrastructure."
+autowrap_mode = 2
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="ArticleBWindow" parent="Windows" unique_id=836066278 instance=ExtResource("10_2hmho")]
+visible = false
+layout_mode = 1
+anchor_left = 0.146
+anchor_top = 0.049
+anchor_right = 0.146
+anchor_bottom = 0.049
+offset_left = -19.839985
+offset_top = -13.96
+offset_right = 514.16
+offset_bottom = 261.04
+title = "E-helper adoption boom.txt"
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/ArticleBWindow" unique_id=1551955853]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.019
+anchor_top = 0.174
+anchor_right = 0.981
+anchor_bottom = 0.957
+offset_left = -0.0560007
+offset_top = -0.0160027
+offset_right = 0.0559692
+offset_bottom = -0.0879974
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Windows/ArticleBWindow/ColorRect3" unique_id=53793464]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Windows/ArticleBWindow/ColorRect3" unique_id=1648284961]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/ArticleBWindow/ColorRect3" unique_id=179156181]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Windows/ArticleBWindow/ColorRect3" unique_id=1270441635]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="Text" type="RichTextLabel" parent="Windows/ArticleBWindow/ColorRect3" unique_id=748847966]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = 9.624147
+offset_top = 3.6379433
+offset_right = -8.637299
+offset_bottom = 5.3371277
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_sp806")
+bbcode_enabled = true
+text = "[b]E-helper adoption boom[/b]
+13.05.00
+
+A majority of people have adopted e-helpers. 88% of the users are satisfied by the small chores they are able to accomplish. 36% would like the e-helpers to be able to do more complicated assignments. 12% have observed odd behaviours, but hope the next update will improve those characteristics."
+autowrap_mode = 2
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="ArticleCWindow" parent="Windows" unique_id=1890807154 instance=ExtResource("10_2hmho")]
+visible = false
+layout_mode = 1
+anchor_left = 0.146
+anchor_top = 0.049
+anchor_right = 0.146
+anchor_bottom = 0.049
+offset_left = -19.839985
+offset_top = -13.96
+offset_right = 513.16
+offset_bottom = 263.04
+title = "First incident.txt"
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/ArticleCWindow" unique_id=1604274321]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.019
+anchor_top = 0.174
+anchor_right = 0.981
+anchor_bottom = 0.957
+offset_left = -0.0560007
+offset_top = -0.0160027
+offset_right = 0.0559692
+offset_bottom = -0.0879974
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Windows/ArticleCWindow/ColorRect3" unique_id=788487105]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Windows/ArticleCWindow/ColorRect3" unique_id=1753191060]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/ArticleCWindow/ColorRect3" unique_id=248882375]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Windows/ArticleCWindow/ColorRect3" unique_id=1377749228]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="Text" type="RichTextLabel" parent="Windows/ArticleCWindow/ColorRect3" unique_id=1727783661]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = 9.624147
+offset_top = 3.6379433
+offset_right = -8.637299
+offset_bottom = 5.3371277
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_sp806")
+bbcode_enabled = true
+text = "[b]First incident[/b]
+20.01.01
+
+A user has died because of an e-helper. The police is still investigating. According to a family member, the person explicitely asked the e-helper to end their life. e-companies have assured the population that there are safety measures in place for such requests. They are promising new fixes and updates in the new e-worker models."
+autowrap_mode = 2
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="ArticleFWindow" parent="Windows" unique_id=2043210571 instance=ExtResource("10_2hmho")]
+visible = false
+layout_mode = 1
+anchor_left = 0.146
+anchor_top = 0.049
+anchor_right = 0.146
+anchor_bottom = 0.049
+offset_left = -19.839985
+offset_top = -13.96
+offset_right = 512.16
+offset_bottom = 262.04
+title = "The Great Replacement.txt"
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/ArticleFWindow" unique_id=1683851334]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.019
+anchor_top = 0.174
+anchor_right = 0.981
+anchor_bottom = 0.957
+offset_left = -0.0560007
+offset_top = -0.0160027
+offset_right = 0.0559692
+offset_bottom = -0.0879974
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Windows/ArticleFWindow/ColorRect3" unique_id=1269126333]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Windows/ArticleFWindow/ColorRect3" unique_id=204575232]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/ArticleFWindow/ColorRect3" unique_id=873267055]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Windows/ArticleFWindow/ColorRect3" unique_id=1428147168]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="Text" type="RichTextLabel" parent="Windows/ArticleFWindow/ColorRect3" unique_id=1250973652]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = 9.624147
+offset_top = 3.6379433
+offset_right = -8.637299
+offset_bottom = 5.3371277
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_sp806")
+bbcode_enabled = true
+text = "[b]The Great Replacement[/b]
+08.08.01
+
+The e-workers have taken over nearly all of the labour available. Many users have seen their work completely taken away from them. The revenue made by e-workers goes straight to the manufacturing and designing companies leaving population in situations of extreme precarity."
+autowrap_mode = 2
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="ImpactWindow" parent="Windows" unique_id=855811944 instance=ExtResource("10_2hmho")]
+visible = false
+layout_mode = 1
+anchor_left = 0.146
+anchor_top = 0.049
+anchor_right = 0.146
+anchor_bottom = 0.049
+offset_left = -8.839985
+offset_top = -13.96
+offset_right = 683.16
+offset_bottom = 450.04
+title = "impact.xls"
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/ImpactWindow" unique_id=2142817875]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.019
+anchor_top = 0.174
+anchor_right = 0.981
+anchor_bottom = 0.957
+offset_left = -0.05600071
+offset_top = -41.736
+offset_right = 0.05596924
+offset_bottom = -0.08798218
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Windows/ImpactWindow/ColorRect3" unique_id=76342965]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Windows/ImpactWindow/ColorRect3" unique_id=1850315003]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/ImpactWindow/ColorRect3" unique_id=1114655847]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Windows/ImpactWindow/ColorRect3" unique_id=793969416]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Windows/ImpactWindow/ColorRect3" unique_id=2022933130]
+layout_mode = 0
+offset_left = 22.490005
+offset_top = 13.406006
+offset_right = 636.1234
+offset_bottom = 392.836
+texture = ExtResource("19_sp806")
+expand_mode = 1
+
+[node name="RevenueWindow" parent="Windows" unique_id=2026751915 instance=ExtResource("10_2hmho")]
+visible = false
+layout_mode = 1
+anchor_left = 0.146
+anchor_top = 0.049
+anchor_right = 0.146
+anchor_bottom = 0.049
+offset_left = -8.839985
+offset_top = -13.96
+offset_right = 683.16
+offset_bottom = 450.04
+title = "revenue.xls"
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/RevenueWindow" unique_id=1019201041]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.019
+anchor_top = 0.174
+anchor_right = 0.981
+anchor_bottom = 0.957
+offset_left = -0.05600071
+offset_top = -41.736
+offset_right = 0.05596924
+offset_bottom = -0.08798218
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Windows/RevenueWindow/ColorRect3" unique_id=1140583242]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Windows/RevenueWindow/ColorRect3" unique_id=422956587]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/RevenueWindow/ColorRect3" unique_id=67368718]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Windows/RevenueWindow/ColorRect3" unique_id=915523835]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Windows/RevenueWindow/ColorRect3" unique_id=348885075]
+layout_mode = 0
+offset_left = 22.490005
+offset_top = 13.406006
+offset_right = 636.1234
+offset_bottom = 392.836
+texture = ExtResource("20_06c6w")
+expand_mode = 1
+
+[node name="Image1Window" parent="Windows" unique_id=1550086900 instance=ExtResource("10_2hmho")]
+visible = false
+layout_mode = 1
+anchor_left = 0.146
+anchor_top = 0.049
+anchor_right = 0.146
+anchor_bottom = 0.049
+offset_left = -8.839985
+offset_top = -13.96
+offset_right = 437.16
+offset_bottom = 424.04
+title = "image1.png"
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/Image1Window" unique_id=276546277]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.019
+anchor_top = 0.174
+anchor_right = 0.981
+anchor_bottom = 0.957
+offset_left = -0.05600071
+offset_top = -45.082
+offset_right = 0.05596924
+offset_bottom = -0.08792114
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Windows/Image1Window/ColorRect3" unique_id=962867936]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Windows/Image1Window/ColorRect3" unique_id=1722110056]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/Image1Window/ColorRect3" unique_id=2095239324]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Windows/Image1Window/ColorRect3" unique_id=123131110]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Windows/Image1Window/ColorRect3" unique_id=1292950782]
+layout_mode = 0
+offset_left = 23.490005
+offset_top = 27.406006
+offset_right = 402.63965
+offset_bottom = 357.0
+texture = ExtResource("21_n8qyt")
+expand_mode = 1
+
+[node name="MyBelovedWindow" parent="Windows" unique_id=807335605 instance=ExtResource("10_2hmho")]
+visible = false
+layout_mode = 1
+anchor_left = 0.146
+anchor_top = 0.049
+anchor_right = 0.146
+anchor_bottom = 0.049
+offset_left = -8.839985
+offset_top = -13.96
+offset_right = 437.16
+offset_bottom = 424.04
+title = "mybeloved.png"
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/MyBelovedWindow" unique_id=1094021772]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.019
+anchor_top = 0.174
+anchor_right = 0.981
+anchor_bottom = 0.957
+offset_left = -0.05600071
+offset_top = -45.082
+offset_right = 0.05596924
+offset_bottom = -0.08792114
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Windows/MyBelovedWindow/ColorRect3" unique_id=528061583]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Windows/MyBelovedWindow/ColorRect3" unique_id=472560623]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/MyBelovedWindow/ColorRect3" unique_id=1046758305]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Windows/MyBelovedWindow/ColorRect3" unique_id=766610003]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Windows/MyBelovedWindow/ColorRect3" unique_id=202699364]
+layout_mode = 0
+offset_left = 23.490005
+offset_top = 27.406006
+offset_right = 402.63965
+offset_bottom = 357.0
+texture = ExtResource("22_2uju1")
+expand_mode = 1
+
+[node name="IconWindow" parent="Windows" unique_id=1148099425 instance=ExtResource("10_2hmho")]
+visible = false
+layout_mode = 1
+anchor_left = 0.146
+anchor_top = 0.049
+anchor_right = 0.146
+anchor_bottom = 0.049
+offset_left = -42.839985
+offset_top = -13.96
+offset_right = 299.16
+offset_bottom = 314.04
+title = "icon.png"
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/IconWindow" unique_id=1033755042]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.019
+anchor_top = 0.174
+anchor_right = 0.981
+anchor_bottom = 0.957
+offset_left = 5.978973
+offset_top = -17.071999
+offset_right = -5.979004
+offset_bottom = -3.604004
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Windows/IconWindow/ColorRect3" unique_id=2002269474]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Windows/IconWindow/ColorRect3" unique_id=1737042676]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Windows/IconWindow/ColorRect3" unique_id=1424632011]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Windows/IconWindow/ColorRect3" unique_id=2029499357]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.818447, 0.839665, 0.842692, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Windows/IconWindow/ColorRect3" unique_id=1509359494]
+layout_mode = 0
+offset_left = 16.523026
+offset_top = 12.0
+offset_right = 83.26868
+offset_bottom = 77.46399
+texture = ExtResource("23_dfejr")
+expand_mode = 1
 
 [node name="FileExplorer" parent="." unique_id=414043701 instance=ExtResource("31_qg81j")]
 layout_mode = 1
-offset_right = -54.0
-structure = Array[ExtResource("32_qg81j")]([SubResource("Resource_mxaxw"), SubResource("Resource_s01h0"), SubResource("Resource_a66ve"), SubResource("Resource_1regh"), SubResource("Resource_bgcim"), SubResource("Resource_vs5sd")])
+offset_left = 193.0
+offset_top = 63.0
+offset_right = -43.0
+offset_bottom = -222.0
+structure = Array[ExtResource("32_qg81j")]([SubResource("Resource_35pa5"), SubResource("Resource_a12s4"), SubResource("Resource_j7bf7"), SubResource("Resource_r7acc")])
 
 [connection signal="pressed" from="TaskBar/Start" to="." method="_on_start_pressed"]
-[connection signal="caret_changed" from="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" to="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" method="_on_caret_changed"]
-[connection signal="focus_entered" from="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" to="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" method="_on_focus_entered"]
-[connection signal="caret_changed" from="Windows/BinWindows/NotesWindow/ColorRect3/DontTxt" to="Windows/BinWindows/NotesWindow/ColorRect3/DontTxt" method="_on_caret_changed"]
-[connection signal="focus_entered" from="Windows/BinWindows/NotesWindow/ColorRect3/DontTxt" to="Windows/BinWindows/NotesWindow/ColorRect3/DontTxt" method="_on_focus_entered"]
-[connection signal="caret_changed" from="Windows/BinWindows/LookingMilfWindow/ColorRect3/DontTxt" to="Windows/BinWindows/LookingMilfWindow/ColorRect3/DontTxt" method="_on_caret_changed"]
-[connection signal="focus_entered" from="Windows/BinWindows/LookingMilfWindow/ColorRect3/DontTxt" to="Windows/BinWindows/LookingMilfWindow/ColorRect3/DontTxt" method="_on_focus_entered"]
 [connection signal="text_changed" from="Windows/Browser/ColorRect3/WackyPedia/HomePage/SearchTerm" to="Windows/Browser/ColorRect3/WackyPedia" method="_on_line_edit_text_changed"]
 [connection signal="text_submitted" from="Windows/Browser/ColorRect3/WackyPedia/HomePage/SearchTerm" to="Windows/Browser/ColorRect3/WackyPedia" method="_on_line_edit_text_submitted"]
 [connection signal="pressed" from="Windows/Browser/ColorRect3/WackyPedia/HomePage/SearchButton" to="Windows/Browser/ColorRect3/WackyPedia" method="_on_search_pressed"]
@@ -5671,22 +3927,6 @@ structure = Array[ExtResource("32_qg81j")]([SubResource("Resource_mxaxw"), SubRe
 [connection signal="focus_entered" from="Windows/Browser/ColorRect3/WackyPedia/Result/ECenterResult/Text" to="Windows/Browser/ColorRect3/WackyPedia/Result/ECenterResult/Text" method="_on_focus_entered"]
 [connection signal="text_changed" from="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/Access/Username" to="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/AccessManager" method="_on_username_text_changed"]
 [connection signal="text_submitted" from="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/Access/Password" to="Windows/EmployeeMgmtWindow/ColorRect3/ColorRect4/AccessManager" method="_on_password_text_submitted"]
-[connection signal="pressed" from="Windows/Folders/Root/BackButton" to="Windows/Folders/FolderManager" method="_on_back_button_pressed"]
-[connection signal="pressed" from="Windows/Folders/Root/WorkButton" to="Windows/Folders/FolderManager" method="_on_work_button_pressed"]
-[connection signal="pressed" from="Windows/Folders/Root/ImportantButton" to="Windows/Folders/FolderManager" method="_on_important_button_pressed"]
-[connection signal="pressed" from="Windows/Folders/Root/NotImportantButton" to="Windows/Folders/FolderManager" method="_on_not_important_button_pressed"]
-[connection signal="pressed" from="Windows/Folders/WorkFolderContent/SignedContractsButton" to="Windows/Folders/FolderManager" method="_on_signed_contracts_button_pressed"]
-[connection signal="pressed" from="Windows/Folders/WorkFolderContent/ArticlesButton" to="Windows/Folders/FolderManager" method="_on_articles_buttons_pressed"]
-[connection signal="pressed" from="Windows/Folders/WorkFolderContent/StatsButton" to="Windows/Folders/FolderManager" method="_on_stats_button_pressed"]
-[connection signal="pressed" from="Windows/Folders/NotImportantFolderContent/PicturesButton" to="Windows/Folders/FolderManager" method="_on_pictures_button_pressed"]
-[connection signal="pressed" from="Windows/Folders/NotImportantFolderContent/MusicButton" to="Windows/Folders/FolderManager" method="_on_music_button_pressed"]
-[connection signal="pressed" from="Windows/Folders/NotImportantFolderContent/VideoButton" to="Windows/Folders/FolderManager" method="_on_video_button_pressed"]
-[connection signal="caret_changed" from="Windows/Folders/Windows/TheContractWindow/ColorRect3/DontTxt" to="Windows/Folders/Windows/TheContractWindow/ColorRect3/DontTxt" method="_on_caret_changed"]
-[connection signal="focus_entered" from="Windows/Folders/Windows/TheContractWindow/ColorRect3/DontTxt" to="Windows/Folders/Windows/TheContractWindow/ColorRect3/DontTxt" method="_on_focus_entered"]
-[connection signal="focus_entered" from="Windows/Folders/Windows/ArticleAWindow/ColorRect3/Text" to="Windows/Folders/Windows/ArticleAWindow/ColorRect3/Text" method="_on_focus_entered"]
-[connection signal="focus_entered" from="Windows/Folders/Windows/ArticleBWindow/ColorRect3/Text" to="Windows/Folders/Windows/ArticleBWindow/ColorRect3/Text" method="_on_focus_entered"]
-[connection signal="focus_entered" from="Windows/Folders/Windows/ArticleCWindow/ColorRect3/Text" to="Windows/Folders/Windows/ArticleCWindow/ColorRect3/Text" method="_on_focus_entered"]
-[connection signal="focus_entered" from="Windows/Folders/Windows/ArticleFWindow/ColorRect3/Text" to="Windows/Folders/Windows/ArticleFWindow/ColorRect3/Text" method="_on_focus_entered"]
 [connection signal="focus_entered" from="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/Text" to="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/Text" method="_on_focus_entered"]
 [connection signal="focus_entered" from="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/Text2" to="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/Text2" method="_on_focus_entered"]
 [connection signal="focus_entered" from="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/Text3" to="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/Text3" method="_on_focus_entered"]
@@ -5696,3 +3936,15 @@ structure = Array[ExtResource("32_qg81j")]([SubResource("Resource_mxaxw"), SubRe
 [connection signal="pressed" from="Windows/EncryptedMessage/EncryptedWindow/ColorRect3/ColorRect4/Text5/Button" to="." method="_on_blow_it_up_button_pressed"]
 [connection signal="timeout" from="Windows/CountDownWindow/CountdownTimer" to="." method="_on_countdown_timer_timeout"]
 [connection signal="focus_entered" from="Windows/CreditWindow/Text3" to="Windows/CreditWindow/Text3" method="_on_focus_entered"]
+[connection signal="caret_changed" from="Windows/GuideLinesWindow/ColorRect3/DontTxt" to="Windows/GuideLinesWindow/ColorRect3/DontTxt" method="_on_caret_changed"]
+[connection signal="focus_entered" from="Windows/GuideLinesWindow/ColorRect3/DontTxt" to="Windows/GuideLinesWindow/ColorRect3/DontTxt" method="_on_focus_entered"]
+[connection signal="caret_changed" from="Windows/NotesWindow/ColorRect3/DontTxt" to="Windows/NotesWindow/ColorRect3/DontTxt" method="_on_caret_changed"]
+[connection signal="focus_entered" from="Windows/NotesWindow/ColorRect3/DontTxt" to="Windows/NotesWindow/ColorRect3/DontTxt" method="_on_focus_entered"]
+[connection signal="caret_changed" from="Windows/LookingMilfWindow/ColorRect3/DontTxt" to="Windows/LookingMilfWindow/ColorRect3/DontTxt" method="_on_caret_changed"]
+[connection signal="focus_entered" from="Windows/LookingMilfWindow/ColorRect3/DontTxt" to="Windows/LookingMilfWindow/ColorRect3/DontTxt" method="_on_focus_entered"]
+[connection signal="caret_changed" from="Windows/TheContractWindow/ColorRect3/DontTxt" to="Windows/TheContractWindow/ColorRect3/DontTxt" method="_on_caret_changed"]
+[connection signal="focus_entered" from="Windows/TheContractWindow/ColorRect3/DontTxt" to="Windows/TheContractWindow/ColorRect3/DontTxt" method="_on_focus_entered"]
+[connection signal="focus_entered" from="Windows/ArticleAWindow/ColorRect3/Text" to="Windows/ArticleAWindow/ColorRect3/Text" method="_on_focus_entered"]
+[connection signal="focus_entered" from="Windows/ArticleBWindow/ColorRect3/Text" to="Windows/ArticleBWindow/ColorRect3/Text" method="_on_focus_entered"]
+[connection signal="focus_entered" from="Windows/ArticleCWindow/ColorRect3/Text" to="Windows/ArticleCWindow/ColorRect3/Text" method="_on_focus_entered"]
+[connection signal="focus_entered" from="Windows/ArticleFWindow/ColorRect3/Text" to="Windows/ArticleFWindow/ColorRect3/Text" method="_on_focus_entered"]

@@ -16,7 +16,7 @@ const FILE_TYPE_NAMES := {
 	FileType.FOLDER: "Folder",
 }
 
-@export var file_name := "filename.txt":
+@export var file_name := "":
 	set(value):
 		if file_name != value:
 			file_name = value
@@ -44,7 +44,7 @@ const FILE_TYPE_NAMES := {
 					
 			if not type_found:
 				type = FileType.FOLDER
-			
+				
 			emit_changed()
 @export var modified := "01.01.01":
 	set(value):
