@@ -6,7 +6,6 @@ signal pressed
 
 var margin_container: MarginContainer
 
-
 @export var text: String:
 	set(value):
 		text = value

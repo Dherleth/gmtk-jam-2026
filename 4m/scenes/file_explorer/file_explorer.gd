@@ -1,8 +1,6 @@
 @tool
 class_name FileExplorer
-extends OsWindow
-
-@onready var window: Control = $Window
+extends Control
 
 @export var structure :Array[FileExplorerEntry] = []:
 	set(value):
@@ -11,6 +9,8 @@ extends OsWindow
 		_connect_resources()
 		_structure_changed()
 		
+@onready var window: OsWindow = $Window
+
 var name_column: Column
 var modified_column: Column
 var type_column: Column
@@ -197,3 +197,19 @@ func _on_line_button_mouse_entered(color_rect: ColorRect) -> void:
 	
 func _on_line_button_mouse_exited(color_rect: ColorRect) -> void:
 	color_rect.color = Color("ffffff00")
+
+
+func get_availables_paths_as_strings() -> Array[String]:
+	var availables_paths: Array[String] = []
+	
+	for button: FileSystemStructureButton in file_system_structure_container.get_children():
+		if button.display_icon: # Folder
+			availables_paths.push_back("/".join(button.path))
+
+	return availables_paths
+
+func open(path: String):
+	for button: FileSystemStructureButton in file_system_structure_container.get_children():
+		if path == "/".join(button.path):
+			window.spawn()
+			button.pressed.emit()

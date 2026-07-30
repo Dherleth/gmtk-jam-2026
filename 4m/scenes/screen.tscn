@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bq6xc7mjmgren" path="res://assets/images/Windows_95_Highlights_in_program.png" id="10_esotp"]
 [ext_resource type="Texture2D" uid="uid://lfuedn4ag0ct" path="res://assets/images/Windows_95_FOLDER.png" id="11_wydk0"]
 [ext_resource type="Script" uid="uid://px0li53gqdi" path="res://scenes/encrypted_message.gd" id="12_2uju1"]
+[ext_resource type="Script" uid="uid://bvhv12qvrfyid" path="res://scenes/file_explorer/file_explorer_opener.gd" id="13_1regh"]
 [ext_resource type="Script" uid="uid://dcmbog0g538u7" path="res://scenes/wackypedia.gd" id="15_ufolh"]
 [ext_resource type="Theme" uid="uid://b2kkavm1kjn46" path="res://themes/win95_theme.tres" id="16_5syhw"]
 [ext_resource type="PackedScene" uid="uid://cbd1u2j608rx6" path="res://scenes/WackyPediaButton.tscn" id="16_mfkbl"]
@@ -160,16 +161,6 @@ type = 3
 folder_content = Array[ExtResource("32_qg81j")]([SubResource("Resource_ort76")])
 metadata/_custom_type_script = "uid://bx2yrr211ihq5"
 
-[sub_resource type="Resource" id="Resource_pys47"]
-script = ExtResource("32_qg81j")
-metadata/_custom_type_script = "uid://bx2yrr211ihq5"
-
-[sub_resource type="Resource" id="Resource_1regh"]
-script = ExtResource("32_qg81j")
-file_name = "Not Important"
-type = 3
-metadata/_custom_type_script = "uid://bx2yrr211ihq5"
-
 [sub_resource type="Resource" id="Resource_vegeo"]
 script = ExtResource("32_qg81j")
 file_name = "Open4All Guidelines.txt"
@@ -180,6 +171,20 @@ script = ExtResource("32_qg81j")
 file_name = "Recycle Bin"
 type = 3
 folder_content = Array[ExtResource("32_qg81j")]([SubResource("Resource_vegeo")])
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
+
+[sub_resource type="Resource" id="Resource_1regh"]
+script = ExtResource("32_qg81j")
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
+
+[sub_resource type="Resource" id="Resource_bgcim"]
+script = ExtResource("32_qg81j")
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
+
+[sub_resource type="Resource" id="Resource_vs5sd"]
+script = ExtResource("32_qg81j")
+file_name = "New folder"
+type = 3
 metadata/_custom_type_script = "uid://bx2yrr211ihq5"
 
 [node name="Screen" type="Control" unique_id=53907799]
@@ -372,7 +377,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="BinButton" type="TextureButton" parent="Desktop" unique_id=1250734270 node_paths=PackedStringArray("window") groups=["apps"]]
+[node name="BinButton" type="TextureButton" parent="Desktop" unique_id=1250734270 node_paths=PackedStringArray("file_explorer")]
 layout_mode = 0
 offset_left = 72.0
 offset_top = 72.0
@@ -381,8 +386,9 @@ offset_bottom = 120.0
 texture_normal = ExtResource("5_ed25v")
 ignore_texture_size = true
 stretch_mode = 0
-script = ExtResource("6_2hpia")
-window = NodePath("../../Windows/BinWindows/BinWindow")
+script = ExtResource("13_1regh")
+file_explorer = NodePath("../../FileExplorer")
+path = "Recycle Bin"
 
 [node name="Label" type="Label" parent="Desktop/BinButton" unique_id=933255462]
 layout_mode = 1
@@ -488,7 +494,7 @@ theme_override_fonts/font = ExtResource("3_sp806")
 text = "Folders"
 horizontal_alignment = 1
 
-[node name="FileExplorerButton" type="TextureButton" parent="Desktop" unique_id=933141806 node_paths=PackedStringArray("window") groups=["apps"]]
+[node name="FileExplorerButton" type="TextureButton" parent="Desktop" unique_id=933141806 node_paths=PackedStringArray("file_explorer")]
 layout_mode = 0
 offset_left = 77.0
 offset_top = 372.0
@@ -497,8 +503,9 @@ offset_bottom = 410.0
 texture_normal = ExtResource("11_wydk0")
 ignore_texture_size = true
 stretch_mode = 0
-script = ExtResource("6_2hpia")
-window = NodePath("../../Windows/Folders")
+script = ExtResource("13_1regh")
+file_explorer = NodePath("../../FileExplorer")
+path = "Work"
 
 [node name="Label" type="Label" parent="Desktop/FileExplorerButton" unique_id=1689474353]
 layout_mode = 1
@@ -5629,7 +5636,7 @@ volume_db = -15.0
 [node name="FileExplorer" parent="." unique_id=414043701 instance=ExtResource("31_qg81j")]
 layout_mode = 1
 offset_right = -54.0
-structure = Array[ExtResource("32_qg81j")]([SubResource("Resource_mxaxw"), SubResource("Resource_s01h0"), SubResource("Resource_pys47"), SubResource("Resource_1regh"), SubResource("Resource_a66ve")])
+structure = Array[ExtResource("32_qg81j")]([SubResource("Resource_mxaxw"), SubResource("Resource_s01h0"), SubResource("Resource_a66ve"), SubResource("Resource_1regh"), SubResource("Resource_bgcim"), SubResource("Resource_vs5sd")])
 
 [connection signal="pressed" from="TaskBar/Start" to="." method="_on_start_pressed"]
 [connection signal="caret_changed" from="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" to="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" method="_on_caret_changed"]
