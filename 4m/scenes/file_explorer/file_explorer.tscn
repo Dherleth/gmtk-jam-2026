@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b77wn2mksdrav" path="res://scenes/file_explorer/column/column.tscn" id="3_ee4v2"]
 [ext_resource type="FontFile" uid="uid://bueekk14nownm" path="res://assets/fonts/w95fa/W95F.otf" id="4_0xeun"]
 
-[node name="FileExplorer" type="Control" unique_id=414043701]
+[node name="FileExplorer" type="Control" unique_id=808500156]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,6 +17,7 @@ offset_bottom = -122.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tsstm")
+metadata/_custom_type_script = "uid://cnjyw0m4yrwv0"
 
 [node name="Window" parent="." unique_id=1942496214 instance=ExtResource("2_rupmg")]
 layout_mode = 1

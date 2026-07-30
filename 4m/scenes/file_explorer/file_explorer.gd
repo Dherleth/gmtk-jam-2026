@@ -1,5 +1,6 @@
 @tool
-extends Control
+class_name FileExplorer
+extends OsWindow
 
 @onready var window: Control = $Window
 
@@ -28,9 +29,7 @@ var current_structure_button: FileSystemStructureButton
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		_structure_changed()
-	else:
-		window.spawn()
-		
+
 
 func _structure_changed() -> void:
 	_draw_explorer_content(structure)
@@ -142,7 +141,8 @@ func _draw_fs_structure(structure: Array[FileExplorerEntry], deepness := 0, path
 			if entry:
 				var is_folder = entry.type == FileExplorerEntry.FileType.FOLDER
 				
-				if is_folder:
+				# Only display non folders in editor to check our structure
+				if is_folder or Engine.is_editor_hint():
 					var entry_path := path.duplicate()
 					
 					if is_folder:
@@ -159,7 +159,6 @@ func _draw_fs_structure(structure: Array[FileExplorerEntry], deepness := 0, path
 						_draw_fs_structure(entry.folder_content, deepness + 1, entry_path)
 						
 					button_instance.pressed.connect(func(): _on_fs_structure_button_pressed(button_instance, entry, entry_path))
-			
 	
 func _on_line_button_pressed(entry: FileExplorerEntry) -> void:
 	if entry.type == FileExplorerEntry.FileType.FOLDER:
@@ -173,8 +172,6 @@ func _on_line_button_pressed(entry: FileExplorerEntry) -> void:
 				current_structure_button = button
 			
 		_draw_explorer_content(entry.folder_content)
-		
-		
 	else:
 		if entry.target_window:
 			var target_window = get_node(entry.target_window)

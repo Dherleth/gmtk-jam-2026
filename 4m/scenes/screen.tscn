@@ -155,7 +155,7 @@ metadata/_custom_type_script = "uid://bx2yrr211ihq5"
 
 [sub_resource type="Resource" id="Resource_s01h0"]
 script = ExtResource("32_qg81j")
-file_name = "dsff"
+file_name = "Important"
 type = 3
 folder_content = Array[ExtResource("32_qg81j")]([SubResource("Resource_ort76")])
 metadata/_custom_type_script = "uid://bx2yrr211ihq5"
@@ -166,6 +166,20 @@ metadata/_custom_type_script = "uid://bx2yrr211ihq5"
 
 [sub_resource type="Resource" id="Resource_1regh"]
 script = ExtResource("32_qg81j")
+file_name = "Not Important"
+type = 3
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
+
+[sub_resource type="Resource" id="Resource_vegeo"]
+script = ExtResource("32_qg81j")
+file_name = "Open4All Guidelines.txt"
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
+
+[sub_resource type="Resource" id="Resource_a66ve"]
+script = ExtResource("32_qg81j")
+file_name = "Recycle Bin"
+type = 3
+folder_content = Array[ExtResource("32_qg81j")]([SubResource("Resource_vegeo")])
 metadata/_custom_type_script = "uid://bx2yrr211ihq5"
 
 [node name="Screen" type="Control" unique_id=53907799]
@@ -447,10 +461,10 @@ horizontal_alignment = 1
 
 [node name="FoldersButton" type="TextureButton" parent="Desktop" unique_id=2057457581 node_paths=PackedStringArray("window") groups=["apps"]]
 layout_mode = 0
-offset_left = 77.0
-offset_top = 372.0
-offset_right = 115.0
-offset_bottom = 410.0
+offset_left = 74.0
+offset_top = 479.0
+offset_right = 112.0
+offset_bottom = 517.0
 texture_normal = ExtResource("11_wydk0")
 ignore_texture_size = true
 stretch_mode = 0
@@ -472,6 +486,35 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("3_sp806")
 text = "Folders"
+horizontal_alignment = 1
+
+[node name="FileExplorerButton" type="TextureButton" parent="Desktop" unique_id=933141806 node_paths=PackedStringArray("window") groups=["apps"]]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 372.0
+offset_right = 115.0
+offset_bottom = 410.0
+texture_normal = ExtResource("11_wydk0")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("6_2hpia")
+window = NodePath("../../Windows/Folders")
+
+[node name="Label" type="Label" parent="Desktop/FileExplorerButton" unique_id=1689474353]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = 3.0
+offset_right = 32.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_sp806")
+text = "Explorer"
 horizontal_alignment = 1
 
 [node name="Windows" type="Control" parent="." unique_id=1130820464]
@@ -5586,7 +5629,7 @@ volume_db = -15.0
 [node name="FileExplorer" parent="." unique_id=414043701 instance=ExtResource("31_qg81j")]
 layout_mode = 1
 offset_right = -54.0
-structure = Array[ExtResource("32_qg81j")]([SubResource("Resource_mxaxw"), SubResource("Resource_s01h0"), SubResource("Resource_pys47"), SubResource("Resource_1regh")])
+structure = Array[ExtResource("32_qg81j")]([SubResource("Resource_mxaxw"), SubResource("Resource_s01h0"), SubResource("Resource_pys47"), SubResource("Resource_1regh"), SubResource("Resource_a66ve")])
 
 [connection signal="pressed" from="TaskBar/Start" to="." method="_on_start_pressed"]
 [connection signal="caret_changed" from="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" to="Windows/BinWindows/GuideLinesWindow/ColorRect3/DontTxt" method="_on_caret_changed"]

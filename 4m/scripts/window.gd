@@ -1,4 +1,5 @@
 extends Control
+class_name OsWindow
 
 @export var title: String = "Title"
 
