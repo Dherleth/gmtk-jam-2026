@@ -1,8 +1,6 @@
 @tool
 extends Control
 
-signal folder_selected(path: String)
-
 @onready var window: Control = $Window
 
 @export var structure :Array[FileExplorerEntry] = []:
@@ -24,6 +22,7 @@ var fs_structure_button_scene = preload("res://scenes/file_explorer/file_system_
 var current_folder_path_label: Label
 
 var current_folder_path: Array[String] = [] # Work/Important for example, lists only folders
+var current_structure_button: FileSystemStructureButton
 
 
 func _ready() -> void:
@@ -141,47 +140,58 @@ func _draw_fs_structure(structure: Array[FileExplorerEntry], deepness := 0, path
 
 		for entry in structure:
 			if entry:
-				var entry_path := path.duplicate()
 				var is_folder = entry.type == FileExplorerEntry.FileType.FOLDER
 				
 				if is_folder:
-					entry_path.append(entry.file_name)
-				
-				var button_instance: FileSystemStructureButton = fs_structure_button_scene.instantiate()
-				button_instance.display_icon = is_folder
-				button_instance.text = entry.file_name
-				# Control wrapper to be able to move the button horizontally in the VBoxContainer
-				var control = Control.new()
-				control.custom_minimum_size = button_instance.custom_minimum_size
-				control.add_child(button_instance)
-				file_system_structure_container.add_child(control)
-				button_instance.deepness = deepness
-				
-				if is_folder:
-					_draw_fs_structure(entry.folder_content, deepness + 1, entry_path)
+					var entry_path := path.duplicate()
 					
-				button_instance.pressed.connect(func(): _on_fs_structure_button_pressed(entry, entry_path))
+					if is_folder:
+						entry_path.append(entry.file_name)
+					
+					var button_instance: FileSystemStructureButton = fs_structure_button_scene.instantiate()
+					button_instance.display_icon = is_folder
+					button_instance.text = entry.file_name
+					file_system_structure_container.add_child(button_instance)
+					button_instance.deepness = deepness
+					button_instance.path = entry_path.duplicate()
+					
+					if is_folder:
+						_draw_fs_structure(entry.folder_content, deepness + 1, entry_path)
+						
+					button_instance.pressed.connect(func(): _on_fs_structure_button_pressed(button_instance, entry, entry_path))
 			
 	
 func _on_line_button_pressed(entry: FileExplorerEntry) -> void:
 	if entry.type == FileExplorerEntry.FileType.FOLDER:
 		current_folder_path.push_back(entry.file_name)
-		current_folder_path_label.text = ">://" + "/".join(current_folder_path)
+		var current_folder_path_string = "/".join(current_folder_path)
+		current_folder_path_label.text = ">://" + current_folder_path_string
+		
+		for button: FileSystemStructureButton in file_system_structure_container.get_children():
+			button.current = "/".join(button.path) == current_folder_path_string
+			if button.current:
+				current_structure_button = button
+			
 		_draw_explorer_content(entry.folder_content)
+		
+		
 	else:
 		if entry.target_window:
 			var target_window = get_node(entry.target_window)
 			target_window.spawn()
 			
 
-func _on_fs_structure_button_pressed(entry: FileExplorerEntry, path: Array[String]) -> void:
+func _on_fs_structure_button_pressed(button: FileSystemStructureButton, entry: FileExplorerEntry, path: Array[String]) -> void:
 	if entry.type == FileExplorerEntry.FileType.FOLDER:
 		current_folder_path = path.duplicate()
 		current_folder_path_label.text = ">://" + "/".join(path)
+		
+		if current_structure_button:
+			current_structure_button.current = false
+			
+		button.current = true
+		current_structure_button = button
 		_draw_explorer_content(entry.folder_content)
-	else:
-		if entry.target_window:
-			pass
 		
 
 func _on_line_button_mouse_entered(color_rect: ColorRect) -> void:
@@ -190,4 +200,3 @@ func _on_line_button_mouse_entered(color_rect: ColorRect) -> void:
 	
 func _on_line_button_mouse_exited(color_rect: ColorRect) -> void:
 	color_rect.color = Color("ffffff00")
-	

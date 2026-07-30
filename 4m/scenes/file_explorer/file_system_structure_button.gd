@@ -1,6 +1,7 @@
 @tool
 extends Control
 class_name FileSystemStructureButton
+
 signal pressed
 
 var margin_container: MarginContainer
@@ -35,8 +36,15 @@ var margin_container: MarginContainer
 		
 @onready var color_rect: ColorRect = $ColorRect
 
-var current := false
-
+var current := false:
+	set(value):
+		current = value
+		
+		if not current:
+			color_rect.color = Color("ffffff00")
+		else:
+			color_rect.color = Color("afafafff")
+var path: Array[String]
 var icon_node: Control
 var text_node: Label
 
@@ -65,7 +73,7 @@ func _on_button_mouse_exited() -> void:
 	if not current:
 		color_rect.color = Color("ffffff00")
 	else:
-		color_rect.color = Color("57a0ffff")
+		color_rect.color = Color("afafafff")
 
 
 func _on_button_pressed() -> void:
