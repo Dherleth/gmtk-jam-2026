@@ -1,11 +1,11 @@
 extends Control
 
 
-@onready var access: Control = $"../Access"
-@onready var list: Control = $"../List"
-@onready var hint: Label = $"../Access/Hint"
-@onready var password_input: LineEdit = $"../Access/Password"
-@onready var username_input: LineEdit = $"../Access/Username"
+@onready var access: Control = %Access
+@onready var list: Control = %List
+@onready var hint: Label = %Hint
+@onready var password_input: LineEdit = %Password
+@onready var username_input: LineEdit = %Username
 
 var password = "toby"
 

@@ -20,6 +20,7 @@ var group4_solved := false
 
 
 func _ready() -> void:
+	show()
 	text.show()
 	text_2.hide()
 	text_3.hide()
@@ -34,6 +35,7 @@ func _ready() -> void:
 	_connect_inputs_solved(input_group_2)
 	_connect_inputs_solved(input_group_3)
 	_connect_inputs_solved(input_group_4)
+	
 	
 func _process(delta: float) -> void:
 	if not group1_solved:

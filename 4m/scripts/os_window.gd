@@ -11,7 +11,7 @@ var mousePos: Vector2 = Vector2.ZERO
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	hide()
-	$TextureRect/Label.text = title
+	$TitleBar/TitleLabel.text = title
 	pivot_offset = Vector2(size.x/2, size.y/2)
 
 
@@ -43,6 +43,7 @@ func despawn():
 	
 	
 func spawn():
+	move_to_front()
 	modulate.a = 0.0 # invisible
 	show()
 	pivot_offset.y = size.y # pivot at bottom (for scaling)

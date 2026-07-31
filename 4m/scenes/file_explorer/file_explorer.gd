@@ -211,6 +211,7 @@ func get_availables_paths_as_strings() -> Array[String]:
 	return availables_paths
 
 func open(path: String):
+	move_to_front()
 	for button: FileSystemStructureButton in file_system_structure_container.get_children():
 		if path == "/".join(button.path):
 			if not window.visible:
