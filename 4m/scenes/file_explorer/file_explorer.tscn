@@ -17,6 +17,7 @@ metadata/_custom_type_script = "uid://cnjyw0m4yrwv0"
 
 [node name="Window" parent="." unique_id=1942496214 instance=ExtResource("2_rupmg")]
 layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = 0.0
@@ -158,9 +159,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -10.0
-offset_top = 25.0
+offset_top = 30.0
 offset_right = 183.0
-offset_bottom = 316.0
+offset_bottom = 311.0
 grow_horizontal = 2
 grow_vertical = 2
 

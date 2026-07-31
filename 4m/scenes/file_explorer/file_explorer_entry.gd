@@ -22,7 +22,7 @@ const FILE_TYPE_NAMES := {
 			file_name = value
 			var type_found = false;
 			
-			for text_type in [".txt", ".doc"]:
+			for text_type in [".txt", ".doc", ".xls"]:
 				if file_name.to_lower().ends_with(text_type):
 					type = FileType.TEXT
 					type_found = true
