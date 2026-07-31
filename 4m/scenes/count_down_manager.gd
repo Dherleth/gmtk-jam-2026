@@ -2,8 +2,8 @@ extends Control
 
 
 @onready var countdown_timer: Timer = $"../CountdownTimer"
-@onready var minute: Label = $"../ColorRect3/ColorRect4/Minute"
-@onready var seconds: Label = $"../ColorRect3/ColorRect4/Seconds"
+@onready var minute: Label = $"../ColorRect3/Minute"
+@onready var seconds: Label = $"../ColorRect3/Seconds"
 @onready var button_label: Label = $"../../../TaskBar/CountDownButton/Digits/Label"
 
 
