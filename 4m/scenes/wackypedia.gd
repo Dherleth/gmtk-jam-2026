@@ -199,3 +199,7 @@ func _on_title_pressed() -> void:
 	searchterm = ""
 	result.hide()
 	home_page.show()
+
+
+func _on_browser_closed() -> void:
+	_on_title_pressed()

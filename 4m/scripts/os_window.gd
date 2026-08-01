@@ -55,7 +55,6 @@ func despawn():
 	
 	# optional, emits the spawned signal once the whole tween is done
 	hide()
-
 	
 	
 func spawn():

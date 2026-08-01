@@ -2992,6 +2992,7 @@ offset_bottom = 488.0
 structure = Array[ExtResource("32_1regh")]([SubResource("Resource_0xeun"), SubResource("Resource_ahs7a"), SubResource("Resource_7hfxj"), SubResource("Resource_6nrmc")])
 
 [connection signal="pressed" from="TaskBar/Start" to="." method="_on_start_pressed"]
+[connection signal="closed" from="Windows/Browser" to="Windows/Browser/WackyPedia" method="_on_browser_closed"]
 [connection signal="text_changed" from="Windows/Browser/WackyPedia/HomePage/SearchTerm" to="Windows/Browser/WackyPedia" method="_on_line_edit_text_changed"]
 [connection signal="text_submitted" from="Windows/Browser/WackyPedia/HomePage/SearchTerm" to="Windows/Browser/WackyPedia" method="_on_line_edit_text_submitted"]
 [connection signal="pressed" from="Windows/Browser/WackyPedia/HomePage/SearchButton" to="Windows/Browser/WackyPedia" method="_on_search_pressed"]
