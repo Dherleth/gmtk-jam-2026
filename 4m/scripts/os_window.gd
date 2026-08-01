@@ -1,16 +1,30 @@
+@tool
 extends Control
 class_name OsWindow
 
 @export var title: String = "Title"
+@export var color: Color = Color("ffffff"):
+	set(value):
+		color = value
+		
+		if not color_rect:
+			color_rect = find_child("Content")
+		
+		if color_rect:
+			color_rect.color = color
+		
 
 signal closed
+signal opened
 
+var color_rect: ColorRect
 var pressed
 var mousePos: Vector2 = Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	hide()
+	if not Engine.is_editor_hint():
+		hide()
 	$TitleBar/TitleLabel.text = title
 	pivot_offset = Vector2(size.x/2, size.y/2)
 
@@ -29,6 +43,7 @@ func _on_x_pressed() -> void:
 	despawn()
 	
 func despawn():
+	closed.emit()
 	modulate.a = 1.0 # invisible
 	pivot_offset.y = size.y # pivot at bottom (for scaling)
 	
@@ -39,7 +54,8 @@ func despawn():
 	tween.parallel().tween_property(self, "scale:y", 0.0, 0.2).from(1.5)
 	
 	# optional, emits the spawned signal once the whole tween is done
-	tween.tween_callback(closed.emit)
+	hide()
+
 	
 	
 func spawn():
@@ -53,7 +69,5 @@ func spawn():
 	
 	tween.tween_property(self, "modulate:a", 1.0, 0.2)
 	tween.parallel().tween_property(self, "scale:y", 1.0, 0.2).from(-1)
-
-
-func _on_closed() -> void:
-	hide()
+	
+	tween.tween_callback(opened.emit)

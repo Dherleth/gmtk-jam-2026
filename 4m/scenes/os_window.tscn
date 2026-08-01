@@ -21,6 +21,7 @@ anchor_right = 0.22100002
 anchor_bottom = 0.39400002
 offset_right = 0.4079895
 offset_bottom = -0.31201172
+pivot_offset = Vector2(127.5, 127.5)
 size_flags_horizontal = 2
 size_flags_vertical = 2
 mouse_filter = 2
@@ -76,7 +77,7 @@ texture_normal = ExtResource("4_m3yh7")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=43384439]
+[node name="Content" type="ColorRect" parent="." unique_id=43384439]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -88,7 +89,7 @@ offset_bottom = -18.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="ColorRect" unique_id=1429951311]
+[node name="ColorRect" type="ColorRect" parent="Content" unique_id=1429951311]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -96,7 +97,7 @@ offset_bottom = 1.0
 grow_horizontal = 2
 color = Color(0.125911, 0.125911, 0.125911, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="ColorRect" unique_id=1179291287]
+[node name="ColorRect2" type="ColorRect" parent="Content" unique_id=1179291287]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -104,7 +105,7 @@ offset_right = 1.0
 grow_vertical = 2
 color = Color(0.125911, 0.125911, 0.125911, 1)
 
-[node name="ColorRect3" type="ColorRect" parent="ColorRect" unique_id=513163880]
+[node name="ColorRect3" type="ColorRect" parent="Content" unique_id=513163880]
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -115,7 +116,7 @@ grow_horizontal = 0
 grow_vertical = 2
 color = Color(0.818447, 0.839665, 0.842692, 1)
 
-[node name="ColorRect4" type="ColorRect" parent="ColorRect" unique_id=1178109420]
+[node name="ColorRect4" type="ColorRect" parent="Content" unique_id=1178109420]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -126,6 +127,5 @@ grow_horizontal = 2
 grow_vertical = 0
 color = Color(0.818447, 0.839665, 0.842692, 1)
 
-[connection signal="closed" from="." to="." method="_on_closed"]
 [connection signal="gui_input" from="TitleBar" to="." method="_on_gui_input"]
 [connection signal="pressed" from="TitleBar/Close" to="." method="_on_x_pressed"]

@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 	if Engine.is_editor_hint():
 		if to_find.size() > 0:
 			placeholder_text = to_find[0]
-		
+			
 
 func _enter_tree() -> void:
 	placeholder_text = ""

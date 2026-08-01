@@ -24,6 +24,7 @@ offset_right = 0.0
 offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(428.5, 202.5)
 
 [node name="Path" type="ColorRect" parent="Window" unique_id=500909365]
 layout_mode = 0

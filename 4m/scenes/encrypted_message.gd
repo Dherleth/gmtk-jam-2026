@@ -1,14 +1,14 @@
 extends Control
 
-@onready var text: RichTextLabel = $EncryptedWindow/ColorRect3/Text
-@onready var text_2: RichTextLabel = $EncryptedWindow/ColorRect3/Text2
-@onready var text_3: RichTextLabel = $EncryptedWindow/ColorRect3/Text3
-@onready var text_4: RichTextLabel = $EncryptedWindow/ColorRect3/Text4
-@onready var text_5: RichTextLabel = $EncryptedWindow/ColorRect3/Text5
-@onready var input_group: Control = $EncryptedWindow/ColorRect3/InputGroup
-@onready var input_group_2: Control = $EncryptedWindow/ColorRect3/InputGroup2
-@onready var input_group_3: Control = $EncryptedWindow/ColorRect3/InputGroup3
-@onready var input_group_4: Control = $EncryptedWindow/ColorRect3/InputGroup4
+@onready var text: RichTextLabel = $EncryptedWindow/Control/Text
+@onready var text_2: RichTextLabel = $EncryptedWindow/Control/Text2
+@onready var text_3: RichTextLabel = $EncryptedWindow/Control/Text3
+@onready var text_4: RichTextLabel = $EncryptedWindow/Control/Text4
+@onready var text_5: RichTextLabel = $EncryptedWindow/Control/Text5
+@onready var input_group: Control = $EncryptedWindow/Control/InputGroup
+@onready var input_group_2: Control = $EncryptedWindow/Control/InputGroup2
+@onready var input_group_3: Control = $EncryptedWindow/Control/InputGroup3
+@onready var input_group_4: Control = $EncryptedWindow/Control/InputGroup4
 @onready var countdown_timer: Timer = $"../CountDownWindow/CountdownTimer"
 @onready var animation_player: AnimationPlayer = $"../../TaskBar/CountDownButton/Control/AnimationPlayer"
 @onready var more_time_label: Label = $"../../TaskBar/CountDownButton/Control/Label"

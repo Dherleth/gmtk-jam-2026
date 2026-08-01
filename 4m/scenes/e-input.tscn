@@ -9,10 +9,12 @@
 custom_maximum_size = Vector2(-1, 15)
 offset_right = 68.5
 offset_bottom = 31.0
-theme_override_colors/font_color = Color(0.3791093, 0.77608657, 0.9999998, 1)
-theme_override_colors/font_uneditable_color = Color(0, 255, 0, 1)
+theme_override_colors/font_color = Color(0.38039216, 0.7764706, 1, 1)
+theme_override_colors/font_uneditable_color = Color(0, 1, 0, 1)
 theme_override_fonts/font = ExtResource("1_t2o7e")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_t2o7e")
+context_menu_enabled = false
+emoji_menu_enabled = false
 flat = true
 script = ExtResource("1_fir5l")
 
