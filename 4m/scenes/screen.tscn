@@ -413,9 +413,9 @@ script = ExtResource("4_06c6w")
 
 [node name="EncryptedButton" type="TextureButton" parent="TaskBar" unique_id=1194831103 node_paths=PackedStringArray("window") groups=["apps"]]
 layout_mode = 0
-offset_left = 8.0
+offset_left = 3.0
 offset_top = 5.0
-offset_right = 91.0
+offset_right = 179.0
 offset_bottom = 36.0
 ignore_texture_size = true
 stretch_mode = 0
@@ -437,23 +437,24 @@ patch_margin_right = 2
 patch_margin_bottom = 2
 
 [node name="Label" type="Label" parent="TaskBar/EncryptedButton" unique_id=534038550]
-layout_mode = 0
-offset_left = 7.0
-offset_top = 1.0
-offset_right = 73.0
-offset_bottom = 27.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0.12222696, 0.6646925, 0.30863708, 1)
 theme_override_fonts/font = ExtResource("3_sp806")
 theme_override_font_sizes/font_size = 20
-text = "xx"
+text = "Encrypted Message"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CountDownButton" type="TextureButton" parent="TaskBar" unique_id=1736174403 node_paths=PackedStringArray("window") groups=["apps"]]
 layout_mode = 0
-offset_left = 97.0
+offset_left = 182.0
 offset_top = 5.0
-offset_right = 235.0
+offset_right = 320.0
 offset_bottom = 36.0
 ignore_texture_size = true
 stretch_mode = 0
@@ -2842,7 +2843,7 @@ Even with the upgraded model, the company was losing _______
 because the __________ use a lot of _______
 The company was ________ to _____.
 And Martin Saltman _________ soon after.
-He ________ to _______."
+He ______ to _______."
 autowrap_mode = 2
 shortcut_keys_enabled = false
 drag_and_drop_selection_enabled = false
@@ -3113,9 +3114,9 @@ to_find = Array[String](["fled", "left", "flew", "went"])
 
 [node name="EInput19" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup3" unique_id=1896546095 instance=ExtResource("25_dfejr")]
 layout_mode = 0
-offset_left = 118.0
+offset_left = 100.0
 offset_top = -178.0
-offset_right = 214.00003
+offset_right = 196.00003
 offset_bottom = -163.0
 placeholder_text = "hawaii"
 to_find = Array[String](["hawaii", "honolulu"])
