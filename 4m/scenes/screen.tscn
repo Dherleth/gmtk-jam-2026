@@ -274,7 +274,7 @@ metadata/_custom_type_script = "uid://bx2yrr211ihq5"
 
 [sub_resource type="Resource" id="Resource_2exot"]
 script = ExtResource("32_1regh")
-file_name = "mybeloved.jpg"
+file_name = "old_photo.jpg"
 modified = "02.11.01"
 type = 1
 size = "50 Ko"
@@ -2264,8 +2264,8 @@ visible = false
 layout_mode = 1
 offset_left = 166.0
 offset_top = 33.0
-offset_right = 833.28796
-offset_bottom = 357.73602
+offset_right = 456.0
+offset_bottom = 188.0
 pivot_offset = Vector2(333.64398, 162.36801)
 title = "notes.txt"
 
@@ -2278,8 +2278,8 @@ anchor_right = 0.985
 anchor_bottom = 0.936
 offset_left = 10.3178005
 offset_top = 32.737408
-offset_right = -35.278625
-offset_bottom = -24.952911
+offset_right = -15.649994
+offset_bottom = -7.1600037
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -2288,7 +2288,7 @@ theme_override_fonts/font = ExtResource("3_sp806")
 text = "To Do:
 - Book meeting with future buyer
 - Transfer money to B.o.H
-- Buy one-way plane ticket"
+- Buy one-way ticket"
 context_menu_enabled = false
 emoji_menu_enabled = false
 shortcut_keys_enabled = false
@@ -2302,8 +2302,8 @@ visible = false
 layout_mode = 1
 offset_left = 166.0
 offset_top = 33.0
-offset_right = 833.28796
-offset_bottom = 357.73602
+offset_right = 483.0
+offset_bottom = 210.0
 pivot_offset = Vector2(333.64398, 162.36801)
 title = "Looking for a MILF?.txt"
 
@@ -2377,7 +2377,7 @@ layout_mode = 1
 offset_left = 166.0
 offset_top = 33.0
 offset_right = 701.0
-offset_bottom = 310.0
+offset_bottom = 269.0
 pivot_offset = Vector2(267.5, 138.5)
 title = "Grand opening.txt"
 
@@ -2414,7 +2414,7 @@ layout_mode = 1
 offset_left = 166.0
 offset_top = 33.0
 offset_right = 700.0
-offset_bottom = 308.0
+offset_bottom = 233.0
 pivot_offset = Vector2(267, 137.5)
 title = "E-helper adoption boom.txt"
 
@@ -2448,7 +2448,7 @@ layout_mode = 1
 offset_left = 166.0
 offset_top = 33.0
 offset_right = 699.0
-offset_bottom = 310.0
+offset_bottom = 253.0
 pivot_offset = Vector2(266.5, 138.5)
 title = "First incident.txt"
 
@@ -2482,7 +2482,7 @@ layout_mode = 1
 offset_left = 166.0
 offset_top = 33.0
 offset_right = 698.0
-offset_bottom = 309.0
+offset_bottom = 240.0
 pivot_offset = Vector2(266, 138)
 title = "The Fast E-replacement.txt"
 
@@ -2549,6 +2549,7 @@ texture = ExtResource("20_06c6w")
 expand_mode = 1
 
 [node name="Image1Window" parent="Windows" unique_id=1550086900 instance=ExtResource("10_2hmho")]
+visible = false
 layout_mode = 1
 offset_left = 166.0
 offset_top = 33.0
@@ -2574,7 +2575,7 @@ offset_top = 33.0
 offset_right = 612.0
 offset_bottom = 471.0
 pivot_offset = Vector2(223, 219)
-title = "mybeloved.png"
+title = "old_photo.png"
 
 [node name="TextureRect" type="TextureRect" parent="Windows/MyBelovedWindow" unique_id=202699364]
 layout_mode = 0
@@ -2586,6 +2587,7 @@ texture = ExtResource("22_2uju1")
 expand_mode = 1
 
 [node name="IconWindow" parent="Windows" unique_id=1148099425 instance=ExtResource("10_2hmho")]
+visible = false
 layout_mode = 1
 offset_left = 166.0
 offset_top = 33.0
@@ -2742,6 +2744,7 @@ offset_bottom = 488.0
 structure = Array[ExtResource("32_1regh")]([SubResource("Resource_0xeun"), SubResource("Resource_ahs7a"), SubResource("Resource_7hfxj"), SubResource("Resource_6nrmc")])
 
 [node name="EncryptedMessage" type="Control" parent="Windows" unique_id=12912388]
+visible = false
 layout_mode = 1
 anchors_preset = 0
 offset_left = 35.0
