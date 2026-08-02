@@ -21,7 +21,6 @@
 [ext_resource type="Texture2D" uid="uid://dlnpux1c7qrim" path="res://assets/images/stat_numbers.png" id="19_sp806"]
 [ext_resource type="AudioStream" uid="uid://dginvyreg7pco" path="res://assets/audio/win_small_notif.wav" id="20_4sqgv"]
 [ext_resource type="Texture2D" uid="uid://bhwkeb11kqor6" path="res://assets/images/Monthly_revenue_in_Millions.png" id="20_06c6w"]
-[ext_resource type="Texture2D" uid="uid://j60i6dyv2prb" path="res://assets/images/image1.png" id="21_n8qyt"]
 [ext_resource type="Texture2D" uid="uid://bql7cgsf6jrtb" path="res://assets/images/my_beloved.png" id="22_2uju1"]
 [ext_resource type="Script" uid="uid://bgmty1xj35r7g" path="res://scenes/fuck_me.gd" id="22_qg81j"]
 [ext_resource type="Texture2D" uid="uid://bfg24qoiv2tly" path="res://icon.png" id="23_dfejr"]
@@ -29,12 +28,16 @@
 [ext_resource type="Script" uid="uid://c43xehsvog50c" path="res://scenes/count_down_manager.gd" id="25_5syhw"]
 [ext_resource type="PackedScene" uid="uid://c2h0iof2f0jt8" path="res://scenes/e-input.tscn" id="25_dfejr"]
 [ext_resource type="AudioStream" uid="uid://bi47cnlxch3wb" path="res://assets/audio/win_pos_notif.wav" id="29_4sqgv"]
+[ext_resource type="Texture2D" uid="uid://bp5nmufdxwmey" path="res://assets/images/yacht_yacht_exterior_superyacht.jpg" id="29_ab8gm"]
 [ext_resource type="AudioStream" uid="uid://dopvhkhbi2veo" path="res://assets/audio/explosion_close_long_ufx_1.ogg" id="30_38t0m"]
 [ext_resource type="AudioStream" uid="uid://ci0as80q34vjx" path="res://assets/audio/countdown.wav" id="31_cdnxo"]
 [ext_resource type="PackedScene" uid="uid://bxwvt7pkm8o36" path="res://scenes/file_explorer/file_explorer.tscn" id="31_qg81j"]
 [ext_resource type="Script" uid="uid://bx2yrr211ihq5" path="res://scenes/file_explorer/file_explorer_entry.gd" id="32_1regh"]
 [ext_resource type="Texture2D" uid="uid://b78vhoxry7jk5" path="res://assets/images/Brain_Chip_(40529717123).jpg" id="32_vegeo"]
 [ext_resource type="Texture2D" uid="uid://bsgwvcjd7g2lu" path="res://assets/images/crop.jpg" id="33_bgcim"]
+[ext_resource type="Texture2D" uid="uid://b7g3ovaci8hlw" path="res://assets/pizza_doggy_psx/Small Props/poster_cx_4_poster_cx_4_motivational.png" id="34_ab8gm"]
+[ext_resource type="Texture2D" uid="uid://dafh5t0y222cb" path="res://assets/pizza_doggy_psx/Small Props/poster_cx_4_poster_cx_4_motivational_d.png" id="35_kodbd"]
+[ext_resource type="Texture2D" uid="uid://ctmvsh0xcv1er" path="res://assets/pizza_doggy_psx/Small Props/poster_cx_4_poster_cx_4_motivational_i.png" id="36_auihx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sanry"]
 atlas = ExtResource("2_mml8x")
@@ -154,7 +157,7 @@ metadata/_custom_type_script = "uid://bx2yrr211ihq5"
 
 [sub_resource type="Resource" id="Resource_vs5sd"]
 script = ExtResource("32_1regh")
-file_name = "The Great Replacement.txt"
+file_name = "The e-replacement.txt"
 modified = "08.08.01"
 size = "33 Ko"
 target_window = NodePath("../ArticleFWindow")
@@ -194,13 +197,41 @@ size = "4 Mo"
 folder_content = Array[ExtResource("32_1regh")]([SubResource("Resource_yf7rw"), SubResource("Resource_5x2m1")])
 metadata/_custom_type_script = "uid://bx2yrr211ihq5"
 
+[sub_resource type="Resource" id="Resource_h6arx"]
+script = ExtResource("32_1regh")
+file_name = "Poster1.png"
+type = 1
+target_window = NodePath("../Poster1")
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
+
+[sub_resource type="Resource" id="Resource_joh68"]
+script = ExtResource("32_1regh")
+file_name = "Poster2.png"
+type = 1
+target_window = NodePath("../Poster2")
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
+
+[sub_resource type="Resource" id="Resource_tmng3"]
+script = ExtResource("32_1regh")
+file_name = "Poster3.png"
+type = 1
+target_window = NodePath("../Poster3")
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
+
+[sub_resource type="Resource" id="Resource_pt5sj"]
+script = ExtResource("32_1regh")
+file_name = "Motivational Posters"
+type = 3
+folder_content = Array[ExtResource("32_1regh")]([SubResource("Resource_h6arx"), SubResource("Resource_joh68"), SubResource("Resource_tmng3")])
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
+
 [sub_resource type="Resource" id="Resource_0xeun"]
 script = ExtResource("32_1regh")
 file_name = "Work"
 modified = "03.11.01"
 type = 3
 size = "300 Ko"
-folder_content = Array[ExtResource("32_1regh")]([SubResource("Resource_hst8l"), SubResource("Resource_p2mdf"), SubResource("Resource_ab8gm")])
+folder_content = Array[ExtResource("32_1regh")]([SubResource("Resource_hst8l"), SubResource("Resource_p2mdf"), SubResource("Resource_ab8gm"), SubResource("Resource_pt5sj")])
 metadata/_custom_type_script = "uid://bx2yrr211ihq5"
 
 [sub_resource type="Resource" id="Resource_bgcim"]
@@ -217,18 +248,24 @@ type = 1
 target_window = NodePath("../FirstAd")
 metadata/_custom_type_script = "uid://bx2yrr211ihq5"
 
+[sub_resource type="Resource" id="Resource_k8u0w"]
+script = ExtResource("32_1regh")
+file_name = "How2Become_a_billionaire.txt"
+target_window = NodePath("../How2")
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
+
 [sub_resource type="Resource" id="Resource_ahs7a"]
 script = ExtResource("32_1regh")
 file_name = "Important"
 modified = "03.11.01"
 type = 3
 size = "0 Ko"
-folder_content = Array[ExtResource("32_1regh")]([SubResource("Resource_bgcim"), SubResource("Resource_wghks")])
+folder_content = Array[ExtResource("32_1regh")]([SubResource("Resource_bgcim"), SubResource("Resource_wghks"), SubResource("Resource_k8u0w")])
 metadata/_custom_type_script = "uid://bx2yrr211ihq5"
 
 [sub_resource type="Resource" id="Resource_lrfqc"]
 script = ExtResource("32_1regh")
-file_name = "image1.jpg"
+file_name = "my_first_love.jpg"
 modified = "01.11.01"
 type = 1
 size = "10 Ko"
@@ -246,7 +283,7 @@ metadata/_custom_type_script = "uid://bx2yrr211ihq5"
 
 [sub_resource type="Resource" id="Resource_kodbd"]
 script = ExtResource("32_1regh")
-file_name = "icon.jpg"
+file_name = "company_logo.jpg"
 modified = "03.11.01"
 type = 1
 size = "66 Ko"
@@ -2048,448 +2085,6 @@ theme_override_fonts/font = ExtResource("3_sp806")
 text = "27.07.01"
 horizontal_alignment = 2
 
-[node name="EncryptedMessage" type="Control" parent="Windows" unique_id=12912388]
-visible = false
-layout_mode = 1
-anchors_preset = 0
-offset_left = 35.0
-offset_top = -13.0
-offset_right = 54.0
-offset_bottom = 2.0
-script = ExtResource("12_2uju1")
-
-[node name="EncryptedWindow" parent="Windows/EncryptedMessage" unique_id=1942496214 instance=ExtResource("10_2hmho")]
-layout_mode = 1
-anchor_top = 1.4000001
-anchor_right = 0.0
-anchor_bottom = 1.4000001
-offset_right = 965.35895
-offset_bottom = 586.14996
-pivot_offset = Vector2(482.67947, 293.07498)
-title = "Encrypted Message"
-color = Color(0, 0.18431373, 0.011764706, 1)
-
-[node name="Control" type="Control" parent="Windows/EncryptedMessage/EncryptedWindow" unique_id=2033290072]
-top_level = true
-anchors_preset = 0
-offset_left = 30.0
-offset_top = 6.0
-offset_right = 70.0
-offset_bottom = 46.0
-script = ExtResource("22_qg81j")
-
-[node name="Text" type="RichTextLabel" parent="Windows/EncryptedMessage/EncryptedWindow/Control" unique_id=760542630]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.010000001
-anchor_top = 0.015000001
-anchor_right = 0.994
-anchor_bottom = 0.193
-offset_left = 29.256418
-offset_top = 49.280006
-offset_right = 908.24
-offset_bottom = 132.28
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/default_color = Color(0.60336375, 0.99999994, 0.81171376, 1)
-theme_override_fonts/normal_font = ExtResource("3_sp806")
-bbcode_enabled = true
-text = "Quick! We're missing crucial information about the e-center:
-
-The company is called ________
-It was founded by _________, ___________ and ____________
-Before their construction, people were ________ about the ________."
-autowrap_mode = 2
-shortcut_keys_enabled = false
-drag_and_drop_selection_enabled = false
-
-[node name="Text2" type="RichTextLabel" parent="Windows/EncryptedMessage/EncryptedWindow/Control" unique_id=14463866]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.025
-anchor_top = 0.047
-anchor_right = 0.985
-anchor_bottom = 0.936
-offset_left = 29.340897
-offset_top = 139.12
-offset_right = 902.60004
-offset_bottom = 211.55997
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/default_color = Color(0.60336375, 0.99999994, 0.81171376, 1)
-theme_override_fonts/normal_font = ExtResource("3_sp806")
-bbcode_enabled = true
-text = "I see, what else ?
-
-Many people adopted _______.
-They were able to ________ like humans.
-Unfortunately, there was a terrible ______
-which forced the company to create a new model, the _______"
-autowrap_mode = 2
-shortcut_keys_enabled = false
-drag_and_drop_selection_enabled = false
-
-[node name="Text3" type="RichTextLabel" parent="Windows/EncryptedMessage/EncryptedWindow/Control" unique_id=635880576]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.025
-anchor_top = 0.047
-anchor_right = 0.985
-anchor_bottom = 0.936
-offset_left = 28.149002
-offset_top = 251.11996
-offset_right = 903.60004
-offset_bottom = 329.55997
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/default_color = Color(0.60336375, 0.99999994, 0.81171376, 1)
-theme_override_fonts/normal_font = ExtResource("3_sp806")
-bbcode_enabled = true
-text = "Horrible... what happened to the company?
-
-Even with the upgraded model, the company was losing _______
-because the __________ use a lot of _______
-The company was ________ to _____.
-And Martin Saltman _________ soon after.
-He ________ to _______."
-autowrap_mode = 2
-shortcut_keys_enabled = false
-drag_and_drop_selection_enabled = false
-
-[node name="Text4" type="RichTextLabel" parent="Windows/EncryptedMessage/EncryptedWindow/Control" unique_id=748743762]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.025
-anchor_top = 0.047
-anchor_right = 0.985
-anchor_bottom = 0.936
-offset_left = 28.149002
-offset_top = 378.12
-offset_right = 904.60004
-offset_bottom = 426.55997
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/default_color = Color(0.60336375, 0.99999994, 0.81171376, 1)
-theme_override_fonts/normal_font = ExtResource("3_sp806")
-bbcode_enabled = true
-text = "What happened then ?
-
-The _____________ were created and started taking ___________ away from people.
-They are capable of ___________ like people as their name suggests.
-___________ was the first person to be ________ by an __________."
-autowrap_mode = 2
-shortcut_keys_enabled = false
-drag_and_drop_selection_enabled = false
-
-[node name="Text5" type="RichTextLabel" parent="Windows/EncryptedMessage/EncryptedWindow/Control" unique_id=473521191]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.010000001
-anchor_top = 0.77900004
-anchor_right = 1.0
-anchor_bottom = 1.7670001
-offset_left = 28.6
-offset_top = 443.84
-offset_right = 904.0
-offset_bottom = 495.31995
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/default_color = Color(0.60336375, 0.99999994, 0.81171376, 1)
-theme_override_fonts/normal_font = ExtResource("3_sp806")
-bbcode_enabled = true
-text = "Great, now that you found my name on that list, I'd like to thank you for being such a good and diligent e-worker. But I think it's time to blow things up, don't you think?
-This is your last assignment. You will not be missed."
-autowrap_mode = 2
-shortcut_keys_enabled = false
-drag_and_drop_selection_enabled = false
-
-[node name="BlowItUp" type="RichTextLabel" parent="Windows/EncryptedMessage/EncryptedWindow/Control/Text5" unique_id=1339820697]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.009000001
-anchor_top = 0.45400003
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -0.81257963
-offset_top = 5.8113403
-offset_right = 3.770813
-offset_bottom = -0.99998474
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/default_color = Color(1, 0.16862746, 0.28627452, 1)
-theme_override_fonts/normal_font = ExtResource("3_sp806")
-theme_override_font_sizes/normal_font_size = 25
-bbcode_enabled = true
-text = "Blow it all up"
-autowrap_mode = 2
-shortcut_keys_enabled = false
-horizontal_alignment = 1
-vertical_alignment = 1
-drag_and_drop_selection_enabled = false
-
-[node name="Button" type="Button" parent="Windows/EncryptedMessage/EncryptedWindow/Control/Text5" unique_id=1619986848]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.010000001
-anchor_top = 0.448
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 0.05501938
-offset_top = 8.391678
-offset_right = 3.770752
-offset_bottom = -1.0000305
-grow_horizontal = 2
-grow_vertical = 2
-flat = true
-
-[node name="InputGroup" type="Control" parent="Windows/EncryptedMessage/EncryptedWindow/Control" unique_id=1150804292]
-layout_mode = 1
-anchor_left = 0.024
-anchor_top = 0.071
-anchor_right = 0.024
-anchor_bottom = 0.071
-offset_left = 22.04
-offset_top = 72.16
-offset_right = 37.04
-offset_bottom = 93.16
-
-[node name="EInput" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup" unique_id=915415110 instance=ExtResource("25_dfejr")]
-layout_mode = 0
-offset_left = 150.0
-offset_top = 3.0
-offset_right = 220.75
-offset_bottom = 18.0
-placeholder_text = "open4all"
-to_find = Array[String](["open4all", "open 4 all"])
-
-[node name="EInput2" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup" unique_id=1598234536 instance=ExtResource("25_dfejr")]
-layout_mode = 0
-offset_left = 120.0
-offset_top = 21.0
-offset_right = 209.0
-offset_bottom = 36.0
-placeholder_text = "melon husk"
-to_find = Array[String](["melon husk", "martin saltman", "john schoolman", "husk", "saltman", "schoolman"])
-
-[node name="EInput3" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup" unique_id=1566777648 instance=ExtResource("25_dfejr")]
-layout_mode = 0
-offset_left = 217.0
-offset_top = 21.0
-offset_right = 318.0
-offset_bottom = 36.0
-placeholder_text = "martin saltman"
-to_find = Array[String](["martin saltman", "melon husk", "john schoolman", "husk", "saltman", "schoolman"])
-
-[node name="EInput4" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup" unique_id=1728969754 instance=ExtResource("25_dfejr")]
-layout_mode = 0
-offset_left = 342.0
-offset_top = 21.0
-offset_right = 459.0
-offset_bottom = 36.0
-placeholder_text = "john schoolman"
-to_find = Array[String](["john schoolman", "melon husk", "martin saltman", "husk", "saltman", "schoolman"])
-
-[node name="EInput5" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup" unique_id=1532507617 instance=ExtResource("25_dfejr")]
-layout_mode = 0
-offset_left = 242.241
-offset_top = 36.0
-offset_right = 312.991
-offset_bottom = 51.0
-placeholder_text = "optimistic"
-to_find = Array[String](["optimistic", "interested", "positive"])
-
-[node name="EInput6" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup" unique_id=20534744 instance=ExtResource("25_dfejr")]
-layout_mode = 0
-offset_left = 384.0
-offset_top = 36.0
-offset_right = 463.0
-offset_bottom = 51.0
-placeholder_text = "e-centers"
-to_find = Array[String](["e-centers", "ecenters", "e-helpers", "ehelpers"])
-
-[node name="InputGroup2" type="Control" parent="Windows/EncryptedMessage/EncryptedWindow/Control" unique_id=1170084851]
-anchors_preset = 0
-offset_left = 22.0
-offset_top = 524.0
-offset_right = 62.0
-offset_bottom = 564.0
-
-[node name="EInput7" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup2" unique_id=28882638 instance=ExtResource("25_dfejr")]
-layout_mode = 0
-offset_left = 146.0
-offset_top = -355.0
-offset_right = 216.75
-offset_bottom = -340.0
-placeholder_text = "e-helpers"
-to_find = Array[String](["e-helpers", "ehelpers"])
-
-[node name="EInput8" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup2" unique_id=2006345174 instance=ExtResource("25_dfejr")]
-layout_mode = 0
-offset_left = 120.0
-offset_top = -338.0
-offset_right = 207.0
-offset_bottom = -323.0
-placeholder_text = "behave"
-to_find = Array[String](["behave", "understand", "speak", "act", "think", "help", "reason", "learn"])
-
-[node name="EInput9" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup2" unique_id=1604257182 instance=ExtResource("25_dfejr")]
-layout_mode = 0
-offset_left = 219.0
-offset_top = -322.0
-offset_right = 306.0
-offset_bottom = -307.0
-placeholder_text = "incident"
-to_find = Array[String](["incident", "event", "accident"])
-
-[node name="EInput11" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup2" unique_id=1877794906 instance=ExtResource("25_dfejr")]
-layout_mode = 0
-offset_left = 345.0
-offset_top = -307.0
-offset_right = 432.0
-offset_bottom = -292.0
-placeholder_text = "e-worker"
-to_find = Array[String](["e-worker", "eworker", "e-workers", "eworkers"])
-
-[node name="InputGroup3" type="Control" parent="Windows/EncryptedMessage/EncryptedWindow/Control" unique_id=800949996]
-anchors_preset = 0
-offset_left = 22.0
-offset_top = 524.0
-offset_right = 62.0
-offset_bottom = 564.0
-
-[node name="EInput12" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup3" unique_id=512236299 instance=ExtResource("25_dfejr")]
-layout_mode = 0
-offset_left = 355.0
-offset_top = -241.80005
-offset_right = 425.75
-offset_bottom = -226.80005
-placeholder_text = "money"
-to_find = Array[String](["money"])
-
-[node name="EInput13" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup3" unique_id=356420135 instance=ExtResource("25_dfejr")]
-layout_mode = 0
-offset_left = 89.759
-offset_top = -225.80005
-offset_right = 180.759
-offset_bottom = -210.80005
-placeholder_text = "e-centers"
-to_find = Array[String](["e-centers", "ecenters"])
-
-[node name="EInput14" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup3" unique_id=942491050 instance=ExtResource("25_dfejr")]
-layout_mode = 0
-offset_left = 257.759
-offset_top = -226.80005
-offset_right = 335.759
-offset_bottom = -211.80005
-placeholder_text = "energy"
-to_find = Array[String](["energy", "resources", "materials", "rare materials"])
-
-[node name="EInput15" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup3" unique_id=204526372 instance=ExtResource("25_dfejr")]
-layout_mode = 0
-offset_left = 122.0
-offset_top = -209.80005
-offset_right = 218.0
-offset_bottom = -194.80005
-placeholder_text = "sold"
-to_find = Array[String](["sold", "rebranded", "renamed", "transferred"])
-
-[node name="EInput16" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup3" unique_id=1130432391 instance=ExtResource("25_dfejr")]
-layout_mode = 0
-offset_left = 214.0
-offset_top = -209.80005
-offset_right = 310.00003
-offset_bottom = -194.80005
-placeholder_text = "closeb$"
-to_find = Array[String](["closeb$", "closebs"])
-
-[node name="EInput17" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup3" unique_id=1732060546 instance=ExtResource("25_dfejr")]
-layout_mode = 0
-offset_left = 129.0
-offset_top = -193.0
-offset_right = 225.00003
-offset_bottom = -178.0
-placeholder_text = "disappeared"
-to_find = Array[String](["disappeared", "left", "fled", "flew", "went"])
-
-[node name="EInput18" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup3" unique_id=965501070 instance=ExtResource("25_dfejr")]
-layout_mode = 0
-offset_left = 27.0
-offset_top = -177.0
-offset_right = 123.00003
-offset_bottom = -162.0
-placeholder_text = "fled"
-to_find = Array[String](["fled", "left", "flew", "went"])
-
-[node name="EInput19" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup3" unique_id=1896546095 instance=ExtResource("25_dfejr")]
-layout_mode = 0
-offset_left = 120.0
-offset_top = -177.0
-offset_right = 216.00003
-offset_bottom = -162.0
-placeholder_text = "hawaii"
-to_find = Array[String](["hawaii", "honolulu"])
-
-[node name="InputGroup4" type="Control" parent="Windows/EncryptedMessage/EncryptedWindow/Control" unique_id=232299104]
-anchors_preset = 0
-offset_left = 23.0
-offset_top = 522.0
-offset_right = 63.0
-offset_bottom = 562.0
-
-[node name="EInput20" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup4" unique_id=942137360 instance=ExtResource("25_dfejr")]
-layout_mode = 0
-offset_left = 33.0
-offset_top = -113.0
-offset_right = 150.99997
-offset_bottom = -98.0
-placeholder_text = "e-workers"
-to_find = Array[String](["e-workers", "eworkers"])
-
-[node name="EInput21" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup4" unique_id=1494552172 instance=ExtResource("25_dfejr")]
-layout_mode = 0
-offset_left = 362.0
-offset_top = -115.0
-offset_right = 463.00003
-offset_bottom = -100.0
-placeholder_text = "jobs"
-to_find = Array[String](["jobs", "work", "revenue"])
-
-[node name="EInput22" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup4" unique_id=47570128 instance=ExtResource("25_dfejr")]
-layout_mode = 0
-offset_left = 134.0
-offset_top = -98.0
-offset_right = 233.0
-offset_bottom = -83.0
-placeholder_text = "behaving"
-to_find = Array[String](["behaving", "working", "walking", "acting", "replacing"])
-
-[node name="EInput23" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup4" unique_id=2058525909 instance=ExtResource("25_dfejr")]
-layout_mode = 0
-offset_left = 5.0
-offset_top = -81.0
-offset_right = 106.00003
-offset_bottom = -66.0
-placeholder_text = "leroy jenkins"
-to_find = Array[String](["leroy jenkins"])
-
-[node name="EInput24" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup4" unique_id=1247196156 instance=ExtResource("25_dfejr")]
-layout_mode = 0
-offset_left = 271.0
-offset_top = -82.0
-offset_right = 341.75
-offset_bottom = -67.0
-placeholder_text = "replaced"
-to_find = Array[String](["replaced"])
-
-[node name="EInput25" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup4" unique_id=464289757 instance=ExtResource("25_dfejr")]
-layout_mode = 0
-offset_left = 387.0
-offset_top = -81.0
-offset_right = 488.0
-offset_bottom = -66.0
-placeholder_text = "e-worker"
-to_find = Array[String](["e-worker", "e-workers", "eworker", "eworkers", "e worker", "e workers"])
-
 [node name="CountDownWindow" parent="Windows" unique_id=2088697027 instance=ExtResource("10_2hmho")]
 visible = false
 layout_mode = 1
@@ -2537,7 +2132,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0.99999994, 0.17005175, 0.28454703, 1)
 theme_override_fonts/font = ExtResource("3_sp806")
 theme_override_font_sizes/font_size = 87
-text = "04"
+text = "24"
 vertical_alignment = 1
 
 [node name="Label3" type="Label" parent="Windows/CountDownWindow/ColorRect3" unique_id=1157558467]
@@ -2579,7 +2174,7 @@ text = "00"
 vertical_alignment = 1
 
 [node name="CountdownTimer" type="Timer" parent="Windows/CountDownWindow" unique_id=1114284354]
-wait_time = 240.0
+wait_time = 1440.0
 one_shot = true
 
 [node name="CreditWindow" parent="Windows" unique_id=398991263 instance=ExtResource("10_2hmho")]
@@ -2888,7 +2483,7 @@ offset_top = 33.0
 offset_right = 698.0
 offset_bottom = 309.0
 pivot_offset = Vector2(266, 138)
-title = "The Great Replacement.txt"
+title = "The Fast E-replacement.txt"
 
 [node name="Text" type="RichTextLabel" parent="Windows/ArticleFWindow" unique_id=1250973652]
 layout_mode = 1
@@ -2906,7 +2501,7 @@ grow_vertical = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_sp806")
 bbcode_enabled = true
-text = "[b]The Great Replacement[/b]
+text = "[b]The e-replacement[/b]
 08.08.01
 
 The e-workers have taken over nearly all of the labour available. Many users have seen their work completely taken away from them. The revenue made by e-workers goes straight to the manufacturing and designing companies leaving population in situations of extreme precarity."
@@ -2953,22 +2548,21 @@ texture = ExtResource("20_06c6w")
 expand_mode = 1
 
 [node name="Image1Window" parent="Windows" unique_id=1550086900 instance=ExtResource("10_2hmho")]
-visible = false
 layout_mode = 1
 offset_left = 166.0
 offset_top = 33.0
-offset_right = 612.0
-offset_bottom = 471.0
+offset_right = 662.0
+offset_bottom = 385.0
 pivot_offset = Vector2(223, 219)
-title = "image1.png"
+title = "my_first_love.png"
 
 [node name="TextureRect" type="TextureRect" parent="Windows/Image1Window" unique_id=1292950782]
 layout_mode = 0
-offset_left = 31.0
-offset_top = 65.0
-offset_right = 410.14966
-offset_bottom = 394.594
-texture = ExtResource("21_n8qyt")
+offset_left = 26.0
+offset_top = 50.0
+offset_right = 466.7119
+offset_bottom = 321.0
+texture = ExtResource("29_ab8gm")
 expand_mode = 1
 
 [node name="MyBelovedWindow" parent="Windows" unique_id=807335605 instance=ExtResource("10_2hmho")]
@@ -2991,14 +2585,13 @@ texture = ExtResource("22_2uju1")
 expand_mode = 1
 
 [node name="IconWindow" parent="Windows" unique_id=1148099425 instance=ExtResource("10_2hmho")]
-visible = false
 layout_mode = 1
 offset_left = 166.0
 offset_top = 33.0
-offset_right = 508.0
-offset_bottom = 361.0
+offset_right = 292.0
+offset_bottom = 171.0
 pivot_offset = Vector2(171, 164)
-title = "icon.png"
+title = "logo.png"
 
 [node name="TextureRect" type="TextureRect" parent="Windows/IconWindow" unique_id=1509359494]
 layout_mode = 0
@@ -3010,12 +2603,13 @@ texture = ExtResource("23_dfejr")
 expand_mode = 1
 
 [node name="FirstAd" parent="Windows" unique_id=395855945 instance=ExtResource("10_2hmho")]
+visible = false
 layout_mode = 1
 offset_left = 166.0
 offset_top = 33.0
 offset_right = 576.0
 offset_bottom = 456.0
-pivot_offset = Vector2(171, 164)
+pivot_offset = Vector2(205, 211.5)
 title = "first_ad.png"
 
 [node name="TextureRect" type="TextureRect" parent="Windows/FirstAd" unique_id=755195988]
@@ -3028,12 +2622,13 @@ texture = ExtResource("32_vegeo")
 expand_mode = 1
 
 [node name="MapofHawaii" parent="Windows" unique_id=1859569063 instance=ExtResource("10_2hmho")]
+visible = false
 layout_mode = 1
 offset_left = 166.0
 offset_top = 33.0
 offset_right = 638.0
 offset_bottom = 381.0
-pivot_offset = Vector2(205, 211.5)
+pivot_offset = Vector2(236, 174)
 title = "Map.png"
 
 [node name="TextureRect" type="TextureRect" parent="Windows/MapofHawaii" unique_id=125214219]
@@ -3045,13 +2640,546 @@ offset_bottom = 320.0
 texture = ExtResource("33_bgcim")
 expand_mode = 1
 
+[node name="Poster1" parent="Windows" unique_id=2133572336 instance=ExtResource("10_2hmho")]
+visible = false
+layout_mode = 1
+offset_left = 166.0
+offset_top = 33.0
+offset_right = 368.0
+offset_bottom = 313.0
+pivot_offset = Vector2(101, 140)
+title = "Poster.png"
+
+[node name="TextureRect" type="TextureRect" parent="Windows/Poster1" unique_id=392685106]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 50.0
+offset_right = 176.0
+offset_bottom = 252.83582
+texture = ExtResource("34_ab8gm")
+
+[node name="Poster2" parent="Windows" unique_id=1877219372 instance=ExtResource("10_2hmho")]
+visible = false
+layout_mode = 1
+offset_left = 166.0
+offset_top = 33.0
+offset_right = 368.0
+offset_bottom = 313.0
+pivot_offset = Vector2(101, 140)
+title = "Poster.png"
+
+[node name="TextureRect" type="TextureRect" parent="Windows/Poster2" unique_id=988129180]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 50.0
+offset_right = 176.0
+offset_bottom = 252.83582
+texture = ExtResource("35_kodbd")
+
+[node name="Poster3" parent="Windows" unique_id=1980919129 instance=ExtResource("10_2hmho")]
+visible = false
+layout_mode = 1
+offset_left = 166.0
+offset_top = 33.0
+offset_right = 368.0
+offset_bottom = 313.0
+pivot_offset = Vector2(101, 140)
+title = "Poster.png"
+
+[node name="TextureRect" type="TextureRect" parent="Windows/Poster3" unique_id=2056875383]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 50.0
+offset_right = 176.0
+offset_bottom = 252.83582
+texture = ExtResource("36_auihx")
+
+[node name="How2" parent="Windows" unique_id=1120073257 instance=ExtResource("10_2hmho")]
+visible = false
+layout_mode = 1
+offset_left = 166.0
+offset_top = 33.0
+offset_right = 506.0
+offset_bottom = 231.0
+pivot_offset = Vector2(170, 99)
+title = "How2Become_a_billionaire.txt"
+
+[node name="Text" type="RichTextLabel" parent="Windows/How2" unique_id=2038658653]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = 13.625
+offset_top = 34.981003
+offset_right = -21.975037
+offset_bottom = -10.272003
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_sp806")
+bbcode_enabled = true
+text = "How to become a billionaire in 5 steps:
+
+- Be a greedy asshole
+- Make bad decisions
+- Have problematic opinions
+- Support leaders with problematic opinions
+- Believe in at least 3 conspiracy theories"
+autowrap_mode = 2
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+
 [node name="FileExplorer" parent="Windows" unique_id=808500156 instance=ExtResource("31_qg81j")]
+visible = false
 layout_mode = 0
 offset_left = 149.0
 offset_top = 83.0
 offset_right = 1006.0
 offset_bottom = 488.0
 structure = Array[ExtResource("32_1regh")]([SubResource("Resource_0xeun"), SubResource("Resource_ahs7a"), SubResource("Resource_7hfxj"), SubResource("Resource_6nrmc")])
+
+[node name="EncryptedMessage" type="Control" parent="Windows" unique_id=12912388]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 35.0
+offset_top = -13.0
+offset_right = 54.0
+offset_bottom = 2.0
+script = ExtResource("12_2uju1")
+
+[node name="EncryptedWindow" parent="Windows/EncryptedMessage" unique_id=1942496214 instance=ExtResource("10_2hmho")]
+layout_mode = 1
+anchor_top = 1.4000001
+anchor_right = 0.0
+anchor_bottom = 1.4000001
+offset_right = 965.35895
+offset_bottom = 586.14996
+pivot_offset = Vector2(482.67947, 293.07498)
+mouse_filter = 0
+title = "Encrypted Message"
+color = Color(0, 0.18431373, 0.011764706, 1)
+
+[node name="Control" type="Control" parent="Windows/EncryptedMessage/EncryptedWindow" unique_id=2033290072]
+anchors_preset = 0
+offset_left = -1.0
+offset_top = 6.999998
+offset_right = 39.0
+offset_bottom = 47.0
+script = ExtResource("22_qg81j")
+
+[node name="Text" type="RichTextLabel" parent="Windows/EncryptedMessage/EncryptedWindow/Control" unique_id=760542630]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.010000001
+anchor_top = 0.015000001
+anchor_right = 0.994
+anchor_bottom = 0.193
+offset_left = 29.256418
+offset_top = 49.280006
+offset_right = 908.24
+offset_bottom = 132.28
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.60336375, 0.99999994, 0.81171376, 1)
+theme_override_fonts/normal_font = ExtResource("3_sp806")
+bbcode_enabled = true
+text = "Quick! We're missing crucial information about the e-center:
+
+The company is called ________
+It was founded by _________, ___________ and ____________
+Before their construction, people were ________ about the ________."
+autowrap_mode = 2
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Text2" type="RichTextLabel" parent="Windows/EncryptedMessage/EncryptedWindow/Control" unique_id=14463866]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = 29.340897
+offset_top = 139.12
+offset_right = 902.60004
+offset_bottom = 211.55997
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.60336375, 0.99999994, 0.81171376, 1)
+theme_override_fonts/normal_font = ExtResource("3_sp806")
+bbcode_enabled = true
+text = "I see, what else ?
+
+Many people adopted _______.
+They were able to ________ like humans.
+Unfortunately, there was a terrible ______
+which forced the company to create a new model, the _______"
+autowrap_mode = 2
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Text3" type="RichTextLabel" parent="Windows/EncryptedMessage/EncryptedWindow/Control" unique_id=635880576]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = 28.149002
+offset_top = 251.11996
+offset_right = 903.60004
+offset_bottom = 329.55997
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.60336375, 0.99999994, 0.81171376, 1)
+theme_override_fonts/normal_font = ExtResource("3_sp806")
+bbcode_enabled = true
+text = "Horrible... what happened to the company?
+
+Even with the upgraded model, the company was losing _______
+because the __________ use a lot of _______
+The company was ________ to _____.
+And Martin Saltman _________ soon after.
+He ________ to _______."
+autowrap_mode = 2
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Text4" type="RichTextLabel" parent="Windows/EncryptedMessage/EncryptedWindow/Control" unique_id=748743762]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.047
+anchor_right = 0.985
+anchor_bottom = 0.936
+offset_left = 28.149002
+offset_top = 378.12
+offset_right = 904.60004
+offset_bottom = 426.55997
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.60336375, 0.99999994, 0.81171376, 1)
+theme_override_fonts/normal_font = ExtResource("3_sp806")
+bbcode_enabled = true
+text = "What happened then ?
+
+The _________ were created and started taking _____ away from people.
+They are capable of ___________ like people as their name suggests.
+___________ was the first person to be ________ by an __________."
+autowrap_mode = 2
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Text5" type="RichTextLabel" parent="Windows/EncryptedMessage/EncryptedWindow/Control" unique_id=473521191]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.010000001
+anchor_top = 0.77900004
+anchor_right = 1.0
+anchor_bottom = 1.7670001
+offset_left = 28.6
+offset_top = 443.84
+offset_right = 904.0
+offset_bottom = 495.31995
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.60336375, 0.99999994, 0.81171376, 1)
+theme_override_fonts/normal_font = ExtResource("3_sp806")
+bbcode_enabled = true
+text = "Great, now that you found my name on that list, I'd like to thank you for being such a good and diligent e-worker. But I think it's time to blow things up, don't you think?
+This is your last assignment. You will not be missed."
+autowrap_mode = 2
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="BlowItUp" type="RichTextLabel" parent="Windows/EncryptedMessage/EncryptedWindow/Control/Text5" unique_id=1339820697]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.009000001
+anchor_top = 0.45400003
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.81257963
+offset_top = 5.8113403
+offset_right = 3.770813
+offset_bottom = -0.99998474
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(1, 0.16862746, 0.28627452, 1)
+theme_override_fonts/normal_font = ExtResource("3_sp806")
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "Blow it all up"
+autowrap_mode = 2
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+drag_and_drop_selection_enabled = false
+
+[node name="Button" type="Button" parent="Windows/EncryptedMessage/EncryptedWindow/Control/Text5" unique_id=1619986848]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.010000001
+anchor_top = 0.448
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.05501938
+offset_top = 8.391678
+offset_right = 3.770752
+offset_bottom = -1.0000305
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="InputGroup" type="Control" parent="Windows/EncryptedMessage/EncryptedWindow/Control" unique_id=1150804292]
+layout_mode = 1
+anchor_left = 0.024
+anchor_top = 0.071
+anchor_right = 0.024
+anchor_bottom = 0.071
+offset_left = 22.04
+offset_top = 72.16
+offset_right = 37.04
+offset_bottom = 93.16
+
+[node name="EInput" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup" unique_id=915415110 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 5.0
+offset_right = 218.75
+offset_bottom = 20.0
+placeholder_text = "open4all"
+to_find = Array[String](["open4all", "open 4 all"])
+
+[node name="EInput2" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup" unique_id=1598234536 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 21.0
+offset_right = 205.0
+offset_bottom = 36.0
+placeholder_text = "melon husk"
+to_find = Array[String](["melon husk", "martin saltman", "john schoolman", "husk", "saltman", "schoolman"])
+
+[node name="EInput3" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup" unique_id=1566777648 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 21.0
+offset_right = 309.0
+offset_bottom = 36.0
+placeholder_text = "martin saltman"
+to_find = Array[String](["martin saltman", "melon husk", "john schoolman", "husk", "saltman", "schoolman"])
+
+[node name="EInput4" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup" unique_id=1728969754 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 343.0
+offset_top = 21.0
+offset_right = 460.0
+offset_bottom = 36.0
+placeholder_text = "john schoolman"
+to_find = Array[String](["john schoolman", "melon husk", "martin saltman", "husk", "saltman", "schoolman"])
+
+[node name="EInput5" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup" unique_id=1532507617 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 245.241
+offset_top = 37.0
+offset_right = 315.991
+offset_bottom = 52.0
+placeholder_text = "optimistic"
+to_find = Array[String](["optimistic", "interested", "positive"])
+
+[node name="EInput6" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup" unique_id=20534744 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 386.0
+offset_top = 37.0
+offset_right = 465.0
+offset_bottom = 52.0
+placeholder_text = "e-centers"
+to_find = Array[String](["e-centers", "ecenters", "e-helpers", "ehelpers"])
+
+[node name="InputGroup2" type="Control" parent="Windows/EncryptedMessage/EncryptedWindow/Control" unique_id=1170084851]
+anchors_preset = 0
+offset_left = 22.0
+offset_top = 524.0
+offset_right = 62.0
+offset_bottom = 564.0
+
+[node name="EInput7" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup2" unique_id=28882638 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 144.0
+offset_top = -353.0
+offset_right = 214.75
+offset_bottom = -338.0
+placeholder_text = "e-helpers"
+to_find = Array[String](["e-helpers", "ehelpers"])
+
+[node name="EInput8" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup2" unique_id=2006345174 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 120.0
+offset_top = -337.0
+offset_right = 207.0
+offset_bottom = -322.0
+placeholder_text = "behave"
+to_find = Array[String](["behave", "understand", "speak", "act", "think", "help", "reason", "learn"])
+
+[node name="EInput9" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup2" unique_id=1604257182 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 219.0
+offset_top = -321.0
+offset_right = 306.0
+offset_bottom = -306.0
+placeholder_text = "incident"
+to_find = Array[String](["incident", "event", "accident"])
+
+[node name="EInput11" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup2" unique_id=1877794906 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 345.0
+offset_top = -306.0
+offset_right = 432.0
+offset_bottom = -291.0
+placeholder_text = "e-worker"
+to_find = Array[String](["e-worker", "eworker", "e-workers", "eworkers"])
+
+[node name="InputGroup3" type="Control" parent="Windows/EncryptedMessage/EncryptedWindow/Control" unique_id=800949996]
+anchors_preset = 0
+offset_left = 22.0
+offset_top = 524.0
+offset_right = 62.0
+offset_bottom = 564.0
+
+[node name="EInput12" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup3" unique_id=512236299 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 354.0
+offset_top = -241.80005
+offset_right = 424.75
+offset_bottom = -226.80005
+placeholder_text = "money"
+to_find = Array[String](["money"])
+
+[node name="EInput13" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup3" unique_id=356420135 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 85.759
+offset_top = -224.80005
+offset_right = 176.759
+offset_bottom = -209.80005
+placeholder_text = "e-centers"
+to_find = Array[String](["e-centers", "ecenters"])
+
+[node name="EInput14" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup3" unique_id=942491050 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 253.759
+offset_top = -224.80005
+offset_right = 331.759
+offset_bottom = -209.80005
+placeholder_text = "energy"
+to_find = Array[String](["energy", "resources", "materials", "rare materials"])
+
+[node name="EInput15" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup3" unique_id=204526372 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 121.0
+offset_top = -208.80005
+offset_right = 217.0
+offset_bottom = -193.80005
+placeholder_text = "sold"
+to_find = Array[String](["sold", "rebranded", "renamed", "transferred"])
+
+[node name="EInput16" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup3" unique_id=1130432391 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 214.0
+offset_top = -208.80005
+offset_right = 310.00003
+offset_bottom = -193.80005
+placeholder_text = "closeb$"
+to_find = Array[String](["closeb$", "closebs"])
+
+[node name="EInput17" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup3" unique_id=1732060546 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 128.0
+offset_top = -193.0
+offset_right = 224.00003
+offset_bottom = -178.0
+placeholder_text = "disappeared"
+to_find = Array[String](["disappeared", "left", "fled", "flew", "went"])
+
+[node name="EInput18" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup3" unique_id=965501070 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 26.0
+offset_top = -178.0
+offset_right = 122.00003
+offset_bottom = -163.0
+placeholder_text = "fled"
+to_find = Array[String](["fled", "left", "flew", "went"])
+
+[node name="EInput19" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup3" unique_id=1896546095 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 118.0
+offset_top = -178.0
+offset_right = 214.00003
+offset_bottom = -163.0
+placeholder_text = "hawaii"
+to_find = Array[String](["hawaii", "honolulu"])
+
+[node name="InputGroup4" type="Control" parent="Windows/EncryptedMessage/EncryptedWindow/Control" unique_id=232299104]
+anchors_preset = 0
+offset_left = 23.0
+offset_top = 522.0
+offset_right = 63.0
+offset_bottom = 562.0
+
+[node name="EInput20" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup4" unique_id=942137360 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 31.0
+offset_top = -113.0
+offset_right = 148.99997
+offset_bottom = -98.0
+placeholder_text = "e-workers"
+to_find = Array[String](["e-workers", "eworkers"])
+
+[node name="EInput21" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup4" unique_id=1494552172 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 322.0
+offset_top = -112.0
+offset_right = 423.00003
+offset_bottom = -97.0
+placeholder_text = "jobs"
+to_find = Array[String](["jobs", "work", "revenue"])
+
+[node name="EInput22" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup4" unique_id=47570128 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 131.0
+offset_top = -96.0
+offset_right = 230.0
+offset_bottom = -81.0
+placeholder_text = "behaving"
+to_find = Array[String](["behaving", "working", "walking", "acting", "replacing"])
+
+[node name="EInput23" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup4" unique_id=2058525909 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 5.0
+offset_top = -81.0
+offset_right = 106.00003
+offset_bottom = -66.0
+placeholder_text = "leroy jenkins"
+to_find = Array[String](["leroy jenkins"])
+
+[node name="EInput24" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup4" unique_id=1247196156 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 271.0
+offset_top = -81.0
+offset_right = 341.75
+offset_bottom = -66.0
+placeholder_text = "replaced"
+to_find = Array[String](["replaced"])
+
+[node name="EInput25" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup4" unique_id=464289757 instance=ExtResource("25_dfejr")]
+layout_mode = 0
+offset_left = 384.0
+offset_top = -80.0
+offset_right = 485.0
+offset_bottom = -65.0
+placeholder_text = "e-worker"
+to_find = Array[String](["e-worker", "e-workers", "eworker", "eworkers", "e worker", "e workers"])
 
 [connection signal="pressed" from="TaskBar/Start" to="." method="_on_start_pressed"]
 [connection signal="closed" from="Windows/Browser" to="Windows/Browser/WackyPedia" method="_on_browser_closed"]
@@ -3081,15 +3209,6 @@ structure = Array[ExtResource("32_1regh")]([SubResource("Resource_0xeun"), SubRe
 [connection signal="focus_entered" from="Windows/Browser/WackyPedia/Result/ECenterResult/Text" to="Windows/Browser/WackyPedia/Result/ECenterResult/Text" method="_on_focus_entered"]
 [connection signal="text_changed" from="Windows/EmployeeMgmtWindow/Access/ColorRect/VBoxContainer/Username" to="Windows/EmployeeMgmtWindow/AccessManager" method="_on_username_text_changed"]
 [connection signal="text_submitted" from="Windows/EmployeeMgmtWindow/Access/ColorRect/VBoxContainer/Password" to="Windows/EmployeeMgmtWindow/AccessManager" method="_on_password_text_submitted"]
-[connection signal="closed" from="Windows/EncryptedMessage/EncryptedWindow" to="Windows/EncryptedMessage/EncryptedWindow/Control" method="_on_encrypted_window_closed"]
-[connection signal="opened" from="Windows/EncryptedMessage/EncryptedWindow" to="Windows/EncryptedMessage/EncryptedWindow/Control" method="_on_encrypted_window_opened"]
-[connection signal="focus_entered" from="Windows/EncryptedMessage/EncryptedWindow/Control/Text" to="Windows/EncryptedMessage/EncryptedWindow/Control/Text" method="_on_focus_entered"]
-[connection signal="focus_entered" from="Windows/EncryptedMessage/EncryptedWindow/Control/Text2" to="Windows/EncryptedMessage/EncryptedWindow/Control/Text2" method="_on_focus_entered"]
-[connection signal="focus_entered" from="Windows/EncryptedMessage/EncryptedWindow/Control/Text3" to="Windows/EncryptedMessage/EncryptedWindow/Control/Text3" method="_on_focus_entered"]
-[connection signal="focus_entered" from="Windows/EncryptedMessage/EncryptedWindow/Control/Text4" to="Windows/EncryptedMessage/EncryptedWindow/Control/Text4" method="_on_focus_entered"]
-[connection signal="focus_entered" from="Windows/EncryptedMessage/EncryptedWindow/Control/Text5" to="Windows/EncryptedMessage/EncryptedWindow/Control/Text5" method="_on_focus_entered"]
-[connection signal="focus_entered" from="Windows/EncryptedMessage/EncryptedWindow/Control/Text5/BlowItUp" to="Windows/EncryptedMessage/EncryptedWindow/Control/Text5/BlowItUp" method="_on_focus_entered"]
-[connection signal="pressed" from="Windows/EncryptedMessage/EncryptedWindow/Control/Text5/Button" to="." method="_on_blow_it_up_button_pressed"]
 [connection signal="timeout" from="Windows/CountDownWindow/CountdownTimer" to="." method="_on_countdown_timer_timeout"]
 [connection signal="focus_entered" from="Windows/CreditWindow/ColorRect2/Text3" to="Windows/CreditWindow/ColorRect2/Text3" method="_on_focus_entered"]
 [connection signal="focus_entered" from="Windows/GuideLinesWindow/DontTxt" to="Windows/GuideLinesWindow/DontTxt" method="_on_focus_entered"]
@@ -3103,3 +3222,13 @@ structure = Array[ExtResource("32_1regh")]([SubResource("Resource_0xeun"), SubRe
 [connection signal="focus_entered" from="Windows/ArticleBWindow/Text" to="Windows/ArticleBWindow/Text" method="_on_focus_entered"]
 [connection signal="focus_entered" from="Windows/ArticleCWindow/Text" to="Windows/ArticleCWindow/Text" method="_on_focus_entered"]
 [connection signal="focus_entered" from="Windows/ArticleFWindow/Text" to="Windows/ArticleFWindow/Text" method="_on_focus_entered"]
+[connection signal="focus_entered" from="Windows/How2/Text" to="Windows/How2/Text" method="_on_focus_entered"]
+[connection signal="closed" from="Windows/EncryptedMessage/EncryptedWindow" to="Windows/EncryptedMessage/EncryptedWindow/Control" method="_on_encrypted_window_closed"]
+[connection signal="opened" from="Windows/EncryptedMessage/EncryptedWindow" to="Windows/EncryptedMessage/EncryptedWindow/Control" method="_on_encrypted_window_opened"]
+[connection signal="focus_entered" from="Windows/EncryptedMessage/EncryptedWindow/Control/Text" to="Windows/EncryptedMessage/EncryptedWindow/Control/Text" method="_on_focus_entered"]
+[connection signal="focus_entered" from="Windows/EncryptedMessage/EncryptedWindow/Control/Text2" to="Windows/EncryptedMessage/EncryptedWindow/Control/Text2" method="_on_focus_entered"]
+[connection signal="focus_entered" from="Windows/EncryptedMessage/EncryptedWindow/Control/Text3" to="Windows/EncryptedMessage/EncryptedWindow/Control/Text3" method="_on_focus_entered"]
+[connection signal="focus_entered" from="Windows/EncryptedMessage/EncryptedWindow/Control/Text4" to="Windows/EncryptedMessage/EncryptedWindow/Control/Text4" method="_on_focus_entered"]
+[connection signal="focus_entered" from="Windows/EncryptedMessage/EncryptedWindow/Control/Text5" to="Windows/EncryptedMessage/EncryptedWindow/Control/Text5" method="_on_focus_entered"]
+[connection signal="focus_entered" from="Windows/EncryptedMessage/EncryptedWindow/Control/Text5/BlowItUp" to="Windows/EncryptedMessage/EncryptedWindow/Control/Text5/BlowItUp" method="_on_focus_entered"]
+[connection signal="pressed" from="Windows/EncryptedMessage/EncryptedWindow/Control/Text5/Button" to="." method="_on_blow_it_up_button_pressed"]
