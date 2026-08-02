@@ -4,7 +4,7 @@ extends Control
 @onready var result: Control = $Result
 @onready var searchterm_input: LineEdit = $HomePage/SearchTerm
 @onready var recent: Control = $HomePage/Recent
-@onready var discovered_pages_container: HBoxContainer = $HomePage/Recent/DiscoveredPages
+@onready var discovered_pages_container: HFlowContainer = $HomePage/Recent/DiscoveredPages
 @onready var searchterm_label: Label = $Result/SearchTerm
 @onready var unknown_result: Control = $Result/UnknownResult
 

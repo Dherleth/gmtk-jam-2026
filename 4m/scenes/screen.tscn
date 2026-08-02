@@ -5,13 +5,14 @@
 [ext_resource type="FontFile" uid="uid://cexbk66whqwso" path="res://assets/fonts/w95fa/w95f.woff" id="3_sp806"]
 [ext_resource type="Script" uid="uid://cjtnmkaudgxic" path="res://scripts/time.gd" id="4_06c6w"]
 [ext_resource type="Texture2D" uid="uid://cwwm4tgs5raod" path="res://assets/images/win95bin.png" id="5_ed25v"]
+[ext_resource type="Texture2D" uid="uid://5o1p6p4bjnl" path="res://assets/images/Windows_95_resize.png" id="6_1regh"]
 [ext_resource type="Script" uid="uid://ltw678giy6qt" path="res://scripts/window_button.gd" id="6_2hpia"]
-[ext_resource type="Texture2D" uid="uid://batdj5mg8cbym" path="res://assets/images/Windows_95.png" id="7_0kugv"]
 [ext_resource type="PackedScene" uid="uid://c08umx5trny1e" path="res://scenes/os_window.tscn" id="10_2hmho"]
 [ext_resource type="Texture2D" uid="uid://bq6xc7mjmgren" path="res://assets/images/Windows_95_Highlights_in_program.png" id="10_esotp"]
 [ext_resource type="Texture2D" uid="uid://lfuedn4ag0ct" path="res://assets/images/Windows_95_FOLDER.png" id="11_wydk0"]
 [ext_resource type="Script" uid="uid://px0li53gqdi" path="res://scenes/encrypted_message.gd" id="12_2uju1"]
 [ext_resource type="Script" uid="uid://bvhv12qvrfyid" path="res://scenes/file_explorer/file_explorer_opener.gd" id="13_1regh"]
+[ext_resource type="Texture2D" uid="uid://dtood0y1ihv2b" path="res://assets/images/Windows_95_EXE.png" id="14_a66ve"]
 [ext_resource type="Script" uid="uid://dcmbog0g538u7" path="res://scenes/wackypedia.gd" id="15_ufolh"]
 [ext_resource type="Theme" uid="uid://b2kkavm1kjn46" path="res://themes/win95_theme.tres" id="16_5syhw"]
 [ext_resource type="PackedScene" uid="uid://cbd1u2j608rx6" path="res://scenes/WackyPediaButton.tscn" id="16_mfkbl"]
@@ -32,6 +33,8 @@
 [ext_resource type="AudioStream" uid="uid://ci0as80q34vjx" path="res://assets/audio/countdown.wav" id="31_cdnxo"]
 [ext_resource type="PackedScene" uid="uid://bxwvt7pkm8o36" path="res://scenes/file_explorer/file_explorer.tscn" id="31_qg81j"]
 [ext_resource type="Script" uid="uid://bx2yrr211ihq5" path="res://scenes/file_explorer/file_explorer_entry.gd" id="32_1regh"]
+[ext_resource type="Texture2D" uid="uid://b78vhoxry7jk5" path="res://assets/images/Brain_Chip_(40529717123).jpg" id="32_vegeo"]
+[ext_resource type="Texture2D" uid="uid://bsgwvcjd7g2lu" path="res://assets/images/crop.jpg" id="33_bgcim"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sanry"]
 atlas = ExtResource("2_mml8x")
@@ -200,12 +203,27 @@ size = "300 Ko"
 folder_content = Array[ExtResource("32_1regh")]([SubResource("Resource_hst8l"), SubResource("Resource_p2mdf"), SubResource("Resource_ab8gm")])
 metadata/_custom_type_script = "uid://bx2yrr211ihq5"
 
+[sub_resource type="Resource" id="Resource_bgcim"]
+script = ExtResource("32_1regh")
+file_name = "Map.png"
+type = 1
+target_window = NodePath("../MapofHawaii")
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
+
+[sub_resource type="Resource" id="Resource_wghks"]
+script = ExtResource("32_1regh")
+file_name = "First_ad.png"
+type = 1
+target_window = NodePath("../FirstAd")
+metadata/_custom_type_script = "uid://bx2yrr211ihq5"
+
 [sub_resource type="Resource" id="Resource_ahs7a"]
 script = ExtResource("32_1regh")
 file_name = "Important"
 modified = "03.11.01"
 type = 3
 size = "0 Ko"
+folder_content = Array[ExtResource("32_1regh")]([SubResource("Resource_bgcim"), SubResource("Resource_wghks")])
 metadata/_custom_type_script = "uid://bx2yrr211ihq5"
 
 [sub_resource type="Resource" id="Resource_lrfqc"]
@@ -244,29 +262,13 @@ size = "300 Ko"
 folder_content = Array[ExtResource("32_1regh")]([SubResource("Resource_lrfqc"), SubResource("Resource_2exot"), SubResource("Resource_kodbd")])
 metadata/_custom_type_script = "uid://bx2yrr211ihq5"
 
-[sub_resource type="Resource" id="Resource_wghks"]
-script = ExtResource("32_1regh")
-file_name = "Music"
-modified = "03.11.01"
-type = 3
-size = "0 Ko"
-metadata/_custom_type_script = "uid://bx2yrr211ihq5"
-
-[sub_resource type="Resource" id="Resource_bgcim"]
-script = ExtResource("32_1regh")
-file_name = "Videos"
-modified = "03.11.01"
-type = 3
-size = "0 Ko"
-metadata/_custom_type_script = "uid://bx2yrr211ihq5"
-
 [sub_resource type="Resource" id="Resource_7hfxj"]
 script = ExtResource("32_1regh")
 file_name = "Not Important"
 modified = "03.11.01"
 type = 3
 size = "150 Ko"
-folder_content = Array[ExtResource("32_1regh")]([SubResource("Resource_lvq0v"), SubResource("Resource_wghks"), SubResource("Resource_bgcim")])
+folder_content = Array[ExtResource("32_1regh")]([SubResource("Resource_lvq0v")])
 metadata/_custom_type_script = "uid://bx2yrr211ihq5"
 
 [sub_resource type="Resource" id="Resource_cdnxo"]
@@ -333,6 +335,7 @@ color = Color(0.764706, 0.780392, 0.796078, 1)
 metadata/_edit_lock_ = true
 
 [node name="Start" type="TextureButton" parent="TaskBar" unique_id=1307060762 groups=["apps"]]
+visible = false
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -373,16 +376,28 @@ script = ExtResource("4_06c6w")
 
 [node name="EncryptedButton" type="TextureButton" parent="TaskBar" unique_id=1194831103 node_paths=PackedStringArray("window") groups=["apps"]]
 layout_mode = 0
-offset_left = 98.0
-offset_top = 4.0
-offset_right = 181.0
-offset_bottom = 35.0
-texture_normal = ExtResource("7_0kugv")
+offset_left = 8.0
+offset_top = 5.0
+offset_right = 91.0
+offset_bottom = 36.0
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("6_2hpia")
 window = NodePath("../../Windows/EncryptedMessage/EncryptedWindow")
 is_in_task_bar = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="TaskBar/EncryptedButton" unique_id=1985366893]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_1regh")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
 
 [node name="Label" type="Label" parent="TaskBar/EncryptedButton" unique_id=534038550]
 layout_mode = 0
@@ -399,16 +414,28 @@ vertical_alignment = 1
 
 [node name="CountDownButton" type="TextureButton" parent="TaskBar" unique_id=1736174403 node_paths=PackedStringArray("window") groups=["apps"]]
 layout_mode = 0
-offset_left = 187.0
-offset_top = 4.0
-offset_right = 325.0
-offset_bottom = 35.0
-texture_normal = ExtResource("7_0kugv")
+offset_left = 97.0
+offset_top = 5.0
+offset_right = 235.0
+offset_bottom = 36.0
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("6_2hpia")
 window = NodePath("../../Windows/CountDownWindow")
 is_in_task_bar = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="TaskBar/CountDownButton" unique_id=934985004]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_1regh")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
 
 [node name="Digits" type="Control" parent="TaskBar/CountDownButton" unique_id=1532663539]
 anchors_preset = 0
@@ -528,11 +555,11 @@ horizontal_alignment = 1
 
 [node name="BrowserButton" type="TextureButton" parent="Desktop" unique_id=90696947 node_paths=PackedStringArray("window") groups=["apps"]]
 layout_mode = 0
-offset_left = 70.0
-offset_top = 175.0
-offset_right = 126.0
-offset_bottom = 231.0
-texture_normal = ExtResource("10_esotp")
+offset_left = 77.0
+offset_top = 180.0
+offset_right = 119.0
+offset_bottom = 222.0
+texture_normal = ExtResource("14_a66ve")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("6_2hpia")
@@ -581,7 +608,7 @@ offset_bottom = 26.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("3_sp806")
-text = "Employee Management"
+text = "Employees"
 horizontal_alignment = 1
 
 [node name="WorkButton" type="TextureButton" parent="Desktop" unique_id=933141806 node_paths=PackedStringArray("file_explorer")]
@@ -637,7 +664,6 @@ offset_bottom = 81.0
 script = ExtResource("15_ufolh")
 
 [node name="HomePage" type="Control" parent="Windows/Browser/WackyPedia" unique_id=2056516644]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -742,13 +768,14 @@ theme_override_font_sizes/font_size = 16
 text = "Recent"
 horizontal_alignment = 1
 
-[node name="DiscoveredPages" type="HBoxContainer" parent="Windows/Browser/WackyPedia/HomePage/Recent" unique_id=362405341]
+[node name="DiscoveredPages" type="HFlowContainer" parent="Windows/Browser/WackyPedia/HomePage/Recent" unique_id=603908530]
 layout_mode = 0
-offset_left = -1.0
+offset_left = 11.061462
 offset_top = 64.0
-offset_right = 813.0
-offset_bottom = 87.0
+offset_right = 800.06146
+offset_bottom = 252.63403
 alignment = 1
+last_wrap_alignment = 2
 
 [node name="Result" type="Control" parent="Windows/Browser/WackyPedia" unique_id=1208210404]
 visible = false
@@ -2148,7 +2175,7 @@ bbcode_enabled = true
 text = "What happened then ?
 
 The _____________ were created and started taking ___________ away from people.
-They are capable of ___________ like people and will be used as such.
+They are capable of ___________ like people as their name suggests.
 ___________ was the first person to be ________ by an __________."
 autowrap_mode = 2
 shortcut_keys_enabled = false
@@ -2242,7 +2269,7 @@ offset_top = 21.0
 offset_right = 209.0
 offset_bottom = 36.0
 placeholder_text = "melon husk"
-to_find = Array[String](["melon husk", "martin saltman", "john schoolman"])
+to_find = Array[String](["melon husk", "martin saltman", "john schoolman", "husk", "saltman", "schoolman"])
 
 [node name="EInput3" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup" unique_id=1566777648 instance=ExtResource("25_dfejr")]
 layout_mode = 0
@@ -2251,7 +2278,7 @@ offset_top = 21.0
 offset_right = 318.0
 offset_bottom = 36.0
 placeholder_text = "martin saltman"
-to_find = Array[String](["martin saltman", "melon husk", "john schoolman"])
+to_find = Array[String](["martin saltman", "melon husk", "john schoolman", "husk", "saltman", "schoolman"])
 
 [node name="EInput4" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup" unique_id=1728969754 instance=ExtResource("25_dfejr")]
 layout_mode = 0
@@ -2260,7 +2287,7 @@ offset_top = 21.0
 offset_right = 459.0
 offset_bottom = 36.0
 placeholder_text = "john schoolman"
-to_find = Array[String](["john schoolman", "melon husk", "martin saltman"])
+to_find = Array[String](["john schoolman", "melon husk", "martin saltman", "husk", "saltman", "schoolman"])
 
 [node name="EInput5" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup" unique_id=1532507617 instance=ExtResource("25_dfejr")]
 layout_mode = 0
@@ -2303,7 +2330,7 @@ offset_top = -338.0
 offset_right = 207.0
 offset_bottom = -323.0
 placeholder_text = "behave"
-to_find = Array[String](["behave", "understand", "work", "walk", "speak", "act"])
+to_find = Array[String](["behave", "understand", "speak", "act", "think", "help", "reason", "learn"])
 
 [node name="EInput9" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup2" unique_id=1604257182 instance=ExtResource("25_dfejr")]
 layout_mode = 0
@@ -2364,7 +2391,7 @@ offset_top = -209.80005
 offset_right = 218.0
 offset_bottom = -194.80005
 placeholder_text = "sold"
-to_find = Array[String](["sold", "rebranded", "renamed"])
+to_find = Array[String](["sold", "rebranded", "renamed", "transferred"])
 
 [node name="EInput16" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup3" unique_id=1130432391 instance=ExtResource("25_dfejr")]
 layout_mode = 0
@@ -2400,7 +2427,7 @@ offset_top = -177.0
 offset_right = 216.00003
 offset_bottom = -162.0
 placeholder_text = "hawaii"
-to_find = Array[String](["hawaii", "honolulu", "hawai"])
+to_find = Array[String](["hawaii", "honolulu"])
 
 [node name="InputGroup4" type="Control" parent="Windows/EncryptedMessage/EncryptedWindow/Control" unique_id=232299104]
 anchors_preset = 0
@@ -2434,7 +2461,7 @@ offset_top = -98.0
 offset_right = 233.0
 offset_bottom = -83.0
 placeholder_text = "behaving"
-to_find = Array[String](["behaving", "understanding", "working", "walking", "speaking", "acting"])
+to_find = Array[String](["behaving", "working", "walking", "acting", "replacing"])
 
 [node name="EInput23" parent="Windows/EncryptedMessage/EncryptedWindow/Control/InputGroup4" unique_id=2058525909 instance=ExtResource("25_dfejr")]
 layout_mode = 0
@@ -2982,8 +3009,43 @@ offset_bottom = 114.46399
 texture = ExtResource("23_dfejr")
 expand_mode = 1
 
+[node name="FirstAd" parent="Windows" unique_id=395855945 instance=ExtResource("10_2hmho")]
+layout_mode = 1
+offset_left = 166.0
+offset_top = 33.0
+offset_right = 576.0
+offset_bottom = 456.0
+pivot_offset = Vector2(171, 164)
+title = "first_ad.png"
+
+[node name="TextureRect" type="TextureRect" parent="Windows/FirstAd" unique_id=755195988]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 49.0
+offset_right = 377.6957
+offset_bottom = 391.0
+texture = ExtResource("32_vegeo")
+expand_mode = 1
+
+[node name="MapofHawaii" parent="Windows" unique_id=1859569063 instance=ExtResource("10_2hmho")]
+layout_mode = 1
+offset_left = 166.0
+offset_top = 33.0
+offset_right = 638.0
+offset_bottom = 381.0
+pivot_offset = Vector2(205, 211.5)
+title = "Map.png"
+
+[node name="TextureRect" type="TextureRect" parent="Windows/MapofHawaii" unique_id=125214219]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 50.0
+offset_right = 445.4226
+offset_bottom = 320.0
+texture = ExtResource("33_bgcim")
+expand_mode = 1
+
 [node name="FileExplorer" parent="Windows" unique_id=808500156 instance=ExtResource("31_qg81j")]
-visible = false
 layout_mode = 0
 offset_left = 149.0
 offset_top = 83.0
