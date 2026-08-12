@@ -30,7 +30,7 @@ func _ready() -> void:
 	if Engine.is_editor_hint():
 		_structure_changed()
 	else:
-		show()
+		window.closed.connect(func(): hide())
 
 
 func _structure_changed() -> void:
@@ -211,6 +211,7 @@ func get_availables_paths_as_strings() -> Array[String]:
 	return availables_paths
 
 func open(path: String):
+	show()
 	move_to_front()
 	for button: FileSystemStructureButton in file_system_structure_container.get_children():
 		if path == "/".join(button.path):

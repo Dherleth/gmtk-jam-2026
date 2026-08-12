@@ -43,7 +43,6 @@ func _on_x_pressed() -> void:
 	despawn()
 	
 func despawn():
-	closed.emit()
 	modulate.a = 1.0 # invisible
 	pivot_offset.y = size.y # pivot at bottom (for scaling)
 	
@@ -55,6 +54,7 @@ func despawn():
 	
 	# optional, emits the spawned signal once the whole tween is done
 	hide()
+	closed.emit()
 	
 	
 func spawn():
