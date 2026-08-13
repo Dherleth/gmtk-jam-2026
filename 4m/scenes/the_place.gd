@@ -19,6 +19,8 @@ func _ready() -> void:
 	start_working_timer.timeout.connect(_on_start_working_timer_timeout)
 	start_countdown_timer.timeout.connect(_on_start_countdown_timer_timeout)
 	
+	screen_instance.explosion.connect(_on_explosion)
+	
 	show_countdown_timer.start()
 
 
@@ -37,3 +39,7 @@ func _on_show_countdown_timer_timeout() ->void:
 func _on_start_countdown_timer_timeout() ->void:
 	screen_instance.start_count_down()
 	start_working_timer.start()
+	
+func _on_explosion():
+	$CanvasLayer.show()
+	$CanvasLayer/AnimationPlayer.play("show_text")

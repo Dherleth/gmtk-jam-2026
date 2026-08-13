@@ -1,6 +1,7 @@
 extends Control
 
 signal dezoom
+signal explosion
 @onready var encrypted_button: TextureButton = $TaskBar/EncryptedButton
 @onready var count_down_button: TextureButton = $TaskBar/CountDownButton
 @onready var countdown_timer: Timer = $Windows/CountDownWindow/CountdownTimer
@@ -57,3 +58,4 @@ func _on_countdown_timer_timeout() -> void:
 	office_music.stop()
 	explosion_sound.play()
 	credit_window.spawn()
+	explosion.emit()

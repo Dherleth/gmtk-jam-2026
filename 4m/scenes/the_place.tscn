@@ -129,6 +129,43 @@ _data = {
 &"zoom_screen": SubResource("Animation_efqn3")
 }
 
+[sub_resource type="Animation" id="Animation_bwl56"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_0fv0t"]
+resource_name = "show_text"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.01, 1.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kk7tg"]
+_data = {
+&"RESET": SubResource("Animation_bwl56"),
+&"show_text": SubResource("Animation_0fv0t")
+}
+
 [node name="ThePlace" type="Node3D" unique_id=1260952195]
 script = ExtResource("1_0fv0t")
 
@@ -211,3 +248,36 @@ one_shot = true
 
 [node name="StartCountdownTimer" type="Timer" parent="." unique_id=1812990959]
 one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=401030690]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1432274441]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect" unique_id=1857228109]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.5
+offset_top = -23.0
+offset_right = 208.5
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("10_w03o1")
+theme_override_font_sizes/font_size = 48
+text = "The e-center blew up."
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer" unique_id=1186849436]
+libraries/ = SubResource("AnimationLibrary_kk7tg")
